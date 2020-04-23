@@ -1,0 +1,53 @@
+body {
+  background-color: black;
+  max-width: 750px;
+  text-align: center;
+  position: relative;
+  color: #39ff14;
+  margin: auto;
+  font-family: consolas;
+  margin-top: 50px;
+}
+
+header {
+  position: relative;
+}
+
+footer, header {
+  border: 1px solid white;
+}
+
+footer, header {
+  border-radius: 10px;
+}
+
+main {
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: left;
+}
+
+h2 {
+  border-bottom: solid 1px;
+}
+
+nav {
+  margin-bottom: 30px;
+}
+
+a {
+  color: green;
+}
+
+.profile-picture {
+  position: absolute;
+  max-width: 150px;
+  float: right;
+  right: 35px;
+  top: 20px;
+}
+
+div {
+  width: 75%;
+}
+
