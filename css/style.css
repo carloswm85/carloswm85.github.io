@@ -4,20 +4,12 @@ body {
   text-align: center;
   position: relative;
   color: #39ff14;
-  margin: auto;
-  font-family: consolas;
-  margin-top: 50px;
-}
-
-header {
-  position: relative;
+  margin: 50px auto;
+  font-family: Consolas, Cambria;
 }
 
 footer, header {
   border: 1px solid white;
-}
-
-footer, header {
   border-radius: 10px;
 }
 
@@ -28,7 +20,7 @@ main {
 }
 
 h2 {
-  border-bottom: solid 1px;
+  border-bottom: solid 1px #39ff14;;
 }
 
 nav {
@@ -39,15 +31,46 @@ a {
   color: green;
 }
 
-.profile-picture {
+.header-picture {
   position: absolute;
   max-width: 150px;
-  float: right;
   right: 35px;
   top: 20px;
+}
+
+.profile-picture {
+  width: 100%;
 }
 
 div {
   width: 75%;
 }
 
+@media only screen and (max-width: 680px) {
+  body {
+    margin: 50px 20px;
+  }
+
+  h1 {
+    
+    display: block;
+  }
+
+  .header-name {
+    display: block;
+    width: 100%;
+  }
+
+  .header-picture {
+    display: block;
+    position: initial;
+    margin: 10px auto;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    margin: 50px 20px;
+  }
+}
