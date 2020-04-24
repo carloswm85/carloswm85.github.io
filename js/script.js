@@ -6,5 +6,5 @@ function lastUpdated() {
     year: 'numeric'
   };
 
-  document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US'. options);
+  document.getElementById('currentDate').textContent = new Date(document.lastModified).toLocaleDateString('en-US'. options);
 }
