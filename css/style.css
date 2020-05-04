@@ -41,47 +41,13 @@ a {
   color: yellow;
 }
 
-.header-picture {
-  position: absolute;
-  max-width: 150px;
-  right: 35px;
-  top: 20px;
-}
-
 .profile-picture {
-  width: 100%;
+  width: 150px;
+  margin-top: 10%;
+  margin-right: 5%;
 }
 
 div {
   width: 75%;
-}
-
-@media only screen and (max-width: 680px) {
-  body {
-    margin: 50px 20px;
-  }
-
-  h1 {
-    
-    display: block;
-  }
-
-  .header-name {
-    display: block;
-    width: 100%;
-  }
-
-  .header-picture {
-    display: block;
-    position: initial;
-    margin: 10px auto;
-  }
-
-}
-
-@media only screen and (max-width: 800px) {
-  body {
-    margin: 50px 20px;
-  }
 }
 
