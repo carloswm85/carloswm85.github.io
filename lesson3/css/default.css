@@ -1,14 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Oswald&display=swap');
 
 body {
-  background-color: #ebebeb;
+  background-color: #dadada;
 }
 
 header {
   display: flex;
   flex-direction: column;
-  border: solid 1px blue;
   background-color: #494949;
+}
+
+footer {
+  color: #dadada;
+  margin: 0;
+  padding: 5%;
+  background-color: #494949;
+}
+
+footer > p {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+footer > p > a {
+  color: #dadada;
+  text-decoration: underline;
 }
 
 h1, h2{
@@ -24,57 +40,50 @@ h2 {
   margin-top: 1%;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
-}
-
-ul {
+nav > ul {
   padding: 0;
+  display: flex;
+  flex-flow: column;
   list-style-type: none;
-  border: solid 1px orange;
 }
 
-li {
-  background-color: #494949;
-  padding: 10px;
-  text-align: center;
-  border: solid 1px;
+nav > ul > a {
+  display: flex;
+  color: #dadada;
+  height: 2.5em;
+  font-family: 'Noto Sans', sans-serif;
+  align-items: center;
+  justify-content: center;
 }
 
-li > a {
-  color: #ebebeb;
-}
-
-nav > ul > li:hover {
-  background-color: red;
+nav > ul > a:hover {
+  background-color: #dadada;
+  color: black;
 }
 
 .logo-container {
   display: block;
   width: 100%;
   height: auto;
-  border: red solid 1px;
 }
 
 .site-logo {
   display: block;
   margin: auto;
-  width: 50vw;
-  height: auto;
-  border: 1px solid yellow;
+  width: 50%;
 }
 
 .link-centered {
   text-align: center;
 }
 
-.section-style, footer {
+.section-style {
   padding: 3%;
   margin: 3%;
   background-color: #ffffff;
 }
 
-footer > p {
-  text-align: center;
+p {
+  font-family: 'Noto Sans', sans-serif;
+  text-align: justify;
 }
