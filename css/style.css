@@ -1,16 +1,18 @@
 body {
-  background-color: #000;
+  background-color: #e9ecef;
   max-width: 750px;
   text-align: center;
   position: relative;
-  color: #39ff14;
+  color: #000;
   margin: 50px auto;
   font-family: 'Courier New', Courier, monospace;
 }
 
 footer, header {
-  border: 1px solid #fff;
+  background-color: floralwhite;
+  border: 1px solid #000;
   border-radius: 10px;
+  font-weight: bolder;
 }
 
 main {
@@ -26,11 +28,17 @@ h1 {
 }
 
 h2 {
-  border-bottom: solid 1px #39ff14;;
+  font-size: 1.5em;
+  border-bottom: solid 1px #000;
 }
 
-p, ul, h2 {
+p, ul {
   font-family: 'PT Mono', monospace;
+  font-size: 1.1em;
+}
+
+li {
+  padding: 0.1em;
 }
 
 nav {
@@ -38,7 +46,7 @@ nav {
 }
 
 a {
-  color: yellow;
+  color: blue;
 }
 
 .profile-picture {
