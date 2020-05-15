@@ -1,10 +1,23 @@
 @media only screen and (min-width: 37.5em) {
-  nav > ul {
+  .navigation {
+    display: flex;
+  }
+  
+  .navigation li {
+    display: block;
     flex-direction: row;
-    justify-content: space-evenly;
   }
 
-  nav > ul > a {
-    width: 100%;
+  .navigation a {
+    text-align: center;
+  }
+
+  .navigation li:first-child {
+    display: none;
+  }
+
+  h1 {
+    color: cornflowerblue;
   }
 }
+

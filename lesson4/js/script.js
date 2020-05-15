@@ -1,3 +1,5 @@
+// LAST UPDATE
+
 const options = {
   weekday: 'long',
   day: 'numeric',
@@ -14,3 +16,11 @@ let local = date.toLocaleDateString('en-US'. options);
 let fullDate = `${local} ${hours}:${minutes}:${seconds}`;
 
 document.getElementById('currentDate').textContent = fullDate;
+
+
+// HAMBURGER MENU
+
+const hambutton = document.querySelector('.ham');
+const mainnav = document.querySelector('.navigation');
+
+hambutton.addEventListener('click', () => {mainnav.classList.toggle('responsive')});
