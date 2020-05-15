@@ -1,0 +1,24 @@
+* {
+  background-color: black;
+  color: white;
+}
+
+div, span {
+  padding: 15px;
+  margin: 25px;
+  border: 1px solid yellow;
+  width: 100%;
+  height: 25px;
+}
+
+.red-block, .red-inline {
+  background-color: red;
+}
+
+.blue-block, .blue-inline {
+  background-color: cornflowerblue;
+}
+
+.green-block, .green-inline {
+  background-color: green;
+}
