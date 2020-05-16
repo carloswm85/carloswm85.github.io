@@ -19,6 +19,7 @@ header {
   display: flex;
   flex-direction: column;
   background-color: #353E42;
+  padding: 0 10px;
 }
 
 
@@ -68,6 +69,7 @@ header {
   font-size: 1.5em;
   color: var(--primary-color);
   margin: 0.5em 0;
+  height: 100%;
 }
 
 .navigation a:first-child {
@@ -99,7 +101,7 @@ header {
 footer {
   color: #ffffff;
   margin: 0;
-  padding: 5%;
+  padding: 1em;
   background-color: #353E42;
 }
 
@@ -129,6 +131,7 @@ h2 {
 }
 
 .section-style {
+  height: auto;
   padding: 3%;
   margin: 3%;
   background-color: #ffffff;

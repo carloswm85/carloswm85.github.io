@@ -1,20 +1,50 @@
-@media only screen and (min-width: 37.5em) {
+@media only screen and (min-width: 500px) {
+  h1 {
+    color: cornflowerblue;
+  }
+
   .navigation {
     display: flex;
+    flex-direction: column;
   }
   
   .navigation a {
     display: block;
-    flex: auto;
-    flex-direction: row;
   }
 
   .navigation a:first-child {
     display: none;
   }
-
-  h1 {
-    color: cornflowerblue;
-  }
 }
 
+@media only screen and (min-width: 870px) {
+  h1 {
+    color: greenyellow;
+  }
+
+  .brand-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .brand-logo-container {
+    flex: auto;
+    flex-grow: 0.5;
+    width: 20%;
+    height: auto;
+  }
+
+  .brand-logo-picture {
+    float: right;
+  }
+
+  .brand-title-container {
+    width: 20%;
+    height: auto;
+  }
+
+  .brand-title-container * {
+    float: left;
+    text-align: left;
+  }
+}
