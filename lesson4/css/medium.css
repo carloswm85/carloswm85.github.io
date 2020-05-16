@@ -43,8 +43,11 @@
     height: auto;
   }
 
-  .brand-title-container * {
-    float: left;
+  .brand-title-container > h1 {
+    text-align: left;
+  }
+
+  .brand-title-container > p {
     text-align: left;
   }
 }
