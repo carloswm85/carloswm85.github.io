@@ -3,16 +3,13 @@
     display: flex;
   }
   
-  .navigation li {
+  .navigation a {
     display: block;
+    flex: auto;
     flex-direction: row;
   }
 
-  .navigation a {
-    text-align: center;
-  }
-
-  .navigation li:first-child {
+  .navigation a:first-child {
     display: none;
   }
 

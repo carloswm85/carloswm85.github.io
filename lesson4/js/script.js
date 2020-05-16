@@ -23,4 +23,4 @@ document.getElementById('currentDate').textContent = fullDate;
 const hambutton = document.querySelector('.ham');
 const mainnav = document.querySelector('.navigation');
 
-hambutton.addEventListener('click', () => {mainnav.classList.toggle('responsive')});
+hambutton.addEventListener('click', () => {mainnav.classList.toggle('responsive')}, false);
