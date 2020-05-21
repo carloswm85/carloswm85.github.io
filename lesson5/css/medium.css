@@ -1,4 +1,4 @@
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 31.25em) { /* 31.25em = 500px*/
   h1 {
     color: cornflowerblue;
   }
@@ -17,7 +17,7 @@
   }
 }
 
-@media only screen and (min-width: 870px) {
+@media only screen and (min-width: 54.375em) { /* 54.375em = 870px */
   h1 {
     color: greenyellow;
   }
