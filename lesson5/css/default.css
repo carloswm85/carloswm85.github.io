@@ -12,6 +12,17 @@
   --paragraph-font: 'Noto Sans', sans-serif;
 }
 
+/* BANNER */
+.banner {
+  border-bottom: 3px var(--secondary-color) solid;
+  padding: 1em;
+  text-align: center;
+  font-family: var(--paragraph-font);
+  margin-bottom: 1em;
+  background-color: yellow;
+  display: block;
+}
+
 body {
   background-color: var(--primary-color);
 }
@@ -92,6 +103,10 @@ header {
 .navigation a:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+}
+
+.navigation .current-page {
+  color: var(--accent3-color);
 }
 
 /* the onclick JS toggles the .reponsive class from display none (.navigation li) to display block because the responsive class is added to the end of the class list like this in HTML.
@@ -250,6 +265,13 @@ footer {
 .footer-top-contact {
   width: 100%;
   box-sizing: border-box;
+}
+
+.location-icon {
+  display: inline;
+  width: 16px;
+  height: auto;
+  filter: invert(100%);
 }
 
 .footer-address > p:first-child {
