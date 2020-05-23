@@ -2,17 +2,7 @@
   h1 {
     color: red;
   }
-  
-  .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-
-  .navigation a {
-    width: calc(100% / 6);
-  }
-    
+      
   body {
     margin: 30px auto;
     width: 60em; 
