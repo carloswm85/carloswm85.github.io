@@ -14,7 +14,7 @@ document.getElementById('currentDate').textContent = local;
 // BANNER
 let day = date.getDay();
 let banner = document.querySelector('.banner');
-if (day == 5) {
+if (day != 5) {
   banner.style.display = 'none';
 }
   
