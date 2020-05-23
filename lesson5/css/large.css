@@ -1,5 +1,4 @@
-
-@media only screen and (min-width: 59.375em) { /* 59.375em = 950px */
+@media only screen and (min-width: 75em) { /* 1200px */
   h1 {
     color: red;
   }
@@ -25,5 +24,11 @@
 
   header, footer {
     margin: 0 -2%;
+  }
+
+  /* ARTICLE */
+  .article-picture {
+    display: block;
+    float: right;
   }
 }
