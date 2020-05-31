@@ -1,3 +1,6 @@
+/* In default.css (OR small.css)
+there's no @media query to add */
+
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Oswald&display=swap');
 
 :root {
@@ -171,9 +174,10 @@ p {
   font-size: 1em;
 }
 
-.summary-information span {
-  color: var(--accent3-color);
+.summary-information {
+  color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: 900;
   /*text-shadow: horizontal-offset vertical-offset 'blur' colour; */
 }
 

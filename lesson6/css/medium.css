@@ -1,4 +1,6 @@
-@media only screen and (min-width: 62em) { /* = 992px */
+/* IN medium.css*/
+
+@media only screen and (min-width: 48em) { /* = 768px */
 
   .navigation {
     display: flex;
