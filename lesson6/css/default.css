@@ -85,7 +85,6 @@ header {
 /* nav > ul (.navigation) > li > a (.ham) */
 .navigation {
   font-size: 1.5em;
-  color: var(--primary-color);
   margin: 0.5em 0;
   height: 100%;
 }
@@ -96,11 +95,12 @@ header {
 
 .navigation > a {
   font-family: var(--paragraph-font);
-  color: var(--primary-color);
+  color: white;
   text-align: center;
   display: none;
   margin: 0;
   padding: 0.5em 0;
+  text-decoration: none;
 }
 
 .navigation a:hover {
@@ -125,7 +125,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  color: var(--primary-color);
+  color: white;
 }
 
 .section-style {
