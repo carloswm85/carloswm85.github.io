@@ -353,3 +353,21 @@ footer {
   display: table;
   clear: both;
 }
+
+/* GALLERY */
+.gallery-container {
+  display: grid;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  border: solid 1px black;
+}
+
+.gallery-item > figcaption {
+  font-family: var(--paragraph-font);
+  text-align: center;
+  margin-top: 0.3em;
+  display: none;
+}

@@ -28,4 +28,14 @@ const mainnav = document.querySelector('.navigation');
 hambutton.addEventListener('click', () => {mainnav.classList.toggle('responsive')}, false);
 
 
-// WEB FONT LOADER
+// GALLERY
+document.getElementsByClassName('gallery-img').addEventListener('mouseover', mouseOver1);
+document.getElementsByClassName('gallery-img').addEventListener('mouseout', mouseOut1);
+
+function mouseOver1() {
+  alert('hey');
+}
+
+function mouseOut1() {
+  
+}

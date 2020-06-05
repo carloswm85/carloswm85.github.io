@@ -34,6 +34,17 @@
   .clear-container {
     overflow: auto;
   }
+
+    /* GALLERY */
+    .gallery-container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
+
+  /* BOX SHADOW, IMAGE GALLERY PICTURES */
+  .gallery-item > img:hover {
+    box-shadow: 0 0 50px #333;
+  }
 }
 
 

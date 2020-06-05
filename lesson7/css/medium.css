@@ -99,4 +99,9 @@
     border: 1px solid var(--secondary-color);
   }
 
+  /* GALLERY */
+  .gallery-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
