@@ -102,6 +102,7 @@
   /* GALLERY */
   .gallery-container {
     grid-template-columns: 1fr 1fr;
+    justify-items: right;
   }
 
 }

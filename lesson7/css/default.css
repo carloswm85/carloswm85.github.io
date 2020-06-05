@@ -362,12 +362,17 @@ footer {
 .gallery-img {
   width: 100%;
   height: auto;
+  border-bottom: 1px solid black;
+}
+
+.gallery-item {
   border: solid 1px black;
+  padding: 0;
 }
 
 .gallery-item > figcaption {
   font-family: var(--paragraph-font);
   text-align: center;
-  margin-top: 0.3em;
-  display: none;
+  margin: 0;
+  padding: 0.3em;
 }
