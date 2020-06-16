@@ -1,5 +1,3 @@
-
-
 // DATE: LAST UPDATE
 const options = {
   weekday: 'long',

@@ -48,71 +48,84 @@
     <nav class="navigation">
       <a class="ham" href="#">&#9776; Menu</a>
       <a class="" href="index.html">Home</a>
-      <a class="current-page" href="preston-6.html">Preston</a>
+      <a class="" href="preston-6.html">Preston</a>
       <a class="" href="soda-springs.html">Soda Springs</a>
       <a class="" href="fish-haven.html">Fish Haven</a>
       <a class="" href="storm-center-8.html">Storm Center</a>
-      <a class="" href="gallery-7.html">Gallery</a>
+      <a class="current-page" href="gallery-7.html">Gallery</a>
     </nav>
   </header>
 
   <!-- MAIN -->
-  <main>
-    <h2 class="subpage-title">Preston Idaho</h2>
+  <main class="main-storm-center">
 
-    <!-- SUMMARY -->
-    <div class="section-style summary">
-      <picture class="summary-picture-tag">
-        <source media="(min-width:64em)" srcset="images/wdd230_image_franklinLARGE.jpg">
-        <source media="(min-width:48em)" srcset="images/wdd230_image_franklinMEDIUM.jpg">
-        <img class="summary-picture-file clearfix"
-          src="images/wdd230_image_franklinSMALLcropped.jpg"
-          alt="Landscape from a sunny day in the green country.">
-      </picture>
+    <!-- FORM -->
+    <h2 class="subpage-title"> Storm Center Form </h2>
 
-      <!-- Weather summary chart -->
-      <section class="summary-information">
-        <h3 class="summary-title">Weather Summary</h3>
-        <p>Currently: <span class="weather-current"> </span></p>
-        <p>High: <span class="weather-high"> 40.9 </span> &#8457;</p>
-        <p>Wind Chill: <span class="weather-chill"> </span></p>
-        <p>Humidity: <span class="weather-humidity"> </span> % </p>
-        <p>Wind Speed: <span class="weather-wind"> 7.9 </span> mph </p>
-      </section>
-    </div>
+      <!-- method attribute could accept "get" or "post" values -->
+      <form method="" action="thanks-8.html" id="storm-center-form">
+        
+        <!-- Section 1 -->
+        <fieldset class="fieldset-1">
+          <legend>Personal Infromation</legend>
 
-    <section class="section-style forecast">
-      <h3 class="forecast-title">5 Day Forecast</h3>
-      <table class="forecast-table">
-        <tr class="table-row">
-          <th class="table-header">Day</th>
-          <th class="table-header">Day 1</th>
-          <th class="table-header">Day 2</th>
-          <th class="table-header">Day 3</th>
-          <th class="table-header">Day 4</th>
-          <th class="table-header">Day 5</th>
-        </tr>
-        <tr class="table-row">
-          <td class="table-cell">Forecast</td>
-          <td class="table-cell"><span>000</span> &#8457; </td>
-          <td class="table-cell"><span>111</span> &#8457; </td>
-          <td class="table-cell"><span>222</span> &#8457; </td>
-          <td class="table-cell"><span>333</span> &#8457; </td>
-          <td class="table-cell"><span>444</span> &#8457; </td>
-        </tr>
-      </table>
-    </section>
+          <label class="top" for="full-name"> Full Name<input type="text" name="full-name" placeholder="John W. Doe" required pattern="[a-zA-Z]{5,50}"></label>
+          <label class="top" for="email"> Email<input type="email" name="email" placeholder="email@example.com"></label>
+          <label class="top" for="telephone"> Telephone<input type="tel" name="telephone" placeholder="1235551234" required></label>
+          <label class="top" for="zip-code"> Zip Code<input class="zip-code" type="number" name="zip-code" placeholder="Only numbers" required></label>
+        </fieldset> 
+        
+        <!-- Section 2 -->
+        <fieldset class="fieldset-2">
+          <legend>Storm Information</legend>
 
-    <section class="section-style article clear-container">
-      <picture class="article-picture ">
-        <img class="article-picture-file" src="images/landscape-photography-of-snowy-mountain-1366919.jpg" alt="Photograp of Idaho state map.">
-        <!-- Photo by Binyamin Mellish from Pexels -->
-      </picture>
-      <h3 class="article-title">Article Title</h3>
-      <p class="article-authorship">By Author</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias molestias obcaecati, distinctio, ullam officia eligendi ipsa, voluptate officiis minus ea a voluptas laboriosam error ut. Quos fugiat eos ullam doloremque.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore beatae unde rerum aperiam, quaerat itaque aliquid repellat facilis sed cum nemo mollitia ducimus aspernatur! Inventore ducimus laudantium rerum sit voluptate?</p>
-    </section>
+          <label class="top" for="storm=date"> Storm Date<input type="date" name="storm-date"></label>
+          <label class="top" for="storm-type"> Storm Type
+            <input list="storm-type-list" name="storm-type" placeholder="Tap or double-click to see options">
+            <datalist id="storm-type-list">
+              <option value="Flash Flood">
+              <option value="Hail">
+              <option value="Hurricane">
+              <option value="Thunderstorm">
+              <option value="Tornado">
+            </datalist>
+          </label>          
+          <label class="top" id="slide-text" for="storm-severity"> Storm Severity (from 1 to 10)</label><input class="slide" type="range" name="storm-severity" min="0" max="10" step="1" value="0">
+          <label class="top" for="storm-region"> Storm Region
+            <select name="storm-region" id="region" form="storm-center-form">
+                  <option value="select">Select Region...</option>
+                <option value="preston">Preston</option>
+                <option value="soda-springs">Soda Springs</option>
+                <option value="fish-haven">Fish Haven</option>
+                <option value="boise">Boise</option>
+                <option value="nampa">Nampa</option>
+                <option value="meridian">Meridian</option>
+                <option value="idaho-falls">Idaho Falls</option>
+                <option value="Pocatello">Pocatello</option>
+            </select>
+          </label>
+          <div class="div-label">User in-danger level</div>
+            <label class="sbs" for="user-in-danger-1" class="sbs"><input type="radio" name="user-in-danger" id="user-in-danger-1" value="yes"> <p>Yes</p></label>
+            <label class="sbs" for="user-in-danger-2" class="sbs"><input type="radio" name="user-in-danger" id="user-in-danger-2" value="maybe"> <p>Maybe</p></label>
+            <label class="sbs" for="user-in-danger-3" class="sbs"><input type="radio" name="user-in-danger" id="user-in-danger-3" value="no"> <p>No</p></label>
+        </fieldset>
+        
+        <!-- Section 3 -->
+        <label for="comments">
+        <fieldset class="fieldset-3">
+          <legend>Comments</legend>
+          <div class="top">
+            <textarea placeholder="Insert your comments here, please." name="comments" maxlength="250"></textarea>    
+          </div>
+        </fieldset>
+        </label>
+        
+        <div class="submit-button-container">
+          <input type="submit" value="Report a storm" class="submit-button">
+        </div>        
+      </form>
+        
+    
 
   </main>
 
@@ -166,6 +179,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script src="js/webfontload.js"></script>
   <script src="js/windchill.js"></script>
+  <script src="js/lazyload.js"></script>
 </body>
 
 </html>

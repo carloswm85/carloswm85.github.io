@@ -105,4 +105,10 @@
     justify-items: right;
   }
 
+  /* FORM */
+  .slide {
+    margin: 0 20%;
+    width: 60%;
+  }
+
 }
