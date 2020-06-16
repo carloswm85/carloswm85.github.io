@@ -63,25 +63,25 @@
     <h2 class="subpage-title"> Storm Center Form </h2>
 
       <!-- method attribute could accept "get" or "post" values -->
-      <form method="" action="thanks-8.html" id="storm-center-form">
+      <form method="POST" action="thanks-8.html" id="storm-center-form">
         
         <!-- Section 1 -->
         <fieldset class="fieldset-1">
           <legend>Personal Infromation</legend>
 
-          <label class="top" for="full-name"> Full Name<input type="text" name="full-name" placeholder="John W. Doe" required pattern="[a-zA-Z]{5,50}"></label>
-          <label class="top" for="email"> Email<input type="email" name="email" placeholder="email@example.com"></label>
-          <label class="top" for="telephone"> Telephone<input type="tel" name="telephone" placeholder="1235551234" required></label>
-          <label class="top" for="zip-code"> Zip Code<input class="zip-code" type="number" name="zip-code" placeholder="Only numbers" required></label>
+          <label class="top" for="full-name"> Full Name<input type="text" name="full-name" id="full-name" placeholder="John W. Doe" required pattern="[a-zA-Z]{5,50}"></label>
+          <label class="top" for="email"> Email<input type="email" name="email" id="email" placeholder="email@example.com"></label>
+          <label class="top" for="telephone"> Telephone<input type="tel" name="telephone" id="telephone" placeholder="1235551234" required></label>
+          <label class="top" for="zip-code"> Zip Code<input class="zip-code" type="number" name="zip-code" id="zip-code" placeholder="Only numbers" required></label>
         </fieldset> 
         
         <!-- Section 2 -->
         <fieldset class="fieldset-2">
           <legend>Storm Information</legend>
 
-          <label class="top" for="storm=date"> Storm Date<input type="date" name="storm-date"></label>
+          <label class="top" for="storm-date"> Storm Date<input type="date" name="storm-date" id="storm-date"></label>
           <label class="top" for="storm-type"> Storm Type
-            <input list="storm-type-list" name="storm-type" placeholder="Tap or double-click to see options">
+            <input list="storm-type-list" name="storm-type" id="storm-type" placeholder="Tap or double-click to see options">
             <datalist id="storm-type-list">
               <option value="Flash Flood">
               <option value="Hail">
@@ -90,9 +90,9 @@
               <option value="Tornado">
             </datalist>
           </label>          
-          <label class="top" id="slide-text" for="storm-severity"> Storm Severity (from 1 to 10)</label><input class="slide" type="range" name="storm-severity" min="0" max="10" step="1" value="0">
+          <label class="top" id="slide-text" for="storm-severity"> Storm Severity (from 1 to 10)</label><input class="slide" type="range" name="storm-severity" id="storm-severity" min="0" max="10" step="1" value="0">
           <label class="top" for="storm-region"> Storm Region
-            <select name="storm-region" id="region" form="storm-center-form">
+            <select name="storm-region" id="storm-region" form="storm-center-form">
                   <option value="select">Select Region...</option>
                 <option value="preston">Preston</option>
                 <option value="soda-springs">Soda Springs</option>
@@ -104,29 +104,34 @@
                 <option value="Pocatello">Pocatello</option>
             </select>
           </label>
-          <div class="div-label">User in-danger level</div>
-            <label class="sbs" for="user-in-danger-1" class="sbs"><input type="radio" name="user-in-danger" id="user-in-danger-1" value="yes"> <p>Yes</p></label>
-            <label class="sbs" for="user-in-danger-2" class="sbs"><input type="radio" name="user-in-danger" id="user-in-danger-2" value="maybe"> <p>Maybe</p></label>
-            <label class="sbs" for="user-in-danger-3" class="sbs"><input type="radio" name="user-in-danger" id="user-in-danger-3" value="no"> <p>No</p></label>
+          <div class="div-label">User in-danger level
+            <p></p>
+            <label for="user-in-danger-1" class="sbs">
+              <input type="radio" name="user-in-danger" id="user-in-danger-1" value="yes"> <span>Yes</span> </label>
+            <label for="user-in-danger-2" class="sbs">
+              <input type="radio" name="user-in-danger" id="user-in-danger-2" value="maybe"> <span>Maybe</span></label>
+            <label for="user-in-danger-3" class="sbs">
+              <input type="radio" name="user-in-danger" id="user-in-danger-3" value="no"> <span>No</span></label>
+          </div>
         </fieldset>
         
         <!-- Section 3 -->
-        <label for="comments">
+        
         <fieldset class="fieldset-3">
           <legend>Comments</legend>
           <div class="top">
-            <textarea placeholder="Insert your comments here, please." name="comments" maxlength="250"></textarea>    
+            <label for="comments">
+                <textarea placeholder="Insert your comments here, please." name="comments" id="comments" maxlength="250"></textarea>    
+            </label>
           </div>
         </fieldset>
-        </label>
+        
         
         <div class="submit-button-container">
           <input type="submit" value="Report a storm" class="submit-button">
         </div>        
+      
       </form>
-        
-    
-
   </main>
 
   <!-- FOOTER -->

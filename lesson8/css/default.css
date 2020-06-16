@@ -434,17 +434,19 @@ form label.sbs {
   margin-bottom: 1em;
 }
 
-form label.sbs p {
+.div-label span {
   color: var(--secondary-color);
   margin-left: 0.7em;
   display: inline;
 }
+
 
 .fieldset-3 {
   padding: 0;
 }
 
 textarea {
+  border-color: var(--primary-color);
   display: block;
   width: 80%;
   height: 10em;
