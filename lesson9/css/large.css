@@ -66,6 +66,29 @@
     margin-top: 2em;
   }
 
+   /* HOME PAGE */
+  /* Towns Information */
+  .towns-container {
+    display: flex;
+    padding: 0;
+    margin-bottom: 1em;
+  }
+
+  .towns-container > section {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding-bottom: 1em;
+  }
+
+  .towns-container :nth-child(odd) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .towns-container div {
+    height: 12em;
+  }
 }
 
 

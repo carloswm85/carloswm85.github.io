@@ -517,3 +517,71 @@ form label.top input:required:valid {
   
   text-align: center;
 }
+
+/* HOME PAGE */
+/* Article */
+.weather-story-section {
+  padding: 0 1em;
+  text-align: justify;
+  margin-bottom: 3em;
+  max-width: 600px;
+  margin: 0 auto 2.5em auto;
+}
+
+.signature {
+  text-align: right;
+  font-style: italic;
+}
+
+.weather-story-picture {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1em auto;
+}
+
+.weather-story-section h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  text-align: center;
+}
+
+/* Towns Information */
+.towns-container *{
+  text-align: center;
+}
+
+.town-stats-section > div > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  height: 2.5em;
+  margin-bottom: 0em;
+}
+
+.towns-container section {
+  border-bottom: solid 1px var(--secondary-color);
+  margin-top: 0;
+  padding: 0.5em;
+  background-color: var(--tertiary-color);
+}
+
+.towns-container img {
+  margin-top: 1em;
+  width: 100%;
+  max-width: 500px;
+}
+
+.towns-container p, h2, h3 {
+  margin: 0;
+}
+
+.towns-container h2, h3 {
+  margin: 0.5em 0;
+}
+
+.towns-container :last-child {
+  border-bottom: none;
+}

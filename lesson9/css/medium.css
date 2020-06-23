@@ -111,4 +111,31 @@
     width: 60%;
   }
 
+  /* HOME PAGE */
+  /* Article */
+  .weather-story-section h2 {
+    margin-top: 1em;
+    font-size: 2.2em;
+  }
+
+  /* Towns Information */
+  .towns-container {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5em;
+  }
+
+  .towns-container section {
+    display: flex;
+  }
+
+  .towns-container :nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .towns-container img, div {
+    width: 95%;
+    margin: auto;
+    font-size: 1em;
+  }
 }
