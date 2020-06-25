@@ -77,7 +77,10 @@
     float: left;
     margin-right: 1.5em;
     max-height: 350px;
-    
+  }
+
+  .article-section-title {
+    width: 30%;
   }
 
   /* FOOTER TOP */
