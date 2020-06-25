@@ -220,6 +220,10 @@ p {
   border-bottom: var(--primary-color) solid 1px;
 }
 
+.forecast-icon {
+  display: block;
+}
+
 /* ARTICLE SECTION */
 .article {
   display: flex;

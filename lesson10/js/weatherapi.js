@@ -40,21 +40,20 @@ fetch(apiURLforecast)
     console.log(jsObject);
 
     for (let i = 1; i < 6; i++) {
-      /*document.getElementById('forecast-preston-' + i).innerHTML = jsObject.daily[i].temp.eve;
-      const imagesrc = 'http://openweathermap.org/img/w/' + jsObject.weather[0].icon + '.png'; 
+      
+      console.log('LOOP: ' + i);
+      document.getElementById('forecast-preston-' + i).innerHTML = jsObject.daily[i].temp.eve;
+      console.log('TEMP: ' + jsObject.daily[i].temp.eve);
+      
+      let imagesrc = 'http://openweathermap.org/img/w/' + jsObject.daily[i].weather[0].icon + '.png';
+      console.log('IMG jsObject: ' + jsObject.daily[i].weather[0].icon);
+      console.log('imagesrc: ' + imagesrc );
+      document.getElementById('forecast-preston-img-' + i).setAttribute('src', imagesrc);
 
-      document.getElementById('icon').setAttribute('src', imagesrc);  // focus on the setAttribute() method
-      document.getElementById('icon').setAttribute('alt', desc);*/
+
+      let desc = jsObject.daily[i].weather[0].description;
+      console.log(desc);
+      document.getElementById('forecast-preston-img-' + i).setAttribute('alt', desc);
+      
     }
   });
-
-/*
-<tr class="table-row">
-  <td class="table-cell">Forecast</td>
-  <td class="table-cell"><span id="forecast-preston-1"></span> &#8457; </td>
-  <td class="table-cell"><span id="forecast-preston-2"></span> &#8457; </td>
-  <td class="table-cell"><span id="forecast-preston-3"></span> &#8457; </td>
-  <td class="table-cell"><span id="forecast-preston-4"></span> &#8457; </td>
-  <td class="table-cell"><span id="forecast-preston-5"></span> &#8457; </td>
-</tr>
-*/  
