@@ -10,7 +10,7 @@ fetch(apiURL)
 
     const currently = jsObject.weather[0].description;
     const temp_high = jsObject.main.temp_max;
-    const windchill = 0.0;
+    const windChill = 0.0;
     const humidity = jsObject.main.humidity;
     const windSpeed = jsObject.wind.speed;
 
