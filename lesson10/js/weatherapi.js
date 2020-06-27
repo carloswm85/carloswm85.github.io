@@ -41,24 +41,20 @@ fetch(apiURLforecast)
     console.log('TEST');
     console.log(jsObject);
     
-    for (let i = 1; i < 6; i++) {
-     
-      // TEMPERATURE
-      //console.log('LOOP: ' + i);
-      document.getElementById('forecast-preston-' + i).innerHTML = jsObject.daily[i].temp.eve;
-      //console.log('TEMP: ' + jsObject.daily[i].temp.eve);
-      
-      let imagesrc = 'http://openweathermap.org/img/w/' + jsObject.daily[i].weather[0].icon + '.png';
-      //console.log('IMG jsObject: ' + jsObject.daily[i].weather[0].icon);
-      //console.log('imagesrc: ' + imagesrc );
-      document.getElementById('forecast-preston-img-' + i).setAttribute('src', imagesrc);
+    // Filtering
+    const fiveDaysForecast = jsObject.list.filter(element => element.dt_txt.includes('18:00:00'));
+    console.log(fiveDaysForecast);
+    
+    const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    let index = 0;
+    fiveDaysForecast.forEach(forecast => {
+      let dayNumber = new Day(forecast.dt_txt);
+
+      document.getElementById(`forecast-day-${index}`).textContent = weekDays[dayNumber];
+      document.getElementById(`forecast-preston´${index}`).textContent = forecast
+      index++;
+    });
 
 
-      let desc = jsObject.daily[i].weather[0].description;
-      //console.log(desc);
-      document.getElementById('forecast-preston-img-' + i).setAttribute('alt', desc);
-     
-      
-
-    }
   });
