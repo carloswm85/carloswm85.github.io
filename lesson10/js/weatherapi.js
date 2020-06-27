@@ -1,5 +1,6 @@
-const apiURL = 'https://api.openweathermap.org/data/2.5/weather?id=5604473&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
-const apiURLforecast = 'https://api.openweathermap.org/data/2.5/onecall?lat=42.1&lon=-111.88&exclude=current,minutely,hourly&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
+const apiURL = 'https://api.openweathermap.org/data/2.5/weather?id=5604473&units=imperial&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
+//const apiURLforecast = 'https://api.openweathermap.org/data/2.5/onecall?lat=42.1&lon=-111.88&exclude=current,minutely,hourly&units=imperial&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
+const apiURLforecast = 'https://api.openweathermap.org/data/2.5/forecast?id=5604473&units=imperial&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
 
 // SUMMARY SECTION
 fetch(apiURL)
@@ -37,23 +38,27 @@ fetch(apiURLforecast)
   .then((response) => response.json())
   .then((jsObject) => {
     //console.table(jsObject);
+    console.log('TEST');
     console.log(jsObject);
-
+    
     for (let i = 1; i < 6; i++) {
-      
-      console.log('LOOP: ' + i);
+     
+      // TEMPERATURE
+      //console.log('LOOP: ' + i);
       document.getElementById('forecast-preston-' + i).innerHTML = jsObject.daily[i].temp.eve;
-      console.log('TEMP: ' + jsObject.daily[i].temp.eve);
+      //console.log('TEMP: ' + jsObject.daily[i].temp.eve);
       
       let imagesrc = 'http://openweathermap.org/img/w/' + jsObject.daily[i].weather[0].icon + '.png';
-      console.log('IMG jsObject: ' + jsObject.daily[i].weather[0].icon);
-      console.log('imagesrc: ' + imagesrc );
+      //console.log('IMG jsObject: ' + jsObject.daily[i].weather[0].icon);
+      //console.log('imagesrc: ' + imagesrc );
       document.getElementById('forecast-preston-img-' + i).setAttribute('src', imagesrc);
 
 
       let desc = jsObject.daily[i].weather[0].description;
-      console.log(desc);
+      //console.log(desc);
       document.getElementById('forecast-preston-img-' + i).setAttribute('alt', desc);
+     
       
+
     }
   });
