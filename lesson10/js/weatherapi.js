@@ -1,26 +1,21 @@
 const apiURL = 'https://api.openweathermap.org/data/2.5/weather?id=5604473&units=imperial&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
-//const apiURLforecast = 'https://api.openweathermap.org/data/2.5/onecall?lat=42.1&lon=-111.88&exclude=current,minutely,hourly&units=imperial&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
 const apiURLforecast = 'https://api.openweathermap.org/data/2.5/forecast?id=5604473&units=imperial&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
 
 // SUMMARY SECTION
 fetch(apiURL)
   .then((response) => response.json())
   .then((jsObject) => {
-    //console.table(jsObject);
-    //console.log(jsObject);
-
+    
     const currently = jsObject.weather[0].description;
     const temp_high = jsObject.main.temp_max;
     const windChill = 0.0;
     const humidity = jsObject.main.humidity;
     const windSpeed = jsObject.wind.speed;
 
-    //console.log(currently, temp_high, windchill, humidity, windSpeed)
-
+    // WINDCHILL formula
     if (temp_high < 50 && windSpeed > 3) {
         windChill = 35.74 + 0.6215 * temp_high - 35.75 * windSpeed ** 0.16 + 0.4275 * temp_high * windSpeed ** 0.16;
         windChill = Math.round(windChill * 10) / 10;
-        //console.log(windChill);
         windChill_display = windChill + ' &#8457;';
     } else {
         windChill_display = 'N/A';
@@ -37,34 +32,30 @@ fetch(apiURL)
 fetch(apiURLforecast)
   .then((response) => response.json())
   .then((jsObject) => {
-    //console.table(jsObject);
-    //console.log('TEST');
-    //console.log(jsObject);
     
     // Filtering
     const fiveDaysForecast = jsObject.list.filter(element => element.dt_txt.includes('18:00:00'));
-    console.log(fiveDaysForecast);
     
+    // Making days of the week
     const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
     let index = 0;
+    // Looping through the filtered array
     fiveDaysForecast.forEach(forecast => {
       let dayNumber = new Date(forecast.dt_txt);
-      console.log(dayNumber);
 
-      let text = `forecast-day-${index}`;
-      //console.log(text);
-
+      // Getting the days and the temperature
       document.getElementById(`forecast-day-${index}`).textContent = weekDays[dayNumber.getDay()];
       document.getElementById(`forecast-preston-${index}`).textContent = forecast.main.temp_max;
 
+      // Getting the image from the server
       let imgScr = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
       document.getElementById(`forecast-preston-img-${index}`).setAttribute('src', imgScr);
 
+      // Getting the alt description for the img
       let imgAlt = forecast.weather[0].description;
       document.getElementById(`forecast-preston-img-${index}`).setAttribute('alt', imgAlt);
       index++;
     });
-
 
   });
