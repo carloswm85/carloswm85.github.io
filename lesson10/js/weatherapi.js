@@ -38,8 +38,8 @@ fetch(apiURLforecast)
   .then((response) => response.json())
   .then((jsObject) => {
     //console.table(jsObject);
-    console.log('TEST');
-    console.log(jsObject);
+    //console.log('TEST');
+    //console.log(jsObject);
     
     // Filtering
     const fiveDaysForecast = jsObject.list.filter(element => element.dt_txt.includes('18:00:00'));
@@ -49,10 +49,20 @@ fetch(apiURLforecast)
 
     let index = 0;
     fiveDaysForecast.forEach(forecast => {
-      let dayNumber = new Day(forecast.dt_txt);
+      let dayNumber = new Date(forecast.dt_txt);
+      console.log(dayNumber);
 
-      document.getElementById(`forecast-day-${index}`).textContent = weekDays[dayNumber];
-      document.getElementById(`forecast-preston´${index}`).textContent = forecast
+      let text = `forecast-day-${index}`;
+      //console.log(text);
+
+      document.getElementById(`forecast-day-${index}`).textContent = weekDays[dayNumber.getDay()];
+      document.getElementById(`forecast-preston-${index}`).textContent = forecast.main.temp_max;
+
+      let imgScr = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
+      document.getElementById(`forecast-preston-img-${index}`).setAttribute('src', imgScr);
+
+      let imgAlt = forecast.weather[0].description;
+      document.getElementById(`forecast-preston-img-${index}`).setAttribute('alt', imgAlt);
       index++;
     });
 
