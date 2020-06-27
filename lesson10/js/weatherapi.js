@@ -1,4 +1,4 @@
-const apiURL = 'http://api.openweathermap.org/data/2.5/weather?id=5604473&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
+const apiURL = 'https://api.openweathermap.org/data/2.5/weather?id=5604473&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
 const apiURLforecast = 'https://api.openweathermap.org/data/2.5/onecall?lat=42.1&lon=-111.88&exclude=current,minutely,hourly&appid=f4051f9ae5c7a4eb58c335ed524c93c6';
 
 // SUMMARY SECTION
