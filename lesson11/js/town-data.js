@@ -6,7 +6,7 @@ fetch(requestedURL)
   })
   .then(function (jsonObject) {
 	const towns = jsonObject['towns'];
-	console.table(jsonObject);  // temporary checking for valid response and data parsing
+	console.table(jsonObject);
 
 	const filteredTowns = towns.filter(town => (town.name == 'Fish Haven' || town.name == 'Preston' || town.name == 'Soda Springs'))
 	
@@ -24,8 +24,7 @@ fetch(requestedURL)
 		h3.textContent = town.motto
 		p1.textContent = `Year Founded: ${town.yearFounded}`;
 		p2.textContent = `Population: ${town.currentPopulation}`;
-		p3.textContent = `Annual Rain Fall: ${town.averageRainFall}`;
-		// image.setAttribute('alt', prophets[i].name + ' ' + prophets[i].lastname + ' - ' + prophets[i].order);
+		p3.textContent = `Annual Rain Fall: ${town.averageRainfall} in/h`;
 		image.setAttribute('src', `images/${town.photo}`);
 		
 		textContainer.appendChild(h2);
