@@ -25,6 +25,7 @@ fetch(requestedURL)
 		p2.textContent = `Population: ${town.currentPopulation}`;
 		p3.textContent = `Annual Rain Fall: ${town.averageRainfall} in/h`;
 		image.setAttribute('src', `images/${town.photo}`);
+		image.setAttribute('alt', `${town.name}: ${town.motto}`);
 		
 		textContainer.appendChild(h2);
 		textContainer.appendChild(h3);
