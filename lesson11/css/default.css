@@ -145,6 +145,7 @@ p {
 
 .subpage-title {
   text-align: center;
+  width: 100%;
   margin: 20px auto;
   font-size: 2em;
 }
