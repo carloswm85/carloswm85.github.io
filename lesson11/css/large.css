@@ -28,12 +28,17 @@
   /* ARTICLE */
   .article-picture-file {
     float: right;
-    margin: 0 0 0 1em;
+    margin: 0 0 0.3em 1em;
   }
 
-  .article {
+  .article-title {
     display: block;
-    padding: 1.2em;
+  }
+
+  .article-section-title {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.3em;
   }
 
   /*  CLEAR ARTICLE PICTURE */

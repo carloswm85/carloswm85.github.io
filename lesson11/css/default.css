@@ -182,6 +182,13 @@ p {
   /*text-shadow: horizontal-offset vertical-offset 'blur' colour; */
 }
 
+/* SECTIONS */
+.section-title {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.3em;
+}
+
 /* FORECAST SECTION */
 .forecast {
   background: var(--secondary-color);
@@ -224,22 +231,33 @@ p {
   display: block;
 }
 
+/* EVENTS SECTION */
+.events-title {
+  text-align: center;
+}
+
+.events ul {
+  font-family: var(--paragraph-font);
+  line-height: 1.5em;
+  text-align: center;
+}
+
 /* ARTICLE SECTION */
 .article {
   display: flex;
   flex-direction: column;
-  padding: 0.8em;
-  padding-top: 1.2em;
-  text-align: justify;
 }
 
 .article-title {
+  display: inline;
+  text-align: center;  
   font-size: 1.5em;
   margin-top: 0;
   margin-bottom: 0.2em;
 }
 
 .article-authorship {
+  text-align: center;
   margin-top: 0;
   font-style: italic;
 }
@@ -254,10 +272,9 @@ p {
   max-height: 280px;
 }
 
-.article-section-title {
-  display: block;
-  padding: 0;
-  margin: 0 auto;
+.article-to-be-continued {
+  font-style: italic;
+  text-align: right;
 }
 
 /* FOOTER */
@@ -285,7 +302,6 @@ footer {
 }
 
 .location-icon {
-  display: inline;
   width: 16px;
   height: auto;
   filter: invert(100%);
@@ -532,7 +548,6 @@ form label.top input:required:valid {
 /* Article */
 .weather-story-section {
   padding: 0 1em;
-  text-align: justify;
   margin-bottom: 3em;
   max-width: 600px;
   margin: 0 auto 2.5em auto;
@@ -594,4 +609,19 @@ form label.top input:required:valid {
 
 .towns-container :last-child {
   border-bottom: none;
+}
+
+/* TERMS AND CONDITIONS */
+.terms-container * {
+  color: var(--secondary-color);
+}
+
+.terms-container h2 {
+  font-style: italic;
+}
+
+.terms-link {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-style: italic;
 }

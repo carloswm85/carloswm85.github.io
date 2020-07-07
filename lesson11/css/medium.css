@@ -68,6 +68,9 @@
     text-align: left;
   }
 
+  /* EVENTS */
+
+
   /* ARTICLE */
   .article {
     display: block;
@@ -80,7 +83,12 @@
   }
 
   .article-section-title {
-    width: 30%;
+    margin-bottom: 0.8em;
+  }
+
+  .article-title {
+    display: block;
+    text-align: center;
   }
 
   /* FOOTER TOP */
