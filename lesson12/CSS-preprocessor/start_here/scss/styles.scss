@@ -1,4 +1,8 @@
+// IMPORTS GO HERE
+
 @import 'normalize';
+
+@import 'variables';
 
 @import 'small';
 
@@ -9,3 +13,15 @@
 @media only screen and (min-width: 1028px) {
 	@import 'large';
 } /* end of media query */
+
+/*
+	The partials files are:
+		_normalize.scss
+		_small.scss
+		_medium.scss
+		_small.scss
+
+		They all used to be the 
+		original css files.
+*/
+
