@@ -466,9 +466,46 @@ header {
     header nav li a:hover {
       background-color: #69D4F2; }
 
+form {
+  font-family: "Open Sans";
+  padding: 1em 0;
+  color: white;
+  margin: 0;
+  background: #00baef;
+  background: -moz-linear-gradient(top, #00baef 0%, #036d8b 100%);
+  background: -webkit-linear-gradient(top, #00baef 0%, #036d8b 100%);
+  background: linear-gradient(to bottom, #00baef 0%, #036d8b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00baef', endColorstr='#036d8b',GradientType=0 ); }
+  form fieldset {
+    border: none; }
+  form h2 {
+    margin: 0 0 0.8em 0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-weight: 700;
+    padding: 0 0.5em;
+    text-align: center; }
+  form section {
+    margin: 0.5em 0;
+    text-align: center; }
+  form input, form select {
+    font-size: 1.3em;
+    font-family: "Open Sans";
+    height: 2.5em; }
+  form select.location {
+    width: 100%; }
+  form .time {
+    width: 49%; }
+  form .scooters {
+    width: 60%;
+    float: left; }
+  form .submit-button {
+    width: 100px;
+    float: right; }
+
+main section {
+  line-height: 0; }
 main img {
-  width: 100%;
-  height: auto; }
+  width: 360px; }
 
 /*
  *	 TESTING ZONE
@@ -494,7 +531,7 @@ a.current {
   font-size: 1.1em;
   text-shadow: none; }
 
-.hide {
+.hide, .form-hide {
   display: none; }
 
 @media only screen and (min-width: 768px) {
