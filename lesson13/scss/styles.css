@@ -416,7 +416,9 @@ header {
   grid: 40px 40px 1fr / 80px 140px 1fr;
   font-family: "Poly", serif;
   background-color: #00BAEF;
-  color: white; }
+  color: white;
+  border-top: 1px solid #036D8B;
+  border-bottom: 1px solid #036D8B; }
   header picture {
     grid-area: 1 / 1 / 2 / 2; }
   header h1 {
@@ -429,7 +431,7 @@ header {
     margin: 0.1em 0 0 1em; }
   header button {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin: 0.2em 0 0 70px;
+    margin: 0.2em 0 0 auto;
     font-size: 2.6em;
     color: white;
     border: none;
@@ -437,7 +439,9 @@ header {
     height: 56px;
     background-color: #00BAEF; }
   header nav {
-    grid-area: 3 / 1 / 4 / 4; }
+    grid-area: 3 / 1 / 4 / 4;
+    border-bottom: 1px solid #036D8B;
+    display: none; }
     header nav ul {
       width: 100%;
       color: white;
@@ -459,11 +463,11 @@ header {
       background-color: #69D4F2; }
 
 main img {
-  width: 360px;
+  width: 100%;
   height: auto; }
 
 /*
- *	 CLASSES
+ *	 TESTING ZONE
 */
 .test {
   border: dashed red 2px; }
@@ -482,6 +486,42 @@ a.current {
   font-size: 1.1em;
   text-shadow: none; }
 
+.hide {
+  display: block; }
+
+@media only screen and (min-width: 768px) {
+  header button {
+    display: none; }
+  header nav {
+    border-top: 1px solid #036D8B; }
+    header nav ul {
+      display: flex;
+      justify-content: space-evenly; }
+    header nav ul li a {
+      border-top: none; } }
+@media only screen and (min-width: 1028px) {
+  header {
+    grid: 50px 40px 1fr / 110px 280px 1fr; }
+    header picture {
+      margin-left: 10px; }
+    header img {
+      width: 80px;
+      height: auto; }
+    header h1 {
+      font-size: 2.5em; }
+    header div {
+      font-size: 1.5em;
+      margin: -0.2em 0 0 0.8em; }
+    header button {
+      display: none; }
+    header nav {
+      border-top: 1px solid #036D8B;
+      margin: 0 1em; }
+      header nav ul {
+        display: flex;
+        justify-content: space-evenly; }
+      header nav ul li a {
+        border-top: none; } }
 /*
 	The partials files are:
 		_normalize.scss

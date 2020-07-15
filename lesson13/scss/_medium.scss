@@ -1,0 +1,16 @@
+header {
+	
+	button {
+		display: none;
+	}
+	nav {
+		border-top: 1px solid $colorPrimary2;
+		ul {
+			display: flex;
+			justify-content: space-evenly;	
+		}
+		ul li a {
+			border-top: none;
+		}
+	}
+}
