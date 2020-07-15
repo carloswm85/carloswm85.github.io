@@ -40,7 +40,7 @@
 		
 		<button  onclick="toggleMenu()">&#9776;</button>
 		<!-- Hamburguer nav -->
-		<nav id="primaryNav" class="">
+		<nav id="primaryNav" class="hide">
 			<ul>				
 				<li><a href="/" class="current">Home</a></li>
 				<li><a href="" class="">Rental</a></li>
@@ -69,11 +69,11 @@
 					<label for="location" class="call"> Location
 						<select name="location" id="location" required>
 								<option>Choose your location</option>
-							<option>10:30</option>
+							<option>Zapala</option>
 						</select>
 					</label>
 					<label for="arrival-date" class="call" > Arrival
-						<input type="date" name="arrival-date" id="arrival-date"></label> <!-- TYPE: date -->
+						<input type="date" name="arrival-date" id="arrival-date" required></label> <!-- TYPE: date -->
 					<label for="arrival-time" class="call">
 						<select name="arrival-time" id="arrival-time" required>
 								<option>Choose time</option>
@@ -98,7 +98,7 @@
 					</label>
 
 					<label for="departure-date" class="call" > Departure
-						<input type="date" name="departure-date" id="departure-date"></label> <!-- TYPE: date -->
+						<input type="date" name="departure-date" id="departure-date" required></label> <!-- TYPE: date -->
 					<label for="departure-time" class="call">
 						<select name="departure-time" id="departure-time" required>
 								<option>Choose time</option>
@@ -124,10 +124,11 @@
 
 					<label for="departure-time" class="call">
 						<select name="departure-time" id="departure-time" required>
-								<option>Scooter Type</option>
-							<option>10:30</option>
-							<option>11:00</option>
-							
+								<option>Number of Scoots</option>
+							<option value="one-scoot">1</option>
+							<option value="two-scoots">2</option>
+							<option value="three-scoots">3</option>
+							<option value="more-scoots">More</option>
 						</select>
 					</label>
 					<input type="submit" value="GO!" class="submit-button">
