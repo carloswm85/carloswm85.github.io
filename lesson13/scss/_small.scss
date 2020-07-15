@@ -1,0 +1,105 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*
+ *	 HTML ELEMENTS
+*/
+header {
+	padding: 0.5em;
+	display: grid;
+	grid: 40px 40px 1fr / 80px 140px 1fr;
+	font-family: $fontHeading;
+	background-color: $colorPrimary0;
+	color: white;
+
+	picture {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	h1 {
+		text-shadow: $fontBorder;
+		grid-area: 1 / 2 / 3 / 3;
+		margin: 0.1em 0 0 0;
+	}
+
+	div {
+		text-shadow: $fontBorder;
+		grid-area: 2 / 2 / 3 / 3;
+		margin: 0.1em 0 0 1em;
+	}
+
+	button {
+		text-shadow: $fontBorder;
+		margin: 0.2em 0 0 70px;
+		font-size: 2.6em;
+		color: white;
+		border: none;
+		width: 56px;
+		height: 56px;
+		background-color: $colorPrimary0;
+	}
+
+	nav {
+		grid-area: 3 / 1 / 4 / 4;
+		ul {
+			width: 100%;
+			color: white;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			text-decoration: none;
+		}
+		li a {
+			color: white;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			text-decoration: none;
+			text-align: center;
+			font-family: $fontParagraph;
+			font-weight: 700;
+			display: block;
+			padding: 1rem;
+			border-top: 1px solid $colorPrimary2;
+		}
+
+		li a:hover {
+			background-color:$colorPrimary4
+		}
+	}
+}
+
+main {
+	img {
+		width: 360px;
+		height: auto;
+	}
+}
+
+
+
+/*
+ *	 CLASSES
+*/
+
+.test {
+	border: dashed red 2px;
+}
+
+/* CLASSES */
+/* Information */
+.information {
+	background-color: $colorSecondary0;
+	text-align: center;
+	font-family: $fontParagraph;
+	font-size: 1.2em;
+	padding: 0.5em 0;
+}
+
+/* Navigation */
+a.current {
+	font-size: 1.1em;
+	text-shadow: none;
+}
+

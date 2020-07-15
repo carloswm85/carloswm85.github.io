@@ -58,20 +58,20 @@
         <fieldset class="fieldset-1">
           <legend>Personal Infromation</legend>
 
-          <label class="top" for="full-name"> Full Name<input type="text" name="full-name" id="full-name" placeholder="John W. Doe" required pattern="[a-zA-Z]{5,50}"></label>
-          <label class="top" for="email"> Email<input type="email" name="email" id="email" placeholder="email@example.com"></label>
-          <label class="top" for="telephone"> Telephone<input type="tel" name="telephone" id="telephone" placeholder="1235551234" required></label>
-          <label class="top" for="zip-code"> Zip Code<input class="zip-code" type="number" name="zip-code" id="zip-code" placeholder="Only numbers" required></label>
+          <label class="top" for="full-name"> Full Name<input type="text" name="full-name" id="full-name" placeholder="John W. Doe" required pattern="[a-zA-Z]{5,50}"></label> <!-- TYPE: text -->
+          <label class="top" for="email"> Email<input type="email" name="email" id="email" placeholder="email@example.com"></label> <!-- TYPE: email -->
+          <label class="top" for="telephone"> Telephone<input type="tel" name="telephone" id="telephone" placeholder="1235551234" required></label> <!-- TYPE: tel -->
+          <label class="top" for="zip-code"> Zip Code<input class="zip-code" type="number" name="zip-code" id="zip-code" placeholder="Only numbers" required></label> <!-- TYPE: number -->
         </fieldset> 
         
         <!-- Section 2 -->
         <fieldset class="fieldset-2">
           <legend>Storm Information</legend>
 
-          <label class="top" for="storm-date"> Storm Date<input type="date" name="storm-date" id="storm-date"></label>
+          <label class="top" for="storm-date"> Storm Date<input type="date" name="storm-date" id="storm-date"></label> <!-- TYPE: date -->
           <label class="top" for="storm-type"> Storm Type
-            <input list="storm-type-list" name="storm-type" id="storm-type" placeholder="Tap or double-click to see options">
-            <datalist id="storm-type-list">
+            <input list="storm-type-list" name="storm-type" id="storm-type" placeholder="Tap or double-click to see options">  <!-- TYPE: list -->
+            <datalist id="storm-type-list">  <!-- TYPE: datalist -->
               <option value="Flash Flood">
               <option value="Hail">
               <option value="Hurricane">
@@ -79,9 +79,9 @@
               <option value="Tornado">
             </datalist>
           </label>          
-          <label class="top" id="slide-text" for="storm-severity"> Storm Severity (from 1 to 10)</label><input class="slide" type="range" name="storm-severity" id="storm-severity" min="0" max="10" step="1" value="0">
+          <label class="top" id="slide-text" for="storm-severity"> Storm Severity (from 1 to 10)</label><input class="slide" type="range" name="storm-severity" id="storm-severity" min="0" max="10" step="1" value="0"> <!-- TYPE: range -->
           <label class="top" for="storm-region"> Storm Region
-            <select name="storm-region" id="storm-region" form="storm-center-form">
+            <select name="storm-region" id="storm-region" form="storm-center-form">  <!-- TYPE: select -->
                   <option value="select">Select Region...</option>
                 <option value="preston">Preston</option>
                 <option value="soda-springs">Soda Springs</option>
@@ -96,7 +96,7 @@
           <div class="div-label">User in-danger level
             <p></p>
             <label for="user-in-danger-1" class="sbs">
-              <input type="radio" name="user-in-danger" id="user-in-danger-1" value="yes"> <span>Yes</span> </label>
+              <input type="radio" name="user-in-danger" id="user-in-danger-1" value="yes"> <span>Yes</span> </label> <!-- TYPE: radio -->
             <label for="user-in-danger-2" class="sbs">
               <input type="radio" name="user-in-danger" id="user-in-danger-2" value="maybe"> <span>Maybe</span></label>
             <label for="user-in-danger-3" class="sbs">
@@ -110,7 +110,7 @@
           <legend>Comments</legend>
           <div class="top">
             <label for="comments">
-                <textarea placeholder="Insert your comments here, please." name="comments" id="comments" maxlength="250"></textarea>    
+                <textarea placeholder="Insert your comments here, please." name="comments" id="comments" maxlength="250"></textarea> <!-- TYPE: textarea-->
             </label>
           </div>
         </fieldset>
