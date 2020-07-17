@@ -7,47 +7,38 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 /*
  *	 HTML ELEMENTS
 */
-header {
-	padding: 0.5em;
-	display: grid;
-	grid: 40px 40px 1fr / 80px 140px 1fr;
-	font-family: $fontHeading;
-	background-color: $colorPrimary0;
+
+h1, h2, h3, p, a, table, span{
 	color: white;
+	text-shadow: $fontBorder;
+	font-family: $fontParagraph;
+	margin: 0;
+}
+
+h2 {
+	margin: 0 0 0.8em 0;
+	font-weight: 700;
+	padding: 0 0.5em;
+	text-align: center;
+}
+
+header {
 	border-top: 1px solid $colorPrimary2;
 	border-bottom: 1px solid $colorPrimary2;
 
-	background: #00baef;
-	background: -moz-linear-gradient(top,  #00baef 0%, #036d8b 100%);
-	background: -webkit-linear-gradient(top,  #00baef 0%,#036d8b 100%);
-	background: linear-gradient(to bottom,  #00baef 0%,#036d8b 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00baef', endColorstr='#036d8b',GradientType=0 );
-
-	picture {
-		grid-area: 1 / 1 / 2 / 2;
-	}
-
-	h1 {
-		text-shadow: $fontBorder;
-		grid-area: 1 / 2 / 3 / 3;
-		margin: 0.1em 0 0 0;
-	}
-
-	div {
-		text-shadow: $fontBorder;
-		grid-area: 2 / 2 / 3 / 3;
-		margin: 0.1em 0 0 1em;
+	.header-top {
+		display: flex;
 	}
 
 	button {
+		border: $colorPrimary2 solid 1px;
 		text-shadow: $fontBorder;
-		margin: 0.2em 0 0 auto;
+		margin: auto;
 		font-size: 2.6em;
 		color: white;
-		border: none;
 		width: 56px;
 		height: 56px;
-		background-color: rgba($color: #000000, $alpha: 0);
+		background-color: $colorTransparent;
 	}
 
 	nav {
@@ -55,18 +46,14 @@ header {
 		border-bottom: 1px solid $colorPrimary2;
 		ul {
 			width: 100%;
-			color: white;
 			list-style-type: none;
 			padding: 0;
 			margin: 0;
 			text-decoration: none;
 		}
 		li a {
-			color: white;
-			text-shadow: $fontBorder;
 			text-decoration: none;
 			text-align: center;
-			font-family: $fontParagraph;
 			font-weight: 700;
 			display: block;
 			padding: 1rem;
@@ -79,28 +66,36 @@ header {
 	}
 }
 
-form {
-	font-family: $fontParagraph;
-	padding: 1em 0;
-	color: white;
+footer {
 	margin: 0;
+	padding-top: 1em;
+	p {
+		font-size: 1.5em;
+		line-height: 2em;
+	}
 
-	background: #00baef;
-	background: -moz-linear-gradient(top,  #00baef 0%, #036d8b 100%);
-	background: -webkit-linear-gradient(top,  #00baef 0%,#036d8b 100%);
-	background: linear-gradient(to bottom,  #00baef 0%,#036d8b 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00baef', endColorstr='#036d8b',GradientType=0 );
+	.footer-social {
+		display: flex;
+		justify-content: space-evenly;
+		img {
+			width: 80px;
+			height: auto;
+		}
+	}
+	
+	.footer-bot {
+		padding: 1.5em;
+		text-align: center;
+		margin: 0;
+	}
+}
+
+form {
+	padding: 1em 0;
+	margin: 0;
 
 	fieldset {
 		border: none;
-	}
-
-	h2 {
-		margin: 0 0 0.8em 0;
-		text-shadow: $fontBorder;
-		font-weight: 700;
-		padding: 0 0.5em;
-		text-align: center;
 	}
 
 	section {
@@ -109,8 +104,8 @@ form {
 	}
 
 	input, select {
+		color: gray;
 		font-size: 1.3em;
-		font-family: $fontParagraph;
 		height: 2.5em;
 	}
 
@@ -128,46 +123,86 @@ form {
 	}
 
 	.submit-button {
+		background-color: $colorComplement2;
+		color: white;
+		font-weight: 700;
+		font-size: 1.5em;
+		text-shadow: $fontBorder;
+		border: 2px solid white;
 		width: 100px;
 		float: right;
 	}
 }
 
-
-main {
-	section {
-		line-height: 0;
+table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 100%;
+	font-weight: 600;
+	text-shadow: $fontBorder;
+	td {
+		border: 2px solid white;
 	}
-
-	img {
-		width: 360px;
+	tr {
+		height: 2em;
+	}
+	.centered {
+		text-align: center;
+	}
+	.margined {	
+		padding-left: 4px;
 	}
 }
 
+section {
+	padding: 1em 0 ;
+}
 
+img {
+	width: 100%;
+	height: auto;
+}
 
 /*
  *	 TESTING ZONE
 */
-
 .test {
 	border: dashed red 2px;
 }
 
-/* CLASSES */
+/*
+ *	 CLASSES
+*/
+/* For All */
+.max-sized {
+	max-width: 950px;
+	margin: 0 auto;
+}
+
 /* Information */
 .information {
-	text-align: center;
-	font-family: $fontParagraph;
-	font-size: 1.2em;
+	margin: 0;
 	padding: 0.5em 0;
+	text-align: center;
+	font-size: 1.2em;
+	span {margin: 0;}
+	
+}
 
-	background: #83cf00;
-	background: -moz-linear-gradient(top,  #83cf00 0%, #9ffc00 100%);
-	background: -webkit-linear-gradient(top,  #83cf00 0%,#9ffc00 100%);
-	background: linear-gradient(to bottom,  #83cf00 0%,#9ffc00 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83cf00', endColorstr='#9ffc00',GradientType=0 );
-
+/* Logo */
+.logo-box {
+	display: flex;
+	padding: 0.5em;
+	width: 230px;
+	h1 {
+		margin: 0.1em 0 0 0.3em;
+	}
+	span {
+		margin: 0.1em 0 0 1.8em;
+	}
+	picture {
+		width: 70px;
+	}
 }
 
 /* Navigation */
@@ -180,3 +215,56 @@ a.current {
 	display: none;
 }
 
+/* Tables */
+.table-weather{
+	width: 300px;
+	max-width: 450px;
+	margin-bottom: 1em;;
+	tr > td {
+		width: 100px;
+	}
+}
+
+.table-forecast {
+	max-width: 450px;
+}
+
+.div-centered {
+	margin: 0 auto;
+}
+
+/*
+ *	 TEST CODE
+*/
+
+.border-red {
+	border: red 1px solid;
+}
+
+
+/*
+ *	 BACKGROUNDS
+*/
+.background-blue {
+	background: #00baef;
+	background: -moz-linear-gradient(top,  #00baef 0%, #036d8b 100%);
+	background: -webkit-linear-gradient(top,  #00baef 0%,#036d8b 100%);
+	background: linear-gradient(to bottom,  #00baef 0%,#036d8b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00baef', endColorstr='#036d8b',GradientType=0 );
+}
+
+.background-blue-2 {
+	background: #00baef;
+	background: -moz-linear-gradient(top,  #00baef 0%, #7db9e8 100%);
+	background: -webkit-linear-gradient(top,  #00baef 0%,#7db9e8 100%);
+	background: linear-gradient(to bottom,  #00baef 0%,#7db9e8 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00baef', endColorstr='#7db9e8',GradientType=0 );
+}
+
+.background-green {
+	background: #83cf00;
+	background: -moz-linear-gradient(top,  #83cf00 0%, #9ffc00 100%);
+	background: -webkit-linear-gradient(top,  #83cf00 0%,#9ffc00 100%);
+	background: linear-gradient(to bottom,  #83cf00 0%,#9ffc00 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83cf00', endColorstr='#9ffc00',GradientType=0 );
+}

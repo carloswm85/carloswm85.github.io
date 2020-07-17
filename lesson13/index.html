@@ -21,184 +21,297 @@
 <!-- BODY -->
 <body>
 	<!-- Announcements Section -->
-	<div class="information">
+	<div class="information background-green">
 		<span>Information</span>
 	</div>
 
 
 	<!-- HEADER -->
-	<header class="test-border">
-
-		<!-- Logo -->
-		
-		<picture class="logo-item">
-			<img class="logo-image" src="img/logo-70.png" alt="">
-		</picture>
-		
-		<h1 class="logo-title">~Scoots</h1>
-		<div class="logo-subtitle">Rent Your Ride</div>
-		
-		<button  onclick="toggleMenu()">&#9776;</button>
-		<!-- Hamburguer nav -->
-		<nav id="primaryNav" class="hide">
-			<ul>				
-				<li><a href="/" class="current">Home</a></li>
-				<li><a href="" class="">Rental</a></li>
-				<li><a href="" class="">Reservations</a></li>
-				<li><a href="" class="">Tours</a></li>
-				<li><a href="" class="">Contact</a></li>
-			</ul>
-		</nav>
+	<header class="background-blue">
+		<div class="max-sized">
+			<div class="header-top">
+				<div class="logo-box">
+					<!-- Logo -->
+					<picture class="logo-item">
+						<img class="logo-image" src="img/logo-70.svg" alt="Scoot's Scooter Rental Company logo.">
+					</picture>
+					
+					<div>
+						<h1 class="logo-title">~Scoots</h1>
+						<span class="logo-subtitle">Rent Your Ride</span>
+					</div>
+				</div>
+					
+				<button  onclick="toggleMenu()">&#9776;</button>
+			</div>
+					
+			<!-- Hamburguer nav -->
+			<nav id="primaryNav" class="hide">
+				<ul>				
+					<li><a href="/" class="current">Home</a></li>
+					<li><a href="" class="">Rental</a></li>
+					<li><a href="" class="">Reservations</a></li>
+					<li><a href="" class="">Tours</a></li>
+					<li><a href="" class="">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 
 	<!-- MAIN -->
-	<main>
+	<main class="background-blue-2">
+		<div class="max-sized">
+			<!-- CALL TO ACTION -->
+			<section class="section-call">
 
-		<!-- CALL TO ACTION -->
-		<section>
-			
-			
-			<img src="img/cozumel-beach.jpg" alt="Cozumel beach.">
-			
-			
-			<!-- FORM -->
-			<form method="POST" action="thanks.html" id="call-to-action">
-				<fieldset>
-					<h2>Rent Your Scooter Easily</h2>
+				<!-- First picture -->
+				<picture>
+					<source media="(min-width: 700px)" srcset="img/home/cozumel-beach-950.png">
+					<source media="(min-width: 518px)" srcset="img/home/cozumel-beach-768.png">
+					<img src="img/home/cozumel-beach-360.png" alt="Cozumel beach.">
+				</picture>
+							
+				<!-- FORM -->
+				<form method="POST" action="thanks.html" id="call-to-action">
+					<fieldset>
+						<h2>Rent Your Scooter Easily</h2>
 
-					<section>
-						<label for="location">
-							<span class="form-hide">Location</span>
-						<select name="location" id="location" class="location" required>
-								<option>Choose your location</option>
-							<option>Playa del Carmen</option>
-							<option>Terminal Puerta Maya</option>
-						</select>
-						</label>
-					</section>
-					
-					
-					<section>
-						<label for="arrival-date" class="sbs" >
-							<span class="form-hide">Arrival</span>
-							<input type="date" name="arrival-date" id="arrival-date" class="time" required></label> <!-- TYPE: date -->
-						<label for="arrival-time" class="call">
-							<select name="arrival-time" id="arrival-time" class="time" required>
-									<option>Choose time</option>
-								<option>10:30</option>
-								<option>11:00</option>
-								<option>11:30</option>
-								<option>12:00</option>
-								<option>12:30</option>
-								<option>13:00</option>
-								<option>13:30</option>
-								<option>14:00</option>
-								<option>14:30</option>
-								<option>15:00</option>
-								<option>15:30</option>
-								<option>16:00</option>
-								<option>16:30</option>
-								<option>17:00</option>
-								<option>17:30</option>
-								<option>18:00</option>
-								<option>18:30</option>
+						<section>
+							<label for="location">
+								<span class="form-hide">Location</span>
+							<select name="location" id="location" class="location" required>
+									<option>Choose your location</option>
+								<option>Playa del Carmen</option>
+								<option>Terminal Puerta Maya</option>
 							</select>
-						</label>
-					</section>
-					
-					<section>
-						<label for="departure-date" class="sbs" >
-							<span class="form-hide">Departure</span>
-							<input type="date" name="departure-date" id="departure-date" class="time" required></label> <!-- TYPE: date -->
-						<label for="departure-time" class="call">
-							<select name="departure-time" id="departure-time" class="time" required>
-									<option>Choose time</option>
-								<option>10:30</option>
-								<option>11:00</option>
-								<option>11:30</option>
-								<option>12:00</option>
-								<option>12:30</option>
-								<option>13:00</option>
-								<option>13:30</option>
-								<option>14:00</option>
-								<option>14:30</option>
-								<option>15:00</option>
-								<option>15:30</option>
-								<option>16:00</option>
-								<option>16:30</option>
-								<option>17:00</option>
-								<option>17:30</option>
-								<option>18:00</option>
-								<option>18:30</option>
-							</select>
-						</label>
-					</section>
-					
-					<section>
-						<label for="departure-time" class="call">
-							<select name="departure-time" id="departure-time" class="scooters" required>
-									<option>Number of Scoots</option>
-								<option value="one-scoot">1</option>
-								<option value="two-scoots">2</option>
-								<option value="three-scoots">3</option>
-								<option value="more-scoots">More</option>
-							</select>
-						</label>
+							</label>
+						</section>
+						
+						
+						<section>
+							<label for="arrival-date" class="sbs" >
+								<span class="form-hide">Arrival</span>
+								<input type="date" name="arrival-date" id="arrival-date" class="time" required></label> <!-- TYPE: date -->
+							<label for="arrival-time" class="call">
+								<select name="arrival-time" id="arrival-time" class="time" required>
+										<option>Choose time</option>
+									<option>10:30</option>
+									<option>11:00</option>
+									<option>11:30</option>
+									<option>12:00</option>
+									<option>12:30</option>
+									<option>13:00</option>
+									<option>13:30</option>
+									<option>14:00</option>
+									<option>14:30</option>
+									<option>15:00</option>
+									<option>15:30</option>
+									<option>16:00</option>
+									<option>16:30</option>
+									<option>17:00</option>
+									<option>17:30</option>
+									<option>18:00</option>
+									<option>18:30</option>
+								</select>
+							</label>
+						</section>
+						
+						<section>
+							<label for="departure-date" class="sbs" >
+								<span class="form-hide">Departure</span>
+								<input type="date" name="departure-date" id="departure-date" class="time" required></label> <!-- TYPE: date -->
+							<label for="departure-time" class="call">
+								<select name="departure-time" id="departure-time" class="time" required>
+										<option>Choose time</option>
+									<option>10:30</option>
+									<option>11:00</option>
+									<option>11:30</option>
+									<option>12:00</option>
+									<option>12:30</option>
+									<option>13:00</option>
+									<option>13:30</option>
+									<option>14:00</option>
+									<option>14:30</option>
+									<option>15:00</option>
+									<option>15:30</option>
+									<option>16:00</option>
+									<option>16:30</option>
+									<option>17:00</option>
+									<option>17:30</option>
+									<option>18:00</option>
+									<option>18:30</option>
+								</select>
+							</label>
+						</section>
+						
+						<section>
+							<label for="departure-time" class="call">
+								<select name="departure-time" id="departure-time" class="scooters" required>
+										<option>Number of Scoots</option>
+									<option value="one-scoot">1</option>
+									<option value="two-scoots">2</option>
+									<option value="three-scoots">3</option>
+									<option value="more-scoots">More</option>
+								</select>
+							</label>
 
-						<input type="submit" value="GO!" class="submit-button">
-					</section>
-					
-				</fieldset>	
-			</form>
-			
-		</section>
+							<input type="submit" value="GO!" class="submit-button">
+						</section>
+						
+					</fieldset>	
+				</form>
+				
+			</section class="section-call">
 
-		<!-- RENTALS -->
-		<section>
-			
-			<!-- Rentals images -->
+			<!-- RENTALS -->
 			<section>
 
+				<picture>
+					<source media="(min-width: 700px)" srcset="img/rentals/type-rentals-950.png">
+					<source media="(min-width: 518px)" srcset="img/rentals/type-rentals-768.png">
+					<img src="img/rentals/type-rentals-360.png" alt="Available rental vehicles.">
+				</picture>
+
+				<h2>Type of Rentals</h2>
+				
+				<!-- Rentals information -->
+				<table class="table-rentals">
+					<thead>
+						<tr class="centered">
+							<td>Type</td>
+							<td>Features</td>
+							<td>Capacity</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="centered">
+							<td colspan="3">Honda Motor Scooters</td>
+						</tr>	
+						<tr>
+							<td class="margined">Honda Metropolitan</td>
+							<td class="centered">49cc</td>
+							<td class="centered">1</td>
+						</tr>
+						<tr>
+							<td class="margined">Honda Dio</td>
+							<td class="centered">110c</td>
+							<td class="centered">2</td>
+						</tr>
+						<tr>
+							<td class="margined">Honda PCX149</td>
+							<td class="centered">149</td>
+							<td class="centered">2</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="centered">Side-by-Side</td>
+						</tr>
+						<tr>
+							<td class="margined">Honda Pioner 1000</td>
+							<td class="centered">-</td>
+							<td class="centered">-</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="centered">Jeep Rentals</td>
+						</tr>
+						<tr>
+							<td class="margined">Jeep Wrangler 4d</td>
+							<td class="centered">Manual<br>A/C</td>
+							<td class="centered">5</td>
+						</tr>
+						<tr>
+							<td class="margined">Jeep Wrangler 2d</td>
+							<td class="centered">Manual<br>Open</td>
+							<td class="centered">4</td>
+						</tr>
+					</tbody>
+				</table>
+				
 			</section>
 
-			<!-- Rentals information -->
-			<table>
+			<!-- WEATHER CONDITIONS -->
+			<section>
+				<picture>
+					<source media="(min-width: 700px)" srcset="img/home/cozumel-sunset-950.png">
+					<source media="(min-width: 518px)" srcset="img/home/cozumel-sunset-768.png">
+					<img src="img/home/cozumel-sunset-360.png" alt="Cozumel beach.">
+				</picture>
+				
+				<h2>
+					Weather Summary
+					<br> on the Island
+				</h2>
 
-			</table>
-			
-		</section>
+				<table class="table-weather">
+					<tbody>
+						<tr>
+							<td class="centered">Current</td>
+							<td class="centered"><span id="weather-1"></span></td>
+						</tr>
+						<tr>
+							<td class="centered">Temperature</td>
+							<td class="centered"><span id="weather-2"></span></td>
+						</tr>
+						<tr>
+							<td class="centered">Humidity</td>
+							<td class="centered"><span id="weather-3"></span></td>
+						</tr>
+						<tr>
+							<td class="centered">Temperature</td>
+							<td class="centered"><span id="weather-4"></span></td>
+						</tr>
+					</tbody>
+				</table>
 
-		<!-- FACILITIES -->
-		<section>
-			<picture>
-				<img src="" alt="">
-			</picture>
-		</section>
-
-		<!-- WEATHER CONDITIONS -->
-		<section>
-			<picture>
-				<img src="" alt="">
-			</picture>
-
-			<table>
-
-			</table>
-		</section>
+				<table class="table-forecast">
+					<tbody>
+						<tr><td class="centered" colspan="5">5 Days Forectast Temperature</td></tr>
+						<tr>
+							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+		
 
 	</main>
 
 	<!-- FOOTER -->
-	<footer>
-		<!-- Contact information -->
-		<section>
+	<footer class="background-blue">
 
-		</section>
+		<div class="logo-box div-centered">
+			<!-- Logo -->
+			<picture class="logo-item">
+				<img class="logo-image" src="img/logo-70.svg" alt="Scoot's Scooter Rental Company logo.">
+			</picture>
+			
+			<div>
+				<h1 class="logo-title">~Scoots</h1>
+				<span class="logo-subtitle">Rent Your Ride</span>
+			</div>
+		</div>
+
+
+		<h2>Find us in Social Media</h2>
+		<!-- Contact information -->
+		<div class="footer-social">
+          <a class="anchor-social" href="https://www.facebook.com"><img class="logo-social" src="img/social/facebook.svg" alt="Facebook social media link and logo."></a>
+          <a class="anchor-social" href="https://twitter.com"><img class="logo-social" src="img/social/twitter.svg" alt="Twitter social media link and logo."></a>
+          <a class="anchor-social" href="https://web.whatsapp.com"><img class="logo-social" src="img/social/whatsapp.svg" alt="WhatsApp social media link and logo."></a>
+        </div>
 
 		<!-- Social Media -->
-		<section>
-
-		</section>
+		<div class="footer-bot">
+			<p>&copy; ~Scoots 2020<br>Site by Carlos W. Mercado</p>
+			<p class="bot-date">
+			  <span id="currentDate"></span>
+			  <span><a href="terms.html" class="terms-link"> Terms and Conditios of use</a></span>
+			</p>
+		</div>
 	</footer>
 </body>
 </html>
