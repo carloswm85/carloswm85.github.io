@@ -15,6 +15,14 @@
       "reservationFull": 40,
       "walkinHalf": 35,
       "walkinFull": 45
+    },
+    {
+      "type": "~Honda Dio Scooter",
+      "capacity": 2,
+      "reservationHalf": 30,
+      "reservationFull": 40,
+      "walkinHalf": 35,
+      "walkinFull": 45
     }
   ]
 }

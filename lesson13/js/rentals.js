@@ -1,27 +1,21 @@
 const rentalsJSON = "https://carloswm85.github.io/lesson13/data/rentals.json";
-const parsedJSON = JSON.parse(rentalsJSON);
 
-console.log(typeof(parsedJSON));
-console.log(parsedJSON);
-
-fetch(parsedJSON)
+fetch(rentalsJSON)
 .then((response) => response.json())
 .then((jsObject) => {
-  
-  document.getElementById('type').innerHTML = jsObject.rentals[0].type;
+  let rentals = jsObject.rentals;
+  console.log(rentals);
 
-  let test1 = jsObject.rentals[0].capacity;
-  document.getElementById('capacity').textContent = test1;
-  console.log(test1);
+  let i = 0;
+  rentals.forEach(rental => {
+    document.getElementById(`type-${i}`).innerHTML = rental.type;
+    document.getElementById(`capacity-${i}`).textContent = rental.capacity;
+    
+    document.getElementById(`reservation-half-${i}`).textContent = rental.reservationHalf;
+    document.getElementById(`reservation-full-${i}`).textContent = rental.reservationFull;
+    document.getElementById(`walkin-half-${i}`).textContent = rental.walkinHalf;
+    document.getElementById(`walkin-full-${i}`).textContent = rental.walkinFull;
+    i++;
+  });
 
-  let test2 = jsObject.rentals[0].reservationHalf;
-  document.getElementById('reservation-half').textContent = test2;
-  console.log(test2);
-  console.log(typeof(test2));
-
-  document.getElementById('reservation-full').textContent = jsObject.rentals[0].reservationFull;
-
-  document.getElementById('walkin-half').innerHTML = jsObject.rentals[0].walkinHalf;
-
-  document.getElementById('walkin-full').innerHTML = jsObject.rentals[0].walkinFull;
 });
