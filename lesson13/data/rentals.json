@@ -3,18 +3,18 @@
     {
       "type": "~Honda Metro Scooter 2",
       "capacity": 1,
-      "reservation-half": 20,
-      "reservation-full": 30,
-      "walkin-half": 25,
-      "walkin-full": 35
+      "reservationHalf": 20,
+      "reservationFull": 30,
+      "walkinHalf": 25,
+      "walkinFull": 35
     },
     {
       "type": "~Honda Dio Scooter",
       "capacity": 2,
-      "reservation-half": 30,
-      "reservation-full": 40,
-      "walkin-half": 35,
-      "walkin-full": 45
+      "reservationHalf": 30,
+      "reservationFull": 40,
+      "walkinHalf": 35,
+      "walkinFull": 45
     }
   ]
 }
