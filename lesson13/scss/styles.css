@@ -8,10 +8,6 @@
  *    IE on Windows Phone and in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
@@ -393,8 +389,7 @@ template {
 /* This variable quickly adds border through
 text-shadow property. */
 /* Main Primary color */
-/* Main Secondary color (1) */
-/* Main Secondary color (2) */
+/* Main Secondary color */
 /* Main Complement color */
 /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
 html {
@@ -410,7 +405,7 @@ html {
 /*
  *	 HTML ELEMENTS
 */
-h1, h2, h3, p, a, table, span {
+h1, h2, h3, p, a, table, span, li, form {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-family: "Open Sans";
@@ -430,7 +425,7 @@ header {
   header button {
     border: #036D8B solid 1px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin: auto;
+    margin: auto 20px auto auto;
     font-size: 2.6em;
     color: white;
     width: 56px;
@@ -468,9 +463,14 @@ footer {
       width: 80px;
       height: auto; }
   footer .footer-bot {
-    padding: 1.5em;
-    text-align: center;
-    margin: 0; }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+    padding-bottom: 1em; }
+    footer .footer-bot span {
+      font-size: 1.2em;
+      margin: 0.2em 0; }
 
 form {
   padding: 1em 0;
@@ -507,7 +507,7 @@ table {
   width: 100%;
   font-weight: 600;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; }
-  table td {
+  table td, table thead {
     border: 2px solid white; }
   table tr {
     height: 2em; }
@@ -517,9 +517,11 @@ table {
     padding-left: 4px; }
 
 section {
-  padding: 1em 0; }
+  padding: 0;
+  margin: 0; }
 
-img {
+img, picture {
+  display: block;
   width: 100%;
   height: auto; }
 
@@ -556,7 +558,8 @@ img {
   .logo-box span {
     margin: 0.1em 0 0 1.8em; }
   .logo-box picture {
-    width: 70px; }
+    width: 70px;
+    height: auto; }
 
 /* Navigation */
 a.current {
@@ -577,8 +580,156 @@ a.current {
 .table-forecast {
   max-width: 450px; }
 
+.table-rentals-2 {
+  max-width: 680px;
+  line-height: 1.5em; }
+
 .div-centered {
   margin: 0 auto; }
+
+/*
+ *	 RENTALS Page
+*/
+/* Nothing here */
+/*
+ *	 RESERVATIONS Page
+*/
+.container-information {
+  padding: 1.2em 0; }
+  .container-information ul {
+    padding: 1em;
+    border: 1px solid black;
+    background-color: white;
+    padding-left: 2em;
+    margin-bottom: 0; }
+  .container-information li {
+    color: black;
+    text-shadow: none;
+    font-size: 1.2em; }
+    .container-information li a {
+      text-shadow: none;
+      color: blue; }
+
+.container-picture-separator {
+  margin: auto; }
+
+.container-reservation-form {
+  border: white solid 2px;
+  margin: 1em auto;
+  margin-bottom: 0;
+  border-radius: 10px;
+  background-color: #69D4F2;
+  padding-top: 1em; }
+  .container-reservation-form h2 {
+    margin: 0; }
+  .container-reservation-form legend {
+    background-color: #00BAEF;
+    border: 1px solid black;
+    color: white;
+    font-family: "Open Sans";
+    font-size: 1.1em;
+    font-weight: 700;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding: 0.5em 1em; }
+  .container-reservation-form fieldset {
+    max-width: 650px;
+    border-radius: 10px;
+    margin: 0 auto 1em auto;
+    background-color: white;
+    border: 1px solid black;
+    padding-bottom: 1em; }
+  .container-reservation-form fieldset, .container-reservation-form p {
+    font-weight: 700;
+    color: black;
+    text-shadow: none; }
+  .container-reservation-form fieldset > p {
+    line-height: 1.5em; }
+  .container-reservation-form .top {
+    max-width: 400px;
+    display: block;
+    margin: 1.5em auto auto auto; }
+    .container-reservation-form .top input, .container-reservation-form .top select, .container-reservation-form .top textarea {
+      color: gray;
+      display: block;
+      width: 100%;
+      margin: 0.2EM auto;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 5px; }
+    .container-reservation-form .top textarea {
+      height: 250px;
+      line-height: 2em; }
+  .container-reservation-form .closer {
+    margin-top: 0.5em; }
+  .container-reservation-form .submit-button {
+    display: block;
+    width: 96%;
+    max-width: 280px;
+    float: none;
+    margin: 10px auto; }
+  .container-reservation-form input:required, .container-reservation-form select:required {
+    border-left: red solid 5px; }
+  .container-reservation-form input:required:valid, .container-reservation-form select:required:valid {
+    border-left: green solid 5px; }
+
+.extra-padding-vertical {
+  padding: 1em 0; }
+
+/*
+ *	 TOURS Page
+*/
+.container-tours-information {
+  padding: 1.2em 1em;
+  background-color: white;
+  border: 1px solid black;
+  padding-left: 2em;
+  padding-bottom: 2.5em; }
+  .container-tours-information h2, .container-tours-information h3, .container-tours-information p {
+    line-height: 1.5em;
+    color: black;
+    text-shadow: none;
+    font-size: 1.2em; }
+  .container-tours-information h2 {
+    font-size: 1.5em;
+    margin-top: 1em; }
+  .container-tours-information h3 {
+    margin-top: 1.2em; }
+
+/* CONTACT Page */
+.container-map {
+  padding: 0;
+  margin-bottom: 1em; }
+  .container-map #map {
+    height: 400px;
+    width: 100%; }
+  .container-map ol {
+    padding: 1em;
+    border: 1px solid black;
+    background-color: white;
+    padding-left: 2em;
+    margin-bottom: 0; }
+  .container-map li, .container-map h2 {
+    color: black;
+    text-shadow: none;
+    font-size: 1.2em; }
+
+/* Other Page */
+.container-thanks {
+  background-color: white;
+  padding: 1em;
+  border: 1px solid black; }
+  .container-thanks p {
+    color: black;
+    font-size: 1.2em;
+    text-shadow: none; }
+
+.container-credits {
+  background-color: white;
+  border: solid 1px black;
+  padding: 1em;
+  padding-left: 2em; }
+  .container-credits h3, .container-credits li, .container-credits a {
+    color: black;
+    text-shadow: none; }
 
 /*
  *	 TEST CODE
@@ -625,23 +776,44 @@ a.current {
   .table-rentals {
     max-width: 700px; }
 
-  .section-call {
+  .container-call {
     position: relative; }
-    .section-call form {
+    .container-call form {
       float: left;
       position: absolute;
       top: 1em;
       left: 1em; }
-      .section-call form fieldset {
+      .container-call form fieldset {
         border: solid 1px #01465A;
         background-color: rgba(105, 212, 242, 0.7); }
-      .section-call form input, .section-call form select {
+      .container-call form input, .container-call form select {
         font-size: 1.3em;
         height: 1.3em; }
-      .section-call form .submit-button {
+      .container-call form .submit-button {
         height: 40px; }
-      .section-call form section {
+      .container-call form section {
         padding: 0.5em 0; }
+
+  .container-rentals {
+    border: 1px solid white;
+    margin: 1em auto;
+    padding: 1em; }
+
+  .container-rentals-2 {
+    padding: 2em 0; }
+
+  .container-weather {
+    position: relative;
+    padding: 0; }
+    .container-weather div {
+      width: 400px;
+      float: right;
+      position: absolute;
+      top: 4em;
+      right: 3em; }
+      .container-weather div table {
+        border: solid 1px #01465A;
+        background-color: rgba(105, 212, 242, 0.7); }
 
   .hide {
     display: block; } }

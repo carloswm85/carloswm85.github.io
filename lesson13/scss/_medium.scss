@@ -20,9 +20,7 @@ header {
 	max-width: 700px;
 }
 
-
-
-.section-call {
+.container-call {
 	position: relative;
 	form {
 		float: left;
@@ -44,6 +42,37 @@ header {
 			padding: 0.5em 0;
 		}
 	}
+}
+
+.container-rentals {
+	border: 1px solid white;
+	margin: 1em auto;
+	padding: 1em;
+}
+
+.container-rentals-2 {
+	padding: 2em 0;
+}
+
+.container-weather {
+	position: relative;
+	padding: 0;
+	
+	div {
+		width: 400px;
+		float: right;
+		position: absolute;
+		top: 4em;
+		right: 3em;	
+		table {
+			border: solid 1px $colorPrimary1;
+			background-color:  rgba(105, 212, 242, 0.7);
+		}		
+	}
+}
+
+.container-rent-form {
+
 }
 
 .hide {

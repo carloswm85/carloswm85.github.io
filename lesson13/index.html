@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- SCOOTS' WEBSITE -->
+<!-- HOME Page -->
 <html lang="en">
 
 <!-- HEAD -->
@@ -20,12 +21,6 @@
 
 <!-- BODY -->
 <body>
-	<!-- Announcements Section -->
-	<div class="information background-green">
-		<span>Information</span>
-	</div>
-
-
 	<!-- HEADER -->
 	<header class="background-blue">
 		<div class="max-sized">
@@ -48,31 +43,31 @@
 			<!-- Hamburguer nav -->
 			<nav id="primaryNav" class="hide">
 				<ul>				
-					<li><a href="/" class="current">Home</a></li>
-					<li><a href="" class="">Rental</a></li>
-					<li><a href="" class="">Reservations</a></li>
-					<li><a href="" class="">Tours</a></li>
-					<li><a href="" class="">Contact</a></li>
+					<li><a href="index.html" class="current">Home</a></li>
+					<li><a href="rentals.html" class="">Rental</a></li>
+					<li><a href="reservations.html" class="">Reservations</a></li>
+					<li><a href="tours.html" class="">Tours</a></li>
+					<li><a href="contact.html" class="">Contact</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 
 	<!-- MAIN -->
-	<main class="background-blue-2">
+	<main class="background-blue-2 extra-padding-vertical">
 		<div class="max-sized">
 			<!-- CALL TO ACTION -->
-			<section class="section-call">
+			<section class="container-call">
 
 				<!-- First picture -->
 				<picture>
-					<source media="(min-width: 700px)" srcset="img/home/cozumel-beach-950.png">
-					<source media="(min-width: 518px)" srcset="img/home/cozumel-beach-768.png">
-					<img src="img/home/cozumel-beach-360.png" alt="Cozumel beach.">
+					<source media="(min-width: 700px)" srcset="img/home/cozumel-beach-950.jpg">
+					<source media="(min-width: 518px)" srcset="img/home/cozumel-beach-768.jpg">
+					<img src="img/home/cozumel-beach-360.jpg" alt="Cozumel beach.">
 				</picture>
 							
 				<!-- FORM -->
-				<form method="POST" action="thanks.html" id="call-to-action">
+				<form method="" action="thanks.html" id="call-to-action">
 					<fieldset>
 						<h2>Rent Your Scooter Easily</h2>
 
@@ -147,11 +142,12 @@
 						<section>
 							<label for="departure-time" class="call">
 								<select name="departure-time" id="departure-time" class="scooters" required>
-										<option>Number of Scoots</option>
-									<option value="one-scoot">1</option>
-									<option value="two-scoots">2</option>
-									<option value="three-scoots">3</option>
-									<option value="more-scoots">More</option>
+										<option>Number of Rentals</option>
+									<option value="rental-1">1</option>
+									<option value="rental-2">2</option>
+									<option value="rental-3">3</option>
+									<option value="rental-4">4</option>
+									<option value="rental-5">5</option>
 								</select>
 							</label>
 
@@ -161,15 +157,15 @@
 					</fieldset>	
 				</form>
 				
-			</section class="section-call">
+			</section>
 
 			<!-- RENTALS -->
-			<section>
+			<section class="container-rentals">
 
 				<picture>
-					<source media="(min-width: 700px)" srcset="img/rentals/type-rentals-950.png">
-					<source media="(min-width: 518px)" srcset="img/rentals/type-rentals-768.png">
-					<img src="img/rentals/type-rentals-360.png" alt="Available rental vehicles.">
+					<source media="(min-width: 700px)" srcset="img/home/scooter-shop-950.jpg">
+					<source media="(min-width: 518px)" srcset="img/home/scooter-shop-768.jpg">
+					<img src="img/home/scooter-shop-360.jpg" alt="Scooters' rental facilities.">
 				</picture>
 
 				<h2>Type of Rentals</h2>
@@ -229,51 +225,54 @@
 			</section>
 
 			<!-- WEATHER CONDITIONS -->
-			<section>
+			<section class="container-weather">
 				<picture>
-					<source media="(min-width: 700px)" srcset="img/home/cozumel-sunset-950.png">
-					<source media="(min-width: 518px)" srcset="img/home/cozumel-sunset-768.png">
-					<img src="img/home/cozumel-sunset-360.png" alt="Cozumel beach.">
+					<source media="(min-width: 700px)" srcset="img/home/cozumel-sunset-950.jpg">
+					<source media="(min-width: 518px)" srcset="img/home/cozumel-sunset-768.jpg">
+					<img src="img/home/cozumel-sunset-360.jpg" alt="Cozumel beach.">
 				</picture>
 				
-				<h2>
-					Weather Summary
-					<br> on the Island
-				</h2>
-
-				<table class="table-weather">
-					<tbody>
-						<tr>
-							<td class="centered">Current</td>
-							<td class="centered"><span id="weather-1"></span></td>
-						</tr>
-						<tr>
-							<td class="centered">Temperature</td>
-							<td class="centered"><span id="weather-2"></span></td>
-						</tr>
-						<tr>
-							<td class="centered">Humidity</td>
-							<td class="centered"><span id="weather-3"></span></td>
-						</tr>
-						<tr>
-							<td class="centered">Temperature</td>
-							<td class="centered"><span id="weather-4"></span></td>
-						</tr>
-					</tbody>
-				</table>
-
-				<table class="table-forecast">
-					<tbody>
-						<tr><td class="centered" colspan="5">5 Days Forectast Temperature</td></tr>
-						<tr>
-							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-							<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-						</tr>
-					</tbody>
-				</table>
+				<div >
+					<h2>
+						Weather Summary
+						<br> on the Island
+					</h2>
+	
+					<table class="table-weather">
+						<tbody>
+							<tr>
+								<td class="centered">Current</td>
+								<td class="centered"><span id="weather-1"></span></td>
+							</tr>
+							<tr>
+								<td class="centered">Temperature</td>
+								<td class="centered"><span id="weather-2"></span></td>
+							</tr>
+							<tr>
+								<td class="centered">Humidity</td>
+								<td class="centered"><span id="weather-3"></span></td>
+							</tr>
+							<tr>
+								<td class="centered">Temperature</td>
+								<td class="centered"><span id="weather-4"></span></td>
+							</tr>
+						</tbody>
+					</table>
+	
+					<table class="table-forecast">
+						<tbody>
+							<tr><td class="centered" colspan="5">5 Days Forectast Temperature</td></tr>
+							<tr>
+								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
 			</section>
 		</div>
 		
@@ -282,36 +281,38 @@
 
 	<!-- FOOTER -->
 	<footer class="background-blue">
+		<div class="max-sized">
 
-		<div class="logo-box div-centered">
-			<!-- Logo -->
-			<picture class="logo-item">
-				<img class="logo-image" src="img/logo-70.svg" alt="Scoot's Scooter Rental Company logo.">
-			</picture>
-			
-			<div>
-				<h1 class="logo-title">~Scoots</h1>
-				<span class="logo-subtitle">Rent Your Ride</span>
+			<div class="logo-box div-centered">
+				<!-- Logo -->
+				<picture class="logo-item">
+					<img class="logo-image" src="img/logo-70.svg" alt="Scoot's Scooter Rental Company logo.">
+				</picture>
+				
+				<div>
+					<h1 class="logo-title">~Scoots</h1>
+					<span class="logo-subtitle">Rent Your Ride</span>
+				</div>
 			</div>
-		</div>
+	
+	
+			<h2>Find us in Social Media</h2>
+			<!-- Contact information -->
+			<div class="footer-social">
+			  <a class="anchor-social" href="https://www.facebook.com"><img class="logo-social" src="img/social/facebook.svg" alt="Facebook social media link and logo."></a>
+			  <a class="anchor-social" href="https://twitter.com"><img class="logo-social" src="img/social/twitter.svg" alt="Twitter social media link and logo."></a>
+			  <a class="anchor-social" href="https://web.whatsapp.com"><img class="logo-social" src="img/social/whatsapp.svg" alt="WhatsApp social media link and logo."></a>
+			</div>
+	
+			<!-- Social Media -->
+			<div class="footer-bot">
+				<span>&copy; ~Scoots 2020</span>
+				<span>Site by Carlos W. Mercado</span>
+				<span id="currentDate"></span>
+				<span><a href="credits.html" class="">Resource Credits</a></span>
+			</div>
 
-
-		<h2>Find us in Social Media</h2>
-		<!-- Contact information -->
-		<div class="footer-social">
-          <a class="anchor-social" href="https://www.facebook.com"><img class="logo-social" src="img/social/facebook.svg" alt="Facebook social media link and logo."></a>
-          <a class="anchor-social" href="https://twitter.com"><img class="logo-social" src="img/social/twitter.svg" alt="Twitter social media link and logo."></a>
-          <a class="anchor-social" href="https://web.whatsapp.com"><img class="logo-social" src="img/social/whatsapp.svg" alt="WhatsApp social media link and logo."></a>
-        </div>
-
-		<!-- Social Media -->
-		<div class="footer-bot">
-			<p>&copy; ~Scoots 2020<br>Site by Carlos W. Mercado</p>
-			<p class="bot-date">
-			  <span id="currentDate"></span>
-			  <span><a href="terms.html" class="terms-link"> Terms and Conditios of use</a></span>
-			</p>
-		</div>
+		</div>	
 	</footer>
 </body>
 </html>
