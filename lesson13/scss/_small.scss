@@ -4,24 +4,19 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 /*----------- apply a natural box layout model to all elements --------------*/
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-/*
- *	 HTML ELEMENTS
-*/
-
+/* HTML ELEMENTS */
 h1, h2, h3, p, a, table, span, li, form {
 	color: white;
 	text-shadow: $fontBorder;
 	font-family: $fontParagraph;
 	margin: 0;
 }
-
 h2 {
 	margin: 0 0 0.8em 0;
 	font-weight: 700;
 	padding: 0 0.5em;
 	text-align: center;
 }
-
 header {
 	border-top: 1px solid $colorPrimary2;
 	border-bottom: 1px solid $colorPrimary2;
@@ -65,7 +60,6 @@ header {
 		}
 	}
 }
-
 footer {
 	margin: 0;
 	padding-top: 1em;
@@ -93,7 +87,6 @@ footer {
 		}
 	}
 }
-
 form {
 	padding: 1em 0;
 	margin: 0;
@@ -130,7 +123,6 @@ form {
 		float: right;
 	}
 }
-
 table {
 	border-collapse: collapse;
 	margin: 0 auto;
@@ -150,41 +142,29 @@ table {
 		padding-left: 4px;
 	}
 }
-
 section {
 	padding: 0;
 	margin: 0;
 }
-
 img, picture {
 	display: block;
 	width: 100%;
 	height: auto;
 }
 
-/*
- *	 TESTING ZONE
-*/
+/* TESTING ZONE */
 .test {
 	border: dashed red 2px;
 }
 
-/*
- *	 CLASSES
-*/
+/* CLASSES */
 /* For All */
 .max-sized {
 	max-width: 950px;
 	margin: 0 auto;
 }
-
-/* Information */
-.information {
-	margin: 0;
-	padding: 0.5em 0;
-	text-align: center;
-	font-size: 1.2em;
-	span {margin: 0;}
+.div-centered {
+	margin: 0 auto;
 }
 
 /* Logo */
@@ -209,45 +189,29 @@ a.current {
 	font-size: 1.1em;
 	text-shadow: none;
 }
-
 .hide, .form-hide {
 	display: none;
 }
 
-/* Tables */
+/* HOME Page */
 .table-weather{
-	
-	width: 300px;
-	max-width: 450px;
-	margin-bottom: 1em;;
-	tr > td {
-		width: 100px;
-	}
+	max-width: 470px;
+	margin-bottom: 1em;;	
 }
-
 .table-forecast {
 	max-width: 450px;
 }
+.container-rentals {
+	background-color: $colorPrimary3;
+}
 
+/* RENTALS Page */
 .table-rentals-2 {
 	max-width: 680px;
 	line-height: 1.5em;
 }
 
-.div-centered {
-	margin: 0 auto;
-}
-
-/*
- *	 RENTALS Page
-*/
-
-/* Nothing here */
-
-/*
- *	 RESERVATIONS Page
-*/
-
+/* RESERVATIONS Page */
 .container-information {
 	padding: 1.2em 0;
 	ul {
@@ -268,11 +232,9 @@ a.current {
 	}
 	
 }
-
 .container-picture-separator {
 	margin: auto;
 }
-
 .container-reservation-form {
 	border: white solid 2px;
 	margin: 1em auto;
@@ -345,14 +307,11 @@ a.current {
 		border-left: green solid 5px;
 	}
 }
-
 .extra-padding-vertical {
 	padding: 1em 0;
 }
 
-/*
- *	 TOURS Page
-*/
+/* TOURS Page */
 .container-tours-information {
 	padding: 1.2em 1em;
 	background-color: white;
@@ -396,7 +355,15 @@ a.current {
 	}
 }
 
-/* Other Page */
+/* Other Pages */
+.information {
+	margin: 0;
+	padding: 0.5em 0;
+	text-align: center;
+	font-size: 1.2em;
+	background-color: red;
+	span {margin: 0;}
+}
 .container-thanks {
 	background-color: white;
 	padding: 1em;
@@ -408,7 +375,6 @@ a.current {
 		text-shadow: none;
 	}
 }
-
 .container-credits {
 	background-color: white;
 	border: solid 1px black;
@@ -420,18 +386,12 @@ a.current {
 	}
 }
 
-/*
- *	 TEST CODE
-*/
-
+/* TEST CODE */
 .border-red {
 	border: red 1px solid;
 }
 
-
-/*
- *	 BACKGROUNDS
-*/
+/* BACKGROUND Gradients */
 .background-blue {
 	background: #00baef;
 	background: -moz-linear-gradient(top,  #00baef 0%, #036d8b 100%);
@@ -439,7 +399,6 @@ a.current {
 	background: linear-gradient(to bottom,  #00baef 0%,#036d8b 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00baef', endColorstr='#036d8b',GradientType=0 );
 }
-
 .background-blue-2 {
 	background: #00baef;
 	background: -moz-linear-gradient(top,  #00baef 0%, #7db9e8 100%);
@@ -447,7 +406,6 @@ a.current {
 	background: linear-gradient(to bottom,  #00baef 0%,#7db9e8 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00baef', endColorstr='#7db9e8',GradientType=0 );
 }
-
 .background-green {
 	background: #83cf00;
 	background: -moz-linear-gradient(top,  #83cf00 0%, #9ffc00 100%);

@@ -23,6 +23,7 @@ header {
 .container-call {
 	position: relative;
 	form {
+		width: 400px;
 		float: left;
 		position: absolute;
 		top: 1em;
@@ -69,10 +70,6 @@ header {
 			background-color:  rgba(105, 212, 242, 0.7);
 		}		
 	}
-}
-
-.container-rent-form {
-
 }
 
 .hide {

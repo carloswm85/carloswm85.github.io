@@ -55,7 +55,7 @@ fetch(apiURLForecastPreston)
     // Looping through the filtered array
     fiveDaysForecast.forEach(forecast => {
       let dayNumber = new Date(forecast.dt_txt);
-
+      
       // Getting the days and the temperature
       document.getElementById(`forecast-preston-day-${index}`).textContent = weekDays[dayNumber.getDay()];
       document.getElementById(`forecast-preston-temp-${index}`).textContent = forecast.main.temp_max;

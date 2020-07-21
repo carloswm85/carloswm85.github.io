@@ -402,9 +402,7 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/*
- *	 HTML ELEMENTS
-*/
+/* HTML ELEMENTS */
 h1, h2, h3, p, a, table, span, li, form {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -525,28 +523,18 @@ img, picture {
   width: 100%;
   height: auto; }
 
-/*
- *	 TESTING ZONE
-*/
+/* TESTING ZONE */
 .test {
   border: dashed red 2px; }
 
-/*
- *	 CLASSES
-*/
+/* CLASSES */
 /* For All */
 .max-sized {
   max-width: 950px;
   margin: 0 auto; }
 
-/* Information */
-.information {
-  margin: 0;
-  padding: 0.5em 0;
-  text-align: center;
-  font-size: 1.2em; }
-  .information span {
-    margin: 0; }
+.div-centered {
+  margin: 0 auto; }
 
 /* Logo */
 .logo-box {
@@ -569,31 +557,23 @@ a.current {
 .hide, .form-hide {
   display: none; }
 
-/* Tables */
+/* HOME Page */
 .table-weather {
-  width: 300px;
-  max-width: 450px;
+  max-width: 470px;
   margin-bottom: 1em; }
-  .table-weather tr > td {
-    width: 100px; }
 
 .table-forecast {
   max-width: 450px; }
 
+.container-rentals {
+  background-color: #1D92B3; }
+
+/* RENTALS Page */
 .table-rentals-2 {
   max-width: 680px;
   line-height: 1.5em; }
 
-.div-centered {
-  margin: 0 auto; }
-
-/*
- *	 RENTALS Page
-*/
-/* Nothing here */
-/*
- *	 RESERVATIONS Page
-*/
+/* RESERVATIONS Page */
 .container-information {
   padding: 1.2em 0; }
   .container-information ul {
@@ -674,9 +654,7 @@ a.current {
 .extra-padding-vertical {
   padding: 1em 0; }
 
-/*
- *	 TOURS Page
-*/
+/* TOURS Page */
 .container-tours-information {
   padding: 1.2em 1em;
   background-color: white;
@@ -712,7 +690,16 @@ a.current {
     text-shadow: none;
     font-size: 1.2em; }
 
-/* Other Page */
+/* Other Pages */
+.information {
+  margin: 0;
+  padding: 0.5em 0;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: red; }
+  .information span {
+    margin: 0; }
+
 .container-thanks {
   background-color: white;
   padding: 1em;
@@ -731,15 +718,11 @@ a.current {
     color: black;
     text-shadow: none; }
 
-/*
- *	 TEST CODE
-*/
+/* TEST CODE */
 .border-red {
   border: red 1px solid; }
 
-/*
- *	 BACKGROUNDS
-*/
+/* BACKGROUND Gradients */
 .background-blue {
   background: #00baef;
   background: -moz-linear-gradient(top, #00baef 0%, #036d8b 100%);
@@ -779,6 +762,7 @@ a.current {
   .container-call {
     position: relative; }
     .container-call form {
+      width: 400px;
       float: left;
       position: absolute;
       top: 1em;

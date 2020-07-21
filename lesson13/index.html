@@ -12,7 +12,6 @@
 
 	<!-- Files -->
 	<link rel="stylesheet" href="scss/styles.css">
-	<script src="js/script.js"></script>
 
 	<!-- VISIBLE -->
 	<title>~Scoots - Rent Your Ride</title>
@@ -74,11 +73,11 @@
 						<section>
 							<label for="location">
 								<span class="form-hide">Location</span>
-							<select name="location" id="location" class="location" required>
-									<option>Choose your location</option>
-								<option>Playa del Carmen</option>
-								<option>Terminal Puerta Maya</option>
-							</select>
+								<select name="location" id="location" class="location" required>
+										<option>Choose your location</option>
+									<option>Playa del Carmen</option>
+									<option>Terminal Puerta Maya</option>
+								</select>
 							</label>
 						</section>
 						
@@ -176,7 +175,7 @@
 						<tr class="centered">
 							<td>Type</td>
 							<td>Features</td>
-							<td>Capacity</td>
+							<td>Capacity<br>(max)</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -195,11 +194,11 @@
 						</tr>
 						<tr>
 							<td class="margined">Honda PCX149</td>
-							<td class="centered">149</td>
+							<td class="centered">149cc</td>
 							<td class="centered">2</td>
 						</tr>
 						<tr>
-							<td colspan="3" class="centered">Side-by-Side</td>
+							<td colspan="3" class="centered">ATV Side-by-Side</td>
 						</tr>
 						<tr>
 							<td class="margined">Honda Pioner 1000</td>
@@ -242,19 +241,15 @@
 						<tbody>
 							<tr>
 								<td class="centered">Current</td>
-								<td class="centered"><span id="weather-1"></span></td>
+								<td class="centered"><span id="weather-cozumel-1"></span></td>
 							</tr>
 							<tr>
 								<td class="centered">Temperature</td>
-								<td class="centered"><span id="weather-2"></span></td>
+								<td class="centered"><span id="weather-cozumel-2"></span> &#8457;</td>
 							</tr>
 							<tr>
 								<td class="centered">Humidity</td>
-								<td class="centered"><span id="weather-3"></span></td>
-							</tr>
-							<tr>
-								<td class="centered">Temperature</td>
-								<td class="centered"><span id="weather-4"></span></td>
+								<td class="centered"><span id="weather-cozumel-3"></span> %</td>
 							</tr>
 						</tbody>
 					</table>
@@ -263,11 +258,11 @@
 						<tbody>
 							<tr><td class="centered" colspan="5">5 Days Forectast Temperature</td></tr>
 							<tr>
-								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
-								<td class="centered"><span id="temperature-forecast-"></span> &#8457; </td>
+								<td class="centered"><span id="forecast-cozumel-temp-1"></span>a</td>
+								<td class="centered"><span id="forecast-cozumel-temp-2"></span> &#8457; </td>
+								<td class="centered"><span id="forecast-cozumel-temp-3"></span> &#8457; </td>
+								<td class="centered"><span id="forecast-cozumel-temp-4"></span> &#8457; </td>
+								<td class="centered"><span id="forecast-cozumel-temp-5"></span> &#8457; </td>
 							</tr>
 						</tbody>
 					</table>
@@ -312,7 +307,12 @@
 				<span><a href="credits.html" class="">Resource Credits</a></span>
 			</div>
 
-		</div>	
+		</div>
 	</footer>
+	
+	<!-- SCRIPTS -->
+	<script src="js/script.js"></script>
+	
+	<script src="js/weather.js"></script>
 </body>
 </html>

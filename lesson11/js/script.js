@@ -12,7 +12,7 @@ let local = date.toLocaleDateString('en-US', options);
 document.getElementById('currentDate').textContent = local;
 
 
-// BANNER
+// BANNER. This shows a banner on the site only if it is Friday
 let day = date.getDay();
 let banner = document.querySelector('.banner');
 if (day != 5) {
