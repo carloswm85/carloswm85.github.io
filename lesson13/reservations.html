@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="scss/styles.css">
 
 	<!-- VISIBLE -->
-	<title>~Scoots - Rent Your Ride</title>
+	<title>~Scoots - Rent Your Ride - RESERVATIONS PAGE</title>
 	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
@@ -74,13 +74,13 @@
 			</section>
 
 			<!-- Picture separation-->
-			<section class="container-picture-separator">
+			<div class="container-picture-separator">
 				<picture>
 					<source media="(min-width: 700px)" srcset="img/reservations/cozumel-coastline-950.jpg">
 					<source media="(min-width: 518px)" srcset="img/reservations/cozumel-coastline-768.jpg">
 					<img src="img/reservations/cozumel-coastline-360.jpg" alt="Cozumel beach.">
 				</picture>
-			</section>			
+			</div>			
 
 			<!-- FORM RENTAL DETAILS -->
 			<section class="container-reservation-form">
@@ -99,7 +99,7 @@
 						
 						<label for="arrival-time" class="top closer">
 							<select name="arrival-time" id="arrival-time" required>
-									<option value="no-value" disabled selected>Choose time</option>
+									<option value="" disabled selected>Choose time</option>
 								<option>10:30</option>
 								<option>11:00</option>
 								<option>11:30</option>
@@ -121,12 +121,12 @@
 						</label>
 						
 						<label for="departure-date" class="top" >Departure*
-							<input type="date" name="departure-date" id="arrival-date" required>
+							<input type="date" name="departure-date" id="departure-date" required>
 						</label>
 						
 						<label for="departure-time" class="top closer">
 							<select name="departure-time" id="departure-time" required>
-									<option value="no-value" disabled selected>Choose time</option>
+									<option value="" disabled selected>Choose time</option>
 								<option>10:30</option>
 								<option>11:00</option>
 								<option>11:30</option>
@@ -149,14 +149,14 @@
 								
 						<label for="rental-type" class="top">Type*
 							<select name="rental-type" id="rental-type" required>
-									<option value="no-value" disabled selected>Choose your rental</option>
-								
+									<option value="" disabled selected>Choose your rental</option>
+									<!-- Rental list is injected here through JS -->
 							</select>
 						</label>
 
 						<label for="rental-amount" class="top">Amount*
 							<select name="rental-amount" id="rental-amount" required>
-									<option value="no-value" disabled selected>Choose a quantity</option>
+									<option value="" disabled selected>Choose a quantity</option>
 								<option value="rental-1">1</option>
 								<option value="rental-2">2</option>
 								<option value="rental-3">3</option>
@@ -436,7 +436,7 @@
 
 						<label class="top" for="cruise">Cruise Line*
 							<select id="cruise" name="cruise" required>
-									<option value="no-value" disabled selected>Choose your line</option>
+									<option value="" disabled selected>Choose your line</option>
 								<option value="cruise-01">Royal Caribbean International</option>
 								<option value="cruise-02">Norwegian Cruise Line</option>
 								<option value="cruise-03">Seabourn Cruise Line</option>
