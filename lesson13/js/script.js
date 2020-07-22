@@ -11,8 +11,7 @@ function initMap() {
 	var middlePoint = {lat: 20.496979, lng: -86.961525};
 	var terminalPuertaMaya = {lat: 20.478194, lng: -86.972534};
 	// The map, centered at Uluru
-	var cozumel = new google.maps.Map(
-		document.getElementById('map'), {zoom: 13, center: middlePoint});
+	var cozumel = new google.maps.Map(document.getElementById('map'), {zoom: 13, center: middlePoint});
 	
 	// The marker, positioned at Uluru
 	var marker1 = new google.maps.Marker({
@@ -36,7 +35,6 @@ function initMap() {
         text: "2"
 	  	}
 	});
-	
 }
 
 // DATE: LAST UPDATE
