@@ -318,11 +318,10 @@ a.current {
 	border: 1px solid black;
 	padding-left: 2em;
 	padding-bottom: 2.5em;
-	h2, h3, p {
+	h2, h3, p, a, li {
 		line-height: 1.5em;
-		color: black;
+		color: rgb(71, 68, 68);
 		text-shadow: none;
-		font-size: 1.2em;
 	}
 	h2 {
 		font-size: 1.5em;
@@ -330,6 +329,9 @@ a.current {
 	}
 	h3 {
 		margin-top: 1.2em;
+	}
+	ul {
+		margin-top: 0.4em;
 	}
 }
 

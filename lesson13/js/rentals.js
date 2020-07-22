@@ -15,7 +15,7 @@ fetch(rentalsJSON)
       i++;
     });
 
-  } else {
+  } else if (currentPage == '/lesson13/rentals.html') {
     rentals.forEach(rental => {
       document.getElementById(`type-${i}`).innerHTML = rental.type;
       document.getElementById(`capacity-${i}`).textContent = rental.capacity;
@@ -25,10 +25,23 @@ fetch(rentalsJSON)
       document.getElementById(`walkin-half-${i}`).textContent = rental.walkinHalf;
       document.getElementById(`walkin-full-${i}`).textContent = rental.walkinFull;
       i++;
-    });    
+    });
+  
+  } else if (currentPage == '/lesson13/reservations.html')  {
+    let select = document.getElementById('rental-type');
+    rentals.forEach(rental => {
+      let option = document.createElement('option');
+      option.setAttribute('id', `type-${i}`);
+      option.innerHTML = rental.type;
+      select.appendChild(option);
+      i++;
+    });
+  
+  } else {
+    console.log('Something went wrong.')
   }
+});
 
   
 
-});
 

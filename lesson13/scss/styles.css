@@ -661,16 +661,17 @@ a.current {
   border: 1px solid black;
   padding-left: 2em;
   padding-bottom: 2.5em; }
-  .container-tours-information h2, .container-tours-information h3, .container-tours-information p {
+  .container-tours-information h2, .container-tours-information h3, .container-tours-information p, .container-tours-information a, .container-tours-information li {
     line-height: 1.5em;
-    color: black;
-    text-shadow: none;
-    font-size: 1.2em; }
+    color: #474444;
+    text-shadow: none; }
   .container-tours-information h2 {
     font-size: 1.5em;
     margin-top: 1em; }
   .container-tours-information h3 {
     margin-top: 1.2em; }
+  .container-tours-information ul {
+    margin-top: 0.4em; }
 
 /* CONTACT Page */
 .container-map {
