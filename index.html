@@ -3,19 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+
 	<title>Document</title>
 </head>
 <body>
+	<div onclick="openNav()">MENU</div>
+
 	<header>
-		<nav>
-			<ul>
-				<li><a href="" class="">Home</a></li>
-				<li><a href="" class="">WDD Portfolio</a></li>
-				<li><a href="" class="">Trading</a></li>
-				<li><a href="" class="">Blog</a></li>
-			</ul>
-		</nav>
+		
 	</header>
+
+	<nav id="sideNav" class="sideNavClass">
+		<ul>
+			
+			<li><a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a></li>
+			<li><a href="index.html" class="current">Home</a></li>
+			<li><a href="portfolio/index.html" class="">WDD Portfolio</a></li>
+			<li><a href="trading/index.html" class="">Trading</a></li>
+			<li><a href="blog/index.html" class="">Blog</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		This is main.
+	</main>
+
+	<footer>
+		This is footer.
+	</footer>
 
 </body>
 </html>
