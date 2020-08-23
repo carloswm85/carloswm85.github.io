@@ -1,195 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 
   <link rel="stylesheet" href="css/styles.css">
-    
+
   <title> Bitcoin Argentina Análisis Técnico: Guía para novatos </title>
 </head>
 
 <body>
-  <div class="go-up"><a href="#content" class="link-white">GO UP &#10506;</a></div>
+  <div class="go-up"><a href="#content" class="link-white">UP &#10506;</a></div>
 
   <header>
-    <h1> Bitcoin Argentina Análisis Técnico: <br> Guía para novatos </h1>
+    <picture>
+      <source media="(min-width: 700px)" srcset="img/cover-950.jpg">
+      <source media="(min-width: 518px)" srcset="img/cover-768.jpg">
+      <img src="img/home/cover-360.jpg" alt="Cover de Bitcoin Argentina AT Guía para novatos.">
+    </picture>
+          
+    
+    <h1> Bitcoin Argentina Análisis Técnico: <br>Guía para novatos</h1>
     <p class="header-paragraph">Por Carlos W. Mercado, agosto 2020</p>
 
     <nav class="navigation">
       <ul class="navigation-container">
         <li class="navigation-item"><a href="#">Inicio</a></li>
-        <li class="navigation-item"><a href="#">Guía rápida</a></li>
-        <li class="navigation-item"><a href="#">Herramientas</a></li>
-        <li class="navigation-item"><a href="#">Enlaces</a></li>
-        <li class="navigation-item"><a href="#">Recomendados</a></li>
+        <li class="navigation-item"><a href="#">Libros recomendados</a></li>
         <li class="navigation-item"><a href="#">Sobre</a></li>
       </ul>
     </nav>
   </header>
-  
+
   <main>
     <section class="section-style">
-      <h2 id="content">Content</h2>
+      <h2 id="content">Guía rápida para novatos</h2>
+      <p>Cualquier material de calidad que tengas a mano para esta guía, es bienvenido. Mandámelo por Facebook, <a href="https://www.facebook.com/CarlosWashingtonMercado"> acá</a>.</p>
+      <p>Esta página es para novatos, así que la idea es que el contenido sea sintético, simple, veraz, contundente y a la médula. Este debería ser el mini-FAQ más claro y ruidoso de la historia del trading (aunque sea por pretensión, jaja).</p>
       <ol>
-        <li><a href="#site-purpose" title="Links to section content on the current page">Site Purpose &#128279;</a></li>
-        <li><a href="#target-audience" title="Links to section content on the current page">Target Audience &#128279;</a>
+        <li><a href="#at-intro" title="Enlace a la sección correspondiente.">Brevísima introducción al análisis técnico &#128279;</a></li>
+        <li><a href="#at-lectura" title="Enlace a la sección correspondiente.">Lecturas on-line &#128279;</a></li>
+        <li><a href="#at-youtube" title="Enlace a la sección correspondiente."> Canales de YouTube recomendados &#128279;</a></li>
+        <li><a href="#at-herramientas" title="Enlace a la sección correspondiente.">Herramientas básicas de AT y exchanges/brokers &#128279;</a>
           <ul>
-            <li><a href="#description" title="Links to section content on the current page">Description &#128279;</a></li>
-            <li><a href="#personas" title="Links to section content on the current page">Personas &#128279;</a>
-              <ul>
-                <li><a href="#case-1" title="Links to section content on the current page">Case 1 &#128279;</a></li>
-                <li><a href="#case-2" title="Links to section content on the current page">Case 2 &#128279;</a></li>
-              </ul>
-            </li>
-            <li><a href="#scenarios" title="Links to section content on the current page">Scenarios &#128279;</a></li>
+            <li><a href="#at-herramientasAT">Herramientas &#128279;</a></li>
+            <li><a href="#at-exchanges">Exchanges &#128279;</a></li>
+            <li><a href="#at-brokers">Brokers &#128279;</a></li>
+
+
           </ul>
-          
         </li>
-        <li><a href="#site-map" title="Links to section content on the current page"> Site Map &#128279;</a></li>
-        <li><a href="#color-scheme" title="Links to section content on the current page"> Color Scheme &#128279;</a></li>
-        <li><a href="#typography" title="Links to section content on the current page"> Typography &#128279;</a></li>
-        <li><a href="#wireframe-sketches" title="Links to section content on the current page"> Wireframe Sketches &#128279;</a></li>
+        <li><a href="#at-educacion" title="Enlace a la sección correspondiente."> Academias e institutos de trading, online y presenciales &#128279;</a>
+        <li><a href="#at-social" title="Enlace a la sección correspondiente."> Redes sociales &#128279;</a>
       </ol>
     </section>
 
+    <!-- Introducción -->
     <section class="section-style">
-      <h2 id="site-purpose">Site Purpose</h2>
-      <p><span class="span-bold">Client:</span> "~Scoots 🛵", Motor scooter rental company.</p>
-      <p><span class="span-bold">Funcionality:</span> Provide information about: Services, requirements, rental process.</p>
-      <p><span class="span-bold">Goals: </span>The website should be able to promote the rental services for those customers that are likely to do their homework before getting to the island, but it should also be useful for those more spontaneous customers.  </p>
-    </section>
+      <h2 id="at-intro">Brevísima introducción al análisis técnico (también llamado "AT")</h2>
+      <p>Quizás lo más básico de lo básico que necesitás saber sobre análisis técnico.</p>
+      <ul>
+        <li><a target="_blank" href="">¿Es lo mismo "trading" que "análisis técnico"? Videos<span class="span-resize-icon">&#8663;</span></a>
+          <ul>
+            <li>No. Un trader es un inversor a corto plazo, quien conserva un activo durante un período corto de tiempo (días o semanas entre compra y venta, a minutos o segundos). Por su parte, un inversor es alguien que conserva dicho activo durante mucho más tiempo (<a href="https://www.investopedia.com/terms/t/trader.asp">fuente</a>).</li>
+            <li>Por otra parte, el análisis técnico es estudio de datos históricos de un activo (precio, volumen, tiempo), para luego predecir su comportamiento futuro. Para eso se vale del uso de gráficas e indicadores técnicos de distinto tipo (<a href="https://www.investopedia.com/terms/t/technical-analysis-of-stocks-and-trends.asp">fuente</a>, y en parte opinión personal).</li>
+          </ul>
+        </li>
         
-    <section class="section-style">
-      <h2 id="target-audience">Target Audience</h2>
+         <li><a target="_blank" href="https://www.youtube.com/results?search_query=QUE+ES+EL+TRADING">Qué ES el trading. Videos<span class="span-resize-icon">&#8663;</span></a> Videos varios a mirar, para entender qué es el trading. A ésto quiero agregar que el trading es timba solo para los que no estudian ni se profesionalizan. Y si alguien te dice que el trading no funciona, es que no lo entiende ni sabe de lo que habla. Lo mismo vale para el que dice que es timba.</li>
+        <li><a target="_blank" href="https://www.youtube.com/results?search_query=QUE+NO+ES+EL+TRADING">Qué NO ES el trading. Videos<span class="span-resize-icon">&#8663;</span></a> No es timba. No es una forma fácil de hacer dinero. Solo el 10 % de los que se involucran en trading se vuelven rentables. Y esto es así porque no se lo toman en serio.</li>
+        <li><a target="_blank" href="https://www.youtube.com/results?search_query=TRADING+CRIPTOMONEDAS">¿Cuál es la relación entre trading y criptomonedas (Bitcoin y otras)? Videos<span class="span-resize-icon">&#8663;</span></a> Cualquier criptomoneda puede ser comprada o vendida en el mercado. Esto quiere decir que puede ser usada en trading, o en inversión, y puede ser sujeta al estudio del análisis técnico.</li>
+        <li><strong>Las 3 reglas INVIOLABLES DE ORO del novato de trading y análisis técnico</strong> (hechas por mí, aunque seguramente no perfeccionadas aún; recomendaciones de un novato a otros novatos, no intento ser pretencioso):
+          <ol>
+            <li>Protege tu capital de vos mismo, JAMÁS DE LOS JAMASES intentes hacer trading con tu capital hasta estar 100 % seguro de que cumplís con las siguientes 2 reglas.</li>
+            <li>Desarrollá tu estrategia de trading, y perfeccionala en backtesting. Tiene que ser PERFECTA para tus fines (OJO: que sea perfecta no quiere decir que sea infalible, ya que tal cosa no existe en el AT). No tradeés con tu capital a menos que tu estrategia te produzca confianza y no te ponga emocional (eufórico, miedoso, nervioso, resentido, bajo FOMO o FOBO, etc).</li>
+            <li>Lográ un entendimiento aceptable de las varias bases del trading:
+              <ul>
+                <li>Velas japonesas, volumen, temporalidades y acción del precio.</li>
+                <li>Estructura de mercado (soportes, resistencias, figuras chartistas, etc), área de valor, señales de entrada y de salida.</li>
+                <li>Temporalidades y análisis top-down.</li>
+                <li>Sistemas de trading (estrategias).</li>
+                <li>Uso y estudio de indicadores.</li>
+                <li>Administración de dinero.</li>
+                <li>Administración de riesgo/recompensa.</li>
+                <li>Psicología de mercado.</li>
+              </ul>
+              (Espero sugerencias de los visitantes a esta página sobre los anteriores puntos.)
+            </li>
 
-      <h3 id="description">Description</h3>
-      <ul>
-        <li><span class="span-bold">WHO:</span> This owner-operator company caters to locals, walk-in tourists, enthusiasts, and cruise-based touring groups and partnerships. These people can be people of different ages, but for the most part is expected that potential clients are teenagers, young adults, families with children old enough to mount on a bike. It is rearely expected that clients are elderly people or peoply with little kids.</li>
-        <li><span class="span-bold">WHERE:</span> Island of Cozumel off the coast of Mexico in the Western Caribbean Sea.</li>
-        <li><span class="span-bold">WHEN:</span> This is a day-time service for potential clients, that offers 24/7 support for costumers. </li>
-        <li><span class="span-bold">WHY:</span>  The overall goal of the website project is to promote the rental services for those customers that like to do their homework before getting to the island and to provide information about the services, requirements, and rental process.</li>
+          </ol>
+        </li>
       </ul>
-      
-      <h3 id="personas">Personas</h3>
+    </section>
+
+    <!-- Lecturas -->
+    <section class="section-style">
+      <h2 id="at-lectura">Lecturas on-line</h2>
+      <p>Cursos, blogs, etc.</p>
+      <!-- SPA -->
       <article>
-        <h4 id="case-1">Case 1:</h4>
-        <picture>
-          <img src="images/by-joshua-mcknight-from-pexels.jpg" alt="Some Image">
-        </picture>
+        <h3>En español</h3>
         <ul>
-          <li><span class="span-bold">Name and age: </span>Michael and Jenisse Johnson Maloy. 23 and 25 years old, respectively.</li>
-          <li><span class="span-bold">Occupation: </span>Musicians and artists.</li>
-          <li><span class="span-bold">Demographics and education: </span> College Education. USA citizens. Average income. They work remotely and independtly. Music production and distribution.</li>
-          <li><span class="span-bold">Goals and motivation for using the site: </span> They use to plan their next step on the fly. They need quick access to reliable information and quick contact with providers.</li>
-          <li><span class="span-bold">Social:</span> They travel pretty much on their own. They have some friends on Mexico, so it is possible for them to make a visit to the island with those.</li>
-          <li><span class="span-bold">Quote: </span>
-            <ul>
-              <li>Michael:"We love traveling light. I don't want to waste my with unnecessary rental procedures. I like to purchase it or rent it quick and neat."</li>
-              <li>Jenisse: "As Michael, I like things quick, but I can take some of my time to choose the correct option. I'm not going to rent or purchase something that later in time I'm going to regret."</li>
-            </ul>
+          <li><a target="_blank" href="https://www.novatostradingclub.com/formacion-trading/analisis-tecnico/">Novatos trading club.<span class="span-resize-icon">&#8663;</span></a> Es un curso de trading que encontré hace poco. No lo pude ver en profundidad, pero por lo que vi tiene muy buena calidad.</li>
         </ul>
       </article>
 
+      <!-- ENG -->
       <article>
-        <h4 id="case-2">Case 2:</h4>
-        <picture>
-          <img src="images/by-craig-adderley-from-pexels.jpg" alt="Some Image">
-        </picture>
+        <h3>En inglés</h3>
         <ul>
-          <li><span class="span-bold">Name and age: Marysa Spittale (third woman on the left), age 52.</span></li>
-          <li><span class="span-bold">Occupation: </span> School teacher, almoste retired.</li>
-          <li><span class="span-bold">Demographics and education: </span> College education. Family woman. She likes to travel, and she affords to do it around for times a year. The main support of her household is her husbando, a manager for a middle size business.</li>
-          <li><span class="span-bold">Goals and motivation for using the site: </span> She likes to plan her vacations at the beginning of each years, even until the least detail. So she needs services that allow he to book whatever she needs way beforehand.</li>
-          <li><span class="span-bold">Social: </span>She enjoys to spend time with her family, and if they do so in vacations outside of the USA, the better. 3 of her children live in Latinamerica, one of them in Mexico.</li>
-          <li><span class="span-bold">Quote: </span> "Last time I went to the Mexican Gulf, I had a really bad experience while renting a big car for us (her and her husband) and a couple of friends. I traveled around mid April, and I had made a reserve two months before. They were suppose to have more than 60 vehicles on their catalogue. Can you beleive that they were all rented and nobody told me?"</li>
+          <li><a target="_blank" href="https://www.investopedia.com/terms/t/technical-analysis-of-stocks-and-trends.asp">Investopedia<span class="span-resize-icon">&#8663;</span></a> Página muy completa sobre inversión y trading. Recomiendo que exploren la página completa, hay muchísimo para ver y aprender, no solo análisis técnico (otros temas de interés que se pueden encontrar son: Inversiones, Análisis fundamental, Administración de portfolio, Principios de trading, Administración de riesgo, y otros temas).</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- YouTube -->
+    <section class="section-style">
+      <h2 id="at-youtube">Canales de YouTube recomendados</h2>
+
+      <p>No voy a intentar hacer una lista exhaustiva de canales de trading, sino solo aquellos que pueden servirle al que empieza en ésto.</p>
+
+      <!-- SPA -->
+      <article>
+        <h3>En español</h3>        
+        <ul>
+          <li><a target="_blank" href="https://www.youtube.com/c/YuriRabassa/videos">Yuri Rabassa <span class="span-resize-icon">&#8663;</span></a> Uno de los mejores canales en español que he visto. Tiene relativamente pocos videos, pero son de excelente calidad y algunos son webinars completos. Altamente didáctico, claro e inspirador. Si sos novato te recomiendo comenzar con estos 3 videos antes de comenzar a operar: <a target="_blank" href="https://youtu.be/GfasPTPJk_o">Video A<span class="span-resize-icon">&#8663;</span></a></a>, <a target="_blank" href="https://youtu.be/-2-7TN4x5KQ">Video B<span class="span-resize-icon">&#8663;</span></a></a> y <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Video C<span class="span-resize-icon">&#8663;</span></a></a>. Yuri además tiene un blog y es editor de una revista sobre Forex trading.</li>
+
+          <li><a target="_blank" href="https://www.youtube.com/c/CanalTrader/videos">Canal Trader <span class="span-resize-icon">&#8663;</span></a> Literalmente, un reality show de traders. Pero sin la cuestión de los dramas de todo reality, porque es educativo sobre todo. Hay muy buen material educativo en los videos.</li>
+          
+          <li><a target="_blank" href="https://www.youtube.com/c/TradingLatino/videos">Trading Latino <span class="span-resize-icon">&#8663;</span></a> En mi opinión este canal no está tan bueno, pero da una muy buena idea de lo que es operar en trading de criptomonedas. Y semanalmente hace muchas transmisiones en vivo, así que pueden ir y hacerle preguntas. Recomendado de todas formas.</li>
         </ul>
       </article>
 
-      <h3 id="scenarios">Scenarios</h3>
+      <!-- ENG -->
+      <article>
+        <h3>En inglés</h3>
+        <ul>
+          <li><a target="_blank" href="https://www.youtube.com/user/tradingwithrayner/videos">Rayner Teo <span class="span-resize-icon">&#8663;</span></a> Un canal abundante en videos de calidad e ideas. De lo mejor que hay en YouTube sobre trading.</li>
+          
+          <li><a target="_blank" href="https://www.youtube.com/c/TheSecretMindset/videos">The Secret Mindset <span class="span-resize-icon">&#8663;</span></a> Videos de altísima calidad, para aprender sobre indicadores, estrategias y otros temas de gran relevancia en el trading en general. Súper-muy-recomendado.</li>
+
+          <li><a target="_blank" href="https://www.youtube.com/c/TRADINGRUSH/videos">Trading Rush <span class="span-resize-icon">&#8663;</span></a> Muchas estrategias (toneladas, diría). Lo interesante de las estrategias que presenta es que las testea 100 veces para hacer un juicio sobre la calidad de la estrategia. Recomendado.</li>
+          
+          <li><a target="_blank" href="https://www.youtube.com/c/HumbledTrader/videos">Humble Trader <span class="span-resize-icon">&#8663;</span></a> Mujer trader que habla de temas en general de trading. Es muy buena. Tiene grandes ideas sobre el trading. Además es muy simpática, le pone toda la onda a los videos.</li>
+
+          <li><a target="_blank" href="https://www.youtube.com/channel/UCviqt5aaucA1jP3qFmorZLQ/videos">Crypto Jebb <span class="span-resize-icon">&#8663;</span></a> Buena info sobre criptos y trading. Videos de calidad, entretenido. El conductor hace buenos análisis hacia la mitad de los videos. Al final y al comienzo de los videos hace muchos comentarios de distinto tipo, muchas veces relevantes, otras no.</li>    
+        </ul>
+      </article>
+    </section>
+
+     <!-- Herramientas, exchanges, brokers -->
+    <section class="section-style">
+      <h2 id="at-herramientas">Herramientas básicas de AT y exchanges/brokers</h2>
+
+      <!-- Herramientas -->
+      <article>
+        <h3 id="at-herramientasAT">Herramientas</h3>
+        <ul>
+          <li><a target="_blank" href="https://www.tradingview.com/"> TradingView<span class="span-resize-icon">&#8663;</span></a> Acá vas a poder ver gráficas de Bitcoin y realizar tu análisis técnico. La página es muy amplia y tiene muchas características. La versión gratuita es bastante buena. En mi opinión, el mejor servicio. Da la posibilidad de hacer papertrading, que sería hacer trading de práctica con dinero virtual. Lo mejor es que no hay límite para la cantidad de veces que podés practicar (backtesting).</li>
+          <li><a target="_blank" href="https://gocharting.com/"> GoCharting <span class="span-resize-icon">&#8663;</span></a> Una alternativa más que interesante a TradingView. Ofrece gratuitamente algunas características que en TV son pagas.</li>
+          <li> Otras herramientas similares son: ForexTester (usado según sé para backtesting), MetaTrader, NinjaTrader y <a href="https://www.investopedia.com/articles/active-trading/121014/best-technical-analysis-trading-software.asp">otros<span class="span-resize-icon">&#8663;</span></a></a>.</li>
+        </ul>
+
+      </article>
+
+      <!-- Exchanges -->
+      <article>
+        <h3 id="at-exchanges">Exchanges</h3>
+        <ul>
+          <li><a target="_blank" href="https://www.satoshitango.com/es-AR/">SatoshiTango<span class="span-resize-icon">&#8663;</span></a> (Argentina) Casa de cambio de Argentina, servicio muy completo, confiable y diligente. Hay más exchanges en Argentina, pero solo voy a mencionar éste que es el con el cual tengo más experiencia y satisfacción en el servicio.</li>
+          <li>También tené presente que siempre podés comprar criptos usando servicios P2P (de manera particular o utilizando algún proveedor de ese servicio, como <a href="https://localbitcoins.com/es/">LocalBitcoins<span class="span-resize-icon">&#8663;</span></a></a>, <a href="https://paxful.com/">Paxful<span class="span-resize-icon">&#8663;</span></a></a>, <a href="https://hodlhodl.com/">HodlHodl<span class="span-resize-icon">&#8663;</span></a></a> u otros.</li>
+        </ul>
+      </article>
+
+      <!-- Brokers -->
+      <article>
+        <h3 id="at-brokers">Brokers</h3>
+        <p>Hay muchísimos brokers para  elegir, solo voy a mencionar los que conozco mejor. <a target="_blank" href="https://coinmarketcap.com/rankings/exchanges/">Acá<span class="span-resize-icon">&#8663;</span></a> se puede encontrar un listado mucho más completo.</p>
+        <ul>
+          <li><a target="_blank" href="https://www.binance.com/es">Binance<span class="span-resize-icon">&#8663;</span></a> (Internacional) Broker con una amplia oferta de criptomonedas, y mucha liquidez. La plataforma está bastante buena, aunque no es perfecta. Tiene un testnet pero solo para futuros (lamentablemente).</li>
+          <li><a target="_blank" href="https://www.bitmex.com/">BitMex<span class="span-resize-icon">&#8663;</span></a> (Internacional) Gran broker, no se tradea con USD (ó cualquier divisa fiat o stablecoin) sino con contratos perpetuos. Tiene testnet. Es de uso difícil para novatos.</li>
+          <li><a target="_blank" href="https://www.bitstamp.net/">Bitstamp<span class="span-resize-icon">&#8663;</span></a> (Internacional) Uno de los broker cripto más viejos. La plataforma está bastante bien. No tiene testnet que yo sepa.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Educacion -->
+    <section class="section-style">
+      <h2 id="at-educacion">Academias e institutos de trading, online y presenciales</h2>
       <ul>
-        <li>What is the best transportation I can use to travel quickly through the island?</li>
-        <li>We are two people. What can I use to move us to the most touristic points in the island?</li>
-        <li>I like adventure! Me and my (family) boys are here looking for danger!</li>
-        <li>Me and my retired wife are not really good using technology. How can I get in touch with your rental services?</li>
-        <li>Do you have options for big families?</li>
+        <li><a target="_blank" href="https://icbargentina.com/"> ICB - Instituto de Capacitación Bursátil<span class="span-resize-icon">&#8663;</span></a> (Argentina) Ofrecen cursos bastante completos sobre distintos temas de inversión y trading. Yo tomé el curso de IBUR. No fue la gran cosa el curso, pero para algo introductorio de 18hs cátedra, estuvo bastante bien, y la bibliografía que me proveyeron fue muy buena. Tienen cursos en FOREX y otros. Recomiendo le peguen una mirada al contenido de los cursos.</li>
       </ul>
     </section>
 
+    <!-- Social -->
     <section class="section-style">
-      <h2 id="site-map">Site Map</h2>
-      <picture>
-        <img src="images/sitemap.png" alt="Sitemap" class="bigger-image">
-      </picture>
-    </section>
-
-    <section class="section-style">
-      <h2 id="color-scheme">Color Scheme</h2>
-      <p>Palette URL: <a href="https://coolors.co/9df6e6-f7ab34-2bbed8-0770b5-8bc541" target="_blank">https://coolors.co/9df6e6-f7ab34-2bbed8-0770b5-8bc541</a></p>
-
-      <picture>
-        <img class="color-palette" src="images/palette.png" alt="Color Palette.">
-      </picture>
-
-
-    </section>
-
-    <section class="section-style">
-      <h2 id="typography">Typography</h2>
-
+      <h2 id="at-social">Redes sociales</h2>
       <ul>
-        <li><span class="span-bold">Heading font:</span> Poly, serif. <span class="span-resize-icon"><a href="https://fonts.google.com/specimen/Poly?selection.family=Poly:ital@0;1&sidebar.open#license" target="_blank" title="Links to external site.">&#8663;</a></span></li>
-        <li><span class="span-bold">Paragraph font:</span> Open Sans.</li>
-      </ul>
-
-      <table>
-        <tr>
-          <td>Heading</td>
-          <td>Normal</td>
-          <td class="span-header-font">This is a sample header text.</td>
-        </tr>
-        <tr>
-          <td>Heading</td>
-          <td>Italic</td>
-          <td class="span-italic span-header-font">This is a sample italic header text.</td>
-        </tr>
-        <tr>
-          <td>Heading</td>
-          <td>Bold</td>
-          <td class="span-bold span-header-font">This is a sample italic header text.</td>
-        </tr>
-        <tr>
-          <td>Paragraph</td>
-          <td>Normal</td>
-          <td>This is a sample paragraph text.</td>
-        </tr>
-        <tr>
-          <td>Paragraph</td>
-          <td>Italic</td>
-          <td class="span-italic">This is a sample italic paragraph text.</td>
-        </tr>
-        <tr>
-          <td>Paragraph</td>
-          <td>Bold</td>
-          <td class="span-bold">This is a sample italic paragraph text.</td>
-        </tr>
-      </table>
-      <ul>
-        <li>Normal paragraph font is used wherever heading tags from h1 to h6 are not used.</li>
-        <li>Italic and bold variations of heading and paragraph types are used whenever necessary.</li>
-      </ul>
-    </section>
-
-    <section class="section-style">
-      <h2 id="wireframe-sketches">Wireframe Sketches</h2>
-      <ul>
-        <li><a target="_blank" href="images/wireframe-small.jpg" title="Links to external site.">Small Screen Size: Smartphones <span class="span-resize-icon">&#8663;</span></a></li>
-        <li><a target="_blank" href="images/wireframe-medium.jpg" title="Links to external site.">Medium Screen Size: Tablets <span class="span-resize-icon">&#8663;</span></a></li>
-        <li><a target="_blank" href="images/wireframe-large.jpg" title="Links to external site.">Large Screen Size: Monitors <span class="span-resize-icon">&#8663;</span></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/groups/ATBitcoinArg/"> Bitcoin Argentina Análisis Técnico <span class="span-resize-icon">&#8663;</span></a> Grupo de Facebook que ya debés de conocer.</li>
+        <li><a target="_blank" href="https://foro.btcarg.com.ar/"> Foro BTCArg <span class="span-resize-icon">&#8663;</span></a> No puedo decir mucho sobre este foro porque no he participado, pero recomiendo pegarse una vuelta.</li>
+        <li><a target="_blank" href="https://cointelegraph.com/bitcoin-for-beginners/where-to-discuss-bitcoin"> Varios lugares dónde hablar sobre Bitcoin<span class="span-resize-icon">&#8663;</span></a> Pasen y vean, en realidad no he hecho una selección sobre todos estos enlaces.</li>
       </ul>
     </section>
   </main>
+  </main>
+
+
 
   <footer>
     <p> &copy; 2020 | Carlos W. Mercado | Neuquén, Argentina</p>
@@ -197,6 +215,7 @@
   </footer>
   <!-- This script is for updating the current date -->
   <script src="js/script.js"> </script>
-  
+
 </body>
+
 </html>
