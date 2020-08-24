@@ -114,6 +114,11 @@ section {
   padding: 1em 1em;
 }
 
+/* IDs */
+#navigation-container li {
+  // TODO
+}
+
 /* CLASSES */
 .current-page {
   color: $at4;
@@ -136,9 +141,7 @@ section {
 }
 
 .go-up {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
+  display: none;
   width: 3.5em;
   height: 2em;
   border-radius: 50px;

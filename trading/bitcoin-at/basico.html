@@ -12,8 +12,6 @@
 </head>
 
 <body>
-  <div class="go-up"><a href="#content">UP</a></div> <!-- ARROW -->
-
   <header>
     <picture>
       <source media="(min-width: 700px)" srcset="img/cover-large1.png">
@@ -29,7 +27,7 @@
 
     <nav class="navigation">
       <ul class="navigation-container">
-        <button>&#8801;</button>
+        <button onclick="toggleMenu()">&#8801;</button>
         <li><a href="index.html" class="">Inicio</a></li>
         <li><a href="basico.html" class="current-page">Básico</a></li>
         <li><a href="intermedio.html" class="">Intermedio</a></li>
@@ -46,7 +44,7 @@
     </section>
 
     <section class="section-style">
-      <h2>Nivel básico</h2>
+      <h2 id="content">Nivel básico</h2>
       <ol>
         <li><a href="#at-intro" title="Enlace a la sección correspondiente.">Brevísima introducción al análisis técnico &#128279;</a></li>
         <li><a href="#at-lectura" title="Enlace a la sección correspondiente.">Lecturas on-line &#128279;</a></li>
@@ -61,7 +59,9 @@
         <li><a href="#at-educacion" title="Enlace a la sección correspondiente."> Academias e institutos de trading, online y presenciales &#128279;</a></li>
         <li><a href="#at-social" title="Enlace a la sección correspondiente."> Redes sociales &#128279;</a></li>
       </ol>
+      <div class="go-up"><a href="#content">Index</a></div> <!-- ARROW -->
     </section>
+    
 
     <!-- Introducción -->
     <section class="section-style">
@@ -164,7 +164,7 @@
       <!-- Brokers -->
       <article>
         <h3 id="at-brokers">Brokers</h3>
-        <p>Hay muchísimos brokers para  elegir, solo voy a mencionar los que conozco mejor. <a target="_blank" href="https://coinmarketcap.com/rankings/exchanges/">Acá<span class="span-resize-icon">&#8663;</span></a> se puede encontrar un listado mucho más completo.</p>
+        <p>Hay muchísimos brokers para  elegir, solo voy a mencionar los que conozco mejor. <a target="_blank" href="https://coinmarketcap.com/rankings/exchanges/" class="link-black">Acá<span class="span-resize-icon">&#8663;</span></a> se puede encontrar un listado mucho más completo.</p>
         <ul>
           <li><a target="_blank" href="https://www.binance.com/es">Binance<span class="span-resize-icon">&#8663;</span></a> (Internacional) Broker con una amplia oferta de criptomonedas, y mucha liquidez. La plataforma está bastante buena, aunque no es perfecta. Tiene un testnet pero solo para futuros (lamentablemente).</li>
           <li><a target="_blank" href="https://www.bitstamp.net/">Bitstamp<span class="span-resize-icon">&#8663;</span></a> (Internacional) Uno de los broker cripto más viejos. La plataforma está bastante bien. No tiene testnet que yo sepa.</li>

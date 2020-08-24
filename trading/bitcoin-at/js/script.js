@@ -16,3 +16,8 @@ let local = date.toLocaleDateString('en-US'. options);
 let fullDate = `${local} ${hours}:${minutes}:${seconds}`;
 
 document.getElementById('currentDate').textContent = fullDate;
+
+// TOGGLE MENU
+function toggleMenu() {
+  document.getElementById('navigation-container').classList.toggle('hide');
+}

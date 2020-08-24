@@ -479,6 +479,7 @@ section {
   margin: 0;
   padding: 1em 1em; }
 
+/* IDs */
 /* CLASSES */
 .current-page {
   color: #fcae42; }
@@ -496,9 +497,7 @@ section {
   font-size: 1.5em; }
 
 .go-up {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
+  display: none;
   width: 3.5em;
   height: 2em;
   border-radius: 50px;
@@ -557,7 +556,13 @@ section {
           padding: 0.5em 0; }
 
   section {
-    padding: 1.6em; } }
+    padding: 1.6em; }
+
+  .go-up {
+    display: block;
+    position: fixed;
+    left: 85%;
+    top: 20px; } }
 @media only screen and (min-width: 1028px) and (min-width: 60em) {
   header, footer {
     width: 950px;

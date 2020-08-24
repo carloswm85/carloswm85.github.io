@@ -12,8 +12,6 @@
 </head>
 
 <body>
-  <div class="go-up"><a href="#content">UP</a></div> <!-- ARROW -->
-
   <header>
     <picture>
       <source media="(min-width: 700px)" srcset="img/cover-large1.png">
@@ -29,7 +27,7 @@
 
     <nav class="navigation">
       <ul class="navigation-container">
-        <button>&#8801;</button>
+        <button onclick="toggleMenu()">&#8801;</button>
         <li><a href="index.html" class="">Inicio</a></li>
         <li><a href="basico.html" class="">Básico</a></li>
         <li><a href="intermedio.html" class="">Intermedio</a></li>
@@ -44,9 +42,86 @@
     <section class="section-style">
       <img src="img/under-construction.jpg" alt="Página bajo construcción.">
     </section>
+
+    <section class="section-style">
+      <h2 id="content">Nivel avanzado</h2>
+      <ol>
+        <li><a href="#at-lectura" title="Enlace a la sección correspondiente.">Lecturas on-line &#128279;</a></li>
+        <li><a href="#at-youtube" title="Enlace a la sección correspondiente."> Canales de YouTube recomendados &#128279;</a></li>
+        <li><a href="#at-herramientas" title="Enlace a la sección correspondiente.">Herramientas de AT y brokers &#128279;</a>
+          <ul>
+            <li><a href="#at-herramientasAT">Herramientas &#128279;</a></li>
+            <li><a href="#at-brokers">Brokers &#128279;</a></li>
+          </ul>
+        </li>
+      </ol>
+      <div class="go-up"><a href="#content">Index</a></div> <!-- ARROW -->
+    </section>
+
+    <!-- Lecturas -->
+    <section class="section-style">
+      <h2 id="at-lectura">1. Lecturas on-line</h2>
+      <p>Cursos, blogs, etc.</p>
+      <!-- SPA -->
+      <article>
+        <h3>En español</h3>
+        <ul>
+          <li><a target="_blank" href="#"><span class="span-resize-icon">&#8663;</span></a> </li>
+        </ul>
+      </article>
+
+      <!-- ENG -->
+      <article>
+        <h3>En inglés</h3>
+        <ul>
+          <li><a target="_blank" href="#"><span class="span-resize-icon">&#8663;</span></a> </
+        </ul>
+      </article>
+    </section>
+
+    <!-- YouTube -->
+    <section class="section-style">
+      <h2 id="at-youtube">2. Canales de YouTube recomendados</h2>
+
+      <!-- SPA -->
+      <article>
+        <h3>En español</h3>        
+        <ul>
+          <li><a target="_blank" href="#"> <span class="span-resize-icon">&#8663;</span></a> </li>
+        </ul>
+      </article>
+
+      <!-- ENG -->
+      <article>
+        <h3>En inglés</h3>
+        <ul>
+          <li><a target="_blank" href="#"><span class="span-resize-icon">&#8663;</span></a> </
+        </ul>
+      </article>
+    </section>
+
+    <!-- Herramientas, exchanges, brokers -->
+    <section class="section-style">
+      <h2 id="at-herramientas">3. Herramientas de AT y brokers</h2>
+
+      <!-- Herramientas -->
+      <article>
+        <h3 id="at-herramientasAT">Herramientas</h3>
+        <ul>
+          <li><a target="_blank" href="#"><span class="span-resize-icon">&#8663;</span></a> </
+        </ul>
+
+      </article>
+
+      <!-- Brokers -->
+      <article>
+        <h3 id="at-brokers">Brokers</h3>
+        <ul>
+          <li><a target="_blank" href="#"><span class="span-resize-icon">&#8663;</span></a> </
+        </ul>
+      </article>
+    </section>
   </main>
-
-
 
   <footer>
     <p> <span class="span-bold">&copy; 2020 | Carlos W. Mercado | Argentina</span>
