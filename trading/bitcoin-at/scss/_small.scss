@@ -83,6 +83,7 @@ ul a, li a {
   color: black;
   font-weight: 700;
   line-height: 1.8em;
+  padding: 0.1em;
 }
 
 table {
@@ -157,6 +158,10 @@ section {
   }
 }
 
+.go-up:hover {
+  background-color: green;
+}
+
 .link-orange {
   color: white;
   padding: 0.1em;
@@ -164,4 +169,22 @@ section {
   background-color: $at4;
   font-weight: 700;
   text-decoration: none;
+}
+
+.link-orange:hover {
+  background-color: green;
+}
+
+.link-black, li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  line-height: 1.8em;
+  padding: 0.1em;
+}
+
+.link-black:hover, ol li a:hover, section ul li a:hover{
+  color: white;
+  background-color: green;
+  border-radius: 10%;
 }
