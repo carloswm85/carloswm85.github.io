@@ -30,6 +30,7 @@ body {
 }
 
 nav {
+  margin-top: 1em;
   ul {
     list-style-type: none;
     padding: 0;
@@ -74,9 +75,14 @@ main {
 }
 
 header, footer {
-  padding: 0;
   background-color: $at2;
   border: solid 1px black;
+  div {
+    margin-bottom: 1em;
+    p {
+      margin: 0.3em;
+    }
+  }
 }
 
 header p, footer p {
