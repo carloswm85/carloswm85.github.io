@@ -19,5 +19,5 @@ document.getElementById('currentDate').textContent = fullDate;
 
 // TOGGLE MENU
 function toggleMenu() {
-  document.getElementById('navigation-container').classList.toggle('hide');
+  document.getElementById('navigation-list').classList.toggle('hide-navigation-list');
 }

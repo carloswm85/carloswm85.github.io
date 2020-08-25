@@ -413,14 +413,8 @@ body {
 nav ul {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 0; }
-  nav ul button {
-    background-color: #4167b2;
-    padding: 0.5em;
-    border: solid 1px white;
-    width: 100%;
-    color: #dcdeea;
-    font-size: 2em; }
+  margin-bottom: 0;
+  margin-top: 0; }
   nav ul li {
     border: solid 1px white;
     text-align: center;
@@ -434,6 +428,18 @@ nav ul {
     nav ul li a:hover {
       background-color: #eaebef;
       color: #4167b2; }
+
+.navigation-button {
+  background-color: #4167b2;
+  padding: 0.5em;
+  border: solid 1px white;
+  width: 100%;
+  color: #dcdeea;
+  font-size: 2em; }
+
+.navigation-button:hover {
+  background-color: #eaebef;
+  color: #4167b2; }
 
 main {
   max-width: 950px;
@@ -474,7 +480,7 @@ img {
   margin: 0 auto; }
 
 section {
-  border-top: black dashed 2px;
+  border-top: solid 2px rgba(0, 0, 0, 0.3);
   background-color: #cdccd2;
   margin: 0;
   padding: 1em 1em; }
@@ -483,6 +489,9 @@ section {
 /* CLASSES */
 .current-page {
   color: #fcae42; }
+
+.hide-navigation-list {
+  display: none; }
 
 .span-bold {
   font-weight: bold; }
@@ -547,13 +556,14 @@ section {
     max-width: 950px; }
     nav button {
       display: none; }
-    nav ul {
-      display: flex;
-      justify-content: space-around; }
-      nav ul li {
-        flex-grow: 1; }
-        nav ul li a {
-          padding: 0.5em 0; }
+
+  #navigation-list {
+    display: flex;
+    justify-content: space-around; }
+    #navigation-list li {
+      flex-grow: 1; }
+      #navigation-list li a {
+        padding: 0.5em 0; }
 
   section {
     padding: 1.6em; }

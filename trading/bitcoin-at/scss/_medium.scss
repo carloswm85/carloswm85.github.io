@@ -6,14 +6,15 @@
 		button {
 			display: none;
 		}
-		ul {
-			display: flex;
-			justify-content: space-around;
-			li {
-				flex-grow: 1;
-				a {
-					padding: 0.5em 0;
-				}
+	}
+
+	#navigation-list {
+		display: flex;
+		justify-content: space-around;
+		li {
+			flex-grow: 1;
+			a {
+				padding: 0.5em 0;
 			}
 		}
 	}
