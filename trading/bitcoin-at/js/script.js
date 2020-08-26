@@ -30,27 +30,45 @@ fetch(requestURL)
     return response.json();
   })
   .then(function (jsonObject) {
-	const prophets = jsonObject['prophets'];
-	console.table(jsonObject);  // temporary checking for valid response and data parsing
-	for (let i = 0; i < prophets.length; i++ ) {
-		let card = document.createElement('section');
-		let h2 = document.createElement('h2');
-		let p1 = document.createElement('p');
-		let p2 = document.createElement('p');
-		let image = document.createElement('img');
-
-		h2.textContent = prophets[i].name + ' ' + prophets[i].lastname;
-		p1.textContent = 'Date of Birth: ' + prophets[i].birthdate;
-		p2.textContent = 'Place of Birth: ' + prophets[i].birthplace;
-		image.setAttribute('alt', prophets[i].name + ' ' + prophets[i].lastname + ' - ' + prophets[i].order);
-		image.setAttribute('src', prophets[i].imageurl);
-		
-		card.appendChild(h2);
-		card.appendChild(p1);
-		card.appendChild(p2);
-		card.appendChild(image);
-
-		document.querySelector('div.cards').appendChild(card);
-	}
-  });
+    const books = jsonObject['books'];
+    console.table(jsonObject);  // temporary checking for valid response and data parsing
+    for (let i = 0; i < books.length; i++ ) {
+      let card = document.createElement('article');
+      let image = document.createElement('img');
+      let h3 = document.createElement('h3');
+      let p1 = document.createElement('p');
+      let p2 = document.createElement('p');
+      let p3 = document.createElement('p');
+      let p4 = document.createElement('p');
+      let p5 = document.createElement('p');
+      let p6 = document.createElement('p');
+      let p7 = document.createElement('p');
+      let p8 = document.createElement('p');
+      
+      image.setAttribute('alt', books[i].name + ', escrito por ' + books[i].author);
+      image.setAttribute('src', books[i].cover);
+      h3.textContent = 'Nombre: ' + books[i].name;
+      p1.textContent = 'Autor: ' + books[i].author;
+      p2.textContent = 'Idiomas disponibles: ' + books[i].language;
+      p3.textContent = 'Notas: ' + books[i].notes;
+      p4.textContent = 'Amazon: ' + books[i].amazon;
+      p5.textContent = 'Google: ' + books[i].google;
+      p6.textContent = 'YouTube: ' + books[i].youtube;
+      p7.textContent = 'Sitio oficial: ' + books[i].site;
+      p8.textContent = 'Descarga: ' + books[i].download;
+            
+      card.appendChild(image);
+      card.appendChild(h3);
+      card.appendChild(p1);
+      card.appendChild(p2);
+      card.appendChild(p3);
+      card.appendChild(p4);
+      card.appendChild(p5);
+      card.appendChild(p6);
+      card.appendChild(p7);
+      card.appendChild(p8);
+      
+		  document.querySelector('section.books').appendChild(card);
+	  }
+});
 

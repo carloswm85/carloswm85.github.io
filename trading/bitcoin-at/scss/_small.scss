@@ -120,11 +120,19 @@ img {
   margin: 0 auto;
 }
 
-section {
-  border-top: solid 2px rgba($color: #000000, $alpha: 0.3);
+section, article {
+  border-bottom: solid 2px rgba($color: #000000, $alpha: 0.3);
   background-color: $at3;
   margin: 0;
   padding: 1em 1em;
+}
+
+.border-top {
+  border-top: solid 2px rgba($color: #000000, $alpha: 0.3);
+}
+
+div {
+  background-color: $at2;
 }
 
 /* IDs */
@@ -155,9 +163,9 @@ section {
   font-size: 1.5em;
 }
 
-.go-up {
+#go-up {
   display: none;
-  width: 3.5em;
+  width: 3.8em;
   height: 2em;
   border-radius: 50px;
   text-align: center;
@@ -176,7 +184,7 @@ section {
   }
 }
 
-.go-up:hover {
+#go-up:hover {
   background-color: green;
 }
 
