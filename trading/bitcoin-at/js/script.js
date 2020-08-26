@@ -23,7 +23,7 @@ function toggleMenu() {
 }
 
 // JSON BOOKS
-const requestURL = 'https://byui-cit230.github.io/lessons/lesson-09/data/latter-day-prophets.json';
+const requestURL = 'https://carloswm85.github.io/trading/bitcoin-at/data/libros.json';
 
 fetch(requestURL)
   .then(function (response) {
