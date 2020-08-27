@@ -1,40 +1,43 @@
 {
 	"books": [
 		{
-			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book1-large.jpg",
-			"name": "Technical Analysis of the Financial Markets",
-			"author": "John J. Murphy",
-			"language": "Inglés y español",
-			"notes": "Disponible en impreso, pdf y kindle. Tiene una guía de estudio aparte.",
-			"amazon": "https://www.amazon.com/s?k=technical+analysis+of+the+financial+markets+john+murphy",
-			"google": "https://www.google.com/search?client=firefox-b-d&q=technical+analysis+of+financial+markets+john+murphy",
-			"youtube": null,
-			"site": null,
-			"download": null
+			"Cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book1-large.jpg",
+			"Nombre": "Technical Analysis of the Financial Markets, A Comprehensive Guide to the Trading Methods and Applications",
+			"Autor": "John J. Murphy",
+			"Idioma": "Inglés y español",
+			"Nota": "Disponible en impreso, pdf y kindle. Tiene una guía de estudio aparte.",
+			"Amazon": "https://www.amazon.com/s?k=technical+analysis+of+the+financial+markets+john+murphy",
+			"Google": "https://www.google.com/search?client=firefox-b-d&q=technical+analysis+of+financial+markets+john+murphy",
+			"YouTube": null,
+			"Sitio": null,
+			"Descarga": null,
+			"Cita": "Trading system development is part art, part science, and part common sense. Our goal IS NOT to develop a system that achieves the highest returns using historical data, but to formulate a sound concept that has performed reasonably well in the past and can be expected to continue to perform reasonably well in the future."
 		},
 		{
-			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book2-large.jpg",
-			"name": "Volumen Profile, The Insider's Guide to Trading",
-			"author": "Trader Dale",
-			"language": "Inglés y español",
-			"notes": "Disponible en impreso, pdf y kindle.",
-			"amazon": "https://www.amazon.com/Trader-Dale/e/B07G9D1H4J",
-			"google": "https://www.google.com/search?q=trader+dale+volume+profile",
-			"youtube": "https://www.youtube.com/channel/UC1_SoqTCXaM8kk0SxkAyhcQ",
-			"site": "https://www.trader-dale.com/",
-			"download": null
+			"Cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book2-large.jpg",
+			"Nombre": "Volumen Profile, The Insider's Guide to Trading",
+			"Autor": "Trader Dale",
+			"Idioma": "Inglés y español",
+			"Nota": "Disponible en impreso, pdf y kindle.",
+			"Amazon": "https://www.amazon.com/Trader-Dale/e/B07G9D1H4J",
+			"Google": "https://www.google.com/search?q=trader+dale+volume+profile",
+			"YouTube": "https://www.youtube.com/channel/UC1_SoqTCXaM8kk0SxkAyhcQ",
+			"Sitio": "https://www.trader-dale.com/",
+			"Descarga": null,
+			"Cita": null
 		},
 		{
-			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book3-large.jpg",
-			"name": "The Candlestick Trading Bible",
-			"author": "Desconocido",
-			"language": "Inglés",
-			"notes": null,
-			"amazon": null,
-			"google": "https://www.google.com/search?client=firefox-b-d&q=candle+stick+trading+bible",
-			"youtube": null,
-			"site": null,
-			"download": null
+			"Cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book3-large.jpg",
+			"Nombre": "The Candlestick Trading Bible",
+			"Autor": "Desconocido",
+			"Idioma": "Inglés",
+			"Nota": null,
+			"Amazon": null,
+			"Google": "https://www.google.com/search?client=firefox-b-d&q=candle+stick+trading+bible",
+			"YouTube": null,
+			"Sitio": null,
+			"Descarga": null,
+			"Cita": null
 		}
 	]
 }

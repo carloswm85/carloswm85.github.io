@@ -31,11 +31,11 @@ fetch(requestURL)
   })
   .then(function (jsonObject) {
     const books = jsonObject['books'];
-    console.table(jsonObject);  // temporary checking for valid response and data parsing
+    console.table(jsonObject); // temporary checking for valid response and data parsing
     for (let i = 0; i < books.length; i++ ) {
       let card = document.createElement('article');
       let image = document.createElement('img');
-      let h3 = document.createElement('h3');
+      let p0 = document.createElement('p');
       let p1 = document.createElement('p');
       let p2 = document.createElement('p');
       let p3 = document.createElement('p');
@@ -44,11 +44,21 @@ fetch(requestURL)
       let p6 = document.createElement('p');
       let p7 = document.createElement('p');
       let p8 = document.createElement('p');
+      let span = document.createElement('span');
+      span.classList.add('span-bold');
       
       image.setAttribute('alt', books[i].name + ', escrito por ' + books[i].author);
       image.setAttribute('src', books[i].cover);
-      h3.textContent = 'Nombre: ' + books[i].name;
+      card.appendChild(image);
+
+      p0.textContent = 'Nombre: ' + books[i].name;
+      span.appendChild(p0);
+      card.appendChild(span);
+
       p1.textContent = 'Autor: ' + books[i].author;
+      span.appendChild(p1);
+      card.appendChild(span);
+
       p2.textContent = 'Idiomas disponibles: ' + books[i].language;
       p3.textContent = 'Notas: ' + books[i].notes;
       p4.textContent = 'Amazon: ' + books[i].amazon;
@@ -57,8 +67,8 @@ fetch(requestURL)
       p7.textContent = 'Sitio oficial: ' + books[i].site;
       p8.textContent = 'Descarga: ' + books[i].download;
             
-      card.appendChild(image);
-      card.appendChild(h3);
+      
+      
       card.appendChild(p1);
       card.appendChild(p2);
       card.appendChild(p3);
