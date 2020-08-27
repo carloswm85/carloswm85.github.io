@@ -1,7 +1,7 @@
 {
 	"books": [
 		{
-			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book1.jpg",
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/technical-analysis.jpg",
 			"data": {
 				"Nombre": "Technical Analysis of the Financial Markets, A Comprehensive Guide to the Trading Methods and Applications",
 				"Autor": "John J. Murphy",
@@ -18,7 +18,7 @@
 			}
 		},
 		{
-			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book2.jpg",
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/volume-profile.jpg",
 			"data": {
 				"Nombre": "Volumen Profile, The Insider's Guide to Trading",
 				"Autor": "Trader Dale",
@@ -35,7 +35,7 @@
 			}	
 		},
 		{
-			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book3.jpg",
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/candlestick-bible.jpg",
 			"data": {
 				"Nombre": "The Candlestick Trading Bible",
 				"Autor": "Desconocido",
@@ -52,7 +52,7 @@
 			}			
 		},
 		{
-			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book4.jpg",
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/market-wizards.jpg",
 			"data": {
 				"Nombre": "Market Wizards: Interviews with Top Traders",
 				"Autor": "Jack D. Schwager",
