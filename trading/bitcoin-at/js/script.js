@@ -37,6 +37,7 @@ fetch(requestURL)
     for (let i = 0; i < books.length; i++ ) {
       let card = document.createElement('article');
       let image = document.createElement('img');
+      card.classList.add('clearfix');
       
       image.setAttribute('alt', '"' + books[i].data["Nombre"] + '"' + ', escrito por ' + books[i].data["Autor"] + ".");
       image.setAttribute('src', books[i].cover);

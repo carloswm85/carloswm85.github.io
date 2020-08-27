@@ -234,3 +234,12 @@ article {
     margin-bottom: 0.5em;
   }
 }
+
+.clearfix:after {
+  content: "."; 
+  visibility: hidden; 
+  display: block; 
+  height: 0; 
+  clear: both;
+}
+// This snippet of code is added to the parent element.
