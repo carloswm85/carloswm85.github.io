@@ -31,8 +31,9 @@ fetch(requestURL)
   })
   .then(function (jsonObject) {
     const books = jsonObject['books'];
-    console.table(jsonObject); // temporary checking for valid response and data parsing
-    for (let i = 0; i < books.length; i++ ) {
+    //console.table(jsonObject); // temporary checking for valid response and data parsing
+    
+    /*for (let i = 0; i < books.length; i++ ) {
       let card = document.createElement('article');
       let image = document.createElement('img');
       let p0 = document.createElement('p');
@@ -79,6 +80,30 @@ fetch(requestURL)
       card.appendChild(p8);
       
 		  document.querySelector('section.books').appendChild(card);
-	  }
+    }*/
+    
+    for (let i = 0; i < books.length; i++ ) {
+      let card = document.createElement('article');
+      let image = document.createElement('img');
+      
+      image.setAttribute('alt', books[i].Nombre + ', escrito por ' + books[i].Autor);
+      image.setAttribute('src', books[i].Cover);
+      card.appendChild(image);
+
+      for (data in books[i]) {
+        let b = books[i];
+        let span = document.createElement('span');
+        span.classList.add('span-bold');
+        span.textContent = data;
+
+        let p = document.createElement('p');
+        p.appendChild(span);
+        p.append(': ' + b[data]);
+        
+
+        card.appendChild(p);
+      }
+      document.querySelector('section.books').appendChild(card);
+    }
 });
 

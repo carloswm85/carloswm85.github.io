@@ -1,17 +1,21 @@
 {
 	"books": [
 		{
-			"Cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book1-large.jpg",
-			"Nombre": "Technical Analysis of the Financial Markets, A Comprehensive Guide to the Trading Methods and Applications",
-			"Autor": "John J. Murphy",
-			"Idioma": "Inglés y español",
-			"Nota": "Disponible en impreso, pdf y kindle. Tiene una guía de estudio aparte.",
-			"Amazon": "https://www.amazon.com/s?k=technical+analysis+of+the+financial+markets+john+murphy",
-			"Google": "https://www.google.com/search?client=firefox-b-d&q=technical+analysis+of+financial+markets+john+murphy",
-			"YouTube": null,
-			"Sitio": null,
-			"Descarga": null,
-			"Cita": "Trading system development is part art, part science, and part common sense. Our goal IS NOT to develop a system that achieves the highest returns using historical data, but to formulate a sound concept that has performed reasonably well in the past and can be expected to continue to perform reasonably well in the future."
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book1-large.jpg",
+			"data": [{
+				"Nombre": "Technical Analysis of the Financial Markets, A Comprehensive Guide to the Trading Methods and Applications",
+				"Autor": "John J. Murphy",
+				"Idioma": "Inglés y español",
+				"Nota": "Disponible en impreso, pdf y kindle. Tiene una guía de estudio aparte.",
+				"Cita": "Trading system development is part art, part science, and part common sense. Our goal IS NOT to develop a system that achieves the highest returns using historical data, but to formulate a sound concept that has performed reasonably well in the past and can be expected to continue to perform reasonably well in the future."
+			}],
+			"links": [{
+				"Amazon": "https://www.amazon.com/s?k=technical+analysis+of+the+financial+markets+john+murphy",
+				"Google": "https://www.google.com/search?client=firefox-b-d&q=technical+analysis+of+financial+markets+john+murphy",
+				"YouTube": null,
+				"Sitio": null,
+				"Descarga": null
+			}]			
 		},
 		{
 			"Cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book2-large.jpg",
