@@ -571,6 +571,10 @@ article {
   background-color: green;
   border-radius: 10%; }
 
+.books img {
+  width: 250px;
+  margin-bottom: 0.5em; }
+
 @media only screen and (min-width: 560px) and (min-width: 560px) {
   nav {
     margin: 0 auto;
@@ -593,7 +597,12 @@ article {
     display: block;
     position: fixed;
     left: 85%;
-    top: 20px; } }
+    top: 20px; }
+
+  .books img {
+    margin: 0.5em 1em 0.5em 0;
+    width: 200px;
+    float: left; } }
 @media only screen and (min-width: 1028px) and (min-width: 60em) {
   header, footer {
     width: 950px;
