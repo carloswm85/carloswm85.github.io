@@ -71,6 +71,7 @@ fetch(requestURL)
 
           let aTag = document.createElement('a');
           aTag.classList.add('link-black');
+          aTag.classList.add('link-slimed');
           aTag.textContent = "Enlace externo";
           aTag.setAttribute('href', b[key]);
           pTag.append(': ');

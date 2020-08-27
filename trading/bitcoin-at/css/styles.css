@@ -562,6 +562,10 @@ article {
   line-height: 1.8em;
   padding: 0.1em; }
 
+.link-slimed {
+  font-weight: 500;
+  font-style: oblique; }
+
 .link-black:hover, ol li a:hover, section ul li a:hover {
   color: white;
   background-color: green;
