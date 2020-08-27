@@ -86,23 +86,44 @@ fetch(requestURL)
       let card = document.createElement('article');
       let image = document.createElement('img');
       
-      image.setAttribute('alt', books[i].data[0] + ', escrito por ' + books[i].Autor);
-      image.setAttribute('src', books[i].scover);
+      image.setAttribute('alt', '"' + books[i].data["Nombre"] + '"' + ', escrito por ' + books[i].data["Autor"] + ".");
+      image.setAttribute('src', books[i].cover);
       card.appendChild(image);
 
-      for (data in books[i]) {
-        let b = books[i];
+      for (key in books[i].data) {
+        let b = books[i].data;
         let span = document.createElement('span');
         span.classList.add('span-bold');
-        span.textContent = data;
+        span.textContent = key;
 
         let p = document.createElement('p');
         p.appendChild(span);
-        p.append(': ' + b[data]);
-        
+        p.append(': ' + b[key]);
 
         card.appendChild(p);
       }
+
+      for (key in books[i].links) {
+        let b = books[i].links;
+        
+        if (b[key] != null) {
+          let spanTag = document.createElement('span');
+          spanTag.classList.add('span-bold');
+          spanTag.textContent = key;
+
+          let pTag = document.createElement('p');
+          pTag.appendChild(spanTag);
+
+          let aTag = document.createElement('a');
+          aTag.textContent = "Enlace externo";
+          aTag.setAttribute('href', b[key]);
+          pTag.append(': ');
+          pTag.appendChild(aTag);
+
+          card.appendChild(pTag);
+        }       
+      }
+
       document.querySelector('section.books').appendChild(card);
     }
 });

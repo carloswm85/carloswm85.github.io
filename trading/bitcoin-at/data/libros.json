@@ -5,7 +5,7 @@
 			"data": {
 				"Nombre": "Technical Analysis of the Financial Markets, A Comprehensive Guide to the Trading Methods and Applications",
 				"Autor": "John J. Murphy",
-				"Idioma": "Inglés y español",
+				"Idioma": "Inglés y español.",
 				"Nota": "Disponible en impreso, pdf y kindle. Tiene una guía de estudio aparte.",
 				"Cita": "Trading system development is part art, part science, and part common sense. Our goal IS NOT to develop a system that achieves the highest returns using historical data, but to formulate a sound concept that has performed reasonably well in the past and can be expected to continue to perform reasonably well in the future."
 			},
@@ -18,30 +18,38 @@
 			}
 		},
 		{
-			"Cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book2-large.jpg",
-			"Nombre": "Volumen Profile, The Insider's Guide to Trading",
-			"Autor": "Trader Dale",
-			"Idioma": "Inglés y español",
-			"Nota": "Disponible en impreso, pdf y kindle.",
-			"Amazon": "https://www.amazon.com/Trader-Dale/e/B07G9D1H4J",
-			"Google": "https://www.google.com/search?q=trader+dale+volume+profile",
-			"YouTube": "https://www.youtube.com/channel/UC1_SoqTCXaM8kk0SxkAyhcQ",
-			"Sitio": "https://www.trader-dale.com/",
-			"Descarga": null,
-			"Cita": null
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book2-large.jpg",
+			"data": {
+				"Nombre": "Volumen Profile, The Insider's Guide to Trading",
+				"Autor": "Trader Dale",
+				"Idioma": "Inglés y español",
+				"Nota": "Disponible en impreso, pdf y kindle.",
+				"Cita": null
+			},
+			"links": {
+				"Amazon": "https://www.amazon.com/Trader-Dale/e/B07G9D1H4J",
+				"Google": "https://www.google.com/search?q=trader+dale+volume+profile",
+				"YouTube": "https://www.youtube.com/channel/UC1_SoqTCXaM8kk0SxkAyhcQ",
+				"Sitio": "https://www.trader-dale.com/",
+				"Descarga": null
+			}	
 		},
 		{
-			"Cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book3-large.jpg",
-			"Nombre": "The Candlestick Trading Bible",
-			"Autor": "Desconocido",
-			"Idioma": "Inglés",
-			"Nota": null,
-			"Amazon": null,
-			"Google": "https://www.google.com/search?client=firefox-b-d&q=candle+stick+trading+bible",
-			"YouTube": null,
-			"Sitio": null,
-			"Descarga": null,
-			"Cita": null
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/book3-large.jpg",
+			"data": {
+				"Nombre": "The Candlestick Trading Bible",
+				"Autor": "Desconocido",
+				"Idioma": "Inglés",
+				"Nota": null,
+				"Cita": null
+			},
+			"links": {
+				"Amazon": null,
+				"Google": "https://www.google.com/search?client=firefox-b-d&q=candle+stick+trading+bible",
+				"YouTube": null,
+				"Sitio": null,
+				"Descarga": null
+			}			
 		}
 	]
 }
