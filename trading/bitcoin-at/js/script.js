@@ -86,8 +86,8 @@ fetch(requestURL)
       let card = document.createElement('article');
       let image = document.createElement('img');
       
-      image.setAttribute('alt', books[i].Nombre + ', escrito por ' + books[i].Autor);
-      image.setAttribute('src', books[i].Cover);
+      image.setAttribute('alt', books[i].data[0] + ', escrito por ' + books[i].Autor);
+      image.setAttribute('src', books[i].scover);
       card.appendChild(image);
 
       for (data in books[i]) {
