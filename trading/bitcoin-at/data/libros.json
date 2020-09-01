@@ -48,7 +48,7 @@
 				"Google": "https://www.google.com/search?client=firefox-b-d&q=candle+stick+trading+bible",
 				"YouTube": null,
 				"Sitio": null,
-				"Descarga": "https://carloswm85.github.io/trading/bitcoin-at/download/The%20Candlestick%20Trading%20Bible.pdf"
+				"Descarga": "https://carloswm85.github.io/trading/bitcoin-at/download/candlestick-trading-bible.pdf"
 			}			
 		},
 		{
@@ -66,6 +66,23 @@
 				"YouTube": "https://www.youtube.com/results?search_query=JACK+SCHWAGER",
 				"Sitio": null,
 				"Descarga": null
+			}			
+		}
+		{
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/art-of-war.jpg",
+			"data": {
+				"Nombre": "The Art of War",
+				"Autor": "Sun Tzu",
+				"Idioma": "Inglés y español",
+				"Nota": "Disponible en impreso, pdf y kindle.",
+				"Cita": null
+			},
+			"links": {
+				"Amazon": "https://www.amazon.com/s?k=art+of+war",
+				"Google": "https://www.google.com/search?client=firefox-b-d&q=art+of+war",
+				"YouTube": "https://www.youtube.com/results?search_query=art+of+war",
+				"Sitio": null,
+				"Descarga": "https://carloswm85.github.io/trading/bitcoin-at/download/art-of-war.pdf"
 			}			
 		}
 	]
