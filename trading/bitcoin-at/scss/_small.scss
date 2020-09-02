@@ -42,10 +42,16 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 1.2em;
-  font-family: $paragraph;
   div {
     margin: 1em auto;
+  }
+  p {
+    font-size: 1.2em;
+    font-family: $heading;
+    font-weight: 400;
+    .link-black {
+      font-weight: 400;
+    }
   }
 }
 
@@ -276,6 +282,9 @@ article {
   img {
     width: 250px;
     margin: 0.5em auto 1em auto;
+  }
+  div {
+    background-color: $at3;
   }
 }
 

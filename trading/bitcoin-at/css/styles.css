@@ -422,11 +422,15 @@ footer {
   padding: 1em 0;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  font-size: 1.2em;
-  font-family: "Roboto", sans-serif; }
+  text-align: center; }
   footer div {
     margin: 1em auto; }
+  footer p {
+    font-size: 1.2em;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400; }
+    footer p .link-black {
+      font-weight: 400; }
 
 .copyright-box {
   margin: 0; }
@@ -606,6 +610,8 @@ article {
   .traders img {
     width: 250px;
     margin: 0.5em auto 1em auto; }
+  .traders div {
+    background-color: #cdccd2; }
 
 .clearfix:after {
   content: ".";
@@ -669,12 +675,6 @@ article {
   section {
     padding: 1.6em; }
 
-  #go-up {
-    display: block;
-    position: fixed;
-    left: 20px;
-    top: 20px; }
-
   .section-first picture {
     margin: auto 1em; }
 
@@ -709,4 +709,10 @@ article {
     width: 950px; }
 
   section {
-    padding: 2.5em; } }
+    padding: 2.5em; }
+
+  #go-up {
+    display: block;
+    position: fixed;
+    left: 20px;
+    top: 20px; } }
