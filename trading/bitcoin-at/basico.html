@@ -24,13 +24,13 @@
     <nav class="navigation">
       <button onclick="toggleMenu()" class="navigation-button">&#8801;</button>
       <ul id="navigation-list" class="hide-navigation-list">        
-        <li><a href="index.html" class="">Inicio</a></li>
-        <li><a href="basico.html" class="current-page">Básico</a></li>
-        <li><a href="intermedio.html" class="">Intermedio</a></li>
-        <li><a href="avanzado.html" class="">Avanzado</a></li>
-        <li><a href="libros.html" class="">Libros</a></li>
-        <li><a href="webinars.html" class="">Webinars</a></li>
-        <li><a href="sobre.html" class="">Sobre</a></li>
+        <li><a href="index.html" class="">INICIO</a></li>
+        <li><a href="basico.html" class="current-page">BÁSICO</a></li>
+        <li><a href="intermedio.html" class="">INTERMEDIO</a></li>
+        <li><a href="avanzado.html" class="">AVANZADO</a></li>
+        <li><a href="libros.html" class="">LIBROS</a></li>
+        <li><a href="webinars.html" class="">WEBINARS</a></li>
+        <li><a href="sobre.html" class="">SOBRE</a></li>
       </ul>
     </nav>
   </header>
@@ -38,13 +38,17 @@
   <main>
     <a id="go-up" href="#content" title="Ir al contenido principal de la página.">Index</a> <!-- ARROW -->
 
-    <section class="section-first">
-      <img src="img/under-construction.jpg" alt="Página bajo construcción.">
+    <section class="section-first">      
+      <picture>
+        <source media="(min-width: 700px)" srcset="img/under-construction-large.png">
+        <source media="(min-width: 518px)" srcset="img/under-construction-medium.png">
+          <img src="img/under-construction-small.jpg" alt="Página bajo construcción.">
+      </picture>
     </section>
 
     <section>
       <h2 id="content">Nivel básico</h2>
-      <ol>
+      <ol class="indice">
         <li><a href="#at-intro" title="Enlace a la sección correspondiente.">Brevísima introducción al análisis técnico &#128279;</a></li>
         <li><a href="#at-lectura" title="Enlace a la sección correspondiente.">Lecturas on-line &#128279;</a></li>
         <li><a href="#at-youtube" title="Enlace a la sección correspondiente."> Canales de YouTube recomendados &#128279;</a></li>
@@ -188,12 +192,15 @@
       </ul>
     </section>
   </main>
-  
+
   <footer>
-    <div>
-      <p> <span class="span-bold">&copy; 2020 | Carlos W. Mercado | Argentina</span></p>
+    <div class="copyright-box">
+      <p> <span class="span-bold">&copy; 2020 | Carlos W. Mercado</span></p>
       <p>Last updated: <span id="currentDate"></span></p>
-      <p><a href="../../index.html" class="link-orange">Carlos' site</a></p>
+    </div>
+    <div class="logo-box">
+      <a href="https://www.facebook.com/groups/ATBitcoinArg/" target="_blank" class="link-black"><img class="logo" src="img/facebook-logo.svg" alt="Facebook logo. Link hacia Bitcoin AT Argentina."></a>
+      <p><a href="https://www.facebook.com/groups/ATBitcoinArg/" target="_blank" class="link-black">Bitcoin Argentina <br>Análisis Técnico</a></p>
     </div>
   </footer>
   <!-- This script is for updating the current date -->

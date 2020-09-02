@@ -24,12 +24,6 @@
       <source media="(min-width: 518px)" srcset="img/cover-768.jpg">
         <img src="img/cover-small.png" alt="Cover original de BTC Argentina Facebook, hecha por Sebastián Coria.">
     </picture>          
-    
-    <div>
-      <h1> Bitcoin Argentina Análisis Técnico:<br>Guía breve de estudio</h1>
-      <p>Por Carlos W. Mercado, agosto 2020 </p>
-      <p><a href="contacto.html" class="link-orange">Contacto y sugerencias</a></p>
-    </div>
 
     <nav class="navigation">
       <button onclick="toggleMenu()" class="navigation-button">&#8801;</button>
@@ -48,8 +42,12 @@
   <main>
     <a id="go-up" href="#content" title="Ir al contenido principal de la página.">Index</a> <!-- ARROW -->
     
-    <section class="border-top">
-      <img src="img/under-construction.jpg" alt="Página bajo construcción.">
+    <section class="section-first">      
+      <picture>
+        <source media="(min-width: 700px)" srcset="img/under-construction-large.png">
+        <source media="(min-width: 518px)" srcset="img/under-construction-medium.png">
+          <img src="img/under-construction-small.jpg" alt="Página bajo construcción.">
+      </picture>
     </section>
 
     <section id="content">
@@ -135,10 +133,13 @@
   </main>
 
   <footer>
-    <div>
-      <p> <span class="span-bold">&copy; 2020 | Carlos W. Mercado | Argentina</span></p>
+    <div class="copyright-box">
+      <p> <span class="span-bold">&copy; 2020 | Carlos W. Mercado</span></p>
       <p>Last updated: <span id="currentDate"></span></p>
-      <p><a href="../../index.html" class="link-orange">Carlos' site</a></p>
+    </div>
+    <div class="logo-box">
+      <a href="https://www.facebook.com/groups/ATBitcoinArg/" target="_blank" class="link-black"><img class="logo" src="img/facebook-logo.svg" alt="Facebook logo. Link hacia Bitcoin AT Argentina."></a>
+      <p><a href="https://www.facebook.com/groups/ATBitcoinArg/" target="_blank" class="link-black">Bitcoin Argentina <br>Análisis Técnico</a></p>
     </div>
   </footer>
   <!-- This script is for updating the current date -->
