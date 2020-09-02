@@ -1,8 +1,16 @@
 @media only screen and (min-width: 60em) {
 	header, footer {
 		width: 950px;
-		margin: 1em auto;
+		margin: 0 auto 1em auto;
 		border: none;
+	}
+
+	footer {
+		margin: 1em auto 0 auto;
+		font-size: 1.1em;
+		line-height: 1.8em;
+		height: 150px;
+		padding: 0.5em;
 	}
 
 	h2 {
@@ -17,10 +25,5 @@
 		padding: 2.5em;
 	}
 
-	footer {
-		font-size: 1.1em;
-		line-height: 1.8em;
-		height: 150px;
-		padding: 0.5em;
-	}
+	
 }

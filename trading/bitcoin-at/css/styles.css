@@ -386,51 +386,63 @@ template {
 [hidden] {
   display: none; }
 
-h1, h2, h3 {
-  font-family: 'Poly', serif; }
-
-h1 {
-  font-size: 2em;
-  line-height: normal;
-  text-align: center; }
-
-h2 {
-  font-size: 2em;
-  line-height: 1em; }
-
-h3 {
-  font-size: 2em;
-  font-style: italic;
-  text-decoration: underline; }
+html {
+  padding: 0; }
 
 body {
   padding: 0;
-  font-family: 'Open Sans';
   margin: 0;
+  font-family: 'Open Sans';
   background-color: #699ec6;
   line-height: 1.5em;
   font-size: 1.2em; }
 
-nav {
-  margin-top: 1em; }
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 0;
-    margin-top: 0; }
-    nav ul li {
-      border: solid 1px white;
-      text-align: center;
-      font-size: 1.2em;
-      background-color: #4167b2; }
-      nav ul li a {
-        padding: 0.5em;
-        display: block;
-        width: 100%;
-        color: #dcdeea; }
-      nav ul li a:hover {
-        background-color: #eaebef;
-        color: #4167b2; }
+h1, h2, h3 {
+  font-family: 'Poly', serif;
+  font-size: 2em; }
+
+h1 {
+  line-height: normal;
+  text-align: center; }
+
+h2 {
+  line-height: 1em; }
+
+h3 {
+  font-style: italic;
+  text-decoration: underline; }
+
+header, footer {
+  margin: 0;
+  background-color: #97bcd8;
+  border: solid 1px black; }
+
+header p, footer p {
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'Poly', serif; }
+
+header picture {
+  max-width: 360px; }
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0; }
+  nav ul li {
+    border: solid 1px white;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #4167b2; }
+    nav ul li a {
+      padding: 0.5em;
+      display: block;
+      width: 100%;
+      color: #dcdeea; }
+    nav ul li a:hover {
+      background-color: #eaebef;
+      color: #4167b2; }
 
 .navigation-button {
   background-color: #4167b2;
@@ -446,20 +458,7 @@ nav {
 
 main {
   max-width: 950px;
-  margin: 0 auto 1em auto; }
-
-header, footer {
-  background-color: #97bcd8;
-  border: solid 1px black; }
-  header div, footer div {
-    margin-bottom: 1em; }
-    header div p, footer div p {
-      margin: 0.3em; }
-
-header p, footer p {
-  text-align: center;
-  font-size: 1.2em;
-  font-family: 'Poly', serif; }
+  margin: 0; }
 
 ul a, li a {
   text-decoration: none;
@@ -506,7 +505,6 @@ article {
   article p {
     margin: 0; }
 
-/* IDs */
 /* CLASSES */
 .current-page {
   color: #fcae42; }
@@ -526,23 +524,11 @@ article {
 .span-resize-icon {
   font-size: 1.5em; }
 
-#go-up {
-  display: none;
-  width: 4em;
-  height: 2em;
-  border-radius: 20px;
-  text-align: center;
-  font-size: 1.5em;
-  background-color: #4167b2;
-  font-family: Poly, sans-serif;
-  border: black 1px solid;
-  text-decoration: none;
-  margin: 0;
-  padding-top: 0.8em;
-  color: white; }
-
-#go-up:hover {
-  background-color: green; }
+.section-first {
+  padding: 0;
+  padding-top: 0.1em; }
+  .section-first p {
+    margin: 1em; }
 
 .link-orange {
   color: white;
@@ -588,15 +574,34 @@ article {
     width: 250px;
     margin: 0.5em auto 1em auto; }
 
-#yuri {
-  border: none; }
-
 .clearfix:after {
   content: ".";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both; }
+
+/* IDs */
+#go-up {
+  display: none;
+  width: 4em;
+  height: 2em;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #4167b2;
+  font-family: Poly, sans-serif;
+  border: black 1px solid;
+  text-decoration: none;
+  margin: 0;
+  padding-top: 0.8em;
+  color: white; }
+
+#go-up:hover {
+  background-color: green; }
+
+#yuri {
+  border: none; }
 
 @media only screen and (min-width: 560px) and (min-width: 560px) {
   nav {
@@ -637,8 +642,15 @@ article {
 @media only screen and (min-width: 1028px) and (min-width: 60em) {
   header, footer {
     width: 950px;
-    margin: 1em auto;
+    margin: 0 auto 1em auto;
     border: none; }
+
+  footer {
+    margin: 1em auto 0 auto;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    height: 150px;
+    padding: 0.5em; }
 
   h2 {
     margin-top: 0; }
@@ -647,10 +659,4 @@ article {
     width: 850px; }
 
   section {
-    padding: 2.5em; }
-
-  footer {
-    font-size: 1.1em;
-    line-height: 1.8em;
-    height: 150px;
-    padding: 0.5em; } }
+    padding: 2.5em; } }

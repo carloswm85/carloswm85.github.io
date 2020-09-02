@@ -1,37 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Poly:ital@0;1&display=swap');
 
-h1, h2, h3 {
-  font-family: 'Poly', serif;
-}
-
-h1 {
-  font-size: 2em;
-  line-height: normal;
-  text-align: center;
-}
-
-h2 {
-  font-size: 2em;
-  line-height: 1em;
-}
-
-h3 {
-  font-size: 2em;
-  font-style: italic;
-  text-decoration: underline;
+html {
+  padding: 0;
 }
 
 body {
   padding: 0;
-  font-family:'Open Sans';
   margin: 0;
+  font-family:'Open Sans';  
   background-color: $at1;
   line-height: 1.5em;
   font-size: 1.2em;
 }
 
+h1, h2, h3 {
+  font-family: 'Poly', serif;
+  font-size: 2em;
+}
+
+h1 {
+  line-height: normal;
+  text-align: center;
+}
+
+h2 {
+  line-height: 1em;
+}
+
+h3 {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+header, footer {
+  margin: 0;
+  background-color: $at2;
+  border: solid 1px black
+}
+
+header p, footer p {
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'Poly', serif;
+}
+
+header {
+  picture {
+    max-width: 360px;
+  }
+}
+
 nav {
-  margin-top: 1em;
   ul {
     list-style-type: none;
     padding: 0;
@@ -72,24 +91,7 @@ nav {
 
 main {
   max-width: 950px;
-  margin: 0 auto 1em auto;
-}
-
-header, footer {
-  background-color: $at2;
-  border: solid 1px black;
-  div {
-    margin-bottom: 1em;
-    p {
-      margin: 0.3em;
-    }
-  }
-}
-
-header p, footer p {
-  text-align: center;
-  font-size: 1.2em;
-  font-family: 'Poly', serif;
+  margin: 0;
 }
 
 ul a, li a {
@@ -148,9 +150,6 @@ article {
   }
 }
 
-/* IDs */
-
-
 /* CLASSES */
 .current-page {
   color: $at4;
@@ -176,24 +175,12 @@ article {
   font-size: 1.5em;
 }
 
-#go-up {
-  display: none;
-  width: 4em;
-  height: 2em;
-  border-radius: 20px;
-  text-align: center;
-  font-size: 1.5em;
-  background-color: $fb1;
-  font-family: Poly, sans-serif;
-  border: black 1px solid;
-  text-decoration: none;
-  margin: 0;
-  padding-top: 0.8em;
-  color: white;
-}
-
-#go-up:hover {
-  background-color: green;
+.section-first {
+  padding: 0;
+  padding-top: 0.1em;
+  p {
+    margin: 1em;
+  }
 }
 
 .link-orange {
@@ -252,15 +239,36 @@ article {
   }
 }
 
-#yuri {
-  border: none;
-}
-
 .clearfix:after {
   content: "."; 
   visibility: hidden; 
   display: block; 
   height: 0; 
   clear: both;
+} // This snippet of code is added to the parent element.
+
+/* IDs */
+
+#go-up {
+  display: none;
+  width: 4em;
+  height: 2em;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: $fb1;
+  font-family: Poly, sans-serif;
+  border: black 1px solid;
+  text-decoration: none;
+  margin: 0;
+  padding-top: 0.8em;
+  color: white;
 }
-// This snippet of code is added to the parent element.
+
+#go-up:hover {
+  background-color: green;
+}
+
+#yuri {
+  border: none;
+}
