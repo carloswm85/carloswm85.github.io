@@ -410,7 +410,6 @@ h2 {
   line-height: 1em; }
 
 h3 {
-  font-style: italic;
   text-decoration: underline; }
 
 header, footer {
@@ -465,6 +464,7 @@ nav ul {
     font-size: 1.2em;
     background-color: #4167b2; }
     nav ul li a {
+      text-decoration: none;
       padding: 0.5em 0;
       display: block;
       width: 100%;
@@ -493,7 +493,7 @@ main {
   margin: 0; }
 
 ul a, li a {
-  text-decoration: none;
+  text-decoration-style: dashed;
   color: black;
   font-weight: 700;
   line-height: 1.8em;
@@ -567,19 +567,8 @@ article {
   font-size: 1.2em;
   font-weight: normal; }
 
-.link-orange {
-  color: white;
-  padding: 0.1em;
-  border-radius: 10%;
-  background-color: #fcae42;
-  font-weight: 700;
-  text-decoration: none; }
-
-.link-orange:hover {
-  background-color: green; }
-
 .link-black, li a {
-  text-decoration: none;
+  text-decoration-style: dashed;
   color: black;
   font-weight: 700;
   line-height: 1.2em;

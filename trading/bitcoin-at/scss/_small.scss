@@ -27,7 +27,7 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
+  
   text-decoration: underline;
 }
 
@@ -97,6 +97,7 @@ nav {
       font-size: 1.2em;
       background-color: $fb1;      
       a {
+        text-decoration: none;
         padding: 0.5em 0;
         display: block;
         width: 100%;   
@@ -133,7 +134,7 @@ main {
 }
 
 ul a, li a {
-  text-decoration: none;
+  text-decoration-style: dashed;
   color: black;
   font-weight: 700;
   line-height: 1.8em;
@@ -229,21 +230,8 @@ article {
   }
 }
 
-.link-orange {
-  color: white;
-  padding: 0.1em;
-  border-radius: 10%;
-  background-color: $at4;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.link-orange:hover {
-  background-color: green;
-}
-
 .link-black, li a {
-  text-decoration: none;
+  text-decoration-style: dashed;
   color: black;
   font-weight: 700;
   line-height: 1.2em;
