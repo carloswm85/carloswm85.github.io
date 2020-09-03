@@ -191,6 +191,11 @@ article {
   }
 }
 
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
 /* CLASSES */
 .current-page {
   color: $at4;
@@ -303,18 +308,17 @@ article {
 
 #go-up {
   display: none;
-  width: 4em;
-  height: 2em;
+  width: 7em;
+  height: 9em;
+  padding: 0.5em;
   border-radius: 20px;
-  text-align: center;
-  font-size: 1.5em;
   background-color: $fb1;
-  font-family: $heading;
   border: black 1px solid;
-  text-decoration: none;
   margin: 0;
-  padding-top: 0.8em;
-  color: white;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 #go-up:hover {

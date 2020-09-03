@@ -538,6 +538,10 @@ article {
   article p {
     margin: 0; }
 
+iframe {
+  display: block;
+  margin: 0 auto; }
+
 /* CLASSES */
 .current-page {
   color: #fcae42; }
@@ -623,18 +627,16 @@ article {
 /* IDs */
 #go-up {
   display: none;
-  width: 4em;
-  height: 2em;
+  width: 7em;
+  height: 9em;
+  padding: 0.5em;
   border-radius: 20px;
-  text-align: center;
-  font-size: 1.5em;
   background-color: #4167b2;
-  font-family: "Oswald", sans-serif;
   border: black 1px solid;
-  text-decoration: none;
-  margin: 0;
-  padding-top: 0.8em;
-  color: white; }
+  margin: 0; }
+  #go-up img {
+    width: 100%;
+    height: auto; }
 
 #go-up:hover {
   background-color: green; }
