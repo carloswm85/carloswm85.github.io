@@ -395,7 +395,9 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #699ec6;
   line-height: 1.5em;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  background-image: url("../img/background.png");
+  background-repeat: repeat; }
 
 h1, h2, h3 {
   font-family: "Oswald", sans-serif;
@@ -532,8 +534,7 @@ div {
   background-color: #97bcd8; }
 
 article {
-  border-top: solid 2px rgba(0, 0, 0, 0.3);
-  padding: 1em 1em; }
+  padding: 0 1em; }
   article p {
     margin: 0; }
 
@@ -560,8 +561,6 @@ article {
   padding: 0;
   padding-top: 0.1em;
   border: none; }
-  .section-first p {
-    margin: 1em; }
 
 .indice li a {
   font-size: 1.2em;
@@ -583,6 +582,11 @@ article {
   background-color: green;
   border-radius: 10%; }
 
+.books h2 {
+  text-decoration: underline; }
+.books article {
+  border: rgba(0, 0, 0, 0.5) solid 1px;
+  padding: 1em; }
 .books img {
   width: 250px;
   margin-bottom: 0.5em; }
@@ -609,6 +613,13 @@ article {
   height: 0;
   clear: both; }
 
+.margin-increment p {
+  margin: 1em 0; }
+
+.date-style {
+  text-align: right;
+  font-style: oblique; }
+
 /* IDs */
 #go-up {
   display: none;
@@ -632,6 +643,9 @@ article {
   border: none; }
 
 @media only screen and (min-width: 560px) and (min-width: 560px) {
+  .cover-border {
+    border-right: 1px solid #dcdeea; }
+
   footer {
     padding: 1em 0;
     display: flex;
