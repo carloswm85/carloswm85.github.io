@@ -15,7 +15,8 @@
 				"YouTube": null,
 				"Sitio": null,
 				"Descarga": null, 
-				"Resumen (pdf, inglés)": null
+				"Resumen (pdf, inglés)": null,
+				"Video review (inglés)": null
 			}
 		},
 		{
@@ -33,7 +34,8 @@
 				"YouTube": "https://www.youtube.com/channel/UC1_SoqTCXaM8kk0SxkAyhcQ",
 				"Sitio": "https://www.trader-dale.com/",
 				"Descarga": null, 
-				"Resumen (pdf, inglés)": null
+				"Resumen (pdf, inglés)": null,
+				"Video review (inglés)": null
 			}	
 		},
 		{
@@ -51,7 +53,8 @@
 				"YouTube": null,
 				"Sitio": null,
 				"Descarga": "https://carloswm85.github.io/trading/bitcoin-at/download/candlestick-trading-bible.pdf", 
-				"Resumen (pdf, inglés)": null
+				"Resumen (pdf, inglés)": null,
+				"Video review (inglés)": null
 			}			
 		},
 		{
@@ -69,7 +72,8 @@
 				"YouTube": "https://www.youtube.com/results?search_query=JACK+SCHWAGER",
 				"Sitio": null,
 				"Descarga": null, 
-				"Resumen (pdf, inglés)": null
+				"Resumen (pdf, inglés)": null,
+				"Video review (inglés)": null
 			}			
 		},
 		{
@@ -87,7 +91,8 @@
 				"YouTube": "https://www.youtube.com/results?search_query=art+of+war",
 				"Sitio": null,
 				"Descarga": "https://carloswm85.github.io/trading/bitcoin-at/download/art-of-war.pdf", 
-				"Resumen (pdf, inglés)": null
+				"Resumen (pdf, inglés)": null,
+				"Video review (inglés)": null
 			}			
 		},
 		{
@@ -105,9 +110,31 @@
 				"YouTube": "https://www.youtube.com/results?search_query=trading+in+the+zone+mark+douglas",
 				"Sitio": null,
 				"Descarga": null, 
-				"Resumen (pdf, inglés)": null
-			}			
+				"Resumen (pdf, inglés)": null,
+				"Video review (inglés)": null
+			}
+		},
+		{
+			"cover": "https://carloswm85.github.io/trading/bitcoin-at/img/books/reminiscences.jpg",
+			"data": {
+				"Nombre": "Reminiscences of a Stock Operator, Biography of Jesse Livermore",
+				"Autor": "Edwin Lefèvre",
+				"Idioma": "Inglés",
+				"Nota": "Disponible en impreso, pdf y kindle.",
+				"Cita": null
+			},
+			"links": {
+				"Amazon": "https://www.amazon.com/s?k=reminiscence+stock+operator",
+				"Google": "https://www.google.com/search?client=reminiscence+stock+operator",
+				"YouTube": "https://www.youtube.com/results?search_query=reminiscence+stock+operator",
+				"Sitio": null,
+				"Descarga": null, 
+				"Resumen (pdf, inglés)": null,
+				"Video review (inglés)": "https://www.youtube.com/watch?v=uWBL6Zgfhg4"
+			}
 		}
+
+		//https://www.youtube.com/watch?v=uWBL6Zgfhg4
 	]
 }
 
