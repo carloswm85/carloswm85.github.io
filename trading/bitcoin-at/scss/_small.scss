@@ -36,7 +36,11 @@ h3 {
 header, footer {
   margin: 0;
   background-color: $at2;
-  border: solid 1px black
+}
+
+header {
+  border: none;
+	border-bottom: solid 2px rgba($color: #000000, $alpha: 0.3);
 }
 
 footer {
@@ -44,6 +48,8 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
+  border: none;
+	border-top: solid 2px rgba($color: #000000, $alpha: 0.3);
   div {
     margin: 1em auto;
   }
@@ -221,10 +227,17 @@ iframe {
   font-size: 1.5em;
 }
 
-.section-first {
+.div-construction {
   padding: 0;
   padding-top: 0.1em;
   border: none;
+  background-color: $at3;
+}
+
+h2.centered-underlined {
+  font-size: 2.5em;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .indice {
@@ -285,6 +298,10 @@ iframe {
   div {
     background-color: $at3;
   }
+  p {
+    margin: 0.5em 0;
+  }
+
 }
 
 .clearfix:after {
@@ -302,6 +319,12 @@ iframe {
 .date-style {
   text-align: right;
   font-style: oblique;
+}
+
+.youtube {
+  width: 360px;
+  height: 205px;
+  margin: 0 auto;
 }
 
 /* IDs */
@@ -327,4 +350,5 @@ iframe {
 
 #yuri {
   border: none;
+  max-width: 250px;
 }

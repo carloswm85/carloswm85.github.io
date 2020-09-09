@@ -416,14 +416,19 @@ h3 {
 
 header, footer {
   margin: 0;
-  background-color: #97bcd8;
-  border: solid 1px black; }
+  background-color: #97bcd8; }
+
+header {
+  border: none;
+  border-bottom: solid 2px rgba(0, 0, 0, 0.3); }
 
 footer {
   padding: 1em 0;
   display: flex;
   flex-direction: column;
-  text-align: center; }
+  text-align: center;
+  border: none;
+  border-top: solid 2px rgba(0, 0, 0, 0.3); }
   footer div {
     margin: 1em auto; }
   footer p {
@@ -561,10 +566,16 @@ iframe {
 .span-resize-icon {
   font-size: 1.5em; }
 
-.section-first {
+.div-construction {
   padding: 0;
   padding-top: 0.1em;
-  border: none; }
+  border: none;
+  background-color: #cdccd2; }
+
+h2.centered-underlined {
+  font-size: 2.5em;
+  text-align: center;
+  text-decoration: underline; }
 
 .indice li a {
   font-size: 1.2em;
@@ -609,6 +620,8 @@ iframe {
     margin: 0.5em auto 1em auto; }
   .traders div {
     background-color: #cdccd2; }
+  .traders p {
+    margin: 0.5em 0; }
 
 .clearfix:after {
   content: ".";
@@ -623,6 +636,11 @@ iframe {
 .date-style {
   text-align: right;
   font-style: oblique; }
+
+.youtube {
+  width: 360px;
+  height: 205px;
+  margin: 0 auto; }
 
 /* IDs */
 #go-up {
@@ -642,7 +660,8 @@ iframe {
   background-color: green; }
 
 #yuri {
-  border: none; }
+  border: none;
+  max-width: 250px; }
 
 @media only screen and (min-width: 560px) and (min-width: 720px) {
   .cover-border {
@@ -684,7 +703,7 @@ iframe {
   section {
     padding: 1.6em; }
 
-  .section-first picture {
+  .div-construction picture {
     margin: auto 1em; }
 
   .books img {
@@ -698,11 +717,14 @@ iframe {
     margin-bottom: 0.5em; }
 
   .border-top {
-    padding: 1em; } }
+    padding: 1em; }
+
+  .youtube {
+    width: 550px;
+    height: 310px; } }
 @media only screen and (min-width: 1028px) and (min-width: 950px) {
   header, footer {
-    width: 950px;
-    border: none; }
+    width: 950px; }
 
   footer {
     font-size: 1.1em;

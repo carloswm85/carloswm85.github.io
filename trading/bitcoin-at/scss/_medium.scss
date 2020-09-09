@@ -50,7 +50,7 @@
 		padding: 1.6em;
 	}
 
-	.section-first {
+	.div-construction {
 		picture {
 		  margin: auto 1em;
 		}
@@ -66,13 +66,18 @@
 
 	.traders {
 		img {
-		  float: left;
-		  margin-right: 1em;
-		  margin-bottom: 0.5em;
+			float: left;
+			margin-right: 1em;
+			margin-bottom: 0.5em;
 		}
 	}
 
 	.border-top {
 		padding: 1em;
+	}
+
+	.youtube {
+		width: 550px;
+		height: 310px;
 	}
 }
