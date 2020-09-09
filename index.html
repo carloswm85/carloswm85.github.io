@@ -9,17 +9,10 @@
 
 	<title>Document</title>
 </head>
-<body>
-	<div onclick="openNav()">MENU</div>
-
-	<header>
-		
-	</header>
-
+<body>	
 	<nav id="sideNav" class="sideNavClass">
-		<ul>
-			
-			<li><a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a></li>
+		<ul>			
+			<li><a href="javascript:void(0)" class="closeBtn" onclick="closeSideNav()">&times;</a></li>
 			<li><a href="index.html" class="current">Home</a></li>
 			<li><a href="portfolio/index.html" class="">WDD Portfolio</a></li>
 			<li><a href="trading/index.html" class="">Trading</a></li>
@@ -27,13 +20,17 @@
 		</ul>
 	</nav>
 
-	<main>
+	<header id="header">
+		Header.	
+	</header>
+
+	<main id="main">
+		<span style="font-size:30px;cursor:pointer" onclick="openSideNav()">&#9776; open</span>
 		This is main.
 	</main>
 
-	<footer>
+	<footer id="footer">
 		This is footer.
 	</footer>
-
 </body>
 </html>
