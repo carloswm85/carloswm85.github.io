@@ -1,7 +1,6 @@
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 950px) {
 	header, footer {
 		width: 950px;
-		margin: auto;
 		border: none;
 	}
 
@@ -17,20 +16,19 @@
 	}
 
 	main {
-		margin: auto;
 		width: 950px;
 	}
 
 	section {
 		padding: 2.5em;
-	}
+	}	
+}
 
+@media only screen and (min-width: 1330px) {
 	#go-up {
 		display: block;
 		position: fixed;
 		right: 20px;
 		bottom: 20px;
 	}
-
-	
 }

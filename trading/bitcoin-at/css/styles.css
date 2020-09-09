@@ -644,11 +644,12 @@ iframe {
 #yuri {
   border: none; }
 
-@media only screen and (min-width: 560px) and (min-width: 560px) {
+@media only screen and (min-width: 560px) and (min-width: 720px) {
   .cover-border {
     border-right: 1px solid #dcdeea; }
 
   footer {
+    margin: auto;
     padding: 1em 0;
     display: flex;
     flex-direction: row;
@@ -662,6 +663,9 @@ iframe {
       align-items: center; }
     footer .logo-box {
       margin: 0; }
+
+  header, main {
+    margin: auto; }
 
   nav {
     margin: 0 auto;
@@ -695,10 +699,9 @@ iframe {
 
   .border-top {
     padding: 1em; } }
-@media only screen and (min-width: 1028px) and (min-width: 60em) {
+@media only screen and (min-width: 1028px) and (min-width: 950px) {
   header, footer {
     width: 950px;
-    margin: auto;
     border: none; }
 
   footer {
@@ -710,12 +713,11 @@ iframe {
     margin-top: 0; }
 
   main {
-    margin: auto;
     width: 950px; }
 
   section {
-    padding: 2.5em; }
-
+    padding: 2.5em; } }
+@media only screen and (min-width: 1028px) and (min-width: 1330px) {
   #go-up {
     display: block;
     position: fixed;
