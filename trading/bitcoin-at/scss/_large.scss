@@ -1,25 +1,23 @@
-@media only screen and (min-width: 950px) {
-	header, footer {
-		width: 950px;
-	}
+header, footer {
+	width: 950px;
+}
 
-	footer {
-		font-size: 1.1em;
-		line-height: 1.8em;
-		height: 150px;
-	}
+footer {
+	font-size: 1.1em;
+	line-height: 1.8em;
+	height: 150px;
+}
 
-	h2 {
-		margin-top: 0;
-	}
+h2 {
+	margin-top: 0;
+}
 
-	main {
-		width: 950px;
-	}
+main {
+	width: 950px;
+}
 
-	section {
-		padding: 2.5em;
-	}	
+section {
+	padding: 2.5em;
 }
 
 @media only screen and (min-width: 1330px) {

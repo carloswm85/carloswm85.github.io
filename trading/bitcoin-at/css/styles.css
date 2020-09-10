@@ -663,7 +663,7 @@ h2.centered-underlined {
   border: none;
   max-width: 250px; }
 
-@media only screen and (min-width: 560px) and (min-width: 720px) {
+@media only screen and (min-width: 720px) {
   .cover-border {
     border-right: 1px solid #dcdeea; }
 
@@ -722,7 +722,7 @@ h2.centered-underlined {
   .youtube {
     width: 550px;
     height: 310px; } }
-@media only screen and (min-width: 1028px) and (min-width: 950px) {
+@media only screen and (min-width: 950px) {
   header, footer {
     width: 950px; }
 
@@ -739,7 +739,7 @@ h2.centered-underlined {
 
   section {
     padding: 2.5em; } }
-@media only screen and (min-width: 1028px) and (min-width: 1330px) {
+@media only screen and (min-width: 950px) and (min-width: 1330px) {
   #go-up {
     display: block;
     position: fixed;
