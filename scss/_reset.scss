@@ -365,3 +365,9 @@ textarea {
     padding: 0.2em 0;
 }
 
+// Add this rule to the parent element to avoid collapsing of the child (on pictures)
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
