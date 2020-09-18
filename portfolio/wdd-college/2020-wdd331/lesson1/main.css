@@ -62,7 +62,7 @@ nav ul li:hover {
     color: #faebd7;
 }
 
-nav ul li a:visited {
+nav > ul > li > a:visited {
     color: red;
 }
 
