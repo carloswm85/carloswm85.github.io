@@ -1,0 +1,32 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © carloswm85
+
+// @version=4
+// Built for 1m timeframe trading
+//File title: 4EMA20 1m - 20/300/1200/4800 - 1m/15m/1h/4h - @carloswm85
+study(title="4EMA20 1m @carloswm85", shorttitle="4EMA20 1m/15m/1h/4h 1m @carloswm85", overlay=true)
+
+enable1m = input(true, title="Enable EMA20 (1m)")
+enable15m = input(true, title="Enable EMA300 (EMA20 15m)")
+enable1h = input(true, title="Enable EMA1200 (EMA20 1h)")
+enable4h = input(true, title="Enable EMA4800 (EMA20 4h)")
+
+// BE AWARE: 1h, 4h, 1D, are all equivalent to their 20 period counterparts on those timeframes
+len1m = input(20, title="Input 1", minval=1) // Just regular EMA20 for 15m timeframe
+len15m = input(300, title="Input 2", minval=1) // EMA20 for 1h
+len1h = input(1200, title="Input 3", minval=1) // EMA20 for 4h
+len4h = input(4800, title="Input 4", minval=1) // EMA20 for 1D
+
+thickness = input(3, minval=1, title="Thickness")
+opacity = input(40, minval=1, title="Opacity")
+price = close
+
+EMA1m = ema(price, len1m)
+EMA15m = ema(price, len15m)
+EMA1h = ema(price, len1h)
+EMA4h = ema(price, len4h)
+
+plot(enable1m and EMA1m ? EMA1m: na, title="EMA20 (1m)", color=#ff00ff, linewidth=thickness, transp=opacity) // fuchsia
+plot(enable15m and EMA15m ? EMA15m: na, title="EMA300 (EMA20 15m)", color=#00ffff, linewidth=thickness, transp=opacity) // aqua
+plot(enable1h and EMA1h ? EMA1h: na, title="EMA1200 (EMA20 1h)", color=#ffff00, linewidth=thickness, transp=opacity) // yellow
+plot(enable4h and EMA4h ? EMA4h: na, title="EMA4800 (EMA20 4h)", color=#ff9800, linewidth=thickness, transp=opacity) // orange

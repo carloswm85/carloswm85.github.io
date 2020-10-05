@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+/* VARIABLES */
+// Colors
+$CornflowerBlue: #6495ed;
+$Champagne: #faebd7;
+$Calico: #deb887;
+$Black: #000000;
+$White: #ffffff;
+$Jumbo: #787981;
+
+// Fonts
+$headline: 'Lora',
+serif;
+$paragraph: Helvetica,
+Arial,
+sans-serif;
+
+// Breakpoint sizes
+$break-small: 460px;
+$break-medium: 720px;
+$break-large: 1024px;
+
+/* MIXIS */
+@mixin breakpoint($break) {
+    @if $break==large {
+        @media (max-width: $break-large) {
+            @content;
+        }
+    }
+
+    @else if $break==medium {
+        @media (max-width: $break-medium) {
+            @content;
+        }
+    }
+
+    @else if $break==small {
+        @media (max-width: $break-small) {
+            @content;
+        }
+    }
+
+    @else {
+        @media ($break) {
+            @content;
+        }
+    }
+}
+
+/* STYLES */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: $CornflowerBlue;
+    padding: 2em 1.8em;
+}
+
+a {
+    text-decoration: none;
+    color: $Champagne;
+}
+
+h1 {
+    margin: 0.6em 0;
+    font-family: $headline;
+    font-size: 2.1em;
+    text-align: right;
+    text-shadow: 2px 2px 1px rgba(127, 127, 127, 1);
+}
+
+h2 {
+    font-family: $headline;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+body {
+    font-family: $paragraph;
+}
+
+hr {
+    color: $Champagne;
+}
+
+/* LINKS */
+nav ul {
+    font-family: $paragraph;
+    list-style: none;
+    text-align: right;
+
+    li {
+        font-size: 1em;
+        margin: 1em 0;
+        font-weight: 600;
+        text-shadow: 2px 2px 1px rgba(127, 127, 127, 1);
+
+        a:active {
+            text-decoration: underline;
+            color: $Calico;
+        }
+    }
+
+    li:hover {
+        text-decoration: underline;
+        color: $Champagne;
+    }
+}
+
+h2 {
+    a {
+        color: $Black;
+    }
+
+    a:active {
+        color: $Calico;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: $CornflowerBlue;
+    }
+}
+
+
+p {
+    a {
+        color: $CornflowerBlue;
+    }
+
+    a:active {
+        color: $Calico;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* MAIN */
+
+article {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: $White;
+    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2em;
+}
+
+.post-date {
+    font-size: 1em;
+    font-weight: 500;
+    color: $Jumbo;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+section {
+    h2 {
+        margin: 1em 0;
+    }
+
+    h2 a {
+        font-size: 1.2em;
+        font-weight: 500;
+        line-height: 1.1em;
+    }
+
+}
+
+figure {
+    width: 200px;
+    margin: 4em auto 1em auto;
+}
+
+img {
+    width: 100%;
+}
+
+@media only screen and (min-width: 720px) {
+    body>div {
+        display: flex;
+    }
+
+    header {
+        max-width: 210px;
+    }
+
+    main {
+        width: 100%;
+    }
+}
+
+main {
+    padding: 2.5em 0.8em 0 0.8em;
+    background-color: $Champagne;
+
+    @include breakpoint(large) {
+        background: red;
+    }
+
+    @include breakpoint(medium) {
+        background: cyan;
+    }
+
+    @include breakpoint(small) {
+        background: green;
+    }
+
+    // CORRECT ← from the keyboard
+    @include breakpoint("max-width: 480px") {
+        background: yellow;
+    }
+
+    /*
+    // WRONG ← Copied and pasted from the instructions
+    @include breakpoint(“max-width: 480px”) {
+        background: yellow;
+    }*/
+}
