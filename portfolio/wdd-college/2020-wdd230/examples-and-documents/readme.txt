@@ -1,1 +1,0 @@
-This examples should be coupied in their own week lessons too
