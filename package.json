@@ -1,0 +1,21 @@
+{
+  "name": "carloswm85.github.io",
+  "version": "1.0.0",
+  "description": "Carlos Washington Mercado GitHub Pages personal website",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carloswm85/carloswm85.github.io.git"
+  },
+  "author": "Carlos Washington Mercado",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/carloswm85/carloswm85.github.io/issues"
+  },
+  "homepage": "https://github.com/carloswm85/carloswm85.github.io#readme"
+}
