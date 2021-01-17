@@ -1,0 +1,36 @@
+//@version=3
+study(title="Challenge 2", overlay=true)
+
+//----------------------------------
+// Bollinger Bands
+bbLength = input(20, minval=1)
+bbSrc = input(close, title="Source")
+bbMult = input(2.0, minval=0.001, maxval=50)
+bbBasis = sma(bbSrc, bbLength)
+bbDev = bbMult * stdev(bbSrc, bbLength)
+bbUpper = bbBasis + bbDev
+bbLower = bbBasis - bbDev
+bbUpperPlot = plot(bbUpper, color=color(black,100))
+bbLowerPlot = plot(bbLower, color=color(black,100))
+
+//----------------------------------
+// Keltner Channel
+useTrueRange = input(true)
+kcLength = input(20, minval=1)
+kcMult = input(1.0)
+kcSrc = input(close, title="Source")
+
+ma = ema(kcSrc, kcLength)
+range = useTrueRange ? tr : high - low
+rangema = ema(range, kcLength)
+kcUpper = ma + rangema * kcMult
+kcLower = ma - rangema * kcMult
+kcUpperPlot = plot(kcUpper, color=color(black,100))
+kcLowerPlot = plot(kcLower, color=color(black,100))
+
+//----------------------------------
+// Squeeze Fill
+topColor=kcUpper > bbUpper ? color(lime,0) : color(black,100)
+bottomColor=kcLower < bbLower ? color(red,0) : color(black,100)
+fill(bbUpperPlot,kcUpperPlot,topColor)
+fill(bbLowerPlot,kcLowerPlot,bottomColor)

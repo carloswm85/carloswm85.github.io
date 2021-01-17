@@ -1,0 +1,26 @@
+//@version=3
+study(title="Fibonacci EMA's", overlay=true)
+
+sLen=input(title="Short EMA Length", defval=13)
+mLen=input(55, title="Mid EMA Length")
+lLen=input(89, title="Long EMA Length")
+
+sEMA=ema(close,shortEMA)
+mEMA=ema(close,midEMA)
+lEMA=ema(close,longEMA)
+
+currentOrder = 0
+prevOrder = nz(currentOrder[1],0)
+currentOrder := (sEMA > mEMA and mEMA > lEMA) ? 1 : ((lEMA > mEMA and mEMA > sEMA) ? -1 : 0)
+orderChange = currentOrder != prevOrder
+
+//crossed=cross(sEMA,lEMA)
+
+p1=plot(sEMA, title="Short EMA", color=blue, linewidth=3, transp=0)
+plot(mEMA, title="Mid EMA", color=green, linewidth=3, transp=0)
+p2=plot(lEMA, title="Long EMA", color=yellow, linewidth=3, transp=0, editable=false)
+
+//plotarrow(crossed?sEMA-lEMA:na, title="EMA Cross", colorup=lime, colordown=red, transp=0, maxheight=20, minheight=20)
+
+bgcolor(orderChange?bgc:na,title="EMA Order Crossed")
+fill(p1,p2,bgc)

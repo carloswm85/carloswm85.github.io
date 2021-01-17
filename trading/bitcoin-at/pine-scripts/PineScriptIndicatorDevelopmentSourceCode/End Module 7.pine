@@ -1,0 +1,16 @@
+//@version=3
+study(title="Fibonacci EMA's", overlay=true)
+
+sLen=input(title="Short EMA Length", defval=13)
+mLen=input(55, title="Mid EMA Length")
+lLen=input(89, title="Long EMA Length")
+
+sEMA=ema(close,shortEMA)
+mEMA=ema(close,midEMA)
+lEMA=ema(close,longEMA)
+
+plot(sEMA, title="Short EMA", color=blue, linewidth=3, transp=0)
+plot(mEMA, title="Mid EMA", color=green, linewidth=3, transp=0)
+plot(lEMA, title="Long EMA", color=yellow, linewidth=3, transp=0, editable=false)
+
+

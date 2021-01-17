@@ -1,0 +1,21 @@
+//@version=3
+study(title="Fibonacci EMA's", overlay=true)
+
+sLen=input(title="Short EMA Length", defval=13)
+mLen=input(55, title="Mid EMA Length")
+lLen=input(89, title="Long EMA Length")
+
+sEMA=ema(close,sLen)
+mEMA=ema(close,mLen)
+lEMA=ema(close,lLen)
+
+plot(sEMA, title="Short EMA", color=blue, linewidth=3, transp=0)
+plot(mEMA, title="Mid EMA", color=green, linewidth=3, transp=0)
+plot(lEMA, title="Long EMA", color=yellow, linewidth=3, transp=0, editable=false)
+
+//You Code It Exercise 1
+show50sma=input(false,"Show 50 SMA")
+show200sma=input(false,"Show 200 SMA")
+plot(show50sma?sma(close,50):na, title="50SMA", color=orange, linewidth=3, transp=0)
+plot(show200sma?sma(close,200):na, title="200SMA", color=white, linewidth=3, transp=0)
+

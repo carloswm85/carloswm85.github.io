@@ -1,0 +1,5 @@
+//@version=3
+//Weekly 200SMA (MTF)
+week = security(tickerid, "W", sma(close,200), barmerge.gaps_on, barmerge.lookahead_on)
+plot(week, title="Weekly Close", color=white, linewidth=4, transp=0)
+

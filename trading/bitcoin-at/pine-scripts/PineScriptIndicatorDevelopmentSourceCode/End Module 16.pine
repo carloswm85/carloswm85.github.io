@@ -1,0 +1,10 @@
+//@version=3
+study("HAMTF", overlay=false)
+
+ha_tick = heikinashi(tickerid)
+ha_open = security(ha_tick, period, open)
+ha_close = security(ha_tick, period, close)
+ha_dif = ha_open-ha_close
+ha_diff = iff(ha_dif > 0, 1, iff(ha_dif < 0, 2, 3))
+ 
+plotshape(15, title="HA Direction", style=shape.circle, location=location.bottom, color=(ha_diff==1)?red:(ha_diff==2)?lime:white, size=size.auto)
