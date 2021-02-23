@@ -48,11 +48,11 @@ rsiSma = sma(rsiDisplayed, rsiLenSma)
 plot(rsiSmaEnable ? rsiSma : na, color=rsiSma >= 50 ? color.green : color.red, title="RSI SMA", linewidth=thickness, transp=opacity, editable=false)
 
 // RSI Signals
-rsiOB = rsiDisplayed > OB
-rsiOS = rsiDisplayed < OS
+rsiOB = rsiDisplayed >= OB
+rsiOS = rsiDisplayed <= OS
 // RSI
-plotshape(rsiOB and rsiEnable and  rsiResolution == ""  ? rsiDisplayed + 4 : na, title= "Overbought",location=location.absolute, color=color.green, transp=20, style=shape.triangledown, text="", editable=false)
-plotshape(rsiOS and rsiEnable and rsiResolution == "" ? rsiDisplayed - 4 : na, title= "Oversold", location=location.absolute, color=color.red, transp=20, style=shape.triangleup, text="", editable=false)
+plotshape(rsiOB and rsiEnable and  rsiResolution == ""  ? rsiDisplayed + 4 : na, title= "Overbought",location=location.absolute, color=color.green, transp=0, style=shape.triangledown, text="", editable=false)
+plotshape(rsiOS and rsiEnable and rsiResolution == "" ? rsiDisplayed - 4 : na, title= "Oversold", location=location.absolute, color=color.red, transp=0, style=shape.triangleup, text="", editable=false)
 alertcondition(rsiOB or rsiOS and timeframe.period == "1", title="RSI OB/OS Alarm 1m", message="RSI OB/OS 1m: {{ticker}}, RSI = {{plot_0}}")
 
 // RSI Dominance

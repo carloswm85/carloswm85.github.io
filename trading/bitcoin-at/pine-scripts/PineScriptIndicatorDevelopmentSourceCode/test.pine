@@ -1,0 +1,8 @@
+enableR5 = input(type=input.bool, defval=true, title="Enable RSI Signal 5 (R5)")
+signalR5 = input(title = "R5 Resolution", defval = "240", type=input.resolution)
+colorR5 = input(title = "R5 Color", defval = color.silver, type=input.color)
+securityR5 = security(syminfo.tickerid, signalR5 , rsi)
+obR5 = securityR5 >= obRSI
+osR5 = securityR5 <= osRSI
+plotshape(obR5 and enableR5 and enableRSIall and (barstate.ishistory or drawOnRT), color=colorR5, transp=transpRSI, text="", style=shape.triangledown, title="Overbought R5")
+plotshape(osR5 and enableR5 and enableRSIall and (barstate.ishistory or drawOnRT), color=colorR5, transp=transpRSI, text="", style=shape.triangleup,	title = "Oversold R5", location=location.belowbar)
