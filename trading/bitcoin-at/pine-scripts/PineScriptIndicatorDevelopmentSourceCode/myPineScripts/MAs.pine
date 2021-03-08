@@ -1,0 +1,257 @@
+// This source code is subject to the terms of the Osozilla Public License 2.0 at https://mozilla.org/OsPL/2.0/
+// © BlueJayBird
+// @author @BlueJayBird
+// @version=4
+
+study(title="Moving Averages, by @BlueJayBird", shorttitle="MAs", format=format.price, overlay=true)
+
+// If this has helped you to improve your trading and therefore your income, any donation is appreciated:
+// BTC: 3Dj9jfGuJ861oEH7kA1zpgMssPw2PYF7Gq
+// ETH and USDT: 0xc8645305ab8c08f08bcbc89c020b63362527f771
+
+// ------------------------------------------------- MAs
+movingAverage = input(title = "Type MAs", defval = "EMA", options = ["EMA", "MA", "RMA", "SMMA", "VWMA", "WMA"])
+price = input(type=input.source, defval=low, title="Source MAs")
+enable_a = input(false, title="Enable MAs[aA][20]")
+enable_bB = input(false, title="Enable MAs[b][B]")
+enable_cC = input(false, title="Enable MAs[c][C]")
+enable_dD = input(true, title="Enable MAs[d][D]")
+enable_eE = input(true, title="Enable MAs[e][E]")
+enable_a_fill_b = input(false, title="Enable [a] to [b] Fill")
+enable_a_fill_B = input(false, title="Enable [a] to [B] Fill")
+// Common
+enable_common = input(false, title="Enable  MAs[20][50][200]")
+// cMA
+enable_custom = input(false, title="Enable Custom MA [MAc]")
+movingAverageCustom = input(title = "Type MAc (Custom)", defval = "EMA", options = ["EMA", "MA", "RMA", "SMMA", "VWMA", "WMA"])
+length_custom = input(defval=50, title="Length MAc (Custom)")
+
+// Style
+thickness = 2
+transp_ma = 40
+transp_fill = 90
+transp_fill_20 = 80
+securityGap = barmerge.gaps_off
+securityLookahead = barmerge.lookahead_on
+
+// colors
+color_custom = color.silver
+// 1m color.aqua, 5m color.fuchsia, 15m color.navy , 30m color.red
+// 1h color.yellow, 4h color.lime, 1D color.orange
+// 1W color.olive , 1M color.maroon
+// CUSTOM color.silver
+
+
+//  MOVING AVERAGES
+float ma20 = na,    float ma50 = na,    float ma60 = na
+float ma80 = na,	float ma100 = na,	float ma120 = na
+float ma140 = na,	float ma200 = na,	float ma300 = na
+float ma320 = na,	float ma400 = na,	float ma480 = na
+float ma600 = na,	float ma840 = na,	float ma1200 = na 
+float ma1600 = na,	float ma1920 = na,	float ma3360 = na 
+float ma3600 = na,	float ma3840 = na,	float ma4800 = na 
+float maCustom_1 = na
+float maCustom_2 = na
+
+smma(sourceSMMA, lenSMMA) =>
+    float valueSMMA = na
+    localSMA = sma(sourceSMMA, lenSMMA)
+    valueSMMA := na(valueSMMA[1]) ? localSMA : (valueSMMA[1] * (lenSMMA - 1) + sourceSMMA) / lenSMMA
+
+// Imported Moving Averages
+ma20security = ema(price, 20)
+ma20_5 = security(syminfo.tickerid, "5", ma20security, securityGap, securityLookahead)
+ma20_30 = security(syminfo.tickerid, "30", ma20security, securityGap, securityLookahead)
+ma20_60 = security(syminfo.tickerid, "60", ma20security, securityGap, securityLookahead)
+ma20_240 = security(syminfo.tickerid, "240", ma20security, securityGap, securityLookahead)
+ma20_D = security(syminfo.tickerid, "D", ma20security, securityGap, securityLookahead)
+ma20_W = security(syminfo.tickerid, "W", ma20security, securityGap, securityLookahead)
+ma20_M = security(syminfo.tickerid, "M", ma20security, securityGap, securityLookahead)
+
+// MA Values
+if movingAverage == "EMA"
+	ma20 := ema(price, 20),		ma50 := ema(price, 50),		ma60 := ema(price, 60)
+	ma80 := ema(price, 80),		ma100 := ema(price, 100),	ma120 := ema(price, 120)
+	ma140 := ema(price, 140),	ma200 := ema(price, 200),	ma300 := ema(price, 300)
+	ma320 := ema(price, 320),	ma400 := ema(price, 400),	ma480 := ema(price, 480)
+	ma600 := ema(price, 600),	ma840 := ema(price, 840),	ma1200 := ema(price, 1200)
+	ma1600 := ema(price, 1600), ma1920 := ema(price, 1920),	ma3360 := ema(price, 3360)
+	ma3600 := ema(price, 3600),	ma3840 := ema(price, 3840),	ma4800 := ema(price, 4800)
+if movingAverage == "MA"
+	ma20 := sma(price, 20),		ma50 := sma(price, 50),		ma60 := sma(price, 60)
+	ma80 := sma(price, 80),		ma100 := sma(price, 100),	ma120 := sma(price, 120)
+	ma140 := sma(price, 140),	ma200 := sma(price, 200),	ma300 := sma(price, 300)
+	ma320 := sma(price, 320),	ma400 := sma(price, 400),	ma480 := sma(price, 480)
+	ma600 := sma(price, 600),	ma840 := sma(price, 840),	ma1200 := sma(price, 1200)
+	ma1600 := sma(price, 1600), ma1920 := sma(price, 1920),	ma3360 := sma(price, 3360)
+	ma3600 := sma(price, 3600),	ma3840 := sma(price, 3840),	ma4800 := sma(price, 4800)
+if movingAverage == "RMA"
+	ma20 := rma(price, 20),		ma50 := rma(price, 50),		ma60 := rma(price, 60)
+	ma80 := rma(price, 80),		ma100 := rma(price, 100),	ma120 := rma(price, 120)
+	ma140 := rma(price, 140),	ma200 := rma(price, 200),	ma300 := rma(price, 300)
+	ma320 := rma(price, 320),	ma400 := rma(price, 400),	ma480 := rma(price, 480)
+	ma600 := rma(price, 600),	ma840 := rma(price, 840),	ma1200 := rma(price, 1200)
+	ma1600 := rma(price, 1600), ma1920 := rma(price, 1920),	ma3360 := rma(price, 3360)
+	ma3600 := rma(price, 3600),	ma3840 := rma(price, 3840),	ma4800 := rma(price, 4800)
+if movingAverage == "SMMA"
+    ma20 := smma(price, 20),		ma50 := smma(price, 50),		ma60 := smma(price, 60)
+	ma80 := smma(price, 80),		ma100 := smma(price, 100),		ma120 := smma(price, 120)
+	ma140 := smma(price, 140),		ma200 := smma(price, 200),		ma300 := smma(price, 300)
+	ma320 := smma(price, 320),		ma400 := smma(price, 400),		ma480 := smma(price, 480)
+	ma600 := smma(price, 600),		ma840 := smma(price, 840),		ma1200 := smma(price, 1200)
+	ma1600 := smma(price, 1600), 	ma1920 := smma(price, 1920),	ma3360 := smma(price, 3360)
+	ma3600 := smma(price, 3600),	ma3840 := smma(price, 3840),	ma4800 := smma(price, 4800)
+if movingAverage == "WMA"
+	ma20 := wma(price, 20),		ma50 := wma(price, 50),		ma60 := wma(price, 60)
+	ma80 := wma(price, 80),		ma100 := wma(price, 100),	ma120 := wma(price, 120)
+	ma140 := wma(price, 140),	ma200 := wma(price, 200),	ma300 := wma(price, 300)
+	ma320 := wma(price, 320),	ma400 := wma(price, 400),	ma480 := wma(price, 480)
+	ma600 := wma(price, 600),	ma840 := wma(price, 840),	ma1200 := wma(price, 1200)
+	ma1600 := wma(price, 1600), ma1920 := wma(price, 1920),	ma3360 := wma(price, 3360)
+	ma3600 := wma(price, 3600),	ma3840 := wma(price, 3840),	ma4800 := wma(price, 4800)
+
+// MAc Values
+if movingAverageCustom == "EMA"
+	maCustom_1 := ema(high, length_custom)
+	maCustom_2 := ema(low, length_custom)
+if movingAverageCustom == "MA"
+	maCustom_1 := sma(high, length_custom)
+	maCustom_2 := sma(low, length_custom)
+if movingAverageCustom == "RMA"
+	maCustom_2 := rma(high, length_custom)
+	maCustom_1 := rma(low, length_custom)
+if movingAverageCustom == "SMMA"
+	maCustom_1 := smma(high, length_custom)
+	maCustom_2 := smma(low, length_custom)
+if movingAverageCustom == "WMA"
+	maCustom_1 := wma(high, length_custom)
+	maCustom_2 := wma(low, length_custom)
+
+// Favorite timeframes: 1m, 15m, 1h, 4h, 1D, 1W
+
+// MA Custom -------------------------------------------------------------
+maCustom_1_plot = plot(enable_custom ? maCustom_1 : na, title="[MAc1]", color=color_custom, linewidth=thickness, transp=transp_ma, editable=true) // emaCustom All Timeframes
+maCustom_2_plot = plot(enable_custom ? maCustom_2 : na, title="[MAc2]", color=color_custom, linewidth=thickness, transp=transp_ma, editable=true) // emaCustom All Timeframes
+bgc_maCustom = iff(maCustom_1 > maCustom_2, color.new(color.silver, transp_fill_20), color.new(color.gray, transp_fill))
+fill(maCustom_1_plot, maCustom_2_plot, bgc_maCustom, editable=false)
+
+// 1m timeframe, with additional timeframes: 5m, 30m, 1h, 4h -------------------------------------------------------------
+// 1m ab aB, for 1m and 5m
+ma20_plot_a_1 = plot(enable_a and timeframe.period == "1" ? ma20 : na, title="[a]", color=color.aqua, linewidth=thickness, transp=transp_ma, editable=false) // 1m
+ma100_plot_b_1 = plot(enable_bB and timeframe.period == "1" ? ma100 : na, title="[b]", color=color.fuchsia, linewidth=thickness, transp=transp_ma, editable=false) // 5m
+ma20_5_plot_B_1 = plot(enable_bB and timeframe.period == "1" ? ma20_5 : na, title="[B]", color=color.fuchsia, linewidth=thickness, transp=transp_ma, editable=false) // 5m
+bgc_abB_1 = iff(ma20 > ma100, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_bB_1 = color.new(color.fuchsia, transp_fill)
+fill(ma20_plot_a_1, ma100_plot_b_1, enable_a_fill_b ? bgc_abB_1 : na, editable=false)
+fill(ma20_plot_a_1, ma20_5_plot_B_1, enable_a_fill_B ? bgc_abB_1 : na, editable=false)
+fill(ma100_plot_b_1, ma20_5_plot_B_1, bgc_bB_1, editable=false)
+// 1m cC, for 30m
+ma600_plot_c_1 = plot(enable_cC and timeframe.period == "1" ? ma600 : na, title="[c]", color=color.red, linewidth=thickness, transp=transp_ma, editable=false) // 30m
+ma20_30_C_1 = plot(enable_cC and timeframe.period == "1" ? ma20_30 : na, title="[C]", color=color.red, linewidth=thickness, transp=transp_ma, editable=false) // 30m
+bgc_cC_1 = color.new(color.red, transp_fill)
+fill(ma600_plot_c_1, ma20_30_C_1, bgc_cC_1, editable=false)
+// 1m dD, for 1h
+ma1200_plot_d_1 = plot(enable_dD and timeframe.period == "1" ? ma1200 : na, title="[d]", color = color.yellow, linewidth=thickness, transp=transp_ma, editable=false) // 1h
+ma20_60_D_1 = plot(enable_dD and timeframe.period == "1" ? ma20_60 : na, title="[D]", color=color.yellow, linewidth=thickness, transp=transp_ma, editable=false) // 1h
+bgc_dD_1 = color.new(color.yellow, transp_fill)
+fill(ma1200_plot_d_1, ma20_60_D_1, bgc_dD_1, editable=false)
+// 1m eE, for 4h
+ma4800_plot_e = plot(enable_eE and timeframe.period == "1" ? ma4800 : na, title="[e]", color = color.lime, linewidth=thickness, transp=transp_ma, editable=false) // 4h
+ma20_240_E = plot(enable_eE and timeframe.period == "1" ? ma20_240 : na, title="[E]", color=color.lime, linewidth=thickness, transp=transp_ma, editable=false) // 4h
+bgc_eE = color.new(color.lime, transp_fill)
+fill(ma4800_plot_e, ma20_240_E, bgc_eE, editable=false)
+
+// 15m timeframe, with additional timeframes: [bB]1h, [cC]4h, [dD]1D, [E]1W -------------------------------------------------------------
+// 15m ab aB, for 15m and 1h
+ma20_plot_a_15 = plot(enable_a and timeframe.period == "15" ? ma20 : na, title="[a]", color=color.aqua, linewidth=thickness, transp=transp_ma, editable=false) // 15m
+ma80_plot_b_15 = plot(enable_bB and timeframe.period == "15" ? ma80 : na, title="[b]", color=color.yellow, linewidth=thickness, transp=transp_ma, editable=false) // 1h
+ma20_60_plot_B_15 = plot(enable_bB and timeframe.period == "15" ? ma20_60 : na, title="[B]", color=color.yellow, linewidth=thickness, transp=transp_ma, editable=false) // 1h
+bgc_ab_15 = iff(ma20 > ma80, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_aB_15 = iff(ma20 > ma20_60, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_bB_15 = color.new(color.yellow, transp_fill)
+fill(ma20_plot_a_15, ma80_plot_b_15, enable_a_fill_b ? bgc_ab_15 : na, editable=false)
+fill(ma20_plot_a_15, ma20_60_plot_B_15, enable_a_fill_B ? bgc_aB_15 : na, editable=false)
+fill(ma80_plot_b_15, ma20_60_plot_B_15, color.yellow, editable=false)
+// 15m cC, for 4h
+ma320_plot_c_15 = plot(enable_cC and timeframe.period == "15" ? ma320 : na, title="[c]", color = color.lime, linewidth=thickness, transp=transp_ma, editable=false) // 4h
+ma20_240_plot_C_15 = plot(enable_cC and timeframe.period == "15" ? ma20_240 : na, title="[C]", color=color.lime, linewidth=thickness, transp=transp_ma, editable=false) // 4h
+bgc_cC_15 = color.new(color.lime, transp_fill)
+fill(ma320_plot_c_15, ma20_240_plot_C_15, bgc_cC_15, editable=false)
+// 15m dD, for 1D
+ma1920_plot_e_15 = plot(enable_dD and timeframe.period == "15" ? ma1920 : na, title="[d]", color = color.orange, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+ma20_D_plot_E_15 = plot(enable_dD and timeframe.period == "15" ? ma20_D : na, title="[D]", color = color.orange, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+bgc_dD_15 = color.new(color.orange, transp_fill)
+fill(ma1920_plot_e_15, ma20_D_plot_E_15, bgc_dD_15, editable=false)
+// 15m eE, for 1W
+// ma13440_plot_e = plot(enable_eE and timeframe.period == "15" ? ma13440 : na, title="[e]", color = color_eE, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+plot(enable_eE and timeframe.period == "15" ? ma20_W : na, title="[E]", color=color.olive, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+// bgc_eE_15 = color.new(color_eE, transp_fill)
+// fill(ma13440_plot_e, ma20_W_plot_E, bgc_eE_15, editable=false)
+
+// 1h timeframe, with additional timeframes: 4h, 1D, 1W -------------------------------------------------------------
+// 1h ab aB, for 1h and 4h
+ma20_plot_a_60 = plot(enable_a and timeframe.period == "60" ? ma20 : na, title="[a]", color=color.aqua, linewidth=thickness, transp=transp_ma, editable=false) // 15m
+ma80_plot_b_60 = plot(enable_bB and timeframe.period == "60" ? ma80 : na, title="[b]", color=color.lime, linewidth=thickness, transp=transp_ma, editable=false) // 4h
+ma20_240_plot_B_60 = plot(enable_bB and timeframe.period == "60" ? ma20_240 : na, title="[B]", color=color.lime, linewidth=thickness, transp=transp_ma, editable=false) // 4h
+bgc_ab_60 = iff(ma20 > ma80, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_aB_60 = iff(ma20 > ma20_240, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_bB_60 = color.new(color.lime, transp_fill)
+fill(ma20_plot_a_60, ma80_plot_b_60, enable_a_fill_b ? bgc_ab_60 : na, editable=false)
+fill(ma20_plot_a_60, ma20_240_plot_B_60, enable_a_fill_B ? bgc_aB_60 : na, editable=false)
+fill(ma80_plot_b_60, ma20_240_plot_B_60, bgc_bB_60, editable=false)
+// 1h cC, for 1D
+ma480_plot_c_60 = plot(enable_cC and timeframe.period == "60" ? ma480 : na, title="[c]", color=color.orange, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+ma20_D_plot_C_60 = plot(enable_cC and timeframe.period == "60" ? ma20_D : na, title="[C]", color=color.orange, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+bgc_cC_60 = color.new(color.orange, transp_fill)
+fill(ma480_plot_c_60, ma20_D_plot_C_60, bgc_cC_60, editable=false)
+// 1h dD, for 1W
+ma3360_plot_d_60 = plot(enable_dD and timeframe.period == "60" ? ma3360 : na, title="[d]", color=color.olive, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+ma20_D_plot_D_60 = plot(enable_dD and timeframe.period == "60" ? ma20_W : na, title="[D]", color=color.olive, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+bgc_dD_60 = color.new(color.olive, transp_fill)
+fill(ma3360_plot_d_60, ma20_D_plot_D_60, bgc_dD_60, editable=false)
+
+// 4h timeframe -------------------------------------------------------------
+// 4h ab aB, for 4h and 1D
+ma20_plot_a_240 = plot(enable_a and timeframe.period == "240" ? ma20 : na, title="[a]", color=color.aqua, linewidth=thickness, transp=transp_ma, editable=false) // 4h
+ma120_plot_b_240 = plot(enable_bB and timeframe.period == "240" ? ma120 : na, title="[b]", color=color.orange, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+ma20_D_plot_B_240 = plot(enable_bB and timeframe.period == "240" ? ma20_D : na, title="[B]", color=color.orange, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+bgc_ab_240 = iff(ma20 > ma120, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_aB_240 = iff(ma20 > ma20_D, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_bB_240 = color.new(color.orange, transp_fill)
+fill(ma20_plot_a_240, ma120_plot_b_240, enable_a_fill_b ? bgc_ab_240 : na, editable=false)
+fill(ma20_plot_a_240, ma20_D_plot_B_240, enable_a_fill_B ? bgc_aB_240 : na, editable=false)
+fill(ma120_plot_b_240, ma20_D_plot_B_240, bgc_bB_240, editable=false)
+// 4h cC, for 1W
+ma840_plot_c_240 = plot(enable_cC and timeframe.period == "240" ? ma840 : na, title="[c]", color=color.olive, linewidth=thickness, transp=transp_ma, editable=false) // 1W
+ma20_W_plot_C_240 = plot(enable_cC and timeframe.period == "240" ? ma20_W : na, title="[C]", color=color.olive, linewidth=thickness, transp=transp_ma, editable=false) // 1W
+bgc_cC_240 = color.new(color.olive, transp_fill)
+fill(ma840_plot_c_240, ma20_W_plot_C_240, bgc_cC_240, editable=false)
+
+// // 1D timeframe -------------------------------------------------------------
+ma20_plot_a_D = plot(enable_a and timeframe.period == "D" ? ma20 : na, title="[a]", color=color.aqua, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+ma140_plot_b_D = plot(enable_bB and timeframe.period == "D" ? ma140 : na, title="[b]", color=color.olive, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+ma20_D_plot_B_D = plot(enable_bB and timeframe.period == "D" ? ma20_W : na, title="[B]", color=color.olive, linewidth=thickness, transp=transp_ma, editable=false) // 1D
+bgc_ab_D = iff(ma20 > ma140, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_aB_D = iff(ma20 > ma20_W, color.new(color.green, transp_fill_20), color.new(color.red, transp_fill))
+bgc_bB_D = color.new(color.orange, transp_fill)
+fill(ma20_plot_a_D, ma140_plot_b_D, enable_a_fill_b ? bgc_ab_D : na, editable=false)
+fill(ma20_plot_a_D, ma20_D_plot_B_D, enable_a_fill_B ? bgc_aB_D : na, editable=false)
+fill(ma140_plot_b_D, ma20_D_plot_B_D, bgc_bB_D, editable=false)
+
+// 1W timeframe -------------------------------------------------------------
+// ma20_common_W = plot(enableCommon and enableAll and ema20 and timeframe.period == "W" ? ema20 : na, title=" 20ema[A]", color=colorQuicker, linewidth=thickness, transp=transp_ma, editable=false)
+// ma50_common_W = plot(enableCommon and enableAll and ema50 and timeframe.period == "W" ? ema50 : na, title=" 50ema[B]", color=colorQuick, linewidth=thickness, transp=transp_ma, editable=false)
+// plot(enableCommon and enableAll and ema200 and timeframe.period == "W" ? ema200 : na, title=" 200ema[C]", color=colorSlow, linewidth=thickness, transp=transp_ma, editable=false)
+// fill(ema20_common_W, ema50_common_W, bgc_common)
+// // 1M timeframe
+// ema20_common_M = plot(enableCommon and enableAll and ema20 and timeframe.period == "M" ? ema20 : na, title=" 20ema[A]", color=colorQuicker, linewidth=thickness, transp=transp_ma, editable=false)
+// ema50_common_M = plot(enableCommon and enableAll and ema50 and timeframe.period == "M" ? ema50 : na, title=" 50ema[B]", color=colorQuick, linewidth=thickness, transp=transp_ma, editable=false)
+// plot(enableCommon and enableAll and ema200 and timeframe.period == "M" ? ema200 : na, title=" 200ema[C]", color=colorSlow, linewidth=thickness, transp=transp_ma, editable=false)
+// fill(ema20_common_M, ema50_common_M, bgc_common)
+
+// Common values, timeframe -------------------------------------------------------------
+bgc_common = iff(ma20 > ma50, color.new(color.green, 80), color.new(color.red, 80))
+ma20_plot = plot(enable_common ? ma20 : na, title="[20]", color=color.aqua, linewidth=thickness, transp=transp_ma, editable=false)
+ma50_plot = plot(enable_common ? ma50 : na, title="[50]", color=color.fuchsia, linewidth=thickness, transp=transp_ma, editable=false)
+plot(enable_common ? ma200 : na, title="[200]", color=color.yellow, linewidth=thickness, transp=transp_ma, editable=false)
+fill(ma20_plot, ma50_plot, bgc_common, editable=false)

@@ -1,0 +1,64 @@
+// This source code is subject to the terms of the Osozilla Public License 2.0 at https://mozilla.org/OsPL/2.0/
+// © BlueJayBird
+// @author @BlueJayBird
+// @version=4
+
+study(title = "[bjb] Os - Oscillator Signals, by @BlueJayBird", shorttitle = "Os", precision = 2, format = format.price, overlay = true)
+
+// If this tool has helped you to improve your trading and therefore your income, any donation is appreciated:
+// BTC: 3Dj9jfGuJ861oEH7kA1zpgMssPw2PYF7Gq
+// ETH and USDT: 0xc8645305ab8c08f08bcbc89c020b63362527f771
+
+// OSCILLATOR SIGNALS -----------------------------------------------------------------
+// ----------------- INPUTS
+// Constants
+transparencyOsSignals = 0
+drawOnRealTime = true // "Draw On Candles Yet To Close"
+// User inputs
+osModeSelection = input(title = "Oscillator Type", defval = "MFI", options = ["MFI", "RSI"])
+enableOsSignals = input(title = "Enable Os Signals", type = input.bool, defval = true)
+overboughtOs = input(defval=75, title = "Overbought Os Level", type = input.integer)
+oversoldOs = input(defval=25, title = "Oversold Os Level", type = input.integer)
+OsSrc = input(hlc3, "Os Source", type = input.source)
+OsLength = input(14, minval = 1, title = "Os Length")
+
+// ----------------- CALCULATIONS
+osMode = osModeSelection == "MFI" ? mfi(OsSrc, OsLength) : osModeSelection == "RSI" ? rsi(OsSrc, OsLength) : na
+
+// ----------------- PLOTTING
+// OsI Signal Levels: Def Values, 1, 5, 15, 60, 240
+signalOs1 = input(title = "Os1 Resolution", defval = "1", type=input.resolution)
+securityOs1 = security(syminfo.tickerid, signalOs1 , osMode)
+obOs1 = securityOs1 >= overboughtOs
+osOs1 = securityOs1 <= oversoldOs
+plotshape(obOs1 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.green, transp = transparencyOsSignals, text = "", style = shape.triangledown, title = "OB Os1")
+plotshape(osOs1 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.green, transp = transparencyOsSignals, text = "", style = shape.triangleup, title = "OS Os1", location = location.belowbar)
+
+signalOs2 = input(title = "Os2 Resolution", defval = "5", type=input.resolution)
+securityOs2 = security(syminfo.tickerid, signalOs2 ,osMode)
+obOs2 = securityOs2 >= overboughtOs
+osOs2 = securityOs2 <= oversoldOs
+plotshape(obOs2 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.yellow, transp = transparencyOsSignals, text = "", style = shape.triangledown, title = "OB Os2")
+plotshape(osOs2 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.yellow, transp = transparencyOsSignals, text = "", style = shape.triangleup, title = "OS Os2", location = location.belowbar)
+
+signalOs3 = input(title = "Os3 Resolution", defval = "15", type=input.resolution)
+securityOs3 = security(syminfo.tickerid, signalOs3 ,osMode)
+obOs3 = securityOs3 >= overboughtOs
+osOs3 = securityOs3 <= oversoldOs
+plotshape(obOs3 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.red, transp = transparencyOsSignals, text = "", style = shape.triangledown, title = "OB Os3")
+plotshape(osOs3 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.red, transp = transparencyOsSignals, text = "", style = shape.triangleup, title = "OS Os3", location = location.belowbar)
+
+signalOs4 = input(title = "Os4 Resolution", defval = "60", type=input.resolution)
+securityOs4 = security(syminfo.tickerid, signalOs4 ,osMode)
+obOs4 = securityOs4 >= overboughtOs
+osOs4 = securityOs4 <= oversoldOs
+plotshape(obOs4 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.white, transp = transparencyOsSignals, text = "", style = shape.triangledown, title = "OB Os4")
+plotshape(osOs4 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.white, transp = transparencyOsSignals, text = "", style = shape.triangleup, title = "OS Os4", location = location.belowbar)
+
+signalOs5 = input(title = "Os5 Resolution", defval = "240", type=input.resolution)
+securityOs5 = security(syminfo.tickerid, signalOs5 ,osMode)
+obOs5 = securityOs5 >= overboughtOs
+osOs5 = securityOs5 <= oversoldOs
+plotshape(obOs5 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.purple, transp = transparencyOsSignals, text = "", style = shape.triangledown, title = "OB Os5")
+plotshape(osOs5 and enableOsSignals and (barstate.ishistory or drawOnRealTime), color = color.purple, transp = transparencyOsSignals, text = "", style = shape.triangleup, title = "OS Os5", location = location.belowbar)
+// END -------------------------------------------------------------------------

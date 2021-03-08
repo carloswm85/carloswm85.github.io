@@ -1,46 +1,52 @@
 // This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © BlueJayBird
 //@version=4
-study(title="Candlestick Blending", shorttitle="CSB", overlay=true)
+study(title="Visual Candlestick Blender, by @BlueJayBird", shorttitle="VCB", overlay=true)
 
-enableTLa = input(defval=true, type=input.bool, title="Enable Timelines 1D (TLa)")
-colorA = input(title="Color TLa", type=input.color, defval=color.white)
-enableTLb = input(defval=true, type=input.bool, title="Enable Timelines 4h (TLb)")
-colorB = input(title="Color TLb", type=input.color, defval=color.silver)
-enableTLc = input(defval=true, type=input.bool, title="Enable Timelines 1h (TLc)")
-colorC = input(title="Color TLc", type=input.color, defval=color.gray)
-enableTLd = input(defval=true, type=input.bool, title="Enable Timelines 1W (TLd)")
-colorD = input(title="Color TLd", type=input.color, defval=color.yellow)
-transpTL = input(defval = 80, title = "Timelines Transparency")
+// If this tool has helped you to improve your trading and therefore your income, any donation is appreciated:
+// BTC: 3Dj9jfGuJ861oEH7kA1zpgMssPw2PYF7Gq
+// ETH and USDT: 0xc8645305ab8c08f08bcbc89c020b63362527f771
 
 // Style
 thickness = 2
 transp_ma = 40
 transp_fill = 90
 transp_fill_20 = 80
-securityGap = barmerge.gaps_off
+securityGap = barmerge.gaps_off 
 securityLookahead = barmerge.lookahead_on
 
-// CSB
-enableCSBautomatic = input(defval=false, type=input.bool, title="Enable CSB Automatic Mode")
+// // Get user input
+// res = input(title="Timeframe", type=input.resolution, defval="D")
+
+// Non-repainting security function
+// Created by Matthew J. Slabosz, at www.zenandtheartoftrading.com
+// rp_security(_symbol, _res, _src) => security(_symbol, _res, _src[barstate.isrealtime ? 1 : 0], securityLookahead)
+
+// // Get HTF price data
+// htfHigh = rp_security(syminfo.tickerid, res, high)
+// htfLow = rp_security(syminfo.tickerid, res, low)
+
+// CSB Automatic
+// enableCSBautomatic = input(defval=false, type=input.bool, title="Enable CSB Automatic Mode")
+
 // Candle Blending Lines (PRIMARY)
 enable1 = input(defval=true, title="Enable Candlestick Blendings 1 (CSB1)")
-res1 = input(title = "Resolution CSB1", defval = "60", type=input.resolution)
+res1 = input(title = "CSB1 Resolution", defval = "60", type=input.resolution)
 o1 = security(syminfo.ticker, res1, open, securityGap, securityLookahead)
 h1 = security(syminfo.ticker, res1, high, securityGap, securityLookahead)
 l1 = security(syminfo.ticker, res1, low, securityGap, securityLookahead)
 c1 = security(syminfo.ticker, res1, close, securityGap, securityLookahead)
-palette1 = c1 > o1 ? color.green : color.red
-paletteTraslucid1 = c1 > o1 ? color.new(color.green, 50) : color.new(color.red, 50)
+palette1 = c1 > o1 ? color.lime : color.red
+paletteTraslucid1 = c1 > o1 ? color.new(color.lime, 50) : color.new(color.red, 50)
 dashedWorkaround1 = bar_index % 2 == 0 ? palette1 : paletteTraslucid1
-plot(enable1 ? o1 : na, title="O1", color=palette1, linewidth=thickness + 1, transp=transp_ma, editable=false, style=plot.style_stepline)
-plot(enable1 ? h1 : na, title="H1", color=dashedWorkaround1, linewidth=thickness, transp=70, editable=false, style=plot.style_stepline)
-plot(enable1 ? l1 : na, title="L1", color=dashedWorkaround1, linewidth=thickness, transp=70, editable=false, style=plot.style_stepline)
-plot(enable1 ? c1 : na, title="C1", color=palette1, linewidth=thickness + 1, transp=transp_ma, editable=false, style=plot.style_stepline)
+plot(enable1 ? o1 : na, title="O1", color=palette1, linewidth=thickness + 1, transp=transp_ma, editable=true, style=plot.style_stepline)
+plot(enable1 ? h1 : na, title="H1", color=dashedWorkaround1, linewidth=thickness, transp=70, editable=true, style=plot.style_stepline)
+plot(enable1 ? l1 : na, title="L1", color=dashedWorkaround1, linewidth=thickness, transp=70, editable=true, style=plot.style_stepline)
+plot(enable1 ? c1 : na, title="C1", color=palette1, linewidth=thickness + 1, transp=transp_ma, editable=true, style=plot.style_stepline)
 
 // Candle Blending Lines (SECONDARY)
-enable2 = input(true, title="Enable Candlestick Blendings 2 (CSB2)")
-res2 = input(title = "Resolution CSB2", defval = "240", type=input.resolution)
+enable2 = input(false, title="Enable Candlestick Blendings 2 (CSB2)")
+res2 = input(title = "CSB2 Resolution", defval = "D", type=input.resolution)
 o2 = security(syminfo.ticker, res2, open, securityGap, securityLookahead)
 h2 = security(syminfo.ticker, res2, high, securityGap, securityLookahead)
 l2 = security(syminfo.ticker, res2, low, securityGap, securityLookahead)
@@ -48,20 +54,37 @@ c2 = security(syminfo.ticker, res2, close, securityGap, securityLookahead)
 palette2 = c2 > o2 ? color.aqua : color.yellow
 paletteTraslucid2 = c2 > o2 ? color.new(color.aqua, 50) : color.new(color.yellow, 50)
 dashedWorkaround2 = bar_index % 2 == 0 ? palette2 : paletteTraslucid2
-plot(enable2 ? o2 : na, title="O2", color=palette2, linewidth=thickness + 1, transp=transp_ma, editable=false, style=plot.style_stepline)
-plot(enable2 ? h2 : na, title="H2", color=dashedWorkaround2, linewidth=thickness, transp=70, editable=false, style=plot.style_stepline)
-plot(enable2 ? l2 : na, title="L2", color=dashedWorkaround2, linewidth=thickness, transp=70, editable=false, style=plot.style_stepline)
-plot(enable2 ? c2 : na, title="C2", color=palette2, linewidth=thickness + 1, transp=transp_ma, editable=false, style=plot.style_stepline)
+plot(enable2 ? o2 : na, title="O2", color=palette2, linewidth=thickness + 1, transp=transp_ma, editable=true, style=plot.style_stepline)
+plot(enable2 ? h2 : na, title="H2", color=dashedWorkaround2, linewidth=thickness, transp=70, editable=true, style=plot.style_stepline)
+plot(enable2 ? l2 : na, title="L2", color=dashedWorkaround2, linewidth=thickness, transp=70, editable=true, style=plot.style_stepline)
+plot(enable2 ? c2 : na, title="C2", color=palette2, linewidth=thickness + 1, transp=transp_ma, editable=true, style=plot.style_stepline)
 
-// VWAP
-enable_vwap = input(false, title="Enable VWAP Session")
-priceVwap = input(type=input.source, defval=hlc3, title="VWAP Source")
-vwapResolutionA = input(title = "Resolution VWAP Session", defval = "", type=input.resolution)
-vwapFunction = vwap(priceVwap)
-vwapSecurity = security(syminfo.tickerid, vwapResolutionA, vwapFunction, securityGap, securityLookahead)
-plot(enable_vwap ? vwapSecurity : na, title="VWAPs", color=color.white, linewidth=2, transp=transp_ma, editable=true) // All TimeFrames
+// Candle Blending Lines (TERTIARY)
+enable3 = input(false, title="Enable Candlestick Blendings 3 (CSB3)")
+res3 = input(title = "CSB3 Resolution", defval = "W", type=input.resolution)
+o3 = security(syminfo.ticker, res3, open, securityGap, securityLookahead)
+h3 = security(syminfo.ticker, res3, high, securityGap, securityLookahead)
+l3 = security(syminfo.ticker, res3, low, securityGap, securityLookahead)
+c3 = security(syminfo.ticker, res3, close, securityGap, securityLookahead)
+palette3 = c3 > o3 ? color.orange : color.fuchsia
+paletteTraslucid3 = c3 > o3 ? color.new(color.orange, 50) : color.new(color.fuchsia, 50)
+dashedWorkaround3 = bar_index % 2 == 0 ? palette3 : paletteTraslucid3
+plot(enable3 ? o3 : na, title="O3", color=palette3, linewidth=thickness + 1, transp=transp_ma, editable=true, style=plot.style_stepline)
+plot(enable3 ? h3 : na, title="H3", color=dashedWorkaround3, linewidth=thickness, transp=70, editable=true, style=plot.style_stepline)
+plot(enable3 ? l3 : na, title="L3", color=dashedWorkaround3, linewidth=thickness, transp=70, editable=true, style=plot.style_stepline)
+plot(enable3 ? c3 : na, title="C3", color=palette3, linewidth=thickness + 1, transp=transp_ma, editable=true, style=plot.style_stepline)
 
 // Time Chartlines 1h and 4h, for 1m
+enableTLc = input(defval=true, type=input.bool, title="Enable Timelines 1h (TLa)")
+colorC = input(title="Color TLa", type=input.color, defval=color.white)
+enableTLb = input(defval=true, type=input.bool, title="Enable Timelines 4h (TLb)")
+colorB = input(title="Color TLb", type=input.color, defval=color.yellow)
+enableTLa = input(defval=true, type=input.bool, title="Enable Timelines 1D (TLc)")
+colorA = input(title="Color TLc", type=input.color, defval=color.red)
+enableTLd = input(defval=true, type=input.bool, title="Enable Timelines 1W (TLd)")
+colorD = input(title="Color TLd", type=input.color, defval=color.lime)
+transpTL = input(defval = 80, title = "Timelines Transparency")
+
 targetTime0     = timestamp(year, month, dayofmonth, 00, 00, 00) //  1D
 targetTime1     = timestamp(year, month, dayofmonth, 01, 00, 00) // 1h
 targetTime2     = timestamp(year, month, dayofmonth, 02, 00, 00) // 1h
