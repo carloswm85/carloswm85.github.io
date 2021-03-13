@@ -1,0 +1,121 @@
+// This source code is subject to the terms of the Osozilla Public License 2.0 at https://mozilla.org/OsPL/2.0/
+// © BlueJayBird
+// @author @BlueJayBird
+// @version=4
+
+study(title="[bjb] OSK - Oscillator's Swiss Knife, by @BlueJayBird", shorttitle="OSK", format = format.price, precision = 2, scale = scale.right)
+
+// If this tool has helped you to improve your trading and therefore your income, any donation is appreciated:
+// BTC: 3Dj9jfGuJ861oEH7kA1zpgMssPw2PYF7Gq
+// ETH and USDT: 0xc8645305ab8c08f08bcbc89c020b63362527f771
+
+// OSCILLATOR LINES -----------------------------------------------------------------
+// ----------------- INPUTS
+// Constants
+transparency = 0
+drawOnRealTime = true // "Draw On Candles Yet To Close"
+// User inputs
+enable = input(title = "Enable Oscillator's Swiss Knife (OSK)", type = input.bool, defval = true)
+type = input(title = "Type", defval = "RSI", options = ["MFI", "RSI"])
+length = input(14, minval = 1, title = "Length")
+
+source = type == "MFI" ? hlc3 : type == "RSI" ? close : na
+mode = type == "MFI" ? mfi(source, length) : type == "RSI" ? rsi(source, length) : na
+overbought = type == "MFI" ? 80 : type == "RSI" ? 70 : na
+oversold = type == "MFI" ? 20 : type == "RSI" ? 30 : na
+
+resolution = input(title = "Resolution", defval = "", type=input.resolution)
+security = security(syminfo.tickerid, resolution , mode)
+enablePoints = input(false, title="Enable Points")
+enableBG = input(true, title="Enable Background")
+
+// SMA
+smaEnable = input(false, title="Enable SMA")
+smaLength = input(7, minval=1, title="SMA Length")
+sma = sma(security, smaLength)
+
+// Signals
+securityOB = security >= overbought
+securityOS = security <= oversold
+
+// ----------------------------------- PLOTTING
+// Oscillator
+plot(enable ? security : na, color = security > 50 ? color.green : color.red, title = "OSK", editable = true)
+// Points
+plot(enablePoints ? security : na, title = "Points", style = plot.style_cross, color = color.white, editable = true)
+// SMA
+plot(smaEnable ? sma : na, color = sma >= 50 ? color.aqua : color.yellow, title="SMA", linewidth = 2, transp = 50, editable = true)
+// Signals
+plotshape(securityOB and enable and resolution == "" ? security + 4 : na, title = "Overbought", location = location.absolute, color = color.green, transp = 0, style = shape.triangledown, text = "", editable = true)
+plotshape(securityOS and enable and resolution == "" ? security - 4 : na, title = "Oversold", location = location.absolute, color = color.red, transp = 0, style = shape.triangleup, text = "", editable = true)
+
+// BACKGROUND
+color_red = color.new(color.red, 40)
+color_green = color.new(color.green, 40)
+color_mid = color.new(color.white, 40)
+style_extreme = hline.style_dashed
+style_middle = hline.style_dotted
+style_quarter = hline.style_dotted
+qub = (overbought) / 2 + 50 // Quarter Upper Band location
+qlb = 50 - (50 - oversold) / 2 // Quarter Lower Band location
+upperLine = hline(enableBG ? overbought : na, "Upper Band", color=color_green, linestyle=style_extreme, editable=false)
+hline(enableBG ? qub : na, "Quarter Upper Band", color=color_green, linestyle=style_quarter, editable=false)
+middleLine = hline(enableBG ? 50 : na, "Middle Band", color=color_mid, linestyle=style_middle, editable=false)
+hline(enableBG ? qlb : na, "Quarter Lower Band", color=color_red, linestyle=style_quarter, editable=false)
+lowerLine = hline(enableBG ? oversold : na, "Lower Band", color=color_red, linestyle=style_extreme, editable=false)
+bgc_ul = color.new(color.green, 90)
+bgc_ll = color.new(color.red, 90)
+fill(upperLine, middleLine, color=bgc_ul, editable=false)
+fill(lowerLine, middleLine, color=bgc_ll, editable=false)
+
+// // ADX --------------------------------------------------
+// //@version=4
+// enableADX = input(false, title="Enable ADX")
+// adxlen = input(14, title="ADX Smoothing")
+// dilen = input(14, title="ADX DI Length")
+// dirmov(len) =>
+// 	up = change(high)
+// 	down = -change(low)
+// 	plusDM = na(up) ? na : (up > down and up > 0 ? up : 0)
+// 	minusDM = na(down) ? na : (down > up and down > 0 ? down : 0)
+// 	truerange = rma(tr, len)
+// 	plus = fixnan(100 * rma(plusDM, len) / truerange)
+// 	minus = fixnan(100 * rma(minusDM, len) / truerange)
+// 	[plus, minus]
+// adx(dilen, adxlen) =>
+// 	[plus, minus] = dirmov(dilen)
+// 	sum = plus + minus
+// 	adx = 100 * rma(abs(plus - minus) / (sum == 0 ? 1 : sum), adxlen)
+// sig = adx(dilen, adxlen)
+// plot(enableADX and sig ? sig: na, color=color.yellow, title="ADX")
+
+// // ATR
+// enableATR = input(false, title="Enable ATR")
+// length = input(title="ATR Length", defval=9, minval=1)
+// lowerATR = input(title="ATR Lower Extention", defval=0.35)
+// upperATR = input(title="ATR Upper Extention", defval=0.35)
+// smoothing = input(title="ATR Smoothing", defval="RMA", options=["RMA", "SMA", "EMA", "WMA"])
+// ma_function(source, length) =>
+// 	if smoothing == "RMA"
+// 		up = rma(max(change(source), 0), length)
+//         down = rma(-min(change(source), 0), length)
+//         rma = (down == 0 ? 100 : (up == 0 ? 0 : 100) - (100 / (1 + up / down )))
+// 	else
+// 		if smoothing == "SMA"
+// 			up = sma(max(change(source), 0), length)
+//             down = sma(-min(change(source), 0), length)
+//             rma = (down == 0 ? 100 : (up == 0 ? 0 : 100) - (100 / (1 + up / down)))
+// 		else
+// 			if smoothing == "EMA"
+// 				up = ema(max(change(source), 0), length)
+//                 down = ema(-min(change(source), 0), length)
+//                 rma = (down == 0 ? 100 : (up == 0 ? 0 : 100) - (100 / (1 + up / down)))
+// 			else
+// 				up = wma(max(change(source), 0), length)
+//                 down = wma(-min(change(source), 0), length)
+//                 rma = (down == 0 ? 100 : (up == 0 ? 0 : 100) - (100 / (1 + up / down)))
+// atrValue = ma_function(tr(true), length)
+// stretchedAtrValue = atrValue < 50 ? atrValue - atrValue * lowerATR : atrValue + atrValue * upperATR
+// atrSmoothed = sma(stretchedAtrValue, length)
+// plot(enableATR and atrSmoothed ? atrSmoothed : na, title = "ATR", color=color.orange, transp=0)
+// // END
