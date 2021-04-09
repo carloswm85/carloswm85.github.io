@@ -1,0 +1,8 @@
+	ma20 := wma(price, 20),		ma50 := wma(price, 50),		ma60 := wma(price, 60)
+	ma80 := wma(price, 80),		ma100 := wma(price, 100),	ma120 := wma(price, 120)
+	ma140 := wma(price, 140),	ma200 := wma(price, 200),	ma240 := wma(price, 240)
+	ma300 := wma(price, 300),	ma320 := wma(price, 320),	ma400 := wma(price, 400)
+	ma480 := wma(price, 480),	ma600 := wma(price, 600),	ma840 := wma(price, 840)
+	ma960 := wma(price, 960),	ma1200 := wma(price, 1200), ma1600 := wma(price, 1600)
+	ma1920 := wma(price, 1920),	ma3360 := wma(price, 3360), ma3600 := wma(price, 3600)
+	ma3840 := wma(price, 3840),	ma4800 := wma(price, 4800)

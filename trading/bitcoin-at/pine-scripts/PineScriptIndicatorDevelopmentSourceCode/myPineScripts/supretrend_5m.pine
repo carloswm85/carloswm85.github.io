@@ -1,0 +1,64 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © BlueJayBird
+//@version = 4
+study(title = "Supertrend, adjusted for 5m timeframe, by @BlueJayBird", shorttitle = "ST5", overlay = true)
+
+// If this tool has helped you to improve your trading and therefore your income, any donation is appreciated:
+// BTC: 3Dj9jfGuJ861oEH7kA1zpgMssPw2PYF7Gq
+// ETH and USDT: 0xc8645305ab8c08f08bcbc89c020b63362527f771
+
+// -------------------------------------- Inputs
+periods = input(title = "ATR Period", type = input.integer, defval = 120)
+multiplier = input(title = "ATR multiplier", type = input.float, step = 0.1, defval = 2.0)
+enable_dt = input(title = "Enable DT", type = input.bool, defval = true)
+enable_ut = input(title = "Enable UT", type = input.bool, defval = true)
+enable_labels = input(title = "Enable Labels", type = input.bool, defval = false)
+
+// -------------------------------------- CALCULATIONS
+atr = atr(periods)
+// -----------------  UT
+// 1
+ut_low = low - (multiplier * atr)
+ut_low_previous = nz(ut_low[1], ut_low)
+ut_low := close[1] > ut_low_previous ? max(ut_low, ut_low_previous) : ut_low
+// 2
+dt_low = low + (multiplier * atr)
+dt_low_previous = nz(dt_low[1], dt_low)
+dt_low := close[1] < dt_low_previous ? min(dt_low, dt_low_previous) : dt_low
+// 3
+trend_ut = 1
+trend_ut := nz(trend_ut[1], trend_ut)
+trend_ut := trend_ut == -1 and close > dt_low_previous ? 1 : trend_ut == 1 and close < ut_low_previous ? -1 : trend_ut
+// ----------------- DT
+// 1
+ut_high = high - (multiplier * atr)
+ut_high_previous = nz(ut_high[1], ut_high)
+ut_high := close[1] > ut_high_previous ? max(ut_high, ut_high_previous) : ut_high
+// 2
+dt_high = high + (multiplier * atr)
+dt_high_previous = nz(dt_high[1], dt_high)
+dt_high := close[1] < dt_high_previous ? min(dt_high, dt_high_previous) : dt_high
+// 3
+trend_dt = 1
+trend_dt := nz(trend_dt[1], trend_dt)
+trend_dt := trend_dt == -1 and close > dt_high_previous ? 1 : trend_dt == 1 and close < ut_high_previous ? -1 : trend_dt
+
+// -------------------------------------- PLOTTING
+ut_color = color.green
+dt_color = color.red
+// UT Line
+ut_plot_high = plot(trend_ut == 1 and enable_ut ? ut_low : na, title = "UT", style = plot.style_linebr, linewidth = 2, color = color.green)
+// UT Shapes
+buySignal = trend_ut == 1 and trend_ut[1] == -1
+plotshape(buySignal and enable_ut ? ut_low : na, title = "UT Start Point", location = location.absolute, style = shape.circle, size = size.tiny, color = color.green, transp = 0)
+plotshape(buySignal and enable_labels and enable_ut ? ut_low : na, title = "UT Label", text = "UT", location = location.absolute, style = shape.labelup, size = size.tiny, color = color.green, textcolor = color.white, transp = 0)
+// DT Line
+dt_plot_high = plot(trend_dt == 1 ? na : enable_dt ? dt_high : na, title = "DT", style = plot.style_linebr, linewidth = 2, color = color.red)
+// DT Shapes
+sellSignal = trend_dt == -1 and trend_dt[1]  == 1
+plotshape(sellSignal and enable_dt ? dt_high : na, title = "DT Start Point", location = location.absolute, style = shape.circle, size = size.tiny, color = color.red, transp = 0)
+plotshape(sellSignal and enable_labels and enable_dt ? dt_high : na, title = "DT Label", text = "DT", location = location.absolute, style = shape.labeldown, size = size.tiny, color = color.red, textcolor = color.white, transp = 0)
+// Filler Background
+mPlot = plot(ohlc4, title = "", style = plot.style_circles, linewidth = 0, editable = false) // Dummy dots. Necessary for plotting the fill!
+fill(mPlot, ut_plot_high, title = "UT Fill", color = ut_color)
+fill(mPlot, dt_plot_high, title = "DT Fill", color = dt_color)
