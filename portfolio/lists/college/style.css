@@ -1,12 +1,52 @@
+/* ELEMENTS */
 h2 {
 	text-align: center;
+}
+
+h5 {
+	font-weight: 600;
 }
 
 hr {
 	color: rgba(0, 0, 0, 0);
 }
 
+h2, h5, p, small, i {
+	color: white;
+}
+
+/* CLASSES */
+.nav-link {
+	color: white;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: black;
+}
+
+.nav-pills .nav-link, .nav-pills .show > .nav-link {
+	font-size: 1.2em;
+}
+
+a:hover {
+    color: yellow;
+}
+
+li > a {
+	background-color: white;
+}
+
+.list-group-item {
+	background-color: black;
+	border: white solid 1px;
+}
+
+.list-group-item:hover h5, .list-group-item:hover p, .list-group-item:hover small, .list-group-item:hover i {
+	color: black;
+}
+
 .bi {
 	font-size: 2rem;
-	color: cornflowerblue;
+	color: white;
 }
