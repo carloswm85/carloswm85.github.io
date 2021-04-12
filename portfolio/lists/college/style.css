@@ -3,6 +3,11 @@ h2 {
 	text-align: center;
 }
 
+h2:hover {
+	color: fuchsia;
+	font-weight: 600;
+}
+
 h5 {
 	font-weight: 600;
 }
@@ -11,8 +16,12 @@ hr {
 	color: rgba(0, 0, 0, 0);
 }
 
-h2, h5, p, small, i {
+h2, h5, p, small, i, li {
 	color: white;
+}
+
+li > a {
+	background-color: white;
 }
 
 /* CLASSES */
@@ -29,13 +38,11 @@ h2, h5, p, small, i {
 	font-size: 1.2em;
 }
 
-a:hover {
+a:hover, .nav-pills .nav-link.active:hover {
     color: yellow;
 }
 
-li > a {
-	background-color: white;
-}
+
 
 .list-group-item {
 	background-color: black;
