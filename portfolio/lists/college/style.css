@@ -24,6 +24,10 @@ li > a {
 	background-color: white;
 }
 
+article, .new-header {
+	margin-top: 1em;
+}
+
 /* CLASSES */
 .nav-link {
 	color: white;
@@ -42,8 +46,6 @@ a:hover, .nav-pills .nav-link.active:hover {
     color: yellow;
 }
 
-
-
 .list-group-item {
 	background-color: black;
 	border: white solid 1px;
@@ -51,6 +53,10 @@ a:hover, .nav-pills .nav-link.active:hover {
 
 .list-group-item:hover h5, .list-group-item:hover p, .list-group-item:hover small, .list-group-item:hover i {
 	color: black;
+}
+
+.list-group-item:hover h5, .list-group-item:hover p, .list-group-item:hover small, .list-group-item:hover i {
+	color: white;
 }
 
 .bi {
