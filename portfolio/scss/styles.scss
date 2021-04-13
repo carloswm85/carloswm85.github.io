@@ -24,6 +24,10 @@ li > a {
 	background-color: white;
 }
 
+li {
+	line-height: 2em;
+}
+
 article, .new-header {
 	margin-top: 1em;
 }
@@ -56,7 +60,7 @@ a:hover, .nav-pills .nav-link.active:hover {
 	color: black;
 }
 
-.list-group-item:hover h5, .list-group-item:hover p, .list-group-item:hover small, .list-group-item:hover i {
+.list-group-item:hover h5.white-text, .list-group-item:hover small.white-text, {
 	color: white;
 }
 
