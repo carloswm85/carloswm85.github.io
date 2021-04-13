@@ -649,7 +649,7 @@
    }
  }
  #zen-intro > header > h2::after {
-   content: url(../zen-garden/assets/svg/018-mercury.svg);
+   content: url(assets/svg/018-mercury.svg);
    width: 2rem;
    float: right;
    animation: translation 20s linear infinite;
@@ -657,7 +657,7 @@
  }
  
  #zen-preamble > p:nth-child(3)::after {
-   content: url(../zen-garden/assets/svg/036-venus.svg);
+   content: url(assets/svg/036-venus.svg);
    width: 4rem;
    float: right;
    animation: translation 60s linear infinite;
@@ -665,7 +665,7 @@
  }
  
  #zen-explanation > p:nth-child(2) > abbr:nth-child(2)::before {
-   content: url(../zen-garden/assets/svg/006-planet-earth.svg);
+   content: url(assets/svg/006-planet-earth.svg);
    width: 4rem;
    float: right;
    position: absolute;
@@ -674,7 +674,7 @@
  }
  
  #zen-explanation > p:nth-child(2) > abbr:nth-child(2)::after {
-   content: url(../zen-garden/assets/svg/moon.svg);
+   content: url(assets/svg/moon.svg);
    width: 2rem;
    float: right;
    position: absolute;
@@ -684,7 +684,7 @@
  }
  
  #zen-explanation > p:nth-child(3)::after {
-   content: url(../zen-garden/assets/svg/017-mars.svg);
+   content: url(assets/svg/017-mars.svg);
    width: 2rem;
    float: right;
    animation: translation 85s linear infinite;
@@ -692,7 +692,7 @@
  }
  
  #zen-participation > p:nth-child(2)::after {
-   content: url(../zen-garden/assets/svg/012-jupiter.svg);
+   content: url(assets/svg/012-jupiter.svg);
    width: 20rem;
    float: right;
    position: absolute;
@@ -701,7 +701,7 @@
  }
  
  #zen-requirements > p:nth-child(2)::after {
-   content: url(../zen-garden/assets/svg/028-saturn.svg);
+   content: url(assets/svg/028-saturn.svg);
    width: 16rem;
    float: right;
    position: absolute;
@@ -710,7 +710,7 @@
  }
  
  #design-selection::before {
-   content: url(../zen-garden/assets/svg/035-uranus.svg);
+   content: url(assets/svg/035-uranus.svg);
    width: 12rem;
    float: right;
    position: absolute;
@@ -719,7 +719,7 @@
  }
  
  #zen-resources::before {
-   content: url(../zen-garden/assets/svg/022-neptune.svg);
+   content: url(assets/svg/022-neptune.svg);
    width: 10rem;
    float: right;
    position: absolute;
