@@ -4,6 +4,7 @@
   "description": "Carlos Washington Mercado GitHub Pages personal website",
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "^5.1.0",
     "bootstrap-icons": "^1.4.1"
   },
   "devDependencies": {},
