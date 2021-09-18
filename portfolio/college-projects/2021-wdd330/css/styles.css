@@ -5,6 +5,7 @@ html {
 	color: #fff;
 	font-size: 1.3em;
 	font-family: 'Ubuntu', sans-serif;
+	padding: 0 0.5em;
 }
 
 body {
@@ -13,6 +14,10 @@ body {
 	border: #fff solid 1px;
 	padding: 0 1em;
 	border-radius: 10px;
+}
+
+.body-wide {
+	max-width: 1024px;
 }
 
 .border-bottom {
