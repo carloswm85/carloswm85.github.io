@@ -25,10 +25,9 @@ links.forEach(element => {
 	
 	linkElement.href = element.url;
 	linkElement.innerText = element.label;
-	linkElement.target = '_blank';
 
 	// &nearr; &UpperRightArrow; &nearrow; &#x02197; &#8599;
-	span.innerHTML = ' &#8663;';
+	span.innerHTML = ' &#8667;';
 
 	linkElement.appendChild(span);
 	listItem.appendChild(linkElement);
