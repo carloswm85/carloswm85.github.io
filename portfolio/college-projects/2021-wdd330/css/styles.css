@@ -53,9 +53,12 @@ img {
 
 .go-back {
 	float: left;
-	font-size: 1.2;
+	font-size: 1.2em;
 }
 
+.italic {
+	font-style: italic;
+}
 
 /* =============================== FORMS =================================== */
 form > input{
