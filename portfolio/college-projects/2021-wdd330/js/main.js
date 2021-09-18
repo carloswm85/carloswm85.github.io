@@ -9,7 +9,7 @@ const links = [
 		url: 'week02/index.html'
 	},
 	{
-		label: 'Week 03 (empty)',
+		label: 'Week 03 (try me)',
 		url: 'week03/index.html'
 	},
 	// {
