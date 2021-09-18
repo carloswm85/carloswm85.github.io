@@ -12,7 +12,7 @@ body {
 	max-width: 450px;
 	margin: 1.5em auto;
 	border: #fff solid 1px;
-	padding: 0 1em;
+	padding: 1em;
 	border-radius: 10px;
 }
 
@@ -31,7 +31,7 @@ li {
 a:link {
 	font-size: 1em;
 	text-decoration: dashed;
-	color: white;
+	color: orange;
 }
 
 a:visited {
@@ -54,4 +54,30 @@ img {
 .go-back {
 	float: left;
 	font-size: 1.2;
+}
+
+
+/* =============================== FORMS =================================== */
+form > input{
+	float: right;
+	width: 70%;
+}
+
+textarea {
+	display: block;
+	margin: 0 auto;
+	width: 90%;
+	height: 250px;
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-around;
+	padding: 1em;
+}
+
+button {
+	flex-grow: 1;
+	padding: 0.2em;
+	margin: 0 0.2em;
 }
