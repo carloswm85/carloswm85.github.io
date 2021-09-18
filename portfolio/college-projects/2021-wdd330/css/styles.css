@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@0;1&display=swap');
+
 html {
 	background-color: #000;
 	color: #fff;
-	font-size: 1.4em;
+	font-size: 1.3em;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -16,18 +19,25 @@ body {
 	border-bottom: #fff 1px dashed;
 }
 
-a {
-	text-decoration: none;
-}
-
 a:link {
-	color: aqua;
+	font-size: 1em;
+	text-decoration: dashed;
+	color: white;
 }
 
 a:visited {
-	color: white;
+	color:yellow;
+}
+
+a:hover {
+	color: aqua;
 }
 
 span {
 	font-size: 1.5em;
+}
+
+img {
+	margin: 1em;
+	width: 90%;
 }
