@@ -19,13 +19,21 @@
 	<h1>Week 02</h1>
 
 	<!-- Instructions -->
-	<section>
-		<p>Open the console for reading the code.</p>
+	<section class="border-bottom">
+		<p>Open the console for reading some code.</p>
 		<p><a href="https://byui-cit.github.io/cit261/prepare/week02.html">https://byui-cit.github.io/cit261/prepare/week02.html &#8663;</a></p>
 	</section>
 
+	<section class="border-bottom">
+		<h2>Raw Files</h2>
+
+		<ul>
+			<li><a href="script.js" target="_blank">script.js &#8663;</a></li>
+		</ul>
+	</section>
+
 	<!-- Reading Section -->
-	<section>
+	<section class="border-bottom">
 		<h2>Readings</h2>
 
 		<ol>
@@ -34,9 +42,30 @@
 					<li>Ch2: Programming basics <span class="lime">→</span> Much of this should be review, but pay special attention to the sections on variables, scope, converting/parsing, and template literals. <span class="lime">→</span> <span class="red">Read</span>
 						<ul>
 							Notes on this reading:
-							<li></li>
-							<li></li>
-							<li></li>
+							<li>Good comments and documentation is something I've always appreciated. Grammar is also soemthing I pay attention to when I'm writing in any language: I really like to follow good practices and best standards. </li>
+							<li><code>var</code> and <code>let</code> have always given me some trouble when learning their differences in JS. Here I learned that the main difference is that <code>let</code> and <code>const</code> have block scope(d). They also prevent you from overwriting any built-in methods by assignment, which is generally frowned upon, whereas using <code>var</code> doesn't.</li>
+							<li>"<code>let</code> as used in formalized mathematics (especially the writing of proofs) indicates that the current instance of a variable exists only for the scope of that logical idea.", from a StackOverflow <a href="https://stackoverflow.com/a/43193811/7389293">answer</a>.</li>
+							<li>"<code>let</code> implements restricted scope of functions, in block structures.", <a href="https://stackoverflow.com/a/37917089/7389293">here</a>.</li>
+							<li>Use <code>const</code> whenever possible.</li>
+							<li>Variables that start with an underscore <code>_</code> generally refer to private properties and methods./li>
+							<li>Direct assignment (in primitive data types) and, assignment by reference (in objetcs), is always an interesting topic.</li>
+							<li>String literals Vs String objects, always good to remember the difference. Some other caveats on strings are mentioned, which is cool.</li>
+							<li>Template literals and interpolation: <code>`She said, "I'm going to be ${ age + 1} years old next year."`</code>... Using backticks <code>`</code></li>
+							<li>Symbold primitive data type: <code>const uniqueID = Symbol('this is a description of the symbol');</code>, which main use-case is as object property keys.</li>
+							<li>JS is <strong>weakly typed</strong> or <strong>loosely typed</strong> language. This means you don't need to explicitly speficy what data-type a variable is when you declare it. <strong>Strongly typed</strong> languages are: Java, Swift, TypeScript.</li>
+							<li><strong>FALSY</strong> boolean values: <code>""</code>, <code>''</code>, <code>``</code>, <code>0</code>, <code>-0</code>, <code>NaN</code>, <code>false</code>, <code>null</code>, <code>undefined</code>. In other languages, zero and empty strings are not falsy.</li>
+							<li>JS uses <strong>Lazy Evaluation</strong> of logical statements: This means it stops evaluating any further operands once the result is clear. This means:
+								<ul>
+									<li>
+										"For example, for a logical AND expression to be true, all the operands have to be
+										true; if any of them are false, there is no point checking any subsequent
+										operands as the result will still be false. Similarly, for a logical OR to be true,
+										only one of the operands has to be true; hence, as soon as an operand is evaluated
+										to true, the result is returned as true and any subsequent operands won’t be
+										checked as the result is of no consequence."
+									</li>
+								</ul>
+							</li>
 							<li></li>
 						</ul>
 					</li>
@@ -86,7 +115,7 @@
 	</section>
 
 	<!-- Assignment Section -->
-	<section>
+	<section class="border-bottom">
 		<h2>Assignments</h2>
 		<ol>
 			<li>Added weekly report: <a href="report.html">Here &#8667;</a></li>
@@ -99,11 +128,8 @@
 		<ol>
 			<li>None.</li>
 		</ol>
-
-
-
 	</section>
 </body>
 
-
+<script src="script.js"></script>
 </html>

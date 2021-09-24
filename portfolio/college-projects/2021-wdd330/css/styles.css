@@ -16,6 +16,13 @@ body {
 	border-radius: 10px;
 }
 
+code {
+	border: solid 1px gray;
+	border-radius: 2px;
+	padding: 0 5px;
+	font-family: Consolas, monospace;
+}
+
 .body-wide {
 	max-width: 1024px;
 }
