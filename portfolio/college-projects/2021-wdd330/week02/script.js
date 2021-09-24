@@ -1,5 +1,16 @@
-/* Novice to Ninja, Ch2*/
+/**
+ * LAST EDIT
+ */
+const lastEdit = document.querySelector(".last-edit");
+const theDate = new Date(document.lastModified).toLocaleDateString();
+lastEdit.innerText = theDate;
 
+
+/**
+ * Novice to Ninja
+ */ 
+
+// Ch2
 // Infinity
 console.log('>>> Novice to Ninja, Ch2');
 console.log('\n>> Infinity');
@@ -12,6 +23,7 @@ console.log(`num1 value: ${num1}; typeof ${ typeof (num1) }`);
 console.log(`num2 value: ${num2}; typeof ${ typeof (num2) }`);
 console.log(`num3 value: ${num3}; typeof ${ typeof (num3) }`);
 
+// Ch3
 // Maps
 const romanNumbers = new Map();
 romanNumbers.set(1, 'I').set(2, 'II').set(3, 'III');
