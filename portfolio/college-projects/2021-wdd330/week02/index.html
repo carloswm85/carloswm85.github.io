@@ -51,10 +51,17 @@
 							<li>Direct assignment (in primitive data types) and, assignment by reference (in objetcs), is always an interesting topic.</li>
 							<li>String literals Vs String objects, always good to remember the difference. Some other caveats on strings are mentioned, which is cool.</li>
 							<li>Template literals and interpolation: <code>`She said, "I'm going to be ${ age + 1} years old next year."`</code>... Using backticks <code>`</code></li>
+<<<<<<< HEAD
 							<li>Symbold primitive data type: <code>const uniqueID = Symbol('this is a description of the symbol');</code>, which main use-case is as object property keys.</li>
 							<li>JS is <b>weakly typed</b> or <b>loosely typed</b> language. This means you don't need to explicitly speficy what data-type a variable is when you declare it. <b>Strongly typed</b> languages are: Java, Swift, TypeScript.</li>
 							<li><b>FALSY</b> boolean values: <code>""</code>, <code>''</code>, <code>``</code>, <code>0</code>, <code>-0</code>, <code>NaN</code>, <code>false</code>, <code>null</code>, <code>undefined</code>. In other languages, zero and empty strings are not falsy.</li>
 							<li>JS uses <b>Lazy Evaluation</b> of logical statements: This means it stops evaluating any further operands once the result is clear. This means:
+=======
+							<li>Symbols primitive data type: <code>const uniqueID = Symbol('this is a description of the symbol');</code>, which main use-case is as object property keys.</li>
+							<li>JS is <strong>weakly typed</strong> or <strong>loosely typed</strong> language. This means you don't need to explicitly speficy what data-type a variable is when you declare it. <strong>Strongly typed</strong> languages are: Java, Swift, TypeScript.</li>
+							<li><strong>FALSY</strong> boolean values: <code>""</code>, <code>''</code>, <code>``</code>, <code>0</code>, <code>-0</code>, <code>NaN</code>, <code>false</code>, <code>null</code>, <code>undefined</code>. In other languages, zero and empty strings are not falsy.</li>
+							<li>JS uses <strong>Lazy Evaluation</strong> of logical statements: This means it stops evaluating any further operands once the result is clear. This means:
+>>>>>>> 0e00f2b388764d53fa0abc292b729270ad09ecff
 								<ul>
 									<li>
 										"For example, for a logical AND expression to be true, all the operands have to be
@@ -66,16 +73,29 @@
 									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li>Logical operators can be used to check if compound statements are true or false.</li>
 						</ul>
 					</li>
 					<li>Ch3: Arrays, Logic, and Loops <span class="lime">→</span> Again much of this should feel like review. Pay special attention to the section on array methods. <span class="lime">→</span> <span class="red">Read</span>
 						<ul>
 							Notes on this reading:
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
+							<li>Review of ARRAYS, their properties and methods. Multidimensional arrays. Arrays are ordered list of values.</li>
+							<li><i>Callbacks</i> are mentioned when talking about array sorting. Callbacks are functions passed as an argument to a function. It the book's case when dealing with <code>myArray.sort();</code>. This topic is covered in chapter 4 of the book.</i></li>
+							<li>Review of SETS: Ordered lists of non-duplicate values. Data structure that represents a collection of unique values, so it cannot include any duplicate values. They offer a useful way to keep track of data without having to check if any values have been duplicated. Example: <code>const list = new Set();</code>. Sets can be worked with arrays in many different ways.</li>
+							<li>Some definitions:
+								<ol>
+									<li><code>Memory Leaks</code>: Occur when a program retains references to values that can no longer be accessed in its memory.</li>
+									<li><code>Garbage collection</code>: Dynamic memory management technique, which is the process of automatically removing items from memory that are no longer required by the program.</li>
+								</ol>	
+							</li>
+							<li>Review of MAPS: Ordered lists of key-value pairs. Convenient way of keeping a list of key and value pairs. They're similar to hashes, or hash-tables or dictionaries. Example: <code>const myMap = new Map();</code></li>
+							<li>Review of logical conditions: <code>if</code> <code>else</code> statements, ternary operator, <code>switch</code> statement, <code>while</code> loop, <code>do ... while</code> loop, <code>for</code> loop.</li>
+							<li>Loop examples on data structures
+								<ul>
+									<li>Arrays and sets: <code>for (const letter of letters) { console.log(letter); }</code></li>
+									<li>Maps: <code>for (const key of numbers.keys()) { console.log(key); }</code></li>
+								</ul>
+							</li>
 						</ul>
 					</li>
 					<li>Ch4: Functions <span class="lime">→</span> Note that there are multiple ways to declare a function in Javascript. Pay close attention to the concept of callbacks as well. <span class="lime">→</span> <span class="red">Read</span>
@@ -123,12 +143,19 @@
 	</section>
 
 	<!-- Extra Section -->
-	<section>
+	<section class="border-bottom">
 		<h2>Extra Stuffs</h2>
 		<ol>
 			<li>None.</li>
 		</ol>
 	</section>
+
+	<!-- Footer -->
+	<footer>
+		<p>
+			By Carlos - Last edit: <span class="last-edit"></span>
+		</p>
+	</footer>
 </body>
 
 <script src="script.js"></script>
