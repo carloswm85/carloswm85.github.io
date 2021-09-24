@@ -16,6 +16,10 @@ body {
 	border-radius: 10px;
 }
 
+footer {
+	text-align: center;
+}
+
 code {
 	border: solid 1px gray;
 	border-radius: 2px;
@@ -65,6 +69,10 @@ img {
 
 .italic {
 	font-style: italic;
+}
+
+.last-edit {
+	font-size: 1em;
 }
 
 /* =============================== FORMS =================================== */

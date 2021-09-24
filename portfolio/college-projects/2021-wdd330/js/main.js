@@ -1,3 +1,7 @@
+
+/**
+ * INDEX
+ */
 const list = document.querySelector('#list');
 const links = [
 	{
@@ -33,3 +37,11 @@ links.forEach(element => {
 	listItem.appendChild(linkElement);
 	list.appendChild(listItem);
 });
+
+
+/**
+ * LAST EDIT
+ */
+const lastEdit = document.querySelector(".last-edit");
+const theDate = new Date(document.lastModified).toLocaleDateString();
+lastEdit.innerText = theDate;
