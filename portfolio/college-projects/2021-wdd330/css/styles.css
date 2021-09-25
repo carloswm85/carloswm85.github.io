@@ -21,10 +21,15 @@ footer {
 }
 
 code {
-	border: solid 1px gray;
+	border: solid 1.5px gray;
+	background-color: #000C18FF;
 	border-radius: 2px;
-	padding: 0 5px;
+	padding: 0 5px 2px 5px;
 	font-family: Consolas, monospace;
+}
+
+.special-code {
+	color: #79fe0c;
 }
 
 .body-wide {
@@ -107,4 +112,13 @@ button {
 
 .red {
 	color:red;
+}
+
+.orange {
+	color: #ff6700;
+	font-size: 1em;
+}
+
+.cyan {
+	color: aqua;
 }
