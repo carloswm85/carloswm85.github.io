@@ -6,9 +6,9 @@ const theDate = new Date(document.lastModified).toLocaleDateString();
 lastEdit.innerText = theDate;
 
 
-/**
+/** ------------------------------------------------------------------------
  * Novice to Ninja
- */
+ --------------------------------------------------------------------------- */
 
 // Ch2
 // Infinity
@@ -54,8 +54,6 @@ function rest(...args) {
 const result2 = rest(1, 2, 3, 4);
 console.log(typeof (result2));
 console.log(result2);
-
-
 
 /* Quiz Ninja Project */
 // Ch2
@@ -121,3 +119,144 @@ function startGame2(quiz) {
 }
 
 startGame2(quiz23);
+
+
+/** ------------------------------------------------------------------------
+ * Eloquent JavaScript
+ --------------------------------------------------------------------------- */
+ console.log('\nELOQUENT JAVASCRIPT');
+
+ // Ch2
+console.log('Chapter 2');
+ 
+/** 2.1
+  * Write a loop that makes seven calls to console.log to output the following triangle:
+  * #
+  * ##
+  * ###
+  * ####
+  * #####
+  * ######
+  * #######
+  */
+let hash = '#';
+for (let count = 0; count <= 7; count++) {
+	console.log(hash);
+	hash += '#';
+}
+
+ 
+ /** 2.2
+  * Write a program that uses console.log to print all the numbers from 1 to 
+  * 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead 
+  * of the number, and for numbers divisible by 5 (and not 3), print "Buzz"
+  * instead.
+  * 
+  * When you have that working, modify your program to print "FizzBuzz" for
+  * numbers that are divisible by both 3 and 5 (and still print "Fizz" or 
+  * "Buzz" for numbers divisible by only one of those).
+  * 
+  */
+ let output = 0;
+ for (let number = 1; number <= 100; number++) {
+	output = number;
+	if (output % 3 == 0 && output % 5 == 0) {
+		output = 'FizzBuzz';
+	} else if (output % 3 == 0) {
+		output = 'Fizz';
+	} else if (output % 5 == 0) {
+		output = 'Buzz';
+	}
+	console.log(`Num: ${number} → ${output}`);
+}
+
+
+/** 2.3
+ * Write a program that creates a string that represents an 8× 8 grid, using 
+ * newline characters to separate lines.At each position of the grid there 
+ * is either a space or a "#" character.The characters should form a 
+ * chessboard.
+ * 
+ * When you have a program that generates this pattern, define a binding 
+ * size = 8 and change the program so that it works for any size, outputting 
+ * a grid of the given width and height.
+ */
+let grid = '';
+let size = 8;
+for (let i = 0; i < size; i++) {
+	if (i % 2 == 0)
+		grid += ' ';
+	for (let j = 0; j < size; j++) {
+		if (j % 2 == 0)
+			grid += '#';
+		else
+			grid += ' ';
+	}
+	grid += '\n';
+}
+console.log(grid);
+
+
+// Ch3
+console.log('Chapter 3')
+
+/** 3.1
+ * The previous chapter introduced the standard function Math.min that returns 
+ * its smallest argument.We can build something like that now.Write a function 
+ * min that takes two arguments and returns their minimum.
+ */
+function min(x, y) {
+	if (x >= y)
+		return y
+	else
+		return x
+}
+console.log(min(0, 10));
+console.log(min(0, -10));
+
+/** 3.2 Recursion
+ * We’ ve seen that % (the remainder operator) can be used to test whether a 
+ * number is even or odd by using % 2 to see whether it’ s divisible by two.
+ * Here’ s another way to define whether a positive whole number is even or odd:
+ * 		- Zero is even.
+ * 		- One is odd.
+ * 		- For any other number N, its evenness is the same as N - 2. 
+ * Define a recursive function isEven corresponding to this description.The 
+ * function should accept a single parameter(a positive, whole number) and 
+ * return a Boolean.
+ * 
+ * Test it on 50 and 75. See how it behaves on - 1. Why ? Can you think of a 
+ * way to fix this ?
+ */
+function isEven(n) {
+	if (n == 0)
+		return true
+	else if (n == 1)
+		return false
+	else if (n < 0)
+		return isEven(-n)
+	else
+		return isEven(n - 2)
+}
+console.log(isEven(50));
+console.log(isEven(75));
+console.log(isEven(-1));
+
+
+/** 3.3
+ * Write a function countBs that takes a string as its only argument and 
+ * returns a number that indicates how many uppercase“ B” characters 
+ * there are in the string.
+ */
+console.log("test" [2]);
+function countChar(word, letter = 'b') {
+	let count = 0;
+	for (let i = 0; i < word.length; i++) {
+		if (word[i] == letter)
+			count++;
+	}
+	return count;
+}
+console.log(countChar('This Bibiana banana string has two lowercase Bs'));
+console.log(countChar("BBC"));
+console.log(countChar("kakkerlak", "k"));

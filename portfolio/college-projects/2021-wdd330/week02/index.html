@@ -83,8 +83,8 @@
 							<li>Functions are first-class objects, so they they behave like other objects and primitive data types. They can be assigned to variables, stored in arrays and even be returned by another functions.</li>
 							<li>Cases:
 								<ul>
-									<li><span class="orange">Function Literal → Function Declaration</span>: <code>function hello() { // code }</code></li>
-									<li><span class="orange">Function Literal → Function Expression (Anonymous function)</span>: <code>const goodbye = function() { // code };</code> Notice the semicolon at the end of the assignment. Remember: If you have assigned a function to a variable, (this is made by mere reference) you need to place a parenthesis after the variable to invoke it as a function.</li>
+									<li><span class="orange">Function Literal → Function Declaration</span>: <code>function hello() { ... }</code></li>
+									<li><span class="orange">Function Literal → Function Expression (Anonymous function)</span>: <code>const goodbye = function() { ... };</code> Notice the semicolon at the end of the assignment. Remember: If you have assigned a function to a variable, (this is made by mere reference) you need to place a parenthesis after the variable to invoke it as a function.</li>
 									<li><span class="orange">Using constructor</span>: <code>const hi = new Function(' /* code */ ');</code></li>
 									<li><span class="orange">Arrow functions</span>: <code>const square = x => x * x;</code> or <code>const add = (x,y) => x + y;</code> or <code>const hello = () => alert('Hello World!');</code>
 										<ul>
@@ -136,17 +136,20 @@
 			</li>
 
 
-			<li>Code Sandbox, from Eloquent Javascript: <a href="https://eloquentjavascript.net/code/">Here &#8663;</a> <span class="lime">→</span> <span class="red">Done</span>
-				<ul>
-					Notes:
-					<li></li>
-				</ul>
-			</li>
+			<li>Code Sandbox, from Eloquent Javascript, take a loo to this week's JS file: <a href="https://eloquentjavascript.net/code/">Here &#8663;</a> <span class="lime">→</span> <span class="red">Done</span></li>
 
-			<li>Chapters 2-4 of Eloquent JavaScript (EJS) <span class="lime">→</span> <span class="red">Read</span>
+			<li>Chapters 2-4 of <a href="https://eloquentjavascript.net/index.html">Eloquent JavaScript (EJS) &#8663;</a> <span class="lime">→</span> <span class="red">Read</span>
 				<ul>
 					Notes:
-					<li></li>
+					<li>Quotes:
+						<blockquote>"We think we are creating the system for our own purposes. We believe we are making it in our own image... But the computer is not really like us. It is a projection of a very slim part of ourselves: that portion devoted to logic, order, rule, and clarity."<span class="quote-reference">Ullman, Close to the Machine: Technophilia and its Discontents</span></blockquote>
+						<blockquote>"When action grows unprofitable, gather information; when information grows unprofitable, sleep."<span class="quote-reference">Ursula K. Le Guin, The Left Hand of Darkness</span></blockquote>
+						<!-- <blockquote>"CONTENT"<span class="quote-reference">REFERENCE</span></blockquote> -->
+					</li>
+					<li>Recursion: <code>function power(base, exponent) { if (exponent == 0) { return 1; } else { return base * power(base, exponent - 1); } }</code></li>
+					<li>Numbers, Booleans, and strings are the atoms that <i>DATA STRUCTURES</i> are built from. Many types of information require more than one atom, though. Objects allow us to group values—including other objects—to build more complex structures.</li>
+					<li>There are some named properties in arrays, such as length and a number of methods. <span class="cyan"><i>Methods are functions that live in properties</i></span> and (usually) act on the value they are a property of.</li>
+					<li>You can iterate over arrays using a special kind of for loop: <code>for (let element of array) { ... }</code>.</li>
 				</ul>
 			</li>
 
@@ -160,14 +163,19 @@
 	</section>
 
 	<!-- Vocabulary Section -->
-	<section class="border-bottom">
+	<section class="border-bottom" id="vocabulary">
 		<h2>Vocabulary</h2>
 		<ol>
 			<li><code>Memory Leaks</code>: Occur when a program retains references to values that can no longer be accessed in its memory.</li>
 			<li><code>Garbage collection</code>: Dynamic memory management technique, which is the process of automatically removing items from memory that are no longer required by the program.</li>
 			<li>Refactoring: The process of improving the code’s structure and maintainability without changing its behavior.</li>
-			<li><b>Type Coersion</b>: It happens when the operands of an operator are of different types. For example: <code>'2' * 8</code> will be printed as <code><< 16</code> because the string of <code>2</code> is coerced into a number. Similar coercions are performed between other data types.</li>
+			<li><b>Type Coersion</b>: It happens when the operands of an operator are of different types. For example: <code>'2' * 8</code> will be printed as <code>
+					<< 16</code> because the string of <code>2
+				</code> is coerced into a number. Similar coercions are performed between other data types.</li>
 			<li>Dry Principle: "Don't Repeat Yourself" (that's why we use functions!), every part of the program should be written only once.</li>
+			<li>Bindings: How does a program keep an internal state? How does it remember things? To catch and hold values in new and old variables. Bindings can be used to file pieces of data under a name, and they are useful for tracking state in your program.</li>
+			<li>Environment: The collection of bindings and their values that exist at a given time is called the environment. When a program starts up, this environment is not empty. It always contains bindings that are part of the language standard, and most of the time, it also has bindings that provide ways to interact with the surrounding system. For example, in a browser, there are functions to interact with the currently loaded website and to read mouse and keyboard input. The environment is the set of bindings that are defined. JavaScript systems always put a number of useful standard bindings into your environment.</li>
+			<li>JSON: If you want to save data in a file for later or send it to another computer over the network, you have to somehow convert these tangles of memory addresses to a description that can be stored or sent. What we can do is <i>serialize</i> the data. That means it is converted into a flat description. A popular serialization format is called JSON (pronounced “Jason”), which stands for JavaScript Object Notation. JSON looks similar to JavaScript’s way of writing arrays and objects, with a few restrictions. All property names have to be surrounded by double quotes, and only simple data expressions are allowed—no function calls, bindings, or anything that involves actual computation. Comments are not allowed in JSON. JavaScript gives us the functions <code>JSON.stringify</code> and <code>JSON.parse</code> to convert data to and from this format.</li>
 		</ol>
 
 	</section>

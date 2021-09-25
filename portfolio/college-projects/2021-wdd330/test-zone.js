@@ -1,8 +1,13 @@
-const num = 23;
-const num2 = '24';
+console.log("test" [2]);
 
-const num3 = parseInt(num2);
-
-console.log(typeof (num));
-console.log(typeof (num2));
-console.log(typeof (num3));
+function countChar(word, letter = 'b') {
+	let count = 0;
+	for (let i = 0; i < word.length; i++) {
+		if (word[i] == letter)
+			count++;
+	}
+	return count;
+}
+console.log(countChar('This Bibiana banana string has two lowercase Bs'));
+console.log(countChar("BBC"));
+console.log(countChar("kakkerlak", "k"));
