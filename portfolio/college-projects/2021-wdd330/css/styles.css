@@ -44,20 +44,6 @@ li {
 	line-height: 2em;
 }
 
-a:link {
-	font-size: 1em;
-	text-decoration: dashed;
-	color: orange;
-}
-
-a:visited {
-	color:yellow;
-}
-
-a:hover, .go-back:hover {
-	color: aqua;
-}
-
 span {
 	font-size: 1.3em;
 }
@@ -74,10 +60,27 @@ img {
 
 .italic {
 	font-style: italic;
+	font-size: 1em;
 }
 
 .last-edit {
 	font-size: 1em;
+}
+
+
+/* =============================== LINKS =================================== */
+a:link {
+	font-size: 1em;
+	text-decoration: underline;
+	color: orange;
+}
+
+a:visited {
+	color:yellow;
+}
+
+a:hover, .go-back:hover {
+	color: aqua;
 }
 
 /* =============================== FORMS =================================== */
