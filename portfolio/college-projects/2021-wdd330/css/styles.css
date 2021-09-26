@@ -53,6 +53,8 @@ img {
 	width: 90%;
 }
 
+
+/* ============================= SOME CLASSES ============================== */
 .go-back {
 	float: left;
 	font-size: 1.2em;
@@ -65,6 +67,14 @@ img {
 
 .last-edit {
 	font-size: 1em;
+}
+
+.empty-container {
+	height: 1.2em;
+	font-size: 1em;
+	padding: 0.2em;
+	margin: 0.5em 0;
+	border: solid 0.5px rgb(52, 58, 63);
 }
 
 
@@ -84,9 +94,12 @@ a:hover, .go-back:hover {
 }
 
 /* =============================== FORMS =================================== */
-form > input{
-	float: right;
-	width: 70%;
+form {
+	border: solid 0.5px #fff;
+	margin: 0 auto 1em auto;
+	padding: 0.7em;
+	border-radius: 3px;
+	width: 650px;
 }
 
 textarea {
@@ -106,9 +119,8 @@ button {
 	flex-grow: 1;
 	padding: 0.2em;
 	margin: 0 0.2em;
+	width: 150px;
 }
-
-
 /* =============================== QUOTES =================================== */
 blockquote {
 	font-style: italic;
