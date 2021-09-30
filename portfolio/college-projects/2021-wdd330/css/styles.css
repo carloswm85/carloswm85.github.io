@@ -48,13 +48,23 @@ img {
 }
 
 /* ================================ CODE =================================== */
-code {
+.code-style {
 	border: solid 1.5px gray;
 	background-color: #000C18FF;
 	border-radius: 2px;
-	padding: 0 5px 2px 5px;
-	font-family: Consolas, monospace;
+	font-family: 'Ubuntu', 'Courier New', Courier, monospace;
 }
+
+.code-inline {	
+	padding: 0 5px 2px 5px;
+}
+
+pre {
+	line-height: 1.1em;
+	width: 650px;
+	margin: 0 auto;
+}
+
 
 /* ============================= SOME CLASSES ============================== */
 .go-back {

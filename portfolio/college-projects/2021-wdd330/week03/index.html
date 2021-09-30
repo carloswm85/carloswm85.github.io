@@ -8,6 +8,12 @@
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="icon" href="../favicon.png" type="image/png">
 
+	<link rel="stylesheet" href="../vendor/highlight/styles/default.min.css">
+	<script src="../vendor/highlight/highlight.min.js"></script>
+	<script>
+		hljs.highlightAll();
+	</script>
+
 	<title>WDD330 - Week 03</title>
 </head>
 
@@ -43,43 +49,44 @@
 					<li><a href="https://javascript.info/object-methods" target="blank_">Object Methods: this.</a>
 						<ul>
 							<li>Object represent <b>entities</b> of the real world.</li>
-							<li>Here's an <i>object literal</i>: <code>user = { sayHi() { alert( this.userName ); } };</code></li>
+							<li>Here's an <i>object literal</i>: <code class="code-inline code-style">user = { sayHi() { alert( this.userName ); } };</code></li>
 							<li>Object's actions are represented in JS by <b>functions</b> <i>stored as</i> <b>object properties</b>.
 								<ul>
-									<li>For example, we can use a Function Expression to create a function and assign it to the property user instance as <code>user.sayHi = function() { ... };</code>, and then make a call to it as <code>user.sayHi();</code>.</li>
+									<li>For example, we can use a Function Expression to create a function and assign it to the property user instance as <code class="code-inline code-style">user.sayHi = function() { ... };</code>, and then make a call to it as <code class="code-inline code-style">user.sayHi();</code>.</li>
 								</ul>
 							<li>A function that is a property of an object is called its <i>method</i>.</li>
-							<li><span class="cyan">The value of</span> <code>this</code> <span class="cyan">is the object instance “before the dot”</span>, the one used to call the method, or the one that called the method. <code>user.sayHi();</code> prints out the user name.
+							<li><span class="cyan">The value of</span> <code class="code-inline code-style">this</code> <span class="cyan">is the object instance “before the dot”</span>, the one used to call the method, or the one that called the method. <code class="code-inline code-style">user.sayHi();</code> prints out the user name.
 								<ul>
-									<li>Methods allow objects to “act” like <code>object.doSomething()</code></li>
+									<li>Methods allow objects to “act” like <code class="code-inline code-style">object.doSomething()</code></li>
 								</ul>
 							</li>
-							<li>In JavaScript, keyword <code>this</code> behaves unlike most other programming languages. It can be used in any function, even if it’s not a method of an object. The value of <code>this</code> is evaluated during the run-time, depending on the context.</li>
-							<li>The concept of <span class="cyan">run-time evaluated</span> <code>this</code> has both pluses and minuses. On the one hand, a function can be reused for different objects. On the other hand, the greater flexibility creates more possibilities for mistakes.
+							<li>In JavaScript, keyword <code class="code-inline code-style">this</code> behaves unlike most other programming languages. It can be used in any function, even if it’s not a method of an object. The value of <code class="code-inline code-style">this</code> is evaluated during the run-time, depending on the context.</li>
+							<li>The concept of <span class="cyan">run-time evaluated</span> <code class="code-inline code-style">this</code> has both pluses and minuses. On the one hand, a function can be reused for different objects. On the other hand, the greater flexibility creates more possibilities for mistakes.
 								<ul>
-									<li>When a function is declared, it may use <code>this</code>, but that <code>this</code> has no value until the function is called.</li>
+									<li>When a function is declared, it may use <code class="code-inline code-style">this</code>, but that <code class="code-inline code-style">this</code> has no value until the function is called.</li>
 									<li>A function can be copied between objects.</li>
-									<li>When a function is called in the “method” syntax: <code>object.method()</code>, the value of <code>this</code> during the call is object.</li>
-									<li>Note that arrow functions are special: they have no <code>this</code>. When <code>this</code> is accessed inside an arrow function, it is taken from outside.</li>
+									<li>When a function is called in the “method” syntax: <code class="code-inline code-style">object.method()</code>, the value of <code class="code-inline code-style">this</code> during the call is object.</li>
+									<li>Note that arrow functions are special: they have no <code class="code-inline code-style">this</code>. When <code class="code-inline code-style">this</code> is accessed inside an arrow function, it is taken from outside.</li>
 								</ul>
 							</li>
-							<li>Example:
-								<pre><code>let ladder = { step: 0,
-									up() {
-									this.step++;
-									return this;
-									},
-									down() {
-									this.step--;
-									return this;
-									},
-									showStep() {
-									alert( this.step );
-									return this;
-									}
-									};
+							<li>Example on <i class="orange">chaining</i>:
+								<pre><code class="language-javascript">
+let ladder = { step: 0,
+	up() {
+		this.step++;
+		return this;
+	},
+	down() {
+		this.step--;
+		return this;
+	},
+	showStep() {
+		alert( this.step );
+		return this;
+	}
+};
 
-									ladder.up().up().down().up().down().showStep();
+ladder.up().up().down().up().down().showStep();
 								</code></pre>
 							</li>
 						</ul>
