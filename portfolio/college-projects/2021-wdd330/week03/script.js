@@ -9,7 +9,7 @@ lastEdit.innerText = theDate;
 /** ------------------------------------------------------------------------
  * JavaScript: Novice to Ninja
  --------------------------------------------------------------------------- */
-// Chapter 5 - Objects
+// Chapter 5 - Objects <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 // Example: Object Literal
 const superman = {
@@ -63,12 +63,18 @@ console.log(dice.roll());
 console.log(dice.roll());
 console.log(dice.roll());
 
+// Chapter Nº 6 - Topic: DOM: Document Objetc Model <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// Exercises were made using only the browser's console.
 
-/* Quiz Ninja Project */
+
+// READINGS & EXERCISES
+/** ------------------------------------------------------------------------
+* Title: Quiz Ninja Project
+--------------------------------------------------------------------------- */
 // Ch5
-
 // Question objects inside an array
-const quiz = [{
+const quiz = [
+	{
 		name: "Superman",
 		realName: "Clark Kent"
 	},
@@ -102,16 +108,36 @@ const game = {
 
 	// function #2
 	ask() {
-		//
+		const question = `What is ${this.question.name}'s real name?`;
+		const response = prompt(question);
+		this.check(response);
 	},
 
 	// function #3
 	check(response) {
-		//
+		const answer = this.question.realName;
+		if (response === answer) {
+			alert('Correct!');
+			this.score++;
+		} else {
+			alert(`Wrong! The correct answer was ${answer}`);
+		}
 	},
 
 	// function #4
 	gameOver() {
-		//
+		alert(`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
 	}
 }
+
+// The quiz array is received
+game.start(quiz);
+/**
+ * We have made the code more organized by placing all the functions
+ * inside an object, or namespace.
+ */
+
+// Chapter 6 and 7
+/**
+ * Note from Carlos: I've decided to make the complete Quiz Ninja Project.
+ */

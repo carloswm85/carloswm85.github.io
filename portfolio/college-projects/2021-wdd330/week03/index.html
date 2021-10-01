@@ -24,19 +24,21 @@
 	</div>
 
 	<h1>Week 03</h1>
+	<p>This week readings assignment:</p>
 
 	<!-- Instructions -->
 	<section class="border-bottom">
-		<p>Open the console for reading some code.</p>
 		<p><a href="https://byui-cit.github.io/cit261/prepare/week03.html">https://byui-cit.github.io/cit261/prepare/week03.html &#8663;</a></p>
 	</section>
 
 	<!-- Raw Files -->
 	<section class="border-bottom">
-		<h2>Reading Exercise Raw Files</h2>
+		<h2>Reading Exercise (Raw() Files</h2>
+		<p>Open the console for reading some code.</p>
 
 		<ul>
 			<li><a href="script.js" target="_blank">script.js &#8663;</a></li>
+			<li><a href="heroes.html" target="_blank">heroes.html &#8663;</a></li>
 		</ul>
 	</section>
 
@@ -122,6 +124,8 @@ ladder.up().up().down().up().down().showStep();
 
 			<li>JavaScript: Novice to Ninja:
 				<ul>
+
+					<!-- Notes #3 -->
 					<li><a href="" target="blank_">Ch5: Objects</a>
 						<ul>
 							<li>Six <span class="orange">primitive data types</span>: strings, numbers, booleans, symbols, undefined, null, or <b>object</b>.
@@ -141,7 +145,7 @@ ladder.up().up().down().up().down().showStep();
 							<li>Objects are assigned <span class="orange">by reference</span>. This means that if a variable is assigned to an object that already exists, it will simply point to the exact same space in memory. So any changes made using either reference will affect the same object.</li>
 							<li>OL can be passed as a parameter to a function. This is useful when passing a "package of values/parameters". → <code class="code-inline code-style">greet( {greeting: `What's up dude`, age: 10, name: `Bart` } );</code></li>
 							<li><span class="orange">Object Literal Pattern</span> or <span class="orange">Namespacing</span>: Objects containing several methods and properties, which can be used as small libraries, so not to confuse their value names with other value names from other namespaces, libraries or whatever. This is used for avoiding code clashes. Example, with namespace <code class="code-inline code-style">myMaths</code>:
-							<pre><code class="language-javascript">
+								<pre><code class="language-javascript">
 	const myMaths = {
 		square(x) {
 			return x * x;
@@ -156,21 +160,51 @@ ladder.up().up().down().up().down().showStep();
 	};
 							</code></pre>
 							</li>
-							<li><span class="orange">Other built-in objects</span>: They're global. Examples: JSON (JavaScript Object Notation), Math, Date, RegExp (Regular Expression)</li>
+							<li><span class="orange">Other built-in objects</span>: They're global.
+								<ul>Examples:
+									<li>JSON (JavaScript Object Notation), portable data format.</li>
+									<li>Math, a number of mathematical constants, for mathematical calculations.</li>
+									<li>Date, for date objects.</li>
+									<li>RegExp, for Regular Expressions.</li>
+
+								</ul>
 							<li>Using <span class="orange">namespaces</span>: Any references to the functions need to be replaced with <code class="code-inline code-style">namespace.function()</code> <i>outside</i> the object, or <code class="code-inline code-style">this.function()</code> <i>inside</i> the object.</li>
 						</ul>
 					</li>
 
 					<hr>
 
+					<!-- Notes #4 -->
 					<li><a href="" target="blank_">Ch6: Document Object Model</a>
 						<ul>
-							<li></li>
+							<li><span class="orange">DOM</span> (Document Object Model): It represents the HTML document as a network of connected nodes that form a tree-like structure. Nodes are: HTML tags, text inside these tags, attributes of a tag. <code class="code-inline code-style">HTML</code> tag is the <span class="cyan">root</span> node. And everything inside of it is its child. Different parts of the web page can be modified by using a special built-in object called <code class="code-inline code-style">document</code>.</li>
+							<li>DOM diagram of <a href="heroes.html">heroes.html</a> file: <a href="img/heroes-dom-diagram.png" target="_blank">heroes-dom-diagram.png &#8663;</a></li>
+							<li>Nodes Numerical Code. After using <code class="code-inline code-style">typeof body;</code> a number is returned. Cases"
+								<ul>
+									<li>code <b>1</b> for node of type <i>element</i></li>
+									<li><b>2</b> for <i>attribute</i></li>
+									<li><b>3</b> for <i>text</i></li>
+									<li><b>8</b> for <i>comment</i></li>
+									<li><b>9</b> for <i></i>body</li>
+								</ul>
+							</li>
+							<li>Regarding nodes: <a href="img/code1.png" target="_blank">This line of code... &#8663;</a> → Reads like: <code class="code-inline code-style">li</code> contains text "Wonder Woman", which is held inside a <i>text node</i>, which is the first child of the <code class="code-inline code-style">li</code> element node.
+								<ul>
+									<li>Using <code class="code-inline code-style">const TextNode = wonderwoman.firstChild;</code> we can get the content of the text node, using <code class="code-inline code-style">textNode.nodeValue;</code></li>
+									<li>So: HTML element ← Text node ← Text string, which is a nodeValue</li>
+									<li>We can also find this value using: <code class="code-inline code-style">wonderWoman.textContent;</code></li>
+									<li><code class="code-inline code-style">innerText</code> property is used in IE8.</li>
+								</ul>
+							</li>
+							<li> <span class="cyan">Table with useful functions:</span>: <a href="table.html" target="_blank">here &#8663;</a> 
+								
+							</li>
 						</ul>
 					</li>
 
 					<hr>
 
+					<!-- Notes #5 -->
 					<li><a href="" target="blank_">Ch7: Events</a>
 						<ul>
 							<li></li>
@@ -198,7 +232,10 @@ ladder.up().up().down().up().down().showStep();
 		<h2>Vocabulary</h2>
 
 		<ul>
-			<li></li>
+			<li>Object: Collection of key-value pairs inside curly braces.</li>
+			<li>Object property: Any JS value. If it's a function, it's known as a method.</li>
+			<li>DOM, node objects, node list.</li>
+			<li>JQuery: JS framework.</li>
 		</ul>
 
 	</section>
@@ -228,6 +265,6 @@ ladder.up().up().down().up().down().showStep();
 	</footer>
 </body>
 
-<script src="script.js"></script>
+<script src="../js/other.js"></script>
 
 </html>
