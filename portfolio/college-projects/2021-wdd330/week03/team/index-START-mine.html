@@ -9,7 +9,7 @@
 <body>
 	<p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
 
-	<a href="https://byui-cit.github.io/cit261/solutions/week03/index-START.html" target="_blank">Source &#8663;</a>
+	<a href="https://byui-cit.github.io/cit261/solutions/week03/index-START.html" target="_blank">Original page, from GitHub site &#8663;</a>
 	<script>
 		// Get your shorts on - this is an array workout!
 		// ## Array Cardio Day 1
@@ -136,17 +136,61 @@
 
 		// Array.prototype.filter()
 		// 1. Filter the list of inventors for those who were born in the 1500's
+		let array1 = inventors.filter(function (item) {
+			if (item.year >= 1500 && item.year < 1600)
+				return item;
+		});
+		console.log(`\nPoint (1)`);
+		array1.forEach( (item) => {
+			console.log(item);
+		});
 
 		// Array.prototype.map()
 		// 2. Give us an array of the inventors' first and last names
-
+		let array2 = inventors.map(function (item) {
+			let newItem = [];
+			newItem.push(item.first);
+			newItem.push(item.last);
+			return newItem;
+		});
+		console.log(`\nPoint (2)`);
+		array2.forEach( (item) => {
+			console.log(`${item[0]} ${item[1]}`);
+		});
+		
 		// Array.prototype.sort()
 		// 3. Sort the inventors by birthdate, oldest to youngest
+		let array3 = inventors.sort(function (a, b) {
+			return a.year - b.year
+		});
+		console.log(`\nPoint (3)`);
+		array3.forEach( (item) => {
+			console.log(item.year);
+		});
 
 		// Array.prototype.reduce()
 		// 4. How many years did all the inventors live?
-
+		let totalYears = 0;
+		let array4 = inventors.reduce(function (totalYears, item) {
+			totalYears += (item.passed - item.year);
+			return totalYears;
+		}, 0);
+		console.log(`\nPoint (4)`);
+		console.log(array4);
+		
 		// 5. Sort the inventors by years lived
+		let array5 = inventors.sort(function (a, b) {
+			let inventor1 = a.passed - a.year;
+			let inventor2 = b.passed - b.year;
+			return inventor1 >= inventor2 ? 1 : inventor1 >= inventor2 ? -1 : 0;
+		});
+		console.log(`\nPoint (5)`);
+		array5.forEach( (item, index) => {
+			let age = item.passed - item.year;
+			console.log(item, index, ` Age: ${age}`);
+		});
+
+		console.table(array5);
 
 		// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 		// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
