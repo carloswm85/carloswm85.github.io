@@ -17,31 +17,31 @@ const links = [
 		url: 'week03/index.html'
 	},
 	{
-		label: 'Week 04 (try me)',
+		label: 'Week 04',
 		url: 'week04/index.html'
 	},
 	{
-		label: 'Week 05 (try me)',
+		label: 'Week 05',
 		url: 'week05/index.html'
 	},
 	{
-		label: 'Week 06 (try me)',
+		label: 'Week 06',
 		url: 'week06/index.html'
 	},
 	{
-		label: 'Week 07 (try me)',
+		label: 'Week 07',
 		url: 'week04/index.html'
 	},
 	{
-		label: 'Week 08 (try me)',
+		label: 'Week 08',
 		url: 'week08/index.html'
 	},
 	{
-		label: 'Week 09 (try me)',
+		label: 'Week 09',
 		url: 'week09/index.html'
 	},
 	{
-		label: 'Week 10 (try me)',
+		label: 'Week 10',
 		url: 'week10/index.html'
 	}
 ]
