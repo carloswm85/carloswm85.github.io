@@ -207,24 +207,38 @@ ladder.up().up().down().up().down().showStep();
 					<!-- Notes #5 -->
 					<li> <span class="yellow">Ch7: Events</span>:
 						<ul>
-							<li><i>Event listeners</i> are used to listen out for any clicks on the page. Every time a page is clicked, a callback function will be called.</li>
+							<li><i>Event handlers/listeners</i> are used to handle out events on the page. Every time a page is clicked, a callback function will be called, and this function is automatically passed an event object as a parameter that contains information about the event.</li>
+							<li>When thinking about <i>object events</i> consider: event properties, event methods, event types.</li>
+							<li><i>What kind of information does that event object contain?</i> Examples: 
+								<code class="code-inline code-style">event.type</code>, 
+								<code class="code-inline code-style">event.target</code>,  
+								<code class="code-inline code-style">event.screenX</code>,  
+								<code class="code-inline code-style">event.screenY</code>,  
+								<code class="code-inline code-style">event.pageX</code>,  
+								<code class="code-inline code-style">event.pageY</code>,  
+								<code class="code-inline code-style">event.clientX</code>,  
+								<code class="code-inline code-style">event.clientY</code>, etc.
+							</li>
 							<li>Examples and problems:
 								<ol>
 									<li>Inline event handlers: <a href="img/inline-handler.png" target="_blank">Example &#8663;</a> Do not use.</li>
 									<li>Older event handlers: <code class="code-inline code-style">document.onclick = function() { console.log('clicked!') };</code> Do not use.</li>
 									<li>Recommended event handlers → <i>Event Listeners</i>. They allow multiple functions to be attached independently to different events. DO use. Examples:
 										<ul>
-											<li>Attached to node objects: <code class="code-inline code-style">document.body.addEventListener("eventType", callbackFunction, thirdParameter);</code></li>
-											<li>Attached to the global object (usually the whole browser window): <code class="code-inline code-style">addEventListener('click' () => alert('clicked!'));</code> Example: <a href="event-handlers/index.html" target="_blank">here &#8663;</a></li>
+											<li>Attached to the global object (usually the whole browser window): <code class="code-inline code-style">addEventListener('click' () => alert('clicked!'));</code> Example: <a href="event-handlers/index.html" target="_blank">html-1 &#8663;</a> and <a href="event-handlers/main.js" target="_blank">js-1 &#8663;</a></li>
+											<li>Attached to node objects: <code class="code-inline code-style">document.body.addEventListener("eventType", callbackFunction, thirdParameter);</code> Example: <a href="event-handlers/index2.html" target="_blank">html-2 &#8663;</a> and <a href="event-handlers/main2.js" target="_blank">js-2 &#8663;</a></li>
 										</ul>		
 								</ol>
 							</li>
 							<li>Event listeners are part of the DOM. DOM is an interface, that allows to use JS to interact with the webpage.</li>
 							<li>All nodes objects have event handler properties. That so: <code class="code-inline code-style">document.onclick = function() { console.log('Clicked!'); }</code> </li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
+							<li>Events classification:
+								<ol>
+									<li>Mouse events: click, dblclick, mousedown, mouseup, mouseover, mouseout, mousemove.</li>
+									<li>Keyboard events: keydown (when is pressed and held down), keypress (when a character is printed to the screen), keyup (when is released).</li>
+									<li>Touch events: touchstart, touchend, touchmove, touchenter, touchleave, touchcancel.</li>
+								</ol>
+							</li>
 						</ul>
 					</li>
 				</ul>
