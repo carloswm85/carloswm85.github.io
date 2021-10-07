@@ -28,17 +28,30 @@
 
 	<!-- Instructions -->
 	<section class="border-bottom">
-		<p><a href="https://byui-cit.github.io/cit261/prepare/week04.html">https://byui-cit.github.io/cit261/prepare/week04	.html &#8663;</a></p>
+		<p><a href="https://byui-cit.github.io/cit261/prepare/week04.html">https://byui-cit.github.io/cit261/prepare/week04 .html &#8663;</a></p>
 	</section>
 
 	<!-- Raw Files -->
-	<section class="border-bottom">
+	<section class="border-bottom" id="raw">
 		<h2>Reading Exercise (raw and interpreted) Files</h2>
 		<p>Open the console for reading some code.</p>
 
 		<ul>
 			<li><a href="script.js" target="_blank">script.js &#8663;</a></li>
-			<li><a href="heroes.html" target="_blank">heroes.html &#8663;</a></li>
+			
+			<li>JavaScript: Novice to Ninja
+				<ul>
+					<li>Ch 8: Forms
+						<ul>
+							<li><a href="exercise-search/index.html" target="_blank">exercise-search/index.html &#8663;</a></li>
+							<li><a href="exercise-search/main-search.js" target="_blank">exercise-search/main-search.js &#8663;</a></li>
+							<li><a href="exercise-hero/index.html" target="_blank">exercise-hero/index.html &#8663;</a></li>
+							<li><a href="exercise-hero/main-hero.js" target="_blank">exercise-hero/main-hero.js &#8663;</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+
 		</ul>
 	</section>
 
@@ -53,12 +66,24 @@
 					<!-- Notes #1 -->
 					<li> <span class="yellow"> Ch8: Forms</span>:
 						<ul>
-							<li></li>
+							<li><b>Forms</b> provide user interaction with the webpage.</li>
+							<li><i>form</i> element is used to contain <i>form controls</i> such as input fields (text, password, checkbox, radio button, hidden, file, and other), select menus, buttons and others.</li>
+							<li>Forms UX: Use correct and semantic markup; make forms keyboard accesible; use WAI-ARIA labels.</li>
+							<li>Notes continue <a href="#raw">at these files &#8657;</a>.</li>
+							<li>Important:
+								<ul>
+									<li><code class="code-inline code-style">document.forms</code> will return an HTML collection of all the forms on a page.</li>
+									<li><code class="code-inline code-style">form.elements</code> will return an HTML collection of all the elements contained within a form.</li>
+									<li>Forms have <code class="code-inline code-style">focus</code> , <code class="code-inline code-style">blur</code> , and change events that fire as a user interacts with the form.</li>
+									<li>Forms also have a <code class="code-inline code-style">submit</code> event that can be used to intercept a form before it’s been submitted.</li>
+									<li>The information entered into a form can be read or updated using the <code class="code-inline code-style">value</code> property of the form controls.</li>
+									<li>The HTML5 form validation API can be used to automatically validate a form, but only at a basic level, so a custom validation script may be required.</li>
+								</ul>
+							</li>
 						</ul>
 					</li>
 
 					<hr>
-
 					<!-- Notes #2 -->
 					<li> <span class="yellow">Ch12: OOP</span>:
 						<ul>
@@ -115,6 +140,22 @@
 	<section class="border-bottom">
 		<h2>Extra Stuffs and Notes</h2>
 		<ol>
+			<li><a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp" target="_blank">addeventlistener() &#8663;</a>
+				<ul>
+					<li><code class="code-inline code-style">document.addEventListener(event, function, useCapture)</code>
+						<ul>
+							<li><code class="code-inline code-style">event</code>: Required. A String that specifies the name of the event.</li>
+							<li><code class="code-inline code-style">function</code>: Required. Specifies the function to run when the event occurs.</li>
+							<li><code class="code-inline code-style">useCapture</code>: Optional. A Boolean value that specifies whether the event should be executed in the capturing or in the bubbling phase.
+								<ul>
+									<li>true - The event handler is executed in the capturing phase.</li>
+									<li>false- Default. The event handler is executed in the bubbling phase.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
 			<li></li>
 		</ol>
 	</section>
