@@ -38,7 +38,7 @@
 
 		<ul>
 			<li><a href="script.js" target="_blank">script.js &#8663;</a></li>
-			
+
 			<li>JavaScript: Novice to Ninja
 				<ul>
 					<li>Ch 8: Forms
@@ -83,23 +83,136 @@
 						</ul>
 					</li>
 
-					<hr>
 					<!-- Notes #2 -->
+					<hr>
 					<li> <span class="yellow">Ch12: OOP</span>:
 						<ul>
-							<li></li>
+							<li>OOP: Promgramming style that involves separating the code into objects that have properties and methods. This object can maintain state throughout the life of the program.</li>
+							<li><span class="lime">Object literal</span>:
+								<pre><code class="language-javascript">
+	const dice = {
+		sides: 6,
+		roll() {
+			return Math.floor(this.sides * Math.random() + 1)
+		}									
+	}							
+							</code></pre>
+							</li>
+							<li><span class="lime">Constructor functions</span>. They were use before ES6. Example:
+								<pre><code class="language-javascript">
+	const Dice = function(sides = 6) {
+		this.sides = sides;
+		this.roll = function() {
+			return Math.floor(this.sides * Math.random() + 1)
+		}
+	}
+</code></pre>
+							</li>
+							<li><span class="lime">ES6 Class Declarations</span> (preferred):
+								<pre><code class="language-javascript">
+	class Dice  {
+		constructor(sides = 6) {
+			this.sides = sides;
+		}
+		roll() {
+			return Math.floor(this.sides * Math.random() + 1)
+		}
+	}
+
+	const vblueDice = new Dice(20);
+</code></pre>
+							</li>
+							<li><span class="lime">Prototypal Inheritance</span>: Every class has a <i>prototype property</i> that is shared by every instance of the class. Use <code class="code-inline code-style">.prototype</code> for adding properties and methods to already existing classes. Example:
+
+								<ol>
+									<pre><code class="language-javascript">
+	class Turtle {
+		constructor(name) {
+			this.name = name;
+			this.weapon = 'hands';
+		}
+		sayHi() {
+			return `Hi dude, my name is ${this.name}`;
+		}
+		attack() {
+			return `Feel the power of my ${this.weapon}!`;
+		}
+	}
+
+	Turtle.prototype.weapon = 'noobie weapon';
+	
+	Turtle.prototype.defend = function() {
+		return `I will protect you with my ${this.weapon}!`;
+	}
+	
+	const raph = new Turtle('Raphael');
+	Turtle.prototype.food = 'pizza';
+	raph.constructor.prototype;
+	// The class with the added values is displayed here.
+</code></pre>
+									<li>Difference between <i>instance properties</i> and <i>prototype properties</i>: The latter are properties shared by <b>every instance</b> of the class, while the former are not.</li>
+									<li>Any change made to the class through the prototype will affect to all of its instances.</li>
+									<li>An object instance can overwrite any properties or methods inherited from its prototype. And this "onwed" properties have precedence over those from the prototype.</li>
+									<li>When to use? When augmenting the class is necessary. To define any property that will remain the same for every instance of the class. And remeber: prototype values are <span class="orange">shallow</span>.</li>
+								</ol>
+							<li><span class="lime">Variable Scrope</span>: Public, Private variables and methods, in classes. Getters and setters. This approach gives full control over . Example:
+								<pre><code class="language-javascript">
+	class Turtle {
+		constructor(name,color) {
+			this.name = name;
+			let _color = color;
+			this.setColor = color => { return _color = color; }
+			this.getColor = () => _color;
+		}
+	}
+							</code></pre>
+								<ul>
+									<li>Why use getters and setters: <a href="https://stackoverflow.com/questions/1568091/why-use-getters-and-setters-accessors" target="_blank">stackoverflow &#8663;</a> </li>
+								</ul>
+							</li>
+							<li><span class="lime">Prototype Chain & The Object Constructor</span>:
+								<blockquote>"When an object calls a method, the JavaScript engine will check to see if the
+									object has that method. If it doesn’t, it will check if the object’s prototype has the
+									method. If not, it will check whether the prototype’s prototype has it. This
+									continues all the way up the prototype chain, until it reaches the prototype of the
+									Object() constructor function, from which all objects in JavaScript inherit. If the
+									prototype of Object() is without the method, an error will be returned saying the
+									object doesn’t exist."<span class="quote-reference">ebook, JS: From Novice to Ninja</span></blockquote>
+
+
+								<pre><code class="language-javascript">
+Object.getPrototypeOf( //<< null
+	Object.getPrototypeOf( // << {} , apparent object literal, which is the prototype of Object() constructor function
+		Object.getPrototypeOf(turtleInstance))); // Turtle {} , which is the class
+									</code></pre>
+								The previous code reached the top of the Prototype Chain.
+							</li>
+							<li><span class="lime">Inheritance Through Extension</span>:
+								<pre><code class="language-javascript">
+class NinjaTurtle extends Turtle {
+	constructor(name) {
+		super(name);
+		this.weapon = 'hands';
+	}
+	attack() { return `Feel the power of my ${this.weapon}!` }
+}
+</code></pre>
+								<ul>
+									<li><code class="code-inline code-style">super</code> refers to the parent class. In the example above, it is used to call the constructor functions of the <i>Turtle</i> class.</li>
+								</ul>
 						</ul>
 					</li>
+			</li>
 
-					<hr>
+			<hr>
 
-					<!-- Notes #3 -->
-					<li> <span class="yellow">Ch15: Modern JavaScript</span>:
-						<ul>
-							<li></li>
-						</ul>
-					</li>
+			<!-- Notes #3 -->
+			<li> <span class="yellow">Ch15: Modern JavaScript</span>:
+				<ul>
+					<li></li>
 				</ul>
+			</li>
+			</ul>
 			</li>
 
 			<hr>
@@ -118,9 +231,23 @@
 
 	<!-- Vocabulary Section -->
 	<section class="border-bottom" id="vocabulary">
-		<h2>Vocabulary</h2>
+		<h2>Vocabulary, Main Concepts</h2>
 
 		<ul>
+			<li>OOP:
+				<ul>
+					<li><i>Classes</i> define blueprints of objects. Objects are then created as an instance of that class.</li>
+					<li>OOP properties:</li>
+					<ul>
+						<li>Encapsulation: The inner workings are kept hidden inside the object and only the essential funcionalities are exposed to the end user.</li>
+						<li>Polymorphism: The same process can be used for different objects. Methods can be shared, but also overriden with a more specific implementation.</li>
+						<li>Inheritance: Take an existing object and inherit its properties and methods to a new one.</li>
+					</ul>
+					<li><code class="code-inline code-style">static</code> keyword. In class declarations, with "static methods" we get a class method. These methods are called by the class directly rather than by instances of the class.
+						<div><code class="code-inline code-style">Dice</code> is a class. So <code class="code-inline code-style">static description() { ... }</code> decribes what that class does, and not just what their instances do. Static methods are not available for instances.</div>
+					</li>
+				</ul>
+			</li>
 			<li></li>
 		</ul>
 
@@ -131,7 +258,7 @@
 		<h2>Assignments and Projects</h2>
 		<ol>
 			<li>Weekly Report: <a href="report.html">Here &#8667;</a></li>
-			<li>Team Activity: <a href="team/index-START-mine.html">Here &#8667;</a></li>
+			<li>Team Activity: <a href="team/team.html" target="_blank">team.html &#8663;</a> <a href="team/team.js" target="_blank">team.js &#8663;</a> <a href="team/solution.html" target="_blank">solution.js &#8663;</a> </li>
 			<li>Quiz Ninja Project: <a href="ninja.html">Here &#8667;</a></li>
 		</ol>
 	</section>
@@ -149,14 +276,13 @@
 							<li><code class="code-inline code-style">useCapture</code>: Optional. A Boolean value that specifies whether the event should be executed in the capturing or in the bubbling phase.
 								<ul>
 									<li>true - The event handler is executed in the capturing phase.</li>
-									<li>false- Default. The event handler is executed in the bubbling phase.</li>
+									<li>false - Default. The event handler is executed in the bubbling phase.</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 				</ul>
 			</li>
-			<li></li>
 		</ol>
 	</section>
 
