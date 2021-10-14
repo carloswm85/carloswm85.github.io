@@ -87,7 +87,7 @@
 					<hr>
 					<li> <span class="yellow">Ch12: OOP</span>:
 						<ul>
-							<li>OOP: Promgramming style that involves separating the code into objects that have properties and methods. This object can maintain state throughout the life of the program.</li>
+							<li>OOP: Promgramming style that involves separating and encapsulating the code into objects that have properties and methods. This object can maintain state throughout the life of the program.</li>
 							<li><span class="lime">Object literal</span>:
 								<pre><code class="language-javascript">
 	const dice = {
@@ -98,7 +98,7 @@
 	}							
 							</code></pre>
 							</li>
-							<li><span class="lime">Constructor functions</span>. They were use before ES6. Example:
+							<li><span class="lime">Constructor functions</span>. They were use before ES6. They create instances of objects. Example:
 								<pre><code class="language-javascript">
 	const Dice = function(sides = 6) {
 		this.sides = sides;
@@ -123,7 +123,6 @@
 </code></pre>
 							</li>
 							<li><span class="lime">Prototypal Inheritance</span>: Every class has a <i>prototype property</i> that is shared by every instance of the class. Use <code class="code-inline code-style">.prototype</code> for adding properties and methods to already existing classes. Example:
-
 								<ol>
 									<pre><code class="language-javascript">
 	class Turtle {
@@ -155,16 +154,37 @@
 									<li>An object instance can overwrite any properties or methods inherited from its prototype. And this "onwed" properties have precedence over those from the prototype.</li>
 									<li>When to use? When augmenting the class is necessary. To define any property that will remain the same for every instance of the class. And remeber: prototype values are <span class="orange">shallow</span>.</li>
 								</ol>
-							<li><span class="lime">Variable Scrope</span>: Public, Private variables and methods, in classes. Getters and setters. This approach gives full control over . Example:
+
+							<li><span class="lime">Creating Objects From Other Objects</span>:
+								<ul>
+									<li><i>Use</i> : <code class="code-inline code-style">const mySecondObject = Object.create(myObjectLiteral);</code></li>
+									<li><i>Object based inheritance</i> :
+										<ul class="align-left">
+											<code class="code-inline code-style code-inline-block">const Superhuman = Object.create(Human);</code>
+											<code class="code-inline code-style code-inline-block">const superman = Object.create(Superhuman);</code>
+										</ul>
+									</li>
+									<li>You can always add custom properties and methods to these objects. For example:
+										<ul class="align-left">
+											<code class="code-inline code-style code-inline-block">Superhuman.realName = 'Real Name Needed';</code>
+											<code class="code-inline code-style code-inline-block">Superhuman.init = function(name, realName) { ... }</code>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><span class="lime">Variable Scope</span>: This is how private variables are made, and how they are set public in classes, in JS. Use getters and setters. This approach gives full control over the class. Example:
 								<pre><code class="language-javascript">
 	class Turtle {
+		const _color;
+		const name;
 		constructor(name,color) {
 			this.name = name;
-			let _color = color;
-			this.setColor = color => { return _color = color; }
+			this.setColor = this.color => { return _color = color; }
 			this.getColor = () => _color;
 		}
 	}
+
+	// NOTE: This code may need to be fixed.
 							</code></pre>
 								<ul>
 									<li>Why use getters and setters: <a href="https://stackoverflow.com/questions/1568091/why-use-getters-and-setters-accessors" target="_blank">stackoverflow &#8663;</a> </li>
@@ -200,7 +220,58 @@ class NinjaTurtle extends Turtle {
 								<ul>
 									<li><code class="code-inline code-style">super</code> refers to the parent class. In the example above, it is used to call the constructor functions of the <i>Turtle</i> class.</li>
 								</ul>
-								<li> <span class="lime">TODO</span> </li>
+								<li> <span class="lime"><i>mixin()</i> ← Using Deep Copy</span>
+									<ul>
+										<li>Technique for adding properties and methods of some objects to another object, without using inheritance, without creating an <i>inheritance chain</i>.</li>
+										<li>Basic mixin functionality is provided by the <code class="code-inline code-style">Object.assign()</code> method. But there is a problem with this solution since it creates a <i>shallow copy</i>: Objects are copied only by reference.</li>
+										<li>A <i>deep copy mixin()</i> solution <isindex>:
+											<pre><code class="language-javascript">
+function mixin(target,...objects) {
+	for (const object of objects) {
+		if(typeof object === 'object') {
+			for (const key of Object.keys(object)) {
+				if (typeof object[key] === 'object') {
+					target[key] = Array.isArray(object[key]) ? [] : {};
+					mixin(target[key],object[key]);
+				} else {
+				Object.assign(target,object);
+				}
+			}
+		}
+	}
+	return target;
+}
+											</code></pre>
+										</li>
+										<li>Usage example:
+											<ul class="align-left">
+												<code class="code-inline code-style code-inline-block">const a = {}, b = { foo: 'bar' }, c = { numbers: [1,2,3] };</code><br>
+												<code class="code-inline code-style code-inline-block">mixin(a,b,c);</code><br>
+												<code class="code-inline code-style code-inline-block"><< { foo: 'bar' , numbers: [ 1, 2, 3 ] }</code>
+											</ul>											
+										</li>
+										<li>Another uses:
+											<ul>
+												<li>Add a large number of properties to an object all at one.</li>
+												<li>To create a <code class="code-inline code-style">copy()</code> method than can be used to make an exact, deep copy of an object.</li>
+												<li>Then, the copy function can be used to create a <i>factory function</i>.</li>
+												<li>To add <i>modular functionality</i>. This means: Encapsulate properties and methods in an object, then add them to other objects without the overhead of an inheritance chain being created.</li>
+												<li>Example: <code class="code-inline code-style">mixin(superman,flight,superSpeed,xRayVision);</code></li>
+											</ul>
+										</li>
+										<li><span class="lime">this</span> keyword usage:
+											<ul>
+												<li>Binding: The value of <code class="code-inline code-style">this</code> points to the object calling a method.</li>
+												<li>Chaining functions: <code class="code-inline code-style">superman.fly().move().xray();</code> Methods can be chained together and called in sequence if they return a reference to <i>this</i>.</li>
+												<li><code class="code-inline code-style">that = this</code> is used to avoid problems with nested functions.</li>
+												<li><code class="code-inline code-style">.bind(this);</code> can be used for all functions to set the value of this inside the nested function.</li>
+												<li><code class="code-inline code-style">for-of</code> and <i>arrow functions</i> can be used to avoid the use of nested functions. Arrow functions should be used when anonymous functions are
+													required in callbacks.</li>
+											</ul>
+										</li>
+										
+									</ul>
+								</li>
 						</ul>
 					</li>
 			</li>
@@ -238,6 +309,7 @@ class NinjaTurtle extends Turtle {
 			<li>OOP:
 				<ul>
 					<li><i>Classes</i> define blueprints of objects. Objects are then created as an instance of that class.</li>
+					<li>All objects are collections of key-value paired properties.</li>
 					<li>OOP properties:</li>
 					<ul>
 						<li>Encapsulation: The inner workings are kept hidden inside the object and only the essential funcionalities are exposed to the end user.</li>
@@ -247,19 +319,19 @@ class NinjaTurtle extends Turtle {
 					<li><code class="code-inline code-style">static</code> keyword. In class declarations, with "static methods" we get a class method. These methods are called by the class directly rather than by instances of the class.
 						<div><code class="code-inline code-style">Dice</code> is a class. So <code class="code-inline code-style">static description() { ... }</code> decribes what that class does, and not just what their instances do. Static methods are not available for instances.</div>
 					</li>
+					<li>The <i>object prototype</i> is live, so new properties and methods can be added to existing instances.</li>
 					<li><i>POLYMORPHISM</i>:
 						<blockquote>"The concept of polymorphism means that different objects can have the same
 							method, but implement it in different ways. The <code class="code-inline code-style">Object.prototype</code> object has a
 							<code class="code-inline code-style">toString()</code> method that is shared by all objects. This means every object created
 							in JavaScript will have a <code class="code-inline code-style">toString()</code> method. Polymorphism means that objects
 							are able to override this method with a more specific implementation. So
-							although every object has a <code class="code-inline code-style">toString()</code> method, the way it’s implemented can
-							vary between different objects. For example, calling it on an array object will
-							return each value in a comma-separated string."<span class="quote-reference">ebook, JS: From Novice to Ninja</span></blockquote>
+							although every object has a <code class="code-inline code-style">toString()</code> method, the way it’s implemented can vary between different objects. For example, calling it on an array object will return each value in a comma-separated string."<span class="quote-reference">ebook, JS: From Novice to Ninja</span></blockquote>
 					</li>
+					<li><b>Monkey-patching</b> is the process of adding methods to built-in objects by augmenting their prototypes. This should be done with caution as it can cause unexpected behavior in the way built-in objects work.</li>
+					<li>Composition over inheritance is a design pattern where objects are composed from “building-block” objects, rather than inheriting all their properties and methods from a parent class.</li>
 				</ul>
 			</li>
-			<li>Moar?</li>
 		</ul>
 
 	</section>
