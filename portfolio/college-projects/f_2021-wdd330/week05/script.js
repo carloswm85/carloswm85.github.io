@@ -7,8 +7,8 @@ lastEdit.innerText = theDate;
 
 // READINGS & EXERCISES
 /** ------------------------------------------------------------------------
- * Book_name
+ * JS: From Novice to Ninja
  --------------------------------------------------------------------------- */
-// Chapter # - Chapter_title
+// Chapter 10 - Testing and Debugging
 
-// Exercise
+// TDD Example, page 371 and on.
