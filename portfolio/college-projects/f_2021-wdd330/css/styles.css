@@ -14,13 +14,12 @@ body {
 	border: #fff solid 1px;
 	padding: 1em;
 	border-radius: 10px;
+	background-color: #181A1B;
 }
 
 footer {
 	text-align: center;
 }
-
-
 
 .special-code {
 	color: #79fe0c;
@@ -70,9 +69,16 @@ hr:after {
 }
 
 /* ================================ CODE =================================== */
+
+/*
+CODE colors:
+	background: #202325
+	font: #AEB7AF
+	font-2: #FF6D6D
+*/
 .code-style {
 	border: solid 1.5px gray;
-	background-color: #000C18FF;
+	background-color: #202325;
 	border-radius: 2px;
 	font-family: 'Ubuntu', 'Courier New', Courier, monospace;
 }
@@ -83,8 +89,9 @@ hr:after {
 
 .code-inline-block {
 	display: inline-block;
-	margin: 2px;
+	margin: 0;
 	padding: 2px 10px;
+	
 }
 
 .align-center {
@@ -97,9 +104,21 @@ hr:after {
 
 pre {
 	line-height: 1.1em;
-	width: 650px;
-	margin: 0 auto;
+	width: auto;
+	margin: 0;
 }
+
+pre code.hljs {
+	background-color: #202325;
+	color: #AEB7AF;
+	padding: 0;
+	margin: 1em 0;
+}
+
+/* [class^='hljs-'],
+[class*='hljs-'] {
+	Does this selector work? 
+} */
 
 
 /* ============================= SOME CLASSES ============================== */

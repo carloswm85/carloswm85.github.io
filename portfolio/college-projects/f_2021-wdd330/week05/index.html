@@ -202,7 +202,7 @@
 				<ul>
 					<li>Sandbox exercises for <a href="http://eloquentjavascript.net/code" target="blank_">chapter 8</a>:
 						<ul>
-							<li></li>
+							<li>TODO or not TODO</li>
 						</ul>
 					</li>
 				</ul>
@@ -219,6 +219,8 @@
 			<li><i>Stack Trace</i> : Sequence of functions or method calls that lead to the point where the error ocurred.</li>
 			<li><i>Warning</i> : It occurs if there's an error in the code that isn't enough to cause the program to crash. This means that the program will continue to run, althoguh possibly incorrectly.</li>
 			<li><i>TDD</i> : Test-driven development is the practice of writing tests that fail, then writing the code that passes the test, then refactoring the code every time a new feature is implemented</li>
+			<li><i>Modules</i> : A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules. This helps to keep code organized in separate, reusable files, which improves code maintainability. The code in a module should have a single purpose, and group together functions with distinct functionality. For example, you might keep any functions used for Ajax in their own module. This could then be used in any projects where Ajax was required. Keeping code modular helps to make it more loosely coupled and interchangeable, meaning you can easily swap one module for another without affecting other parts of a project. Indeed, small single-purpose modules are the exact opposite of large monolithic libraries as they enable developers to use only the modules that are needed, avoiding any wasted code. Modules also allow a public API to be exposed, while keeping the implementation hidden away inside the module.</li>
+			<li><i>Coupling</i> : The coupling of code refers to how dependent certain elements or modules of code are on each other. Two pieces of code are said to be tightly coupled if one relies on the other to run. This often occurs if a piece of code makes hard-coded references to another piece of code, requiring it to be used. This will often mean that changes to one piece of code will necessitate changes in the other. On the other hand, two pieces of code are said to loosely coupled if one piece of code can be easily substituted by another without affecting the final outcome.</li>
 		</ul>
 
 	</section>
@@ -228,18 +230,39 @@
 		<h2>Assignments and Projects</h2>
 		<ol>
 			<li>Weekly Report: <a href="report.html">Here &#8667;</a></li>
-			<li>Team Activity: <a href="team/team.html" target="_blank">team.html &#8663;</a> <a href="team/team.js" target="_blank">team.js &#8663;</a> <a href="team/solution.html" target="_blank">solution.js &#8663;</a> </li>
+			<li>Team Activity:
+				<ul>
+					<li> Instructions: <a href="../course-content/ponder/team05.html" target="_blank">team05.html &#8663;</a> </li>
+					<li>Instructions? <a href="../course-content/ponder/team05-calc.html" target="_blank">team05-calc.html &#8663;</a> </li>
+					<li>Team:
+						<ul>
+							<li>Team solution: <a href="team/main-team.html" target="_blank">main-team.html &#8663;</a> </li>
+							<li>Team code 1: <a href="team/main-team.js" target="_blank">main-team.js &#8663;</a> </li>
+							<li>Team code 2: <a href="team/hikes.js" target="_blank">hikes.js &#8663;</a> </li>
+						</ul>
+					</li>
+					<li>Teacher's
+						<ul>
+							<li>Teacher's solution: <a href="team/teachers/app5.js" target="_blank">teachers/app5.js &#8663;</a></li>
+							<li>Teacher's solution: <a href="team/teachers/hikes.js" target="_blank">teachers/hikes.js &#8663;</a></li>
+							<li>Teacher's solution: <a href="team/teachers/hiking-complete.html" target="_blank">teachers/hiking-complete.html &#8663;</a></li>
+						</ul>
+					</li>
+				</ul>
 			<li>Quiz Ninja Project: <a href="ninja/index.html">Here &#8667;</a></li>
 		</ol>
 	</section>
 
-	<!-- Extra Section -->
-	<section class="border-bottom">
-		<h2>Extra Stuffs and Notes</h2>
-		<ol>
-			<li>Tools:
-				<ul>
-					<li> <span class="lime">Linters</span> (style/quality code detection):
+	<ul>
+		<!-- Extra Section -->
+		<section class="border-bottom">
+			<h2>Extra Stuffs and Notes</h2>
+			<ol>
+				<li>Tools:
+					<ul>
+						<li> <span class="lime">Linters</span> (style/quality code detection):
+
+	</ul>
 						<ul>
 							<li>JS Lint: <a href="http://jslint.com/" target="_blank">here &#8663;</a></li>
 							<li>JS Hint: <a href="http://jshint.com/" target="_blank">here &#8663;</a></li>
