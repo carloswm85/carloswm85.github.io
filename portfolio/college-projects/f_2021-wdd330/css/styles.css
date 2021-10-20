@@ -12,17 +12,14 @@ body {
 	max-width: 450px;
 	margin: 1.5em auto;
 	border: #fff solid 1px;
-	padding: 1em;
+	padding: 2em;
 	border-radius: 10px;
-	background-color: #181A1B;
+	background-color: #181a1b;
 }
 
 footer {
 	text-align: center;
-}
-
-.special-code {
-	color: #79fe0c;
+	margin-top: 1em;
 }
 
 .body-wide {
@@ -31,6 +28,7 @@ footer {
 
 .border-bottom {
 	border-bottom: #fff 1px dashed;
+	padding-bottom: 1em;
 }
 
 
@@ -61,7 +59,7 @@ hr {
 }
 
 hr:after {
-	background: #000;
+	background: #181a1b;
 	content: '(╯°□°)╯︵ ┻━┻';
 	padding: .5em 1.5em;	
 	position: relative;
@@ -76,6 +74,11 @@ CODE colors:
 	font: #AEB7AF
 	font-2: #FF6D6D
 */
+
+.special-code {
+	color: #79fe0c;
+}
+
 .code-style {
 	border: solid 1.5px gray;
 	background-color: #202325;
@@ -229,5 +232,3 @@ blockquote {
 	color: yellow;
 	font-size: 1em;
 }
-
-/
