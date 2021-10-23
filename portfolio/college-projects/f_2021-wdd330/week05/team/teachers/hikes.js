@@ -1,5 +1,7 @@
 // Example of using Classes and modules to organize the code needed to render our list of hikes. Not using MVC here.
 
+//#region Variables
+
 //create an array of hikes
 const hikeList = [
   {
@@ -37,6 +39,7 @@ const hikeList = [
 ];
 
 const imgBasePath = '//byui-cit.github.io/cit261/examples/';
+//#endregion
 
 //#region CLASS
 export default class Hikes {
@@ -151,3 +154,4 @@ function renderOneHikeFull(hike) {
 }
 
 //#endregion
+
