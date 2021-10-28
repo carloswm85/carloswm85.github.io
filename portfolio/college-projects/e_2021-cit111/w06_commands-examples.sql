@@ -1,7 +1,7 @@
-DROP DATABASE mdb;
-CREATE DATABASE mdb;
+DROP DATABASE w06_mdb_example;
+CREATE DATABASE w06_mdb_example;
 
-USE mdb;
+USE w06_mdb_example;
 
 CREATE TABLE actors (
 	actor_id INT NOT NULL AUTO_INCREMENT,
