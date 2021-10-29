@@ -1,12 +1,14 @@
 // I've left the model view and controller code together in the one file for simplicity
 
-//commentModel
+//commentModel -----------------------------------------------------------
 class CommentModel {
+	
 	constructor(type) {
 		this.type = type;
 		// get the initial list of comments out of local storage if it exists
 		this.comments = readFromLS(this.type) || [];
 	}
+	
 	// I decided I could combine my getAllComments, and filterCommentsByName methods into one by passing in an optional query argument
 	getComments(q = null) {
 		if (q === null) {
