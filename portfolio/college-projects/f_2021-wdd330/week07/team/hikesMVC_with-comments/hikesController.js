@@ -10,12 +10,15 @@ export default class HikesController {
 	// a class needs a constructor
 	constructor(parentId) {
 		this.parentElement = document.getElementById(parentId);
+		
 		this.hikeModel = new HikeModel();
 		this.hikesView = new HikesView(parentId);
+		
 		//add an instance of our comments class to the controller
 		this.comments = new Comments('hikes', 'comments');
 	}
 		
+	// this method builds the entire main page content
 	showHikeList() {
 		const hikeListElement = this.parentElement;
 		// the list of hikes will come from the model now...
@@ -28,8 +31,11 @@ export default class HikesController {
 		this.comments.showCommentList();
 	}
 	
+	// This method is attached to the addHikeListener()
+	// it uses the custom data-name attribute from the <li>
 	showOneHike(hikeName) {
 		const hike = this.hikeModel.getHikeByName(hikeName);
+		
 		this.hikesView.renderOneHikeFull(
 			this.parentElement,
 			hike
@@ -44,6 +50,7 @@ export default class HikesController {
 	addHikeListener() {
 		// We need to loop through the children of our list and attach a listener to each, remember though that children is a nodeList...not an array. So in order to use something like a forEach we need to convert it to an array.
 		const childrenArray = Array.from(this.parentElement.children);
+
 		childrenArray.forEach(child => {
 			child.addEventListener('touchend', e => {
 				this.showOneHike(e.currentTarget.dataset.name);
@@ -51,3 +58,4 @@ export default class HikesController {
 		});
 	}
 }
+

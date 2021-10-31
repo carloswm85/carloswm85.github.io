@@ -1,4 +1,6 @@
-// normally the model would have more going on...retrieving the hikes from a database, filtering, etc. Our model will be very simple.  We could simply export the hikeList, but a better pattern would be to create a 'getter' function to do it instead. That way as our model changed...we could simply change the getter function and anything using it should be able to remain the same.
+// normally the model would have more going on...retrieving the hikes from a database, filtering, etc.
+// Our model will be very simple We could simply export the hikeList, but a better pattern would be to create a 'getter' function to do it instead.That way as our model changed...we could simply change the getter function and anything using it should be able to remain the same.
+
 const hikeList = [{
 		name: 'Bechler Falls',
 		imgSrc: 'falls.png',
@@ -27,7 +29,12 @@ const hikeList = [{
 		directions: 'Take Highway 20 north to Ashton. Turn right into the town and continue through. Follow that road for a few miles then turn left again onto the Cave Falls road. Drive to until you see the sign for Bechler Meadows on the left. Turn there. There is a parking area at the trailhead.'
 	}
 ];
+
+// All the information from the Hike model is sent out from here.
 class HikeModel {
+
+	/* No constructor */
+	
 	getAllHikes() {
 		return hikeList;
 	}
