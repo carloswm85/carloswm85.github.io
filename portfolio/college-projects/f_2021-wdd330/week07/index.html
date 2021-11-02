@@ -45,9 +45,91 @@
 	<section class="border-bottom">
 		<h2>Readings</h2>
 
-		<ol>
-			<li></li>
-		</ol>
+		<ul>
+			<h2>JavaScript: From Novice to Ninja</h2>
+			
+			<li> <span class="lime">Ch.11 Further Functions</span>
+				<ul>
+					<li>Functions have built-in properties such as length, and can have custom properties added too. They can also have their own methods. They are <b>first-class objects</b>.</li>
+					<li>All functions have <code class="code-inline code-style">call()</code> and <code class="code-inline code-style">apply()</code> methods that can invoke a function with the value of <code class="code-inline code-style">this</code> bound to an object that is provided as an argument. This <code class="code-inline code-style">this</code> is the very first argument of any function.
+						<ul>Example, <code class="code-inline code-style">clark</code> object:
+							<ul class="align-center">
+								<code class="code-inline code-style code-inline-block">
+									sayHello.call(clark, 'How do you do');<br>
+									<< 'How do you do, my name is Clark'
+								</code><br>
+							</ul>							
+						</ul>
+						These are two powerful methods, as they allow generalized functions to be written that are not tied to specific objects by being methods of that object. This gives flexibility over how the functions can be used. <br>
+						<code class="code-inline code-style">apply()</code> is used with arrays.
+					</li>
+					<li>Properties are added like <code class="code-inline code-style">myFunction.description = 'The description';</code> </li>
+					<li>The <code class="code-inline code-style">myFunction.cache</code> property can be very useful for saving values for quick debugging.
+					<pre>
+						<code class="language-javascript">
+	function square(x) {
+		square.cache = square.cache || {};
+		if (!square.cache[x]) {
+			square.cache[x] = x * x;
+		}
+		return square.cache[x]
+	}
+
+	let resulta = square(2);
+	let resultb = square(3);
+
+	console.log(square.cache);
+						</code>
+					</pre>
+					</li>
+					<li><i>Immediately Invoked Function Expressions</i> or IIFEs are functions that are enclosed in parentheses and followed by double parentheses so they’re invoked. They are useful for namespacing variables and setting default values.
+					<pre><code class="language-javascript">
+	(function (term) {
+	const temp = 'World';
+	console.log(`Hello ${temp} ${term}`);
+	})(23);
+						</code></pre>
+						<ul>Use cases:
+							<li>Temporary variables. You may need to use a variable once in your code, and never again, not even being able to recover its value.</li>
+							<li>Initialization code.  For run only once code. This can also be achieved using <code class="code-inline code-style">{ }</code> </li>
+							<li>Isolating your own <code class="code-inline code-style">strict mode</code> zone when working someone else's code.</li>
+							<li>Creating self-contained code blocks (modules).</li>
+						</ul>
+					</li>
+					<li>Functions are able to dynamically redefine themselves in the body of the function, depending on certain conditions. This is done by assigning an anonymous function to a variable that has the same name as the function.
+						<pre>
+							<code class="language-javascript">
+	function party(){
+		console.log('Wow this is amazing!');
+		party = function(){
+			console.log('Been there, got the T-Shirt');
+		}
+	}
+							</code>
+						</pre>
+						This is called the <b>Lazy Definition Pattern</b> and is often used when some initialization code is required the first time it’s invoked. This means the initialization can be done the first time it’s called, then the function can be redefined to what you want it to be for every subsequent invocation.
+					</li>
+					<!-- TODO: here -->
+					<li>A recursive function will keep invoking itself until a certain condition is met.</li>
+					<li>A callback is a function that’s provided as an argument to another function.</li>
+					<li>Callbacks are frequently used in asynchronous programming as part of the event loop. This means that a program can continue to run in a single thread while waiting for another task to be completed.</li>
+					<li>Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence. They also provide a nicer mechanism for handling errors.</li>
+					<li>Functions that return other functions are known as higher-order functions.</li>
+					<li>A closure is the process of keeping a reference to a variable available outside the scope of the function it was originally defined in.</li>
+					<li>A generator is created by placing an asterisk (*) after the function keyword.</li>
+					<li>A generator function will return an iterator object that provides a next() method, which returns the next value in a sequence that is defined in the generator function.</li>
+					<li>Functional programming involves breaking processes down into steps that can be applied as a series of functions.</li>
+					<li>Pure functions are functions that don’t rely on the state of the code they are called from, have no side-effects, and always give the same result when given the same arguments (referential transparency).</li>
+					<li>Currying or partial application is the process of applying one argument at a time to a function. A new function is returned until all the arguments have been used.</li>
+				</ul>
+			</li>
+
+			<li> <span class="lime">Ch.13 AJAX</span> 
+				<ul>
+					<li></li>
+				</ul>
+			</li>
+		</ul>
 	</section>
 
 	<!-- Vocabulary Section -->
