@@ -7,22 +7,20 @@ const imgBasePath = './';
 
 class HikesView {
 
-    /* hikeListElement === <ul>, hikeList === dictionary */
+    /* hikeListElement === <ul> named 'hikes', hikeList === dictionary */
     renderHikeList(hikeListElement, hikeList) {
         // I decided to let the controller handle where the list gets placed.
         // So instead of getting the element here in the function, when I created the view I decided to pass the target element in.
 
         // The following line was replaced by actual input.
         // const hikeListElement = document.getElementById('hikes');
-
         hikeListElement.innerHTML = ''; // Eliminate any content, just in case
 
         // the list of hikes doesn't exist here in the view either...so I've passed that in as parameter as well.
         hikeList.forEach(hike => {
             // notice the call to 'this' below. 'this' is like adding './' at the beginning of a path. It helps the computer find things.
             hikeListElement.appendChild(this.renderOneHikeLight(hike));
-            console.log('>> Rendering hike:');
-            console.log(hike);
+            console.log('>> Rendering hike:' + hike);
         });
     }
 
@@ -56,7 +54,11 @@ class HikesView {
         return item;
     }
 
+    // parent === <ul>, hike === hike object from model hikes dictionary
     renderOneHikeFull(parent, hike) {
+        console.log('renderOneHikeFull(), parent: ' + parent);
+        console.log('renderOneHikeFull(), hike: ' + hike);        
+
         const backButton = document.createElement('button');
         backButton.innerHTML = '&lt;- All Hikes';
         const item = document.createElement('li');
@@ -85,8 +87,10 @@ class HikesView {
         parent.innerHTML = '';
         item.insertBefore(backButton, item.childNodes[0]);
         parent.appendChild(item);
+        
         // send the button back to the controller to attach a listener
         return backButton;
     }
 }
+
 export default HikesView;

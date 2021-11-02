@@ -39,8 +39,14 @@ class HikeModel {
 		return hikeList;
 	}
 
+	// the model receives a string, and returns the object
 	getHikeByName(name) {
-		return hikeList.find(hike => hike.name === name);
+		let hikeItem = hikeList.find(hike => hike.name === name);
+
+		console.log('getHikeByName(), hikeItem: ' + hikeItem);
+		console.log('getHikeByName(), typeof(hikeItem): ' + typeof (hikeItem));
+		
+		return hikeItem;
 	}
 }
 
