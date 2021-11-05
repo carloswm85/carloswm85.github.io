@@ -125,7 +125,30 @@
 						</code>
 					</pre>						
 					</li>
-					<li>A callback is a function that’s provided as an argument to another function.</li>
+					<li>A callback is a function that’s provided as an argument to another function. Example:
+						<pre>
+							<code class="language-javascript">
+	function random(a,b,callback) {
+		
+		// if only one argument is supplied, assume the lower limit is 1
+		if (b === undefined) b = a, a = 1;
+		const result = Math.floor((b-a+1) * Math.random()) + a
+		
+		if(callback) {
+			result = callback(result);
+		}
+		return result;
+	}
+
+	function square(n) {
+		return n*n;
+	}
+
+	random(1,10,square);
+	// << 49
+							</code>
+						</pre>
+					</li>
 					<li>Callbacks are frequently used in asynchronous programming as part of the event loop. This means that a program can continue to run in a single thread while waiting for another task to be completed.</li>
 					<li>Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence. They also provide a nicer mechanism for handling errors. Examples:
 								<pre>
@@ -148,6 +171,7 @@
 								</pre>
 					</li>
 					<li>Functions that return other functions are known as higher-order functions.</li>
+					<!-- TODO: -->
 					<li>A closure is the process of keeping a reference to a variable available outside the scope of the function it was originally defined in.</li>
 					<li>A generator is created by placing an asterisk (*) after the function keyword.</li>
 					<li>A generator function will return an iterator object that provides a next() method, which returns the next value in a sequence that is defined in the generator function.</li>
