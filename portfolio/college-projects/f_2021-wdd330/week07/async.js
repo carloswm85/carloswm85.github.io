@@ -27,6 +27,8 @@ done(miliseconds2);
 done(miliseconds3);
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Example 02
+import fetch from "node-fetch";
+
 async function loadJson(url) { // (1)
 	let response = await fetch(url); // (2)
 	console.log(response);		
@@ -40,6 +42,6 @@ async function loadJson(url) { // (1)
 	throw new Error(response.status);
 }
 
-const urlinput = require('./week07/animals.json');
+const urlinput = require('./animals.json');
 loadJson(urlinput)
-	.catch(console.log('alert')); // Error: 404 (4)
+	.catch(console.log('alerta')); // Error: 404 (4)

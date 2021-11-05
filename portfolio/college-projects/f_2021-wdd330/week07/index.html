@@ -40,6 +40,7 @@
 			<li><a href="script.js" target="_blank">script.js &#8663;</a></li>
 			<li><a href="promise1.js" target="_blank">promise1.js &#8663;</a></li>
 			<li><a href="promise2.js" target="_blank">promise2.js &#8663;</a></li>
+			<li><a href="async.js" target="_blank">async.js &#8663;</a> </li>
 		</ul>
 	</section>
 
@@ -110,12 +111,42 @@
 							</code>
 						</pre>
 						This is called the <b>Lazy Definition Pattern</b> and is often used when some initialization code is required the first time it’s invoked. This means the initialization can be done the first time it’s called, then the function can be redefined to what you want it to be for every subsequent invocation.
+					</li>					
+					<li>A recursive function will keep invoking itself until a certain condition is met.
+					<pre>
+						<code class="language-javascript">
+	function factorial(n) {
+		if (n === 0) {
+			return 1;
+		} else {
+			return n * factorial(n - 1);
+		}
+	}
+						</code>
+					</pre>						
 					</li>
-					<!-- TODO: here -->
-					<li>A recursive function will keep invoking itself until a certain condition is met.</li>
 					<li>A callback is a function that’s provided as an argument to another function.</li>
 					<li>Callbacks are frequently used in asynchronous programming as part of the event loop. This means that a program can continue to run in a single thread while waiting for another task to be completed.</li>
-					<li>Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence. They also provide a nicer mechanism for handling errors.</li>
+					<li>Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence. They also provide a nicer mechanism for handling errors. Examples:
+								<pre>
+									<code class="language-javascript">
+	const promise = new Promise((resolve, reject) => {
+		const n = dice.roll();
+			setTimeout(() => {
+				(n > 3) ? resolve(n) : reject(n);
+			}, n * 1000);
+	});
+
+	promise.then(
+		// fullfilled promise
+		result => console.log(`Yeah, baby! ${result}`),
+	).catch(
+		// rejected promise, handled
+		result => console.log(`Oh, noes! ${result}`)
+	);
+									</code>
+								</pre>
+					</li>
 					<li>Functions that return other functions are known as higher-order functions.</li>
 					<li>A closure is the process of keeping a reference to a variable available outside the scope of the function it was originally defined in.</li>
 					<li>A generator is created by placing an asterisk (*) after the function keyword.</li>
@@ -160,7 +191,11 @@
 		<h2>Extra Stuffs and Notes</h2>
 
 		<ul>
-			<li></li>
+			<li><a href="https://dev.to/tiwariaditya/why-thinking-asynchronous-is-important-in-js-part-1-4boi" target="_blank">https://dev.to/tiwariaditya/why-thinking-asynchronous-is-important-in-js-part-1-4boi &#8663;</a></li>
+			<li><a href="https://dev.to/tiwariaditya/why-thinking-asynchronous-is-important-in-js-part-2-1mmb" target="_blank">https://dev.to/tiwariaditya/why-thinking-asynchronous-is-important-in-js-part-2-1mmb &#8663;</a> </li>
+			<li><a href="https://javascript.info/async-await" target="_blank">https://javascript.info/async-await &#8663;</a> </li>
+			<li><a href="https://stackoverflow.com/a/48433898/7389293" target="_blank">https://stackoverflow.com/a/48433898/7389293 &#8663;</a> </li>
+
 		</ul>
 	</section>
 
