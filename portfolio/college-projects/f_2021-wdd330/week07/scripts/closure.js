@@ -2,7 +2,7 @@
 /** ------------------------------------------------------------------------
 * Title: Closure functions
 --------------------------------------------------------------------------- */
-// >> Example
+// Example <<
 /**
  * A closure is formed when the inner
  * function is returned by the outer function, 
@@ -18,13 +18,14 @@ function closure() {
 }
 
 /*
-	the returned  anonymous arrow function
+	the returned function
 	maintains access to the variables "a" and
 	"b" even after the closure() function has
 	been invoked.
 */
 const toFahrenheit = closure();
 
+// call the function (c) => c * a + b with 30 as c
 let value = toFahrenheit(30);
 
 console.log(`Fahrenheit: ${value}`);

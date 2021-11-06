@@ -42,6 +42,6 @@ async function loadJson(url) { // (1)
 	throw new Error(response.status);
 }
 
-const urlinput = require('./animals.json');
+const urlinput = require('../animals.json');
 loadJson(urlinput)
 	.catch(console.log('alerta')); // Error: 404 (4)
