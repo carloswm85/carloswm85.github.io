@@ -193,7 +193,27 @@
 
 			<li> <span class="lime">Ch.13 AJAX</span> 
 				<ul>
-					<li></li>
+					<li> Ajax was a neat acronym coined by Jesse James Garrett in 2005 in the article “Ajax: A New Approach to Web Applications”, that referred to the different parts of the process being used: Asynchronous JavaScript and XML:
+						<img src="images/ajax.png" alt="">
+						Also, keep in mind:
+						<img src="images/cors.png" alt="">
+						<img src="images/apis.png" alt="">
+					</li>
+					<li>Ajax is a technique for sending and receiving data asynchronously in the background, between the client and the server. Thanks to Ajax, web pages are no longer static, but dynamic applications.</li>
+					<li>Ajax allows JavaScript to request resources from a server on behalf of the client. The data can be sent in many forms, but it is usually in JSON.</li>
+					<li>Ajax can be used for making partial page updates without having to do a full page reload.</li>
+					<li>Ajax can be used for communicating with external APIs.</li>
+					<li>Ajax requests can be made using the Fetch API. This interface allows the communication with the server. Consequently, a server is required when requesting resources using Ajax. Typically this involves using a server-side language, such as PHP, Ruby, Node.js, or .NET to serve the data response following an Ajax request (usually from a back-end database).
+						<ul>Notes:
+							<li>XMLHttpRequest object (by Microsoft) has been superseded by the <i>Fetch API</i>, which is currently a living standard for requesting and sending data asynchronously across a network.</li>
+							<li>The Fetch API uses promises to avoid "callback hell".</li>
+						</ul>
+					</li>
+					<li>The Response interface allows you to control the response received from a request or to create your own <span class="lime">response objects</span>.</li>
+					<li>The Request interface allows you to create a request object that contains information about the request being made, such as the URL and headers.</li>
+					<li>The Headers interface allows you to create HTTP headers that can be added to a request or response object.</li>
+					<li>Requests can retrieve data using a GET request, or send data using a POST request.</li>
+					<li>The FormData interface makes it easier to send data from forms.</li>
 				</ul>
 			</li>
 		</ul>
