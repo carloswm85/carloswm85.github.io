@@ -58,12 +58,12 @@
 					<li>Functions have built-in properties such as length, and can have custom properties added too. They can also have their own methods. They are <b>first-class objects</b>.</li>
 					<li>All functions have <code class="code-inline code-style">call()</code> and <code class="code-inline code-style">apply()</code> methods that can invoke a function with the value of <code class="code-inline code-style">this</code> bound to an object that is provided as an argument. This <code class="code-inline code-style">this</code> is the very first argument of any function.
 						<ul>Example, <code class="code-inline code-style">clark</code> object:
-							<ul class="align-center">
-								<code class="code-inline code-style code-inline-block">
-									sayHello.call(clark, 'How do you do');<br>
-									<< 'How do you do, my name is Clark'
-								</code><br>
-							</ul>							
+							<pre>
+								<code class="language-javascript">
+		sayHello.call(clark, 'How do you do');
+		// >> 'How do you do, my name is Clark'
+								</code>
+							</pre>
 						</ul>
 						These are two powerful methods, as they allow generalized functions to be written that are not tied to specific objects by being methods of that object. This gives flexibility over how the functions can be used. <br>
 						<code class="code-inline code-style">apply()</code> is used with arrays.
@@ -194,13 +194,14 @@
 			<li> <span class="lime">Ch.13 AJAX</span> 
 				<ul>
 					<li> Ajax was a neat acronym coined by Jesse James Garrett in 2005 in the article “Ajax: A New Approach to Web Applications”, that referred to the different parts of the process being used: Asynchronous JavaScript and XML:
-						<img src="images/ajax.png" alt="">
+						<img src="images/ajax.png" alt="no image">
 						Also, keep in mind:
-						<img src="images/cors.png" alt="">
-						<img src="images/apis.png" alt="">
+						<img src="images/cors.png" alt="no image">
+						<img src="images/apis.png" alt="no image">
+						<img src="images/http.png" alt="no image">
 					</li>
 					<li>Ajax is a technique for sending and receiving data asynchronously in the background, between the client and the server. Thanks to Ajax, web pages are no longer static, but dynamic applications.</li>
-					<li>Ajax allows JavaScript to request resources from a server on behalf of the client. The data can be sent in many forms, but it is usually in JSON.</li>
+					<li>Ajax allows JavaScript to request resources from a server on behalf of the client. The data can be sent in many forms, but it is usually in JSON. That's probably the most common format for AJAX responses. The json() method is used to deal with these by transforming a stream of JSON data into a promise that resolves to a JavaScript object.</li>
 					<li>Ajax can be used for making partial page updates without having to do a full page reload.</li>
 					<li>Ajax can be used for communicating with external APIs.</li>
 					<li>Ajax requests can be made using the Fetch API. This interface allows the communication with the server. Consequently, a server is required when requesting resources using Ajax. Typically this involves using a server-side language, such as PHP, Ruby, Node.js, or .NET to serve the data response following an Ajax request (usually from a back-end database).
@@ -209,22 +210,61 @@
 							<li>The Fetch API uses promises to avoid "callback hell".</li>
 						</ul>
 					</li>
-					<li>The Response interface allows you to control the response received from a request or to create your own <span class="lime">response objects</span>.</li>
-					<li>The Request interface allows you to create a request object that contains information about the request being made, such as the URL and headers.</li>
-					<li>The Headers interface allows you to create HTTP headers that can be added to a request or response object.</li>
+					<li>The <span class="cyan">Response interface</span> allows you to control the response received from a request or to create your own <span class="lime">response objects</span>.</li>
+					<li>The <span class="cyan">Request interface</span> allows you to create a <span class="lime">request object</span> that contains information about the request being made, such as the URL and headers.</li>
+					<li>The Fetch API introduced a Headers interface, which can be used to create a Headers object, which can then be added as a property of Request and Response objects. The <span class="cyan">Headers interface</span> allows you to create HTTP headers that can be added to a request or response object. Typical information contained in headers includes the file-type of the resource, cookie information, authentication information and when the resource was last modified.</li>
 					<li>Requests can retrieve data using a GET request, or send data using a POST request.</li>
-					<li>The FormData interface makes it easier to send data from forms.</li>
+					<li>The Fetch API <span class="cyan">FormData interface</span> makes it easier to send data from forms.</li>
+					<li>We can use the Headers, Request and Response objects to put together a typical example that sets up the URL, Request and Headers before calling the fetch() method:
+					<pre>
+						<code class="language-javascript">
+	const url = 'https:example.com/data';
+	
+	const headers = new Headers({
+		'Content-Type': 'text/plain',
+		'Accept-Charset': 'utf-8',
+		'Accept-Encoding': 'gzip,deflate'
+	});
+
+	//url + headers → request → fetch → response/error
+
+	const request = (url, {
+		headers: headers
+	})
+
+	fetch(request)
+		.then(function (response) {
+			if (response.ok) {
+				return response;
+			}
+			throw Error(response.statusText);
+		})
+		.then(response => /* do something with response */ )
+		.catch(error => console.log('There was an error!'));
+						</code>
+					</pre>	
+					</li>
+
+					<li>Ajax <i>receiving information</i> full example:
+						<ul>
+							<li><a href="../additional-content/jsninja2-master/Ch 13/ajax/ajax.html" target="_blank">ajax.html &#8663;</a></li>
+							<li><a href="../additional-content/jsninja2-master/Ch 13/ajax/ajax.html.txt" target="_blank">ajax.html.txt &#8663;</a></li>
+							<li><a href="../additional-content/jsninja2-master/Ch 13/ajax/main.js" target="_blank">main.js &#8663;</a></li>
+						</ul>
+					</li>
+					<li>Ajax <i>sending information</i> full example:
+						<ul>
+							<li><a href="../additional-content/jsninja2-master/Ch 13/todo/todo.html" target="_blank">todo.html &#8663;</a></li>
+							<li><a href="../additional-content/jsninja2-master/Ch 13/todo/todo.html.txt" target="_blank">todo.html.txt &#8663;</a></li>
+							<li><a href="../additional-content/jsninja2-master/Ch 13/todo/main.js" target="_blank">main.js &#8663;</a></li>
+						</ul>
+					</li>
+
+					<li>If you don’t want to live on the edge, you could consider using a library to take care of Ajax requests. The advantage of this approach is that the library will take care of any implementation details behind the scenes – it will use the most up-to-date methods, such as the fetch API, if it’s supported, and fallback on using older methods, if required.<br>
+					The <span class="lime">jQuery</span> library is a good option for this – it has the generic ajax() method that can be used in a very similar way to the fetch() method.</li>
+
 				</ul>
 			</li>
-		</ul>
-	</section>
-
-	<!-- Vocabulary Section -->
-	<section class="border-bottom" id="vocabulary">
-		<h2>Vocabulary, Main Concepts</h2>
-
-		<ul>
-			<li></li>
 		</ul>
 	</section>
 
