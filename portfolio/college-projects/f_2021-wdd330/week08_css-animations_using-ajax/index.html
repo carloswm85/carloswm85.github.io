@@ -12,7 +12,6 @@
 	<script src="../libraries/highlight/highlight.min.js"></script>
 	<script>
 		hljs.highlightAll();
-
 	</script>
 
 	<title>WDD330 - Week 08</title>
@@ -51,19 +50,136 @@
 				<ol>
 					<li><span class="orange">Transforms</span>
 						<ul>
-							<li></li>
+							<li>The CSS3 <code class="code-inline code-style">transform</code> property allows: translation, scaling, rotation, skewing, changing the origing of transform
+								<pre>
+									<code class="language-css">
+	.all-transforms {
+		transform: translate(45px, -45px);
+		transform: translateX(45px);
+		transform: translateY(-30px);
+		transform: scale(1.5, 0.25);
+		transform: rotate(10deg);
+		transform: skew(15deg, 4deg);
+		transform-origin: 0 0;
+		transform: rotate(10deg) translateX(40px) scalte(1.5);
+	}
+									</code>
+								</pre>
+							</li>
+
+							<li>Transforms, as well as other CSS3 properties, require vendor prefixing for older browsers and some othere older systems. Example: <code class="code-inline code-style">-webkit-</code> or <code class="code-inline code-style">-ms-</code>.</li>
 						</ul>
 					</li>
 					<li><span class="orange">Transtitions</span>
 						<ul>
-							<li></li>
+							<li>CSS transitions (like many other CSS animation features) require less client-side processing.</li>
+							<li>Transitions allow the values of CSS properties <i>to change over time</i>, essentially providing simple animations. Any transform from point 1 can be animated (over time).</li>
+							<li><span class="cyan">Steps for creating a simple transition using only CSS</span>:
+								<ol>
+									<li>Declare the original state of the element in the default/originating style declaration.</li>
+									<li>Declare the final state of your transitioned element; for example, a <code class="code-inline code-style">:hover</code> state.</li>
+									<li>Include the transition functions in your default style declaration using the transition properties, including: <code class="code-inline code-style">transition-property</code> , <code class="code-inline code-style">transition-duration</code> , <code class="code-inline code-style">transition-timing-function</code> , and <code class="code-inline code-style">transition-delay</code>.</li>
+								</ol>
+							</li>
+							<li>Example:
+								<pre>
+									<code class="language-css">
+	.all-transitions {
+		/* Select what's going to change. */
+		transition-property: transform, color;
+		transition-duration: 0.2, 0.1ss;
+		transition-timing-function: ease-out, linear;
+		transition-delay: 50ms;
+
+		/* Shorthand */
+		transition: transform 0.2s ease-out 50ms;
+
+		/* all: all properties transtion at the same rate, speed, delay. */
+		transition: all 0.2s ease-out 50ms;
+	}
+									</code>	
+								</pre>
+							</li>
 						</ul>
 					</li>
 					<li><span class="orange">Animations</span>
 						<ul>
-							<li></li>
+							<li>Transitions animate elements over time; however, they’re limited in what they can do. You can define starting and ending states, but there’s no fine-grained control over any intermediate states. CSS animations, unlike transitions, allow you to control <i>each step of an animation</i> via <b>keyframes</b>.</li>
+							<li>A keyframe is a snapshot that defines a <i>starting or end point</i> of any smooth transition. With CSS transitions, we’re essentially limited to defining a first and a last keyframe. CSS animations allow us to add <i>any number of keyframes in between</i>, to guide our animation in more complex ways.</li>
+							<li> <span class="cyan">Defining keyframes</span>:
+								<pre>
+									<code class="language-css">
+	@keyframes moveRight {
+		from {
+			transform: translateX(-50%);
+		}
+		to {
+			transform: translateX(50%);
+		}		
+	}
+
+	@keyframes appearDissappear {
+		/* The element will start
+		invisible, fade into visible
+		by 20%, remain visible until
+		80%, then fade out. */
+		0%, 100% {
+			opacity: 0;
+		}
+		20%, 80% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes bgMove {
+		100% {
+			background-position: 120% 0;
+		}
+	}
+									</code>
+								</pre>								
+							</li>
+							
+							<li>An element must have at minimum <i>ONE animation name</i> for there to be an animation, and must also have <i>ONE duration</i> declared for the animation to be perceptible. Once we have defined our keyframe animations, the next step is to apply it to one or more elements using the various animation properties.</li>
+							<li><span class="cyan">Using animation</span>:
+								<pre>
+									<code class="language-css">
+	.verbose {
+		animation-name: appearDisappear;
+		animation-duration: 300ms;
+		animation-timing-function: ease-in/linear/;
+		animation-iteration-count: 1/infinite;
+		animation-direction: alternate/alternate-reverse;
+		animation-delay: 5s;
+		animation-fill-mode: none/backwards/forwards/both;
+		animation-play-state: running;
+	}
+
+	/* shorthand */		
+	.concise {
+		animation:
+			300ms ease-in alternate 5s
+			backwards appearDisappear;
+	}
+	/* NOTE: In this shorthand version,
+	we’ve left out the animation-iteration-count
+	and animation-play-state since both were
+	set to default. */
+
+	/* Multiple animations */
+	.target-html-element {
+		animation:
+			animationOne 300ms ease-in backwards,
+			animationTwo 600ms ease-out 1s forwards;
+	}
+									</code>
+								</pre>
+							</li>
 						</ul>
 					</li>
+					<ul>
+						<li><code class="code-inline code-style">Animations</code> contain <code class="code-inline code-style">Transitions</code>, which contain <code class="code-inline code-style">Transforms</code>.</li>
+					</ul>
 				</ol>
 			</li>
 
