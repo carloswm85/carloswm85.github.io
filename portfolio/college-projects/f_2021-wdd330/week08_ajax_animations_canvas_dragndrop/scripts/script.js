@@ -10,4 +10,4 @@ lastEdit.innerText = theDate;
  * Week 08
  --------------------------------------------------------------------------- */
 
- // Nothing here yet.
+ // Code for this week is in some other places.
