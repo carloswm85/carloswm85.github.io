@@ -30,11 +30,11 @@ const links = [
 	},
 	{
 		label: 'Week 07',
-		url: 'week07/index.html'
+		url: 'week07_ajax/index.html'
 	},
 	{
 		label: 'Week 08',
-		url: 'week08/index.html'
+		url: 'week08_ajax_animations_canvas_dragndrop/index.html'
 	},
 	{
 		label: 'Week 09',
