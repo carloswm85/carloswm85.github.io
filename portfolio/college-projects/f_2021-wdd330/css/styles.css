@@ -303,8 +303,28 @@ blockquote {
 
 /* ======================== Fetch API Output ========================== */
 #fetch-output {
-		border: 2px dashed rgb(173, 171, 171);
+	border: 2px dashed rgb(173, 171, 171);
 		border-radius: 15px;
 		padding: 1em 0.5em;
 
+}
+
+/* ========================== Canvas API =============================== */
+.canvasStyle,
+.catContainer {
+	display: block;
+	border: 1px dashed white;
+	margin: 1em;	
+}
+
+.catContainer {
+	padding: 1em 1.5em;
+}
+
+.mouse, .cat {
+	width: auto;
+}
+
+.draganddrop .mc {
+	text-align: center;
 }

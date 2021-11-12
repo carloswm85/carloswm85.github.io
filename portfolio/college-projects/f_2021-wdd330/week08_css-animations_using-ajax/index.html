@@ -12,6 +12,7 @@
 	<script src="../libraries/highlight/highlight.min.js"></script>
 	<script>
 		hljs.highlightAll();
+
 	</script>
 
 	<title>WDD330 - Week 08</title>
@@ -23,7 +24,7 @@
 	</div>
 
 	<h1>Week 08</h1>
-	
+
 	<!-- Instructions -->
 	<section class="border-bottom">
 		<h2>This week readings assignment</h2>
@@ -45,7 +46,7 @@
 
 		<ul>
 			<h3>HTML5 & CSS3 for the Real World</h3>
-			
+
 			<li> <span class="lime">Ch.8 CSS3 Transforms and Transitions</span>
 				<ol>
 					<li><span class="orange">Transforms</span>
@@ -137,9 +138,9 @@
 		}
 	}
 									</code>
-								</pre>								
+								</pre>
 							</li>
-							
+
 							<li>An element must have at minimum <i>ONE animation name</i> for there to be an animation, and must also have <i>ONE duration</i> declared for the animation to be perceptible. Once we have defined our keyframe animations, the next step is to apply it to one or more elements using the various animation properties.</li>
 							<li><span class="cyan">Using animation</span>:
 								<pre>
@@ -183,21 +184,112 @@
 				</ol>
 			</li>
 
-			<li><span class="lime">Ch.12 Canvas, SVG, and Drag and Drop</span> 
+			<hr>
+
+			<li><span class="lime">Ch.12 Canvas, SVG, and Drag and Drop</span>
 				<ol>
-					<li><span class="orange">Canvas API</span>
+					<li><span class="orange">Canvas (JavaScript) API</span>
 						<ul>
-							<li></li>
+							<li>With canvas, using JS, it is possible to:
+								<ul>
+									<li>Draw shapes, lines, arcs, text, gradients, patterns.</li>
+									<li>Manipulate pixels in images and video.</li>
+								</ul>
+							</li>
+							<li>Working canvas example 1, simple rectangle:
+								<canvas id="myCanvas" class="canvasStyle" width="150" height="150">
+									Sorry! This browser does not support canvas API.
+								</canvas>
+
+								<ul>Notes:
+									<li>If you can see the text "Sorry! This browser does not support canvas API", there's a problem.</li>
+									<li>The <code class="code-inline code-style">id="myCanvas" class="myCanvas" width="200" height="200"</code>, defines the size of the <i>canvas coordinate system</i>. (0, 0) origin is at the upper left-hand side corner.</li>
+									<li>Canvas JS code con this example: <a href="./scripts/canvas.js" target="_blank">canvas.js &#8663;</a> </li>
+								</ul>
+							</li>
+
+							<li>Working canvas example 2, pattern:
+								<canvas id="demo2" class="demo2 canvasStyle" width="500" height="150">
+									Sorry! This browser does not support canvas API.
+								</canvas>
+
+								<ul>Notes:
+									<li>This code RENDERS an entire image, as IT IS presented. It take a small image, and repeats it to build a new one, with a repeated pattern. What can be seen is ONE image, made using code from a single little one.</li>
+								</ul>
+							</li>
+
+							<li>What else you can make:
+								<ul>
+									<li>Gradients: <code class="code-inline code-style">var gradient = context.createLinearGradient(0, 0, 0, 200);</code></li>
+									<li>Other shapes by creating paths. Read code for example below: <a href="./scripts/canvas.js" target="_blank">here &#8663;</a></li>
+								</ul>
+							</li>
+
+							<li>Saving Canvas Drawings, example:
+								<br>
+								<canvas id="demo3" class="demo3 canvasStyle" width="500" height="150">
+									Sorry! This browser does not support canvas API.
+								</canvas>
+								<button name="saveButton" id="saveButton">Display in New Tab</button>
+							</li>
+
+							<li>Other functions:
+								<ul>
+									<li>For copying an image file into the canvas: <code class="code-inline code-style">context.drawImage(imageFromId, 0, 0);</code></li>
+									<li><code class="code-inline code-style">var imageData = context.getImageData(0, 0, 1, 1);</code> which is then used to change the colors of the image. See <code class="code-inline code-style">manipulateImage()</code> in readings.</li>
+									<li>Also in readings: How to add text image.</li>
+								</ul>
+							</li>
 						</ul>
 					</li>
+
 					<li><span class="orange">SVG</span>
 						<ul>
-							<li></li>
+							<li>Scalable Vector Graphics.</li>
+							<li>Code example:
+								<img src="images/svg-code.png" alt="image">
+							</li>
+							<li><b>Raphaël</b> is an open-source JavaScript library that makes drawing and animating with SVG much easier.</li>
+							<li>Canvas Vs SVG:
+								<img src="images/canvas-vs-svg-1.png" alt="image">
+								<img src="images/canvas-vs-svg-2.png" alt="image">
+							</li>
 						</ul>
 					</li>
 					<li><span class="orange">Drag and Drop API</span>
 						<ul>
-							<li></li>
+							<li>There are two major kinds of functionality you can implement with Drag and Drop: dragging files from your computer into a web page—in combination with the File API—or dragging elements into other elements on the same page.</li>
+							<li>There are several steps to adding drag and drop to your page:
+								<ol>
+									<li>Set the <code class="code-inline code-style">draggable</code> attribute on any HTML elements you’d like to be draggable.</li>
+									<li>Add an event listener for the <code class="code-inline code-style">dragstart</code> event on any draggable HTML elements.</li>
+									<li>Add an event listener for the <code class="code-inline code-style">dragover</code> and drop events on any elements that you want to have accept dropped items.</li>
+								</ol>
+							</li>
+
+							<li>The code is <a href="scripts/drag-and-drop.js" target="_blank">here &#8663;</a></li>
+							<li>Example:
+
+								<article id="ac3" class="catContainer">
+									<h1>Wai-Aria? HAHA!</h1>
+									<h2 id="catHeading">Form Accessibility</h2>
+									<img src="images/cat-negative.png" id="cat" class="cat" alt="WAI-ARIA Cat">
+
+									<div class="content">
+										<p id="mouseContainer" class="mc">
+											<img src="images/mouse.png" alt="mouse treat" id="mouse1" class="mouse" draggable="true">
+											<img src="images/mouse.png" alt="mouse treat" id="mouse2" class="mouse" draggable="true">
+											<img src="images/mouse.png" alt="mouse treat" id="mouse3" class="mouse" draggable="true">
+										</p>
+										<ul>
+											<li>Mice: <i>dragstart</i></li>
+											<li>Cat: <i>dragover</i></li>
+											<li>Cat and Mouse: <i>drop</i> and events</li>
+										</ul>
+										<p><i>Notice how the cursor behaviour changes after implementing the D&D API code.</i></p>
+									</div>
+								</article>
+							</li>
 						</ul>
 					</li>
 				</ol>
@@ -210,7 +302,7 @@
 		<h2>Vocabulary, Main Concepts</h2>
 
 		<ul>
-			<li></li>
+			<li><b>XML</b> stands for <i>eXtensible Markup Language</i>. Like HTML, it’s a markup metalanguage. In plain English, it’s a system meant to annotate text. Just as we can use HTML tags to wrap our content and give it meaning, so can XML tags be used to <span class="cyan"> describe data</span>, such as the content of a file.</li>
 		</ul>
 
 	</section>
@@ -223,7 +315,7 @@
 			<li>Team Activity: Working with Fetch API and promises.
 				<ul>
 					<li> Instructions: <a href="../course-content/ponder/team08.html" target="_blank">team08.html &#8663;</a> </li>
-					<li>Notes about APIs and promises from Week 07: <a href="../week07_ajax/" target="_blank">AJAX  notes &#8663;</a> </li>
+					<li>Notes about APIs and promises from Week 07: <a href="../week07_ajax/" target="_blank">AJAX notes &#8663;</a> </li>
 					<li>Notes for this assignment: <a href="./team/index.html" target="_blank">team personal notes &#8663;</a></li>
 		</ol>
 	</section>
@@ -246,5 +338,7 @@
 </body>
 
 <script src="../js/other.js"></script>
+<script src="./scripts/canvas.js"></script>
+<script src="./scripts/drag-and-drop.js"></script>
 
 </html>
