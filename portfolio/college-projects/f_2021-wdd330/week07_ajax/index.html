@@ -34,8 +34,13 @@
 
 	<!-- Raw Files -->
 	<section class="border-bottom" id="raw">
-		<h2>Reading Exercise (raw and interpreted) Files</h2>
-		<p>Open the console for reading some code.</p>
+		<h2>Reading Exercises (raw and interpreted) Files</h2>
+
+		<ul>
+			<h3>Quick explanation</h3>
+			<li>Remember that <code class="code-inline code-style">fetch</code> returns a Promise, not the data! Also remember that we will need to tell fetch what type of data we are expecting: <code class="code-inline code-style">.text()</code> , <code class="code-inline code-style">.json()</code> , or <code class="code-inline code-style">.blob()</code> so it can process it accordingly.</li>
+			<li>We can resolve (process) a Promise in one of two ways: either with a <code class="code-inline code-style">.then()</code> , or with <code class="code-inline code-style">async/await</code> . (MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank"> Using Promises &#8663;</a>)</li>
+		</ul>
 
 		<ul>
 			<li><a href="./scripts/script.js" target="_blank">script.js &#8663;</a></li>
@@ -45,7 +50,7 @@
 			<li><a href="./scripts/closure.js" target="_blank">closure.js &#8663;</a> </li>
 			<li><a href="./scripts/functional-programming.js" target="_blank">functional-programming.js &#8663;</a> </li>
 			<li><a href="./scripts/currying.js" target="_blank">currying.js &#8663;</a> </li>
-			<li><a href="./scripts/ajax.js" target="_blank">ajax.js &#8663;</a> </li>
+			<li><a href="./scripts/ajax.mjs" target="_blank">ajax.mjs &#8663;</a> </li>
 			<li><a href="../week08_css-animations_using-ajax/" target="_blank">Additional notes on AJAX from Team Activity Week 08 &#8663;</a> </li>
 		</ul>
 	</section>

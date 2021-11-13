@@ -309,6 +309,10 @@ blockquote {
 
 }
 
+.margin-horizontal-1em {
+	margin: 0 1em;
+}
+
 /* ========================== Canvas API =============================== */
 .canvasStyle,
 .catContainer {
