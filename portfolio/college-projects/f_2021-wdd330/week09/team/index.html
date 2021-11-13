@@ -28,7 +28,7 @@
 	<!-- Readings -->
 	<section class="border-bottom">
 		<h2>Documentation for this assignment:</h2>
-		
+
 		<ul>
 			<li></li>
 		</ul>
@@ -42,7 +42,7 @@
 			<li>Practice from documentation:
 				<ul>
 					<li><a href="./exercises/index.html" target="_blank">index.html &#8663;</a> </li>
-				
+
 				</ul>
 			</li>
 		</ul>
@@ -53,10 +53,51 @@
 	<section class="border-bottom">
 		<h2>Notes</h2>
 
-		<!-- <h3>Star Wars Notes</h3> -->
-		
+		<h3>Notes</h3>
 		<ul>
-			<li>Getting keyboard codes: <a href="https://keycode.info/" target="_blank">https://keycode.info/ &#8663;</a> </li>
+			<li>KeyboardEvent type, following the correc order of events:
+				<ul>
+					<li><i>keydown</i>: When the user is pressing a key. It works for all keys.</li>
+					<li><i>keypress</i>: When the user presses a key. It does not work for all keys.</li>
+					<li><i>keyup</i>: When the user releases a key.</li>
+				</ul>
+			</li>
+
+			<li>HTML <code class="code-inline code-style">data-*</code> Attribute:
+
+				<ul>
+					<li>Used to store custom data private to the page or application.</li>
+					<li>Custom attributes prefixed with "data-" will be completely ignored by the user agent.</li>
+
+					<li>JS code:
+						<pre>
+							<code class="language-javascript">
+	function showDetails(animal) {
+		var animalType = animal.getAttribute("data-animal-type");
+		alert("The " + animal.innerHTML + " is a " + animalType + ".");
+	}
+							</code>
+						</pre>
+					</li>
+					
+					<li>HTML code:
+						<pre>
+							<code class="language-html">
+		&lt;li onclick="showDetails(this)" id="owl" data-animal-type="bird"&gt;Owl&lt;/li&gt;
+							</code>
+						</pre>
+					</li>
+
+				</ul>
+			</li>
+
+
+		</ul>
+
+		<h3>Additional Notes</h3>
+		<ul>
+			<li>Getting keyboard codes: <a href="https://keycode.info/" target="_blank">https://keycode.info/ &#8663;</a></li>
+			<li>Data Attributes: <a href="https://www.w3schools.com/tags/att_data-.asp" target="_blank">here &#8663;</a> </li>
 		</ul>
 	</section>
 
@@ -71,4 +112,3 @@
 <script src="../../js/other.js"></script>
 
 </html>
-
