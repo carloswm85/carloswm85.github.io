@@ -35,12 +35,9 @@ body,html {
 
 .playing {
   transform: scale(1.3); /* and here */
+  transform: translateY(50px);
   border-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;
-}
-
-.downwards {
-  transform: translateY(10px);
 }
 
 kbd {
