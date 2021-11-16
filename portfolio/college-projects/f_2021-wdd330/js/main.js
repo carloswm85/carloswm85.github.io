@@ -38,7 +38,7 @@ const links = [
 	},
 	{
 		label: 'Week 09',
-		url: 'week09/index.html'
+		url: 'week09_parcel-boilerplate/'
 	},
 	{
 		label: 'Week 10',
