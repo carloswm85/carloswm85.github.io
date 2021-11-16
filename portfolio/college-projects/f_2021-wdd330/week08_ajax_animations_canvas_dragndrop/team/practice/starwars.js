@@ -1,45 +1,68 @@
 // Create a basic application and use fetch to pull a list of people or ships. Display this list in the browser window.
+let currentPage = 1;
 
-const url = 'https://swapi.dev/api/people/';
-const container = document.getElementById('fetch-output');
+async function loadJson(url) { // (1)
+	let response = await fetch(url); // (2)
 
-fetch(url)
-	.then(function (promise) {
-		return promise;
-	})
-	.then(response => {
-		return response.json();
-	})
-	.then(function (data) {
-		// from the 'result' array in data object
-		// get every single 'person' object, and display it
-		for (let index = 1; index < data.count; index++) {
-			const entity = data.results[index];
+	if (response.status == 200) {
+		let json = await response.json(); // (3)
+		return json;
+	}
+	throw new Error(response.status);
+}
+
+// get promise
+function resultPromise(page) {
+	let url = `https://swapi.dev/api/people/?page=${page}`;
+
+	let resultPromise = loadJson(url)
+		.then(data => {
+			return data;
+		})
+		.catch(function (err) {
+			console.log(err);
+		});
+
+	return resultPromise;
+}
+
+// display promise
+function displayData(page) {
+	let container = document.getElementById('fetch-output');
+	let starwarsData = resultPromise(page)
+
+	starwarsData.then((starwarsDataResult) => {
+
+		for (let index = 1; index < starwarsDataResult.count; index++) {
+			const entity = starwarsDataResult.results[index];
 			const entityTitle = document.createElement('h3')
 			const entityContainer = document.createElement('ul');
 
-			entityTitle.innerHTML = `${entity['name']}`;
 			entityContainer.appendChild(entityTitle);
-
+			
 			// TODO: Process films
-
 			for (const [key, value] of Object.entries(entity)) {
 				// console.log(`entity${index} → ${key}: ${value}`);
 				const entityFeature = document.createElement('li')
 				entityFeature.innerHTML = `${key}: ${value}`;
 				entityContainer.appendChild(entityFeature);
 			}
+			entityTitle.innerHTML = `${entity['name']}`;
 			container.appendChild(entityContainer);
 		}
-	})
-	.catch(function (err) {
-		console.log(err);
 	});
+
+
+}
 
 // TODO: make buttons work
 // https://byui.instructure.com/courses/160562/quizzes/2612997?module_item_id=20163472
 const previous = document.getElementById('previous');
 const next = document.getElementById('next');
 
-previous.addEventListener('click', evento => alert('prevo'));
-next.addEventListener('click', evento => alert('nexto'));
+previous.addEventListener('click', evento => displayData(currentPage--));
+next.addEventListener('click', evento => displayData(currentPage++));
+
+window.onload = async () => {
+	await displayData(currentPage);
+}
