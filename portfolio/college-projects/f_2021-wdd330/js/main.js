@@ -6,35 +6,35 @@ const list = document.querySelector('#list');
 const links = [
 	{
 		label: 'Week 01',
-		url: 'week01/index.html'
+		url: 'week01/'
 	},
 	{
 		label: 'Week 02',
-		url: 'week02/index.html'
+		url: 'week02/'
 	},
 	{
 		label: 'Week 03',
-		url: 'week03/index.html'
+		url: 'week03/'
 	},
 	{
 		label: 'Week 04',
-		url: 'week04/index.html'
+		url: 'week04/'
 	},
 	{
 		label: 'Week 05',
-		url: 'week05/index.html'
+		url: 'week05/'
 	},
 	{
 		label: 'Week 06',
-		url: 'week06_todo_list/index.html'
+		url: 'week06_todo_list/'
 	},
 	{
 		label: 'Week 07',
-		url: 'week07_ajax/index.html'
+		url: 'week07_ajax/'
 	},
 	{
 		label: 'Week 08',
-		url: 'week08_ajax_animations_canvas_dragndrop/index.html'
+		url: 'week08_ajax_animations_canvas_dragndrop/'
 	},
 	{
 		label: 'Week 09',
@@ -42,19 +42,19 @@ const links = [
 	},
 	{
 		label: 'Week 10',
-		url: 'week10/index.html'
+		url: 'week10/'
 	},
 	{
 		label: 'Week 11',
-		url: 'week11/index.html'
+		url: 'week11/'
 	},
 	{
 		label: 'Week 12',
-		url: 'week12/index.html'
+		url: 'week12/'
 	},
 	{
 		label: 'Week 13',
-		url: 'week13/index.html'
+		url: 'week13/'
 	}
 ]
 
