@@ -1,3 +1,8 @@
+html {
+	background-color: #000;
+	color: aliceblue;
+}
+
 .tg {
 	border-collapse: collapse;
 	border-color: #93a1a1;
@@ -24,7 +29,7 @@
 	border-width: 1px;
 	color: #fdf6e3;
 	font-family: Arial, sans-serif;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: normal;
 	overflow: hidden;
 	padding: 10px 5px;

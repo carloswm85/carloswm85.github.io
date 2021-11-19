@@ -63,11 +63,12 @@ links.forEach(element => {
 	var linkElement = document.createElement('a');
 	var span = document.createElement('span');
 	
+	linkElement.target = '_blank';
 	linkElement.href = element.url;
 	linkElement.innerText = element.label;
 
 	// &nearr; &UpperRightArrow; &nearrow; &#x02197; &#8599;
-	span.innerHTML = ' &#8667;';
+	span.innerHTML = ' &#8663;';
 
 	linkElement.appendChild(span);
 	listItem.appendChild(linkElement);
