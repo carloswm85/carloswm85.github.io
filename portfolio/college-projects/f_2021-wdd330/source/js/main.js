@@ -6,55 +6,55 @@ const list = document.querySelector('#list');
 const links = [
 	{
 		label: 'Week 01',
-		url: 'week01/'
+		url: 'weeks/week01/'
 	},
 	{
 		label: 'Week 02',
-		url: 'week02/'
+		url: 'weeks/week02/'
 	},
 	{
 		label: 'Week 03',
-		url: 'week03/'
+		url: 'weeks/week03/'
 	},
 	{
 		label: 'Week 04',
-		url: 'week04/'
+		url: 'weeks/week04/'
 	},
 	{
 		label: 'Week 05',
-		url: 'week05/'
+		url: 'weeks/week05/'
 	},
 	{
 		label: 'Week 06',
-		url: 'week06_todo_list/'
+		url: 'weeks/week06_todo_list/'
 	},
 	{
 		label: 'Week 07',
-		url: 'week07_ajax/'
+		url: 'weeks/week07_ajax/'
 	},
 	{
 		label: 'Week 08',
-		url: 'week08_ajax_animations_canvas_dragndrop/'
+		url: 'weeks/week08_ajax_animations_canvas_dragndrop/'
 	},
 	{
 		label: 'Week 09',
-		url: 'week09_parcel-boilerplate/'
+		url: 'weeks/week09_parcel-boilerplate/'
 	},
 	{
 		label: 'Week 10',
-		url: 'week10/'
+		url: 'weeks/week10/'
 	},
 	{
 		label: 'Week 11',
-		url: 'week11/'
+		url: 'weeks/week11/'
 	},
 	{
 		label: 'Week 12',
-		url: 'week12/'
+		url: 'weeks/week12/'
 	},
 	{
 		label: 'Week 13',
-		url: 'week13/'
+		url: 'weeks/week13/'
 	}
 ]
 
