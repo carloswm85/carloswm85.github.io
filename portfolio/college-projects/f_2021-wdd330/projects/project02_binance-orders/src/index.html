@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<link rel="icon" href="./img/favicon-125.png" type="image/png">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/vs2015.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+	<!-- and it's easy to individually load additional languages -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/json.min.js"></script>
+
+
+	<link rel="stylesheet" href="../node_modules/highlight.js/styles/vs2015.css">
+	<script src="../node_modules/highlight/highlight.min.js"></script>
+
+	<!-- <script>
+		hljs.highlightAll();
+	</script> -->
+
+	<title>Binance Orders</title>
+</head>
+
+<body class="body-wide">
+
+	<!-- Orders -->
+	<div action="" id="orders-container" class="border-bottom">
+
+		<fieldset id="order-buy" class="orders-pane">
+			<input type="text" placeholder="Price">
+			<input type="text" placeholder="Amount">
+			<div class="button-container">
+				<button class="form-button">25%</button>
+				<button class="form-button">50%</button>
+				<button class="form-button">75%</button>
+				<button class="form-button">100%</button>
+			</div>
+			<input type="text" placeholder="Totals">
+			<button class="form-button">Buy</button>
+		</fieldset>
+
+		<fieldset id="order-sell" class="orders-pane">
+			<input type="text" placeholder="Price">
+			<input type="text" placeholder="Amount">
+			<div class="button-container">
+				<button class="form-button">25%</button>
+				<button class="form-button">50%</button>
+				<button class="form-button">75%</button>
+				<button class="form-button">100%</button>
+			</div>
+			<input type="text" placeholder="Totals">
+			<button class="form-button">Sell</button>
+		</fieldset>
+	</div>
+
+	<!-- Display Information -->
+	<section class="border-bottom">
+		<h3>Other content</h3>
+		<pre>
+			<code id="display" class="language-json code"></code>
+		</pre>
+
+		<pre>
+			<code id="display2" class="language-json code">
+				[
+					{
+						"title": "apples",
+						"count": [12000, 20000],
+						"description": {"text": "...", "sensitive": false}
+					},
+					{
+						"title": "oranges",
+						"count": [17500, null],
+						"description": {"text": "...", "sensitive": false}
+					}
+				]
+			</code>
+		</pre>
+
+	</section>
+
+	<!-- Footer -->
+	<footer>
+		<p>
+			By Carlos - Last edit: <span class="last-edit"></span>
+		</p>
+	</footer>
+
+	<script src="scripts/other.js"></script>
+	<script src="scripts/main.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			document.querySelectorAll('pre code').forEach((el) => {
+				hljs.highlightElement(el);
+			});
+		});
+	</script>
+</body>
+
+</html>

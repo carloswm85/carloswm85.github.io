@@ -151,7 +151,7 @@ button {
     cursor: pointer;
 
     &:active {
-			background-color: $yellow;
+      background-color: $yellow;
       transform: scale(1.1);
       box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     }
@@ -248,4 +248,14 @@ blockquote {
 
 .margin-horizontal-1em {
   margin: 0 1em;
+}
+
+/* =========================== Extra Classes ========================== */
+.last-edit {
+  font-size: 1em;
+}
+
+code {
+  font-size: 10pt;
+  tab-size: 2;
 }

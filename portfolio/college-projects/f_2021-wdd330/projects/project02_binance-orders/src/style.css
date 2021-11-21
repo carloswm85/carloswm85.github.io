@@ -242,6 +242,16 @@ blockquote {
   margin: 0 1em;
 }
 
+/* =========================== Extra Classes ========================== */
+.last-edit {
+  font-size: 1em;
+}
+
+code {
+  font-size: 10pt;
+  tab-size: 2;
+}
+
 /* end */
 /* end */
 
