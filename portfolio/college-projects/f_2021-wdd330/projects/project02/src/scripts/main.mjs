@@ -14,11 +14,14 @@ fetch(apiUrl)
 		if (response.ok) {
 			// let text = response.text();
 			let json = response.json();
+			console.log('01');			
+			console.log(json);			
 			return json;
 		}
 	})
 	.then(data => {
-		console.log(data);
+		console.log('02');		
+		console.log(data);		
 	})
 	.catch(err => {
 		console.log(err);		
