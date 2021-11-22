@@ -1,10 +1,18 @@
-import Keys from './keys.js';
+import Keys, { something } from './keys.js';
 
-const keyApi = new Keys().testnetApiKey;
-const keySecret = new Keys().testnetSecretKey;
+const keys = new Keys();
+
+const keyApi = keys.testnetApiKey;
+const keySecret = keys.testnetSecretKey;
+const keyAll = keys.getKeys(0);
 
 console.log(keyApi);
 console.log(keySecret);
+console.log(keyAll);
+something();
+console.log(keys.value);
+
+
 
 const apiUrl = 'https://api.binance.com/api/v3/exchangeInfo?symbol=BTCUSDT';
 const apiUrl2 = 'https://www.google.com';
