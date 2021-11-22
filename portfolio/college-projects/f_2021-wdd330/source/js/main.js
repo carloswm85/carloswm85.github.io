@@ -42,7 +42,7 @@ const links = [
 	},
 	{
 		label: 'Week 10',
-		url: 'weeks/week10/'
+		url: 'weeks/week10_formValidation_fetchApi/'
 	},
 	{
 		label: 'Week 11',
