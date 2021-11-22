@@ -1,8 +1,10 @@
-// API key
-// const apiKey = 'Qeik4zia54oPl8TbVVqSZZjbSQZn3yFf5f4fqShKaKaZtTBnhQxVssf0SGhbP2jg';
+import Keys from './keys.js';
 
-// Secret key
-// const secretKey = 'JGy1UEMqCoyg3EH32TlkvbEp7ARXvQ2xYkgdpZC5rRDNz62f35d3Su0fEnO90pD4';
+const keyApi = new Keys().testnetApiKey;
+const keySecret = new Keys().testnetSecretKey;
+
+console.log(keyApi);
+console.log(keySecret);
 
 const apiUrl = 'https://api.binance.com/api/v3/exchangeInfo?symbol=BTCUSDT';
 const apiUrl2 = 'https://www.google.com';
