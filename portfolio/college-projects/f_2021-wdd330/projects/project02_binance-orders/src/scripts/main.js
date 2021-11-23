@@ -12,8 +12,6 @@ console.log(keyAll);
 something();
 console.log(keys.value);
 
-
-
 const apiUrl = 'https://api.binance.com/api/v3/exchangeInfo?symbol=BTCUSDT';
 const apiUrl2 = 'https://www.google.com';
 

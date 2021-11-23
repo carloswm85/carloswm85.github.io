@@ -83,10 +83,15 @@ hr:after {
 
 /*
 CODE colors:
-	background: #202325
-	font: #AEB7AF
-	font-2: #FF6D6D
+background: #202325
+font: #AEB7AF
+font-2: #FF6D6D
 */
+
+code {
+	tab-size: 0.5;
+	text-align: left;
+}
 
 .special-code {
 	color: #79fe0c;
@@ -97,6 +102,7 @@ CODE colors:
 	background-color: #202325;
 	border-radius: 2px;
 	font-family: 'Ubuntu', 'Courier New', Courier, monospace;
+	font-size: 1em;
 }
 
 .code-inline {	
@@ -118,23 +124,13 @@ CODE colors:
 	text-align: left;
 }
 
-pre {
-	line-height: 1.1em;
+pre * {
+	line-height: 1.3em;
+	font-size: 1.1em;
 	width: auto;
 	margin: 0;
 }
 
-pre code.hljs {
-	background-color: #202325;
-	color: #AEB7AF;
-	padding: 0;
-	margin: 1em 0;
-}
-
-/* [class^='hljs-'],
-[class*='hljs-'] {
-	Does this selector work? 
-} */
 
 
 /* ============================= SOME CLASSES ============================== */
