@@ -133,6 +133,6 @@
 	</footer>
 </body>
 
-<script src="../../../source/js/other.js"></script>
+<script src="../../source/js/other.js"></script>
 
 </html>
