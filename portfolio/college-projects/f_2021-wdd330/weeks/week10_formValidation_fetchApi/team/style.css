@@ -18,6 +18,11 @@ body {
 	padding: 1em 2em;
 }
 
+.border-bottom {
+	border-bottom: #aaa 1px dashed;
+	padding-bottom: 1em;
+}
+
 .simple-container {
 	max-width: 675px;
 	margin: 0 auto;
@@ -97,6 +102,11 @@ aside,
 	margin: 0 auto;
 	border: 1px solid lightgrey;
 	padding: 5px 15px;
+}
+
+code {
+	tab-size: 2;
+	text-align: left;
 }
 
 @media (min-width: 1921px) {
