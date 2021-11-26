@@ -35,7 +35,8 @@ footer {
 }
 
 .body-wide {
-  max-width: 1024px;
+  max-width: 950px;
+  padding: 1em 2em;
 }
 
 .border-bottom {
@@ -102,10 +103,14 @@ a:hover,
   padding: 1em 0.5em;
 }
 
-input[type=text] {
+input[type=text], select {
   margin: 0.5em 0;
   font-size: 1.2em;
   padding-left: 0.5em;
+}
+
+.drop-down {
+  width: 50%;
 }
 
 /* =============================== FORMS =================================== */
@@ -258,4 +263,10 @@ blockquote {
 code {
   font-size: 10pt;
   tab-size: 2;
+}
+
+
+/* ================================= Lists ============================ */
+#assets-id {
+  
 }

@@ -1,7 +1,7 @@
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> My Keys
 /**
- * TestNet: https: //testnet.binance.vision/
- * TestNet reference: https: //dev.binance.vision/t/binance-testnet-environments/99/22
+ * TestNet: https://testnet.binance.vision/
+ * TestNet reference: https://dev.binance.vision/t/binance-testnet-environments/99/22
  */
 export default class Keys {
 

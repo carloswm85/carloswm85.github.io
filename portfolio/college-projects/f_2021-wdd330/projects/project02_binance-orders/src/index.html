@@ -27,7 +27,7 @@
 <body class="body-wide">
 
 	<!-- Orders -->
-	<div action="" id="orders-container" class="border-bottom">
+	<div action="" id="orders-container" class="bder-bottom">
 
 		<fieldset id="order-buy" class="orders-pane">
 			<input type="text" placeholder="Price">
@@ -56,30 +56,23 @@
 		</fieldset>
 	</div>
 
+	<fieldset>
+		<label for="asset">
+			<select name="assets" id="assets_id" class="drop-down">
+				<option value="empty">Select crypto</option>
+				<option value="btcusdt">BTCUSDT</option>
+				<option value="ethusdt">ETHUSDT</option>
+			</select>
+		</label>
+	</fieldset>
+
 	<!-- Display Information -->
 	<section class="border-bottom">
 		<h3>Other content</h3>
 		<pre>
 			<code id="display" class="language-json code"></code>
 		</pre>
-
-		<pre>
-			<code id="display2" class="language-json code">
-				[
-					{
-						"title": "apples",
-						"count": [12000, 20000],
-						"description": {"text": "...", "sensitive": false}
-					},
-					{
-						"title": "oranges",
-						"count": [17500, null],
-						"description": {"text": "...", "sensitive": false}
-					}
-				]
-			</code>
-		</pre>
-
+	
 	</section>
 
 	<!-- Footer -->
