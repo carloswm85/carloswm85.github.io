@@ -12,8 +12,11 @@ export default class Quake {
     const query =
       this.baseUrl +
       `&latitude=${position.lat}&longitude=${position.lon}&maxradiuskm=${radius}`;
-    console.log(query);
-    this._quakes = await getJSON(query);
+	
+    const query2 = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-02-02&latitude=37.4013952&longitude=-122.9209344&maxradiuskm=100';
+    
+    console.log(query2);
+    this._quakes = await getJSON(query2);
     return this._quakes;
   }
   getQuakeById(id) {
