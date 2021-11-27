@@ -28,6 +28,7 @@ async function everything() {
 		`&latitude=${location.latitude}&longitude=${location.longitude}&maxradiuskm=${radius}`;
 	console.log(query);
 
+	// REPLACEMENT
 	// So we are going to replace that query with one located in the San Francisco, California area. Which do
 	// have items in the features array.
 	query = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-02-02&latitude=37.4013952&longitude=-122.9209344&maxradiuskm=100';
