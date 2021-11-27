@@ -18,7 +18,7 @@ export default class Quake {
 
     this._quakes2 = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-02-02&latitude=37.4013952&longitude=-122.9209344&maxradiuskm=100';
 
-    return this._quakes;
+    return this._quakes2;
   }
   getQuakeById(id) {
     return this._quakes.features.filter(item => item.id === id)[0];
