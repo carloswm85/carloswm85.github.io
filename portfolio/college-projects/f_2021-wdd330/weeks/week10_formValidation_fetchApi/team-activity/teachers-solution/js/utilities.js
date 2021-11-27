@@ -15,12 +15,13 @@ export function getJSON(url) {
 }
 
 // 2
-export const getLocation = function(options) {
-  return new Promise(function(resolve, reject) {
+export const getLocation = function (options) {
+  myPromise = new Promise(function(resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject, options);
     console.log('getLocation');
     console.log(resolve);
-    console.log(reject);   
-    
+    console.log(reject);    
   });
+  console.log(myPromise);  
+  return myPromise;
 };

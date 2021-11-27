@@ -1,3 +1,4 @@
+
 export function getJson(url) {
 	return fetch(url)
 		.then(response => {
@@ -17,10 +18,6 @@ export function getJson(url) {
 export const getLocation = function (options) {
 	return new Promise(function (resolve, reject) {
 		navigator.geolocation.getCurrentPosition(resolve, reject, options);
-	});
-
-	// For testing purposes
-	// San Francisco, California, area
-	// return 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-02-02&latitude=37.4013952&longitude=-122.9209344&maxradiuskm=100'
+	});	
 };
 
