@@ -1,3 +1,4 @@
+// 1
 export function getJSON(url) {
   return fetch(url)
     .then(function(response) {
@@ -12,8 +13,14 @@ export function getJSON(url) {
       console.log(error);
     });
 }
+
+// 2
 export const getLocation = function(options) {
   return new Promise(function(resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject, options);
+    console.log('getLocation');
+    console.log(resolve);
+    console.log(reject);   
+    
   });
 };
