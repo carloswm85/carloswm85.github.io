@@ -9,7 +9,6 @@ html {
 	color: #fff;
 	font-size: 1.3em;
 	font-family: 'Ubuntu', sans-serif;
-	padding: 0 0.5em;
 }
 
 h1 {
@@ -89,6 +88,7 @@ font-2: #FF6D6D
 */
 
 code {
+	/* This one selector is used in the module highlight.js */
 	tab-size: 0.5;
 	text-align: left;
 }
@@ -295,34 +295,3 @@ blockquote {
 	font-size: 1em;
 }
 
-/* ======================== Fetch API Output ========================== */
-#fetch-output {
-	border: 2px dashed rgb(173, 171, 171);
-		border-radius: 15px;
-		padding: 1em 0.5em;
-
-}
-
-.margin-horizontal-1em {
-	margin: 0 1em;
-}
-
-/* ========================== Canvas API =============================== */
-.canvasStyle,
-.catContainer {
-	display: block;
-	border: 1px dashed white;
-	margin: 1em;	
-}
-
-.catContainer {
-	padding: 1em 1.5em;
-}
-
-.mouse, .cat {
-	width: auto;
-}
-
-.draganddrop .mc {
-	text-align: center;
-}
