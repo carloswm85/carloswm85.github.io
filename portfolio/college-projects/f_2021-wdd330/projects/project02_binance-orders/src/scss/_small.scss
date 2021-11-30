@@ -16,7 +16,7 @@ body {
   border: $white solid 1px;
   padding: 1em;
   border-radius: 10px;
-  background-color: $bg1;
+  background-color: $black;
 }
 
 h1 {
@@ -45,7 +45,7 @@ footer {
 }
 
 
-/* ===================== INDIVIDUAL ELEMENTS =============================== */
+/* === INDIVIDUAL ELEMENTS ==== */
 
 li {
   line-height: 2em;
@@ -72,14 +72,14 @@ hr {
 }
 
 hr:after {
-  background: $bg1;
+  background: $black;
   content: '(╯°□°)╯︵ ┻━┻';
   padding: .5em 1.5em;
   position: relative;
   top: -13px;
 }
 
-/* =============================== LINKS =================================== */
+/* === LINKS ==== */
 a:link {
   font-size: 1em;
   text-decoration: underline;
@@ -95,7 +95,7 @@ a:hover,
   color: aqua;
 }
 
-/* =============================== Orders ================================== */
+/* === Orders ==== */
 .orders-pane {
   display: flex;
   flex-direction: column;
@@ -113,7 +113,7 @@ input[type=text], select {
   width: 50%;
 }
 
-/* =============================== FORMS =================================== */
+/* === FORMS ==== */
 #orders-container {
   display: flex;
   flex-direction: row;
@@ -163,7 +163,6 @@ button {
   }
 }
 
-
 input[type=checkbox] {
   accent-color: yellow;
   margin: 0 auto;
@@ -187,7 +186,7 @@ input[type=checkbox] {
 
 }
 
-/* Form Row */
+/* === Form Row ==== */
 .form-row {
   display: flex;
   gap: 0.6em;
@@ -201,7 +200,7 @@ input[type=checkbox] {
   flex-grow: 1;
 }
 
-/* =============================== QUOTES =================================== */
+/* === QUOTES ==== */
 blockquote {
   font-style: italic;
   border: solid 0.5px rgb(52, 58, 63);
@@ -218,9 +217,9 @@ blockquote {
 }
 
 
-/* =============================== COLORS =================================== */
+/* === COLORS ==== */
 .lime {
-  color: $lime;
+  color: $green-lime
   font-size: 1em;
 }
 
@@ -243,7 +242,7 @@ blockquote {
   font-size: 1em;
 }
 
-/* ======================== Fetch API Output ========================== */
+/* === Fetch API Output ===== */
 #fetch-output {
   border: 2px dashed rgb(173, 171, 171);
   border-radius: 15px;
@@ -255,7 +254,7 @@ blockquote {
   margin: 0 1em;
 }
 
-/* =========================== Extra Classes ========================== */
+/* === Extra Classes ==== */
 .last-edit {
   font-size: 1em;
 }
@@ -266,6 +265,4 @@ code {
 }
 
 
-/* ================================= Lists ============================ */
-// #assets-id {
-// }
+/* === Lists ==== */

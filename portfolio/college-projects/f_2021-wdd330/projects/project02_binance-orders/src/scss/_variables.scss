@@ -1,20 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-$headline: 'Gentium Basic',
-serif;
-$paragraph: 'Ubuntu',
-sans-serif;
-
-$bg1: #181a1b;
-$bg2: #F0F0F0;
-$bg3: #CBE1E8;
+$headline: 'Gentium Basic', serif;
+$paragraph: 'Ubuntu', sans-serif;
 
 $black: #000000;
+$black1: #181a1b;
+$black2: #0e0e0e;
+$black3: #161a1e;
+$black4: #1e2026;
+$black5: #2a2d35;
+
+$gray: #808080;
+$gray1: #454c56;
+$gray2: #474d57;
+$gray3: #688e8c;
+$gray4: #999ea7;
+
 $white: #ffffff;
-$red: #ff5252;
-$green: #26a69a;
-$lime: #00e676;
+$white1: #CBE1E8;
+$white2: #F0F0F0;
+
+$red: #ff0000;
+$red-bear: #ff5252;
+$red1: #f6465d;
+$red2: #a93747;
+
+
+$green: #008000;
+$green-bull: #26a69a;
+$green-lime: #00e676;
+$green1: #0ecb81;
+$green2: #0eb555;
+
+$yellow: #ffff00;
+$yellow1: #ffeb3b;
+$yellow2: #e9b10b;
+
 $cyan: #00bcd4;
 $orange: #ff9800;
 $pink: #e040fb;
-$yellow: #ffeb3b;
