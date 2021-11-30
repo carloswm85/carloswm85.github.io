@@ -20,7 +20,7 @@ async function getPosts() {
     const data = await makeRequest('posts', 'GET', null, myAuth.token);
     // make sure the element is shown
     document.getElementById('content').classList.remove('hidden');
-    console.log(data);
+    // console.log(data);
     var ul = document.getElementById('list');
     ul.innerHTML = '';
     for (var i = 0; i < data.length; i++) {

@@ -17,12 +17,14 @@ const expiresIn = '1m';
 // 1
 // Create a token from a payload
 function createToken(payload) {
+  console.log('Server 1');  
   return jwt.sign(payload, SECRET_KEY, { expiresIn });
 }
 
 // 2
 // Verify the token
 function verifyToken(token) {
+  console.log('Server 2');  
   return jwt.verify(token, SECRET_KEY, (err, decode) => {
     if (err) {
       throw Error(err);
@@ -35,8 +37,9 @@ function verifyToken(token) {
 // 3
 // Check if the user exists in database
 function isAuthenticated({ email, password }) {
+  console.log('Server 3');
   return (
-    //userdb.users.findIndex(user => user.username === username && user.password === password) !== -1
+    // userdb.users.findIndex(user => user.username === username && user.password === password) !== -1
     router.db
       .get('users')
       .findIndex(user => user.email === email && user.password === password)
@@ -44,9 +47,10 @@ function isAuthenticated({ email, password }) {
   );
 }
 
-// 1
+// 4
 server.post('login', (req, res) => {
-  console.log(`req.body → ${req.body}`);
+  // console.log(`req.body → ${req.body}`);
+  console.log('Server 4');
   const { email, password } = req.body;
   if (isAuthenticated({ email, password }) === false) {
     const status = 401;
@@ -58,10 +62,15 @@ server.post('login', (req, res) => {
   res.status(200).json({ accessToken });
 });
 
-// 2
+// 5
 server.use((req, res, next) => {
+  console.log('Server 5');
+  
   if (req.method === 'POST') {
     const { authorization } = req.headers;
+    // console.log(authorization);
+    // console.log(req.headers);
+
     if (authorization) {
       const [scheme, token] = authorization.split(' ');
       //jwt.verify(token, 'json-server-auth-123456');
@@ -75,8 +84,12 @@ server.use((req, res, next) => {
   next();
 });
 
-// 3
+// 6
 server.use(/^(?!\/auth).*$/, (req, res, next) => {
+  console.log('Server 6');
+  console.log(req.headers);
+  console.log(typeof req.headers.authorization);
+  
   if (
     req.headers.authorization === undefined ||
     req.headers.authorization.split(' ')[1] !== 'Bearer'
@@ -98,11 +111,11 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
   }
 });
 
-// 4
+// 7
 server.use(router);
 
-// 5
-// Tgus us the address where the server will be run, NOT the client!
+// 8
+// This is the address where the server will be run, NOT the client!
 server.listen(3000, () => {
-  console.log('Run Auth API Server');
+  console.log('Run Auth API Server (← server.js)');
 });
