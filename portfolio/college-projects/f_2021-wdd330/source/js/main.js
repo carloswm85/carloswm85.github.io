@@ -46,7 +46,7 @@ const links = [
 	},
 	{
 		label: 'Week 11',
-		url: 'weeks/week11/'
+		url: 'weeks/week11_json-server/'
 	},
 	{
 		label: 'Week 12',
