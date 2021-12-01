@@ -23,7 +23,7 @@ async function displayText() {
 
 async function showList() {
 	const data = await getJson(url2);
-	const listaSelect = document.getElementById('assets_id')
+	const listaSelect = document.getElementById('asset_id')
 	const arraySymbols = data.symbols;
 	console.log(data);
 

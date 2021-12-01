@@ -13,7 +13,13 @@
 
 ## Additional Information
 - https://syncwith.com/api/binance 
-- https://github.com/binance/binance-api-postman 
+- Postman:
+  - Tutorial: https://academy.binance.com/en/articles/binance-api-series-pt-1-spot-trading-with-postman
+  - Repo: https://github.com/binance/binance-api-postman
+  - 
 
 ## Chrome Extensions
 - Google Chrome extensions documentation: [Link](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
+
+## Code
+- Tabs: https://www.w3schools.com/howto/howto_js_tabs.asp

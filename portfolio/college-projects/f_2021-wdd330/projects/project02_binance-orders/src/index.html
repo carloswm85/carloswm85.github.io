@@ -6,71 +6,179 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="./img/favicon-125.png" type="image/png">
-	
+
 	<!-- Normalize included. -->
-	<link rel="stylesheet" href="./style.css"> 
-	
+	<link rel="stylesheet" href="./style.css">
+
 	<title>Binance Orders</title>
 </head>
 
-<body class="body-wide">
+<body>
+	<!-- TAB LINKS -->
+	<header class="tab">
+		<button class="tablinks" onclick="openTab(event, 'Trade')" id="defaultOpen">Trade</button>
+		<button class=" tablinks" onclick="openTab(event, 'Settings')">Settings</button>
+		<button class="tablinks" onclick="openTab(event, 'Security')">Security</button>
+	</header>
 
-	<!-- Orders -->
-	<div action="" id="orders-container" class="bder-bottom">
+	<main>
+		<!-- TAB CONTENT -->
+		<!-- Tab 1 -->
+		<div id="Trade" class="tabcontent flexbox-column">
 
-		<fieldset id="order-buy" class="orders-pane">
-			<input type="text" placeholder="Price">
-			<input type="text" placeholder="Amount">
-			<div class="button-container">
-				<button class="form-button">25%</button>
-				<button class="form-button">50%</button>
-				<button class="form-button">75%</button>
-				<button class="form-button">100%</button>
+			<!-- Tab 1.1 -->
+			<fieldset class="common-container">
+				<legend>Asset</legend>
+
+				<!-- A -->
+				<div class="left-column tabcontent-item">
+					<label for="asset-selection"> 
+						<select name="assets" id="asset_id">
+							<option value="empty">Select Crypto</option>
+						</select>
+					</label>
+				</div>
+
+				<!-- <code class="code-inline code-style code-inline-block"></code><br> -->
+				<div class="right-column tabcontent-item" id="display">
+					<span id="current">Current $</span>
+					<span id="change">Change %</span>
+				</div>
+			</fieldset>
+
+			<!-- Tab 1.2 - Orders -->
+			<div class="common-container">
+
+				<!-- A - Buy -->
+				<div class="left-column tabcontent-item">
+					<fieldset id="order-buy" class="orders-pane">
+						<legend>Buy</legend>
+						<input type="text" placeholder="Price">
+						<input type="text" placeholder="Amount">
+						<div class="button-container">
+							<button class="form-button">25%</button>
+							<button class="form-button">50%</button>
+							<button class="form-button">75%</button>
+							<button class="form-button">100%</button>
+						</div>
+						<input type="text" placeholder="Totals">
+						<button class="form-button">Buy</button>
+					</fieldset>
+				</div>
+
+				<!-- B - Sell -->
+				<div class="right-column tabcontent-item">
+					<fieldset id="order-sell" class="orders-pane">
+						<legend>Sell</legend>
+						<input type="text" placeholder="Price">
+						<input type="text" placeholder="Amount">
+						<div class="button-container">
+							<button class="form-button">25%</button>
+							<button class="form-button">50%</button>
+							<button class="form-button">75%</button>
+							<button class="form-button">100%</button>
+						</div>
+						<input type="text" placeholder="Totals">
+						<button class="form-button">Sell</button>
+					</fieldset>
+				</div>
 			</div>
-			<input type="text" placeholder="Totals">
-			<button class="form-button">Buy</button>
-		</fieldset>
+		</div>
 
-		<fieldset id="order-sell" class="orders-pane">
-			<input type="text" placeholder="Price">
-			<input type="text" placeholder="Amount">
-			<div class="button-container">
-				<button class="form-button">25%</button>
-				<button class="form-button">50%</button>
-				<button class="form-button">75%</button>
-				<button class="form-button">100%</button>
+		<!-- Tab 2 -->
+		<div id="Settings" class="tabcontent">
+
+			<!-- Tab 2.1 -->
+			<div class="left-column tabcontent-item">
+				<fieldset class="radio-button">
+					<legend>Mode</legend>
+					<!-- 1 -->
+					<label for="rbutton-spot">
+						<input type="radio" name="rbutton-mode" value="spot" checked>
+						Spot
+					</label>
+					<!-- 2 -->
+					<label for="rbutton-margin">
+						<input type="radio" name="rbutton-mode" value="margin">
+						Margin x3
+					</label>
+					<!-- 3 -->
+					<label for="rbutton-isolated">
+						<input type="radio" name="rbutton-mode" value="isolated">
+						Isolated x10
+					</label>
+				</fieldset>
 			</div>
-			<input type="text" placeholder="Totals">
-			<button class="form-button">Sell</button>
-		</fieldset>
-	</div>
 
-	<fieldset>
-		<label for="asset">
-			<select name="assets" id="assets_id" class="drop-down">
-				<option value="empty">Select crypto</option>
-			</select>
-		</label>
-	</fieldset>
+			<!-- Tab 2.2 -->
+			<div class="right-column tabcontent-item">
+				<fieldset class="radio-button">
+					<legend>Theme</legend>
+					<!-- 1 -->
+					<label for="rbutton-dark">
+						<input type="radio" name="rbutton-theme" value="dark" checked>
+						Dark
+					</label>
+					<!-- 2 -->
+					<label for="rbutton-light">
+						<input type="radio" name="rbutton-theme" value="light">
+						Light
+					</label>
+					<!-- 3 -->
+					<label for="rbutton-binance">
+						<input type="radio" name="rbutton-theme" value="binance">
+						Binance
+					</label>
+				</fieldset>
+			</div>
+		</div>
 
+		<!-- Tab 03 -->
+		<div id="Security" class="tabcontent flexbox-column">
+
+			<fieldset>
+				<legend>Binance</legend>
+				<!-- Binance -->
+				<label for="key-binance">API Key
+					<input type="text" name="key-binance" id="apiKey" class="keys">
+				</label>
+				<label for="secret-binance">Secret Key
+					<input type="text" name="secret-binance" id="secretKey" class="keys">
+				</label>
+				<button class="form-button">Save</button>
+			</fieldset>
+
+			<fieldset>
+				<legend>Testnet</legend>
+				<!-- Testnet -->
+				<label for="key-testnet">API Key
+					<input type="text" name="key-testnet" id="apiKeyTest" class="keys">
+				</label>
+				<label for="secret-testnet">Secret Key
+					<input type="text" name="secret-testnet" id="secretKeyTest" class="keys">
+				</label>
+				<button class="form-button">Save</button>
+
+			</fieldset>
+		</div>
+
+	</main>
 	<!-- Display Information -->
-	<section class="border-bottom">
-		<h3>Other content</h3>
+	<section>
 		<pre>
-			<code id="display" class="language-json code"></code>
+			<code id="display-json" class="language-json code"></code>
 		</pre>
-	
 	</section>
 
-	<!-- Footer -->
-	<footer>
-		<p>
-			By Carlos - Last edit: <span class="last-edit"></span>
-		</p>
-	</footer>
-
+	<!-- scripts -->
 	<script type="module" src="scripts/main.js"></script>
+	<script src="scripts/styling.js"></script>
 	<script src="scripts/other.js"></script>
+
+	<script>
+		document.getElementById("defaultOpen").click();
+
+	</script>
 </body>
 
 </html>
