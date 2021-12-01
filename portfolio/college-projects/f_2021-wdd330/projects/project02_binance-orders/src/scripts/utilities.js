@@ -1,7 +1,7 @@
 // 1
-export function getJson(url) {
+export async function getJson(url) {
 	return fetch(url)
-		.then(response => {
+		.then((response) => {
 			if (!response.ok) {
 				throw Error(response.statusText);
 			} else {

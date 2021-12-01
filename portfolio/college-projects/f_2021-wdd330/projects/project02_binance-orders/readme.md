@@ -21,5 +21,7 @@
 ## Chrome Extensions
 - Google Chrome extensions documentation: [Link](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
 
-## Code
+## Other
 - Tabs: https://www.w3schools.com/howto/howto_js_tabs.asp
+- Fetch examples: https://mdn.github.io/fetch-examples/
+- 

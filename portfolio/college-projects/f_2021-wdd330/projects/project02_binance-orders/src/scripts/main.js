@@ -7,37 +7,40 @@ const keyApi = keys.testnetApiKey;
 const keySecret = keys.testnetSecretKey;
 const keyAll = keys.getKeys(0);
 
-const baseUrl = 'https://api.binance.com/api/v3';
-const testNet = 'https://testnet.binance.vision/api/v3';
-const url1 = testNet + '/depth?symbol=BTCUSDT';
-const url2 = testNet + '/exchangeInfo';
-console.log(url2);
+// Base URL
+const binance = 'https://api.binance.com/api';
+const testnet = 'https://testnet.binance.vision/api';
+const v1 = '/v1';
+const v2 = '/v2';
+const v3 = '/v3';
 
-async function displayText() {
-	const json = await getJson(url1);
-	const text = getText(json);
+// Endpoints
+const depth = testnet + v3 + '/depth';
+const exchangeInfo = testnet + v3 + '/exchangeInfo';
+const priceStatistics = testnet + v3 + "/ticker/24hr";
+const allPrices = testnet + v1 + '/ticker/allPrices';
 
-	const disp = document.getElementById('display');
-	disp.innerText = text;
-}
+// Etc
+let symbol = "?symbol=";
+const btc = "BTCUSDT";
 
-async function showList() {
-	const data = await getJson(url2);
-	const listaSelect = document.getElementById('asset_id')
-	const arraySymbols = data.symbols;
+async function showList(url) {
+	const data = await getJson(url);
+	const listaSelect = document.getElementById('asset-selection_id');
+	console.log('Show List:');
 	console.log(data);
 
-	arraySymbols.forEach(element => {
+	data.forEach(element => {
 		const symbol = element.symbol;
 		const option = document.createElement('option');
-		option.setAttribute('value', symbol.toLowerCase());
+		
+		option.setAttribute('value', symbol);
 		option.innerText = symbol;
 		listaSelect.appendChild(option);
 	});
-
-	console.log(arraySymbols[19]);
 }
 
 
 // displayText();
-showList();
+const test = '';
+showList(test);
