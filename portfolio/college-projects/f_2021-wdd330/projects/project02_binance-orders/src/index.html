@@ -16,21 +16,20 @@
 <body>
 	<!-- TAB LINKS -->
 	<header class="tab">
-		<button class="tablinks" onclick="openTab(event, 'Trade')" id="defaultOpen">Trade</button>
-		<button class=" tablinks" onclick="openTab(event, 'Settings')">Settings</button>
-		<button class="tablinks" onclick="openTab(event, 'Security')">Security</button>
+		<button class="tablinks" onclick="openTab(event, 'Trade')" id="tab1">Trade</button>
+		<button class=" tablinks" onclick="openTab(event, 'Settings')" id="tab2">Settings</button>
+		<button class="tablinks" onclick="openTab(event, 'Security')" id="tab3">Security</button>
 	</header>
 
 	<main>
-		<!-- TAB CONTENT -->
-		<!-- Tab 1 -->
+		<!-- Tab 1.0 - TRADE -->
 		<div id="Trade" class="tabcontent flexbox-column">
 
-			<!-- Tab 1.1 -->
+			<!-- Tab 1.1 - Selected Asset-->
 			<fieldset class="common-container">
 				<legend>Asset</legend>
 
-				<!-- A -->
+				<!-- A - Drop-down List -->
 				<div class="left-column tabcontent-item">
 					<label for="asset-selection"> 
 						<select name="asset-selection" id="asset-selection_id">
@@ -39,14 +38,14 @@
 					</label>
 				</div>
 
-				<!-- <code class="code-inline code-style code-inline-block"></code><br> -->
+				<!-- B - Current Asset Values -->
 				<div class="right-column tabcontent-item" id="display">
 					<span id="current">Current $</span>
 					<span id="change">Change %</span>
 				</div>
 			</fieldset>
 
-			<!-- Tab 1.2 - Orders -->
+			<!-- Tab 1.2 - Orders: Buy and Sell -->
 			<div class="common-container">
 
 				<!-- A - Buy -->
@@ -85,11 +84,28 @@
 			</div>
 		</div>
 
-		<!-- Tab 2 -->
+		<!-- Tab 2.0 - SETTINGS -->
 		<div id="Settings" class="tabcontent">
 
 			<!-- Tab 2.1 -->
 			<div class="left-column tabcontent-item">
+				
+				<!-- A - Server -->
+				<fieldset class="radio-button">
+					<legend>Server</legend>
+					<!-- 1 -->
+					<label for="rbutton-binance">
+						<input type="radio" name="rbutton-binance" value="binance">
+						api.binance
+					</label>
+					<!-- 2 -->
+					<label for="rbutton-testnet">
+						<input type="radio" name="rbutton-testnet" value="testnet" checked>
+						testnet.binance
+					</label>
+				</fieldset>
+
+				<!-- B - Mode -->
 				<fieldset class="radio-button">
 					<legend>Mode</legend>
 					<!-- 1 -->
@@ -133,14 +149,14 @@
 			</div>
 		</div>
 
-		<!-- Tab 03 -->
+		<!-- Tab 3.0 - SECURITY -->
 		<div id="Security" class="tabcontent flexbox-column">
 
 			<fieldset>
 				<legend>Binance</legend>
 				<!-- Binance -->
 				<label for="key-binance">API Key
-					<input type="text" name="key-binance" id="apiKey" class="keys">
+					<input type="password" name="key-binance" id="apiKey" class="keys">
 				</label>
 				<label for="secret-binance">Secret Key
 					<input type="text" name="secret-binance" id="secretKey" class="keys">
@@ -176,7 +192,7 @@
 	<script src="scripts/other.js"></script>
 
 	<script>
-		document.getElementById("defaultOpen").click();
+		document.getElementById("tab1").click();
 
 	</script>
 </body>

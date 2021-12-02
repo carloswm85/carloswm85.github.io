@@ -450,7 +450,11 @@ code {
   }
 }
 /* Fieldsets */
-fieldset input[type=text] {
+fieldset input[type=text],
+fieldset input[type=password] {
+  margin: 0.5em 0;
+  font-size: 1.2em;
+  padding-left: 0.5em;
   width: 100%;
 }
 fieldset.radio-button {
@@ -469,13 +473,6 @@ legend {
   flex-direction: column;
   flex-grow: 1;
   padding: 1em 0.5em;
-}
-
-input[type=text] {
-  margin: 0.5em 0;
-  font-size: 1.2em;
-  padding-left: 0.5em;
-  width: 70%;
 }
 
 select {
