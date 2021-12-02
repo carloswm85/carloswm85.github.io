@@ -3,8 +3,8 @@ import {
 } from './utilities.js';
 
 const chartSetting = {
-	width: 600,
-	height: 300,
+	width: 0,
+	height: 350,
 	layout: {
 		backgroundColor: '#000000',
 		textColor: 'rgba(255, 255, 255, 0.9)',
@@ -32,7 +32,7 @@ const chart = LightweightCharts.createChart(document.getElementById('chart'), ch
 
 const timeAxis = chart.timeScale();
 timeAxis.applyOptions({ 'timeVisible': true });
-console.log(timeAxis);
+// console.log(timeAxis);
 
 
 // const lineSeries = chart.addLineSeries();
@@ -55,9 +55,13 @@ function getUrl(assetName) {
 	return url;
 }
 
+// TODO: https://www.youtube.com/watch?v=EeT3Ore4Sao&ab_channel=PartTimeLarry
 // 3
 async function displayCurrentChart(event) {
 	const selectedAsset = event.target.value;
+
+	// TODO: Remove series and add it again, using a chart object: https://tradingview.github.io/lightweight-charts/api/interfaces/IChartApi#removeseries 
+	// chart.removeSeries(candleSeries);	
 
 	// Set HISTORICAL storical Data
 	const historicalUrl = 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m';
@@ -96,8 +100,8 @@ async function displayCurrentChart(event) {
 }
 
 // CODE
-const select = document.getElementById('asset_selection_chart_id');
-select.addEventListener('change', displayCurrentChart);
+const selectListChart = document.getElementById('asset_selection_chart_id');
+selectListChart.addEventListener('change', displayCurrentChart);
 
 candleSeries.setData([{
 		time: '2018-10-19',

@@ -97,12 +97,12 @@
 					<legend>Server</legend>
 					<!-- 1 -->
 					<label for="rbutton-binance">
-						<input type="radio" name="rbutton-binance" value="binance">
+						<input type="radio" name="rbutton-server" value="binance">
 						api.binance
 					</label>
 					<!-- 2 -->
 					<label for="rbutton-testnet">
-						<input type="radio" name="rbutton-testnet" value="testnet" checked>
+						<input type="radio" name="rbutton-server" value="testnet" checked>
 						testnet.binance
 					</label>
 				</fieldset>
@@ -117,12 +117,12 @@
 					</label>
 					<!-- 2 -->
 					<label for="rbutton-margin">
-						<input type="radio" name="rbutton-mode" value="margin">
+						<input type="radio" name="rbutton-mode" value="margin" disabled>
 						Margin x3
 					</label>
 					<!-- 3 -->
 					<label for="rbutton-isolated">
-						<input type="radio" name="rbutton-mode" value="isolated">
+						<input type="radio" name="rbutton-mode" value="isolated" disabled>
 						Isolated x10
 					</label>
 				</fieldset>
@@ -139,12 +139,12 @@
 					</label>
 					<!-- 2 -->
 					<label for="rbutton-light">
-						<input type="radio" name="rbutton-theme" value="light">
+						<input type="radio" name="rbutton-theme" value="light" disabled>
 						Light
 					</label>
 					<!-- 3 -->
 					<label for="rbutton-binance">
-						<input type="radio" name="rbutton-theme" value="binance">
+						<input type="radio" name="rbutton-theme" value="binance" disabled>
 						Binance
 					</label>
 				</fieldset>
@@ -190,7 +190,7 @@
 				<div class="left-column tabcontent-item">
 					<label for="asset-selection">
 						<select name="asset-selection" id="asset_selection_chart_id">
-							<option value="empty">Select Crypto</option>
+							<option value="empty">Select Crypto (sample visible)</option>
 						</select>
 					</label>
 				</div>
@@ -225,6 +225,7 @@
 	<script src="scripts/websocket.js"></script>
 
 	<script>
+		// TODO: Chart is not appearing in first load from other tabs.
 		document.getElementById("tab2").click();
 	</script>
 </body>

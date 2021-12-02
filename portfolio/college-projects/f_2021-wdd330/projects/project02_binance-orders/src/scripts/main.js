@@ -49,12 +49,17 @@ async function showLists(url) {
 
 	symbolsArray.forEach(element => {
 		const symbol = element;
-		const option = document.createElement('option');
+		const optionTrade = document.createElement('option');
+		const optionChart = document.createElement('option');
 
-		option.setAttribute('value', symbol);
-		option.innerText = symbol;
-		symbolsListTrade.appendChild(option);
-		symbolsListChart.appendChild(option);
+		optionTrade.setAttribute('value', symbol);
+		optionTrade.innerText = symbol;
+
+		optionChart.setAttribute('value', symbol);
+		optionChart.innerText = symbol;
+		
+		symbolsListChart.appendChild(optionChart);
+		symbolsListTrade.appendChild(optionTrade);
 	});
 }
 
@@ -86,8 +91,8 @@ async function displayCurrent(event) {
 }
 
 // CODE
-const selectList = document.getElementById('asset_selection_id');
-selectList.addEventListener('change', displayCurrent);
+const selectListTrade = document.getElementById('asset_selection_id');
+selectListTrade.addEventListener('change', displayCurrent);
 
 
 // displayText();
