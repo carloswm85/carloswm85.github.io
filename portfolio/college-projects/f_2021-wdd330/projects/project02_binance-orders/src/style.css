@@ -507,6 +507,7 @@ button {
   flex-grow: 1;
   padding: 0.2em;
   margin: 0 0.2em;
+  font-weight: bold;
 }
 button.form-button {
   padding: 0.5em 1em;
@@ -520,8 +521,12 @@ button.form-button {
   cursor: pointer;
   margin: 0 auto;
 }
-button.form-button:active {
+button.form-button:hover {
   background-color: #ffff00;
+  color: #000000;
+}
+button.form-button:active {
+  background-color: #ff9800;
   transform: scale(1.1);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
@@ -529,17 +534,19 @@ button.form-button:active {
 #display {
   display: flex;
   justify-content: space-between;
-  border: 1px yellow solid;
 }
 #display span {
   font-size: 1.2em;
-  border: 1px red solid;
+  border: 1px #ffffff solid;
+  padding-left: 0.25em;
 }
 #display #current {
   flex-grow: 2;
+  border-radius: 0.5em 0 0 0.5em;
 }
 #display #change {
   flex-grow: 1;
+  border-radius: 0 0.5em 0.5em 0;
 }
 
 /* end */

@@ -1,5 +1,11 @@
-import Keys, { something } from './keys.js';
-import { getJson, getText, listFiller } from './utilities.js';
+import Keys, {
+	something
+} from './keys.js';
+import {
+	getJson,
+	getText,
+	listFiller
+} from './utilities.js';
 
 const keys = new Keys();
 
@@ -21,11 +27,12 @@ const exchangeInfo = `${baseUrl}${v3}/exchangeInfo`;
 const priceStatistics = `${baseUrl}${v3}/ticker/24hr`;
 const allPrices = `${baseUrl}${v1}/ticker/allPrices`;
 
-
 // Etc
 let symbol = "?symbol=";
 const btc = "BTCUSDT";
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> LIST
+// 1
 async function showList(url) {
 	const data = await getJson(url);
 	const symbolsList = document.getElementById('asset-selection_id');
@@ -35,18 +42,42 @@ async function showList(url) {
 		const symbol = element.symbol;
 		symbolsArray.push(symbol)
 	})
-	
+
 	symbolsArray.sort();
 
 	symbolsArray.forEach(element => {
 		const symbol = element;
 		const option = document.createElement('option');
-		
+
 		option.setAttribute('value', symbol);
 		option.innerText = symbol;
 		symbolsList.appendChild(option);
 	});
 }
+
+// 2
+function getUrl(assetName) {
+	const url = `${priceStatistics}${symbol}${assetName}`
+	return url;
+}
+
+// 3
+async function displayCurrent(event) {
+	const selectedAsset = event.target.value;
+	console.log(selectedAsset);
+
+	const url = getUrl(selectedAsset);
+	const data = await getJson(url);
+
+	const current = document.getElementById('current');
+	const change = document.getElementById('change');
+	current.innerText = data.lastPrice;
+	change.innerText = data.priceChangePercent;
+}
+
+// CODE
+const select = document.getElementById('asset-selection_id');
+select.addEventListener('change', displayCurrent);
 
 
 // displayText();

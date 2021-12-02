@@ -179,6 +179,7 @@ button {
   flex-grow: 1;
   padding: 0.2em;
   margin: 0 0.2em;
+  font-weight: bold;
 
   &.form-button {
     padding: 0.5em 1em;
@@ -192,8 +193,13 @@ button {
     cursor: pointer;
     margin: 0 auto;
 
-    &:active {
+    &:hover {
       background-color: $yellow;
+      color: $black;
+    }
+
+    &:active {
+      background-color: $orange;
       transform: scale(1.1);
       box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     }
@@ -203,18 +209,20 @@ button {
 #display {
   display: flex;
   justify-content: space-between;
-  border: 1px yellow solid;
 
   & span {
     font-size: 1.2em;
-    border: 1px red solid;
+    border: 1px $white solid;
+    padding-left: 0.25em;
   }
 
   & #current {
     flex-grow: 2;
+    border-radius: 0.5em 0 0 0.5em;
   }
-
+  
   & #change {
     flex-grow: 1;
+    border-radius: 0 0.5em 0.5em 0;
   }
 }
