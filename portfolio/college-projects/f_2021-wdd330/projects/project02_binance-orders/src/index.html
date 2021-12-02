@@ -18,9 +18,9 @@
 	<!-- TAB LINKS -->
 	<header class="tab">
 		<button class="tablinks" onclick="openTab(event, 'trade')" id="tab1">Trade</button>
-		<button class=" tablinks" onclick="openTab(event, 'settings')" id="tab2">Settings</button>
+		<button class="tablinks" onclick="openTab(event, 'minichart')" id="tab2">Minichart</button>
 		<button class="tablinks" onclick="openTab(event, 'security')" id="tab3">Security</button>
-		<button class="tablinks" onclick="openTab(event, 'minichart')" id="tab4">Minichart</button>
+		<button class=" tablinks" onclick="openTab(event, 'settings')" id="tab4">Settings</button>
 	</header>
 
 	<main>
@@ -186,7 +186,7 @@
 			<!-- 4.1 - Chart Settings -->
 			<div class="row">
 				
-				<!-- A - Drop-down List -->
+				<!-- A - Left-column -->
 				<div class="left-column tabcontent-item">
 					<label for="asset-selection">
 						<select name="asset-selection" id="asset_selection_chart_id">
@@ -195,9 +195,13 @@
 					</label>
 				</div>
 
-				<!-- A - Drop-down List -->
+				<!-- B - Right Column -->
 				<div class="right-column tabcontent-item">
-					Other content.
+						<label for="asset-selection">
+							<select name="asset-selection" id="asset_selection_chart_id">
+								<option value="empty">Select timeframe</option>
+							</select>
+						</label>
 				</div>
 			</div>
 
@@ -221,7 +225,7 @@
 	<script src="scripts/websocket.js"></script>
 
 	<script>
-		document.getElementById("tab4").click();
+		document.getElementById("tab2").click();
 	</script>
 </body>
 

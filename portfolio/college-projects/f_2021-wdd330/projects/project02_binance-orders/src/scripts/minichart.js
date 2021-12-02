@@ -30,6 +30,11 @@ const chartSetting = {
 
 const chart = LightweightCharts.createChart(document.getElementById('chart'), chartSetting);
 
+const timeAxis = chart.timeScale();
+timeAxis.applyOptions({ 'timeVisible': true });
+console.log(timeAxis);
+
+
 // const lineSeries = chart.addLineSeries();
 const bull = '#26a69a';
 const bear = '#ff5252';
@@ -54,14 +59,13 @@ function getUrl(assetName) {
 async function displayCurrentChart(event) {
 	const selectedAsset = event.target.value;
 
-	// Set Historical Data
-	const historicalUrl = 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=15m';
+	// Set HISTORICAL storical Data
+	const historicalUrl = 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m';
 
 	const data = await getJson(historicalUrl);
 	const historicalCandlesticks = []
 
 	data.forEach(element => {
-		console.log(element);		
 		const candlestick = {
 			'time': element[0] / 1000,
 			'open': element[1],
@@ -74,21 +78,20 @@ async function displayCurrentChart(event) {
 
 	candleSeries.setData(historicalCandlesticks);
 
-	// Stream Current Data
+	// Stream CURRENT Data
 	const socketUrl = getUrl(selectedAsset);
 	const webs = new WebSocket(socketUrl)
 
 	webs.onmessage = function (event) {
 		const jsonObject = JSON.parse(event.data);
-		// console.log(jsonObject);		
-		// candleSeries.setData([{
-		// 	time: '2018-10-19',
-		// 	open: 180.34,
-		// 	high: 180.99,
-		// 	low: 178.57,
-		// 	close: 179.85
-		// }]);
-
+		const candlestick = jsonObject.k;
+		candleSeries.update({
+			'time': candlestick.t / 1000,
+			'open': candlestick.o,
+			'high': candlestick.h,
+			'low': candlestick.l,
+			'close': candlestick.c
+		});
 	}
 }
 
