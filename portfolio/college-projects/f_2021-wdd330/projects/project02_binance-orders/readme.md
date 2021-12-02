@@ -4,6 +4,7 @@
 - Block 2 challenge proposal instructions: [Link](https://byui.instructure.com/courses/160562/assignments/7228245?module_item_id=20163546)
 - TODO application instructions: [Link](https://byui-cit.github.io/cit261/resources/todo.html)
 - Trello board: [Link](https://trello.com/b/94QLblUO/todo-project)
+- Teacher's recommendations: [Link](docs/teachers.md)
 
 ## Binance
 - Binance API Documentation: [Link](https://binance-docs.github.io/apidocs/spot/en/#introduction)
@@ -15,8 +16,7 @@
 - https://syncwith.com/api/binance 
 - Postman:
   - Tutorial: https://academy.binance.com/en/articles/binance-api-series-pt-1-spot-trading-with-postman
-  - Repo: https://github.com/binance/binance-api-postman
-  - 
+  - Repo: https://github.com/binance/binance-api-postman  - 
 
 ## Chrome Extensions
 - Google Chrome extensions documentation: [Link](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
