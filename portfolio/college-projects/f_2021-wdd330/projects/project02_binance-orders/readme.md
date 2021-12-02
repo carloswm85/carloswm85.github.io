@@ -21,6 +21,10 @@
 ## Chrome Extensions
 - Google Chrome extensions documentation: [Link](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
 
+## Lightweigh-Charts
+- Repo: https://github.com/tradingview/lightweight-charts/
+- Documentation: https://tradingview.github.io/lightweight-charts/ 
+- Demos: https://www.tradingview.com/lightweight-charts/
 ## Other
 - Tabs: https://www.w3schools.com/howto/howto_js_tabs.asp
 - Fetch examples: https://mdn.github.io/fetch-examples/
