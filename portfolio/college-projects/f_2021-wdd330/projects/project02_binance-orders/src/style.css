@@ -549,6 +549,20 @@ button.form-button:active {
   border-radius: 0 0.5em 0.5em 0;
 }
 
+/* === CHART ==== */
+.row {
+  display: flex;
+  margin: 0.5em 1em;
+}
+.row div {
+  flex-grow: 1;
+}
+
+#chart {
+  width: 100%;
+  margin: 1em;
+}
+
 /* end */
 /* end */
 

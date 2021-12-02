@@ -9,6 +9,7 @@
 
 	<!-- Normalize included. -->
 	<link rel="stylesheet" href="./style.css">
+	<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
 
 	<title>Binance Orders</title>
 </head>
@@ -33,7 +34,7 @@
 				<!-- A - Drop-down List -->
 				<div class="left-column tabcontent-item">
 					<label for="asset-selection"> 
-						<select name="asset-selection" id="asset-selection_id">
+						<select name="asset-selection" id="asset_selection_id">
 							<option value="empty">Select Crypto</option>
 						</select>
 					</label>
@@ -181,7 +182,27 @@
 
 		<!-- Tab 4.0 - CHART -->
 		<div id="minichart" class="tabcontent flexbox-column">
-			Mini Chart goes here.
+			
+			<!-- 4.1 - Chart Settings -->
+			<div class="row">
+				
+				<!-- A - Drop-down List -->
+				<div class="left-column tabcontent-item">
+					<label for="asset-selection">
+						<select name="asset-selection" id="asset_selection_chart_id">
+							<option value="empty">Select Crypto</option>
+						</select>
+					</label>
+				</div>
+
+				<!-- A - Drop-down List -->
+				<div class="right-column tabcontent-item">
+					Other content.
+				</div>
+			</div>
+
+			<!-- 4.2 - Chart -->
+			<div id="chart"></div>
 		</div>
 
 	</main>
@@ -194,12 +215,13 @@
 
 	<!-- scripts -->
 	<script type="module" src="scripts/main.js"></script>
+	<script type="module" src="scripts/minichart.js"></script>
 	<script src="scripts/styling.js"></script>
 	<script src="scripts/other.js"></script>
 	<script src="scripts/websocket.js"></script>
 
 	<script>
-		document.getElementById("tab1").click();
+		document.getElementById("tab4").click();
 	</script>
 </body>
 

@@ -25,6 +25,7 @@ const baseUrl = testnet;
 const depth = `${baseUrl}${v3}/depth`;
 const exchangeInfo = `${baseUrl}${v3}/exchangeInfo`;
 const priceStatistics = `${baseUrl}${v3}/ticker/24hr`;
+const klines = `${baseUrl}${v3}/klines?symbol=BTCUSDT&interval=1m`
 const allPrices = `${baseUrl}${v1}/ticker/allPrices`;
 
 // Etc
@@ -33,9 +34,10 @@ const btc = "BTCUSDT";
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> LIST
 // 1
-async function showList(url) {
+async function showLists(url) {
 	const data = await getJson(url);
-	const symbolsList = document.getElementById('asset-selection_id');
+	const symbolsListTrade = document.getElementById('asset_selection_id');
+	const symbolsListChart = document.getElementById('asset_selection_chart_id');
 	const symbolsArray = [];
 
 	data.forEach(element => {
@@ -51,7 +53,8 @@ async function showList(url) {
 
 		option.setAttribute('value', symbol);
 		option.innerText = symbol;
-		symbolsList.appendChild(option);
+		symbolsListTrade.appendChild(option);
+		symbolsListChart.appendChild(option);
 	});
 }
 
@@ -83,10 +86,10 @@ async function displayCurrent(event) {
 }
 
 // CODE
-const select = document.getElementById('asset-selection_id');
-select.addEventListener('change', displayCurrent);
+const selectList = document.getElementById('asset_selection_id');
+selectList.addEventListener('change', displayCurrent);
 
 
 // displayText();
 const test = 'https://carloswm85.github.io/portfolio/college-projects/f_2021-wdd330/projects/project02_binance-orders/src/scripts/allPrices.json';
-showList(allPrices);
+showLists(allPrices);
