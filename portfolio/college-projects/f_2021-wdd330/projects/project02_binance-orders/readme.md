@@ -24,4 +24,10 @@
 ## Other
 - Tabs: https://www.w3schools.com/howto/howto_js_tabs.asp
 - Fetch examples: https://mdn.github.io/fetch-examples/
-- 
+- Websockets: 
+  - https://www.npmjs.com/package/wscat
+  - Examples:
+    - `wscat --connect wss://stream.binance.com:9443/ws/btcusdt@trade`
+    - `wscat --connect wss://stream.binance.com:9443/ws/btcusdt@kline_5m | tee dataset.txt`
+  - https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+  - https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md#general-wss-information

@@ -16,14 +16,15 @@
 <body>
 	<!-- TAB LINKS -->
 	<header class="tab">
-		<button class="tablinks" onclick="openTab(event, 'Trade')" id="tab1">Trade</button>
-		<button class=" tablinks" onclick="openTab(event, 'Settings')" id="tab2">Settings</button>
-		<button class="tablinks" onclick="openTab(event, 'Security')" id="tab3">Security</button>
+		<button class="tablinks" onclick="openTab(event, 'trade')" id="tab1">Trade</button>
+		<button class=" tablinks" onclick="openTab(event, 'settings')" id="tab2">Settings</button>
+		<button class="tablinks" onclick="openTab(event, 'security')" id="tab3">Security</button>
+		<button class="tablinks" onclick="openTab(event, 'minichart')" id="tab4">Minichart</button>
 	</header>
 
 	<main>
 		<!-- Tab 1.0 - TRADE -->
-		<div id="Trade" class="tabcontent flexbox-column">
+		<div id="trade" class="tabcontent flexbox-column">
 
 			<!-- Tab 1.1 - Selected Asset-->
 			<fieldset class="common-container">
@@ -85,7 +86,7 @@
 		</div>
 
 		<!-- Tab 2.0 - SETTINGS -->
-		<div id="Settings" class="tabcontent">
+		<div id="settings" class="tabcontent">
 
 			<!-- Tab 2.1 -->
 			<div class="left-column tabcontent-item">
@@ -150,7 +151,7 @@
 		</div>
 
 		<!-- Tab 3.0 - SECURITY -->
-		<div id="Security" class="tabcontent flexbox-column">
+		<div id="security" class="tabcontent flexbox-column">
 
 			<fieldset>
 				<legend>Binance</legend>
@@ -178,6 +179,11 @@
 			</fieldset>
 		</div>
 
+		<!-- Tab 4.0 - CHART -->
+		<div id="minichart" class="tabcontent flexbox-column">
+			Mini Chart goes here.
+		</div>
+
 	</main>
 	<!-- Display Information -->
 	<section>
@@ -190,10 +196,10 @@
 	<script type="module" src="scripts/main.js"></script>
 	<script src="scripts/styling.js"></script>
 	<script src="scripts/other.js"></script>
+	<script src="scripts/websocket.js"></script>
 
 	<script>
 		document.getElementById("tab1").click();
-
 	</script>
 </body>
 

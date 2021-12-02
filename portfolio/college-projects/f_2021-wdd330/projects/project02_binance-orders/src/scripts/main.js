@@ -57,22 +57,29 @@ async function showList(url) {
 
 // 2
 function getUrl(assetName) {
-	const url = `${priceStatistics}${symbol}${assetName}`
+	// const timeframe = '1m';
+	const assetNameLowered = assetName.toLowerCase();
+	// const url = `wss://stream.binance.com:9443/ws/${assetNameLowered}@kline_${timeframe}`;
+	const url = `wss://stream.binance.com:9443/ws/${assetNameLowered}@ticker`;
 	return url;
 }
 
 // 3
 async function displayCurrent(event) {
 	const selectedAsset = event.target.value;
-	console.log(selectedAsset);
-
-	const url = getUrl(selectedAsset);
-	const data = await getJson(url);
+	const socketUrl = getUrl(selectedAsset);
+	console.log(socketUrl);
+	const webs = new WebSocket(socketUrl)
 
 	const current = document.getElementById('current');
 	const change = document.getElementById('change');
-	current.innerText = data.lastPrice;
-	change.innerText = data.priceChangePercent;
+
+	webs.onmessage = function (event) {
+		const jsonObject = JSON.parse(event.data);
+		current.innerText = jsonObject.c;
+		change.innerText = jsonObject.P;
+	}
+
 }
 
 // CODE
