@@ -62,8 +62,14 @@ INSERT INTO keyword (keyword_id, keyword) VALUES
 SELECT * FROM artwork_has_keyword;
 DELETE FROM artwork_has_keyword;
 
-INSERT INTO artwork_has_keyword VALUES
-	(1, 1), (2, 2), (2, 3), (3, 1), (4, 4), (4, 5), (4, 6), (5, 5), (5, 7),
-	(5, 8), (5, 9), (6, 4), (6, 5), (7, 5), (7, 9), (7, 10), (8, 4), (8, 5),
-	(9, 3), (9, 8), (10, 3), (11, 5), (11, 8), (11, 11), (12, 1), (12, 3),
-	(12, 5), (13, 2), (13, 5);
+SELECT artwork_id FROM artwork WHERE title = 'Irises';
+SELECT keyword_id FROM keyword tab WHERE tab.keyword = 'flowers';
+
+INSERT INTO artwork_has_keyword  (artwork_id, keyword_id) VALUES
+	((SELECT artwork_id FROM artwork WHERE title = 'Irises'), (SELECT keyword_id FROM keyword WHERE keyword = 'flowers')),
+	((SELECT artwork_id FROM artwork WHERE title = 'The Starry Night'), (SELECT keyword_id FROM keyword WHERE keyword = 'blue'));
+	-- ((SELECT artwork_id FROM artwork WHERE title = 'The Starry Night'), (SELECT keyword_id FROM keyword WHERE keyword = 'landscape'));
+
+-- INSERT INTO "artwork has keyword" (artworkid, keywordid) VALUES
+-- 	(SELECT artworkid FROM artwork WHERE id(the primary key) = (something),  SELECT keyworkid FROM keyword WHERE id(the primary key) = (something));
+
