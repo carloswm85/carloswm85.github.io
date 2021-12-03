@@ -403,11 +403,11 @@ code {
 }
 
 /* === Tabs ==== */
-.tab {
+.tabs {
   overflow: hidden;
 }
 
-.tab button {
+.tabs button {
   background-color: white;
   float: left;
   border: none;
@@ -418,13 +418,14 @@ code {
   border-radius: 0.5em 0.5em 0 0;
 }
 
-.tab button:hover {
+.tabs button:hover {
   background-color: #ff9800;
   color: white;
 }
 
-.tab button.active {
+.tabs button.active_tab {
   background-color: #26a69a;
+  color: #ffffff;
 }
 
 /* Fading effect takes 1 second */

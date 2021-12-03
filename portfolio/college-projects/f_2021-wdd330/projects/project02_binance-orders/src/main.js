@@ -1,11 +1,6 @@
-import Keys, {
-	something
-} from './keys.js';
-import {
-	getJson,
-	getText,
-	listFiller
-} from './utilities.js';
+import Keys, { something } from './modules/keys.mjs';
+import { getJson, getText, listFiller } from './modules/utilities.mjs';
+import { setUpTabs } from './modules/styling.mjs';
 
 const keys = new Keys();
 
@@ -98,3 +93,19 @@ selectListTrade.addEventListener('change', displayCurrent);
 // displayText();
 const test = 'https://carloswm85.github.io/portfolio/college-projects/f_2021-wdd330/projects/project02_binance-orders/src/scripts/allPrices.json';
 showLists(allPrices);
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> TABS
+setUpTabs();
+document.getElementById("minichart").click();
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Radio Buttons
+
+// var rb_tabs = document.querySelectorAll('input[name="rbutton-tab"]');
+// console.log(rb_tabs);
+// rb_tabs.forEach(rbutton => {
+// 	rbutton.addEventListener("change", function (event) {
+// 		var selectedTab = event.target.value;
+// 		setUpTabs(selectedTab, true);
+// 	});
+// });
