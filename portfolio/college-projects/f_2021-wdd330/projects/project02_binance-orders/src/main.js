@@ -1,6 +1,7 @@
 import Keys, { something } from './modules/keys.mjs';
 import { getJson, getText, listFiller } from './modules/utilities.mjs';
 import { setUpTabs } from './modules/styling.mjs';
+import Minichart from './modules/minichart.mjs';
 
 const keys = new Keys();
 
@@ -26,6 +27,14 @@ const allPrices = `${baseUrl}${v1}/ticker/allPrices`;
 // Etc
 let symbol = "?symbol=";
 const btc = "BTCUSDT";
+
+// Chart
+const chart = new Minichart();
+const selectListChart = document.getElementById('asset_selection_chart_id');
+chart.setCurrentChart();
+selectListChart.addEventListener('change', chart.displayCurrentChart);
+
+
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> LIST
 // 1

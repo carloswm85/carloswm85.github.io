@@ -1,4 +1,4 @@
-export { default as chart } from './modules/minichart.mjs';
+export { default as chart } from './modules/minichart.js';
 
 // import from 'scripts/minichart';
 // import from 'scripts/styling';

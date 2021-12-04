@@ -1,105 +1,136 @@
 import {
 	getJson
-} from './utilities.js';
+} from './utilities.mjs';
 
-const chartSetting = {
-	width: 0,
-	height: 350,
-	layout: {
-		backgroundColor: '#000000',
-		textColor: 'rgba(255, 255, 255, 0.9)',
-	},
-	grid: {
-		vertLines: {
-			color: 'rgba(197, 203, 206, 0.5)',
-		},
-		horzLines: {
-			color: 'rgba(197, 203, 206, 0.5)',
-		},
-	},
-	crosshair: {
-		mode: LightweightCharts.CrosshairMode.Normal,
-	},
-	rightPriceScale: {
-		borderColor: 'rgba(197, 203, 206, 0.8)',
-	},
-	timeScale: {
-		borderColor: 'rgba(197, 203, 206, 0.8)',
-	},
-}
+export default class Minichart {
 
-const chart = LightweightCharts.createChart(document.getElementById('chart'), chartSetting);
+	// constructor
+	constructor() {
 
-const timeAxis = chart.timeScale();
-timeAxis.applyOptions({ 'timeVisible': true });
-// console.log(timeAxis);
-
-
-// const lineSeries = chart.addLineSeries();
-const bull = '#26a69a';
-const bear = '#ff5252';
-
-var candleSeries = chart.addCandlestickSeries({
-	upColor: bull,
-	downColor: bear,
-	borderDownColor: bear,
-	borderUpColor: bull,
-	wickDownColor: bear,
-	wickUpColor: bull,
-});
-
-function getUrl(assetName) {
-	const timeframe = '1m';
-	const assetNameLowered = assetName.toLowerCase();
-	const url = `wss://stream.binance.com:9443/ws/${assetNameLowered}@kline_${timeframe}`;
-	return url;
-}
-
-// TODO: https://www.youtube.com/watch?v=EeT3Ore4Sao&ab_channel=PartTimeLarry
-// 3
-async function displayCurrentChart(event) {
-	const selectedAsset = event.target.value;
-
-	// TODO: Remove series and add it again, using a chart object: https://tradingview.github.io/lightweight-charts/api/interfaces/IChartApi#removeseries 
-	// chart.removeSeries(candleSeries);	
-
-	// Set HISTORICAL storical Data
-	const historicalUrl = 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m';
-
-	const data = await getJson(historicalUrl);
-	const historicalCandlesticks = []
-
-	data.forEach(element => {
-		const candlestick = {
-			'time': element[0] / 1000,
-			'open': element[1],
-			'high': element[2],
-			'low': element[3],
-			'close': element[4]
+		this.chartSetting = {
+			width: 0,
+			height: 350,
+			layout: {
+				backgroundColor: '#000000',
+				textColor: 'rgba(255, 255, 255, 0.9)',
+			},
+			grid: {
+				vertLines: {
+					color: 'rgba(197, 203, 206, 0.5)',
+				},
+				horzLines: {
+					color: 'rgba(197, 203, 206, 0.5)',
+				},
+			},
+			crosshair: {
+				mode: LightweightCharts.CrosshairMode.Normal,
+			},
+			rightPriceScale: {
+				borderColor: 'rgba(197, 203, 206, 0.8)',
+			},
+			timeScale: {
+				borderColor: 'rgba(197, 203, 206, 0.8)',
+			},
 		}
-		historicalCandlesticks.push(candlestick);
-	});
 
-	candleSeries.setData(historicalCandlesticks);
+		this.chart = LightweightCharts.createChart(
+			document.getElementById('chart'),
+			this.chartSetting);
 
-	// Stream CURRENT Data
-	const socketUrl = getUrl(selectedAsset);
-	const webs = new WebSocket(socketUrl)
-
-	webs.onmessage = function (event) {
-		const jsonObject = JSON.parse(event.data);
-		const candlestick = jsonObject.k;
-		candleSeries.update({
-			'time': candlestick.t / 1000,
-			'open': candlestick.o,
-			'high': candlestick.h,
-			'low': candlestick.l,
-			'close': candlestick.c
+		this.timeAxis = this.chart.timeScale();
+		this.timeAxis.applyOptions({
+			'timeVisible': true
 		});
-	}
-}
 
-// CODE
-const selectListChart = document.getElementById('asset_selection_chart_id');
-selectListChart.addEventListener('change', displayCurrentChart);
+		this.bull = '#26a69a';
+		this.bear = '#ff5252';
+
+		this.candleSeries = this.chart.addCandlestickSeries({
+			upColor: this.bull,
+			downColor: this.bear,
+			borderDownColor: this.bear,
+			borderUpColor: this.bull,
+			wickDownColor: this.bear,
+			wickUpColor: this.bull,
+		});
+
+	}
+
+	// 1
+	getUrl(assetName) {
+		const timeframe = '1m';
+		const assetNameLowered = assetName.toLowerCase();
+		const url = `wss://stream.binance.com:9443/ws/${assetNameLowered}@kline_${timeframe}`;
+		return url;
+	}
+
+	// 02
+	// Set HISTORICAL storical Data
+	async setCurrentChart() {
+		this.historicalUrl = 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m';
+
+		this.data = await getJson(this.historicalUrl);
+		this.historicalCandlesticks = [];
+
+		this.data.forEach(element => {
+			const candlestick = {
+				'time': element[0] / 1000,
+				'open': element[1],
+				'high': element[2],
+				'low': element[3],
+				'close': element[4]
+			};
+			this.historicalCandlesticks.push(candlestick);
+		});
+		this.candleSeries.setData(this.historicalCandlesticks);
+		this.updateChart();
+	}
+
+	updateChart() {		
+		this.socketUrl = this.getUrl('BTCUSDT');
+		this.webs = new WebSocket(this.socketUrl);
+
+		this.webs.onmessage = function (event) {
+			const jsonObject = JSON.parse(event.data);
+			const candlestick = jsonObject.k;
+			this.candleSeries.update({
+				'time': candlestick.t / 1000,
+				'open': candlestick.o,
+				'high': candlestick.h,
+				'low': candlestick.l,
+				'close': candlestick.c
+			});
+		}
+	}
+
+
+	// TODO: https://www.youtube.com/watch?v=EeT3Ore4Sao&ab_channel=PartTimeLarry
+	// 2
+	async displayCurrentChart(event) {
+		this.selectedAsset = event.target.value;
+
+		// TODO: Remove series and add it again, using a chart object: https://tradingview.github.io/lightweight-charts/api/interfaces/IChartApi#removeseries 
+		// chart.removeSeries(candleSeries);	
+
+		// Stream CURRENT Data
+		this.socketUrl = this.getUrl(selectedAsset);
+		this.webs = new WebSocket(socketUrl);
+
+		this.webs.onmessage = function (event) {
+			const jsonObject = JSON.parse(event.data);
+			const candlestick = jsonObject.k;
+			this.candleSeries.update({
+				'time': candlestick.t / 1000,
+				'open': candlestick.o,
+				'high': candlestick.h,
+				'low': candlestick.l,
+				'close': candlestick.c
+			});
+		}
+	}
+
+} // end class
+
+
+
 

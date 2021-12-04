@@ -50,7 +50,7 @@ const links = [
 	},
 	{
 		label: 'Week 12',
-		url: 'weeks/week12/'
+		url: 'weeks/week12_show-and-tell/'
 	},
 	{
 		label: 'Week 13',
