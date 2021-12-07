@@ -1,6 +1,14 @@
-import Keys, { something } from './modules/keys.mjs';
-import { getJson, getText, listFiller } from './modules/utilities.mjs';
-import { setUpTabs } from './modules/styling.mjs';
+import Keys, {
+	something
+} from './modules/keys.mjs';
+import {
+	getJson,
+	getText,
+	listFiller
+} from './modules/utilities.mjs';
+import {
+	setUpTabs
+} from './modules/styling.mjs';
 import Minichart from './modules/minichart.mjs';
 
 const keys = new Keys();
@@ -31,10 +39,11 @@ const btc = "BTCUSDT";
 // Chart
 const chart = new Minichart();
 const selectListChart = document.getElementById('asset_selection_chart_id');
+const selectListTimeframe = document.getElementById('timeframe_selection_chart_id');
 chart.setCurrentChart();
-selectListChart.addEventListener('change', chart.displayCurrentChart);
-
-
+chart.updateChart();
+selectListChart.addEventListener('change', chart.changeCryptocurrency);
+selectListTimeframe.addEventListener('change', chart.changeTimeframe);
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> LIST
 // 1
@@ -42,7 +51,10 @@ async function showLists(url) {
 	const data = await getJson(url);
 	const symbolsListTrade = document.getElementById('asset_selection_id');
 	const symbolsListChart = document.getElementById('asset_selection_chart_id');
+	const timeframesListChart = document.getElementById('timeframe_selection_chart_id');
 	const symbolsArray = [];
+
+	const timeframesArray = ['1m','3m','5m','15m','30m','1h','2h','4h','6h','8h','12h','1d','3d','1w','1M'];
 
 	data.forEach(element => {
 		const symbol = element.symbol;
@@ -61,10 +73,17 @@ async function showLists(url) {
 
 		optionChart.setAttribute('value', symbol);
 		optionChart.innerText = symbol;
-		
+
 		symbolsListChart.appendChild(optionChart);
 		symbolsListTrade.appendChild(optionTrade);
 	});
+
+	timeframesArray.forEach(timeframe => {
+			const optionTimeframe = document.createElement('option');
+			optionTimeframe.setAttribute('value', timeframe);
+			optionTimeframe.innerText = timeframe;
+			timeframesListChart.appendChild(optionTimeframe);
+	})
 }
 
 // 2

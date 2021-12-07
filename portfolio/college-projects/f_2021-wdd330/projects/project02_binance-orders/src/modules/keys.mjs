@@ -46,6 +46,7 @@ export default class Keys {
 	}
 }
 
+
 export function something() {
 	console.log('testing exported something() from key.js');
 }

@@ -2,12 +2,16 @@ import {
 	getJson
 } from './utilities.mjs';
 
+const bull = '#26a69a';
+const bear = '#ff5252';
+
+
 export default class Minichart {
 
 	// constructor
 	constructor() {
 
-		this.chartSetting = {
+		const chartSettings = {
 			width: 0,
 			height: 350,
 			layout: {
@@ -33,31 +37,27 @@ export default class Minichart {
 			},
 		}
 
-		this.chart = LightweightCharts.createChart(
+		const chart = LightweightCharts.createChart(
 			document.getElementById('chart'),
-			this.chartSetting);
+			chartSettings);
 
-		this.timeAxis = this.chart.timeScale();
-		this.timeAxis.applyOptions({
+		const timeAxis = chart.timeScale();
+		timeAxis.applyOptions({
 			'timeVisible': true
 		});
 
-		this.bull = '#26a69a';
-		this.bear = '#ff5252';
-
-		this.candleSeries = this.chart.addCandlestickSeries({
-			upColor: this.bull,
-			downColor: this.bear,
-			borderDownColor: this.bear,
-			borderUpColor: this.bull,
-			wickDownColor: this.bear,
-			wickUpColor: this.bull,
+		this.candleSeries = chart.addCandlestickSeries({
+			upColor: bull,
+			downColor: bear,
+			borderDownColor: bear,
+			borderUpColor: bull,
+			wickDownColor: bear,
+			wickUpColor: bull
 		});
-
 	}
 
-	// 1
-	getUrl(assetName) {
+	// 01
+	getSocketUrl(assetName) {
 		const timeframe = '1m';
 		const assetNameLowered = assetName.toLowerCase();
 		const url = `wss://stream.binance.com:9443/ws/${assetNameLowered}@kline_${timeframe}`;
@@ -65,61 +65,71 @@ export default class Minichart {
 	}
 
 	// 02
-	// Set HISTORICAL storical Data
 	async setCurrentChart() {
-		this.historicalUrl = 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m';
+		// Set HISTORICAL storical Data
+		// TODO https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data
+		const historicalUrl = 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m';
+		const data = await getJson(historicalUrl);
+		const historicalCandlesticks = [];
 
-		this.data = await getJson(this.historicalUrl);
-		this.historicalCandlesticks = [];
-
-		this.data.forEach(element => {
-			const candlestick = {
-				'time': element[0] / 1000,
-				'open': element[1],
-				'high': element[2],
-				'low': element[3],
-				'close': element[4]
+		data.forEach(element => {
+			let candlestick = {
+				time: element[0] / 1000,
+				open: element[1],
+				high: element[2],
+				low: element[3],
+				close: element[4]
 			};
-			this.historicalCandlesticks.push(candlestick);
+			historicalCandlesticks.push(candlestick);
 		});
-		this.candleSeries.setData(this.historicalCandlesticks);
-		this.updateChart();
+		this.candleSeries.setData(historicalCandlesticks);
 	}
 
-	updateChart() {		
-		this.socketUrl = this.getUrl('BTCUSDT');
-		this.webs = new WebSocket(this.socketUrl);
+	// 03
+	getCandleSeries() {
+		return this.candleSeries;
+	}
+	
+	// 04
+	async updateChart() {
+		// TODO https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-streams
+		const socketUrl2 = this.getSocketUrl('BTCUSDT');
+		const webs = new WebSocket(socketUrl2);
+		const candleSeries = await this.getCandleSeries();
 
-		this.webs.onmessage = function (event) {
-			const jsonObject = JSON.parse(event.data);
-			const candlestick = jsonObject.k;
-			this.candleSeries.update({
-				'time': candlestick.t / 1000,
-				'open': candlestick.o,
-				'high': candlestick.h,
-				'low': candlestick.l,
-				'close': candlestick.c
-			});
+		webs.onmessage = function (event) {
+			let jsonObject = JSON.parse(event.data);
+			let candlestick = jsonObject.k;
+
+			let candle = {
+				time: candlestick.t / 1000,
+				open: candlestick.o,
+				high: candlestick.h,
+				low: candlestick.l,
+				close: candlestick.c
+			};
+
+			candleSeries.update(candle);
 		}
 	}
 
 
-	// TODO: https://www.youtube.com/watch?v=EeT3Ore4Sao&ab_channel=PartTimeLarry
-	// 2
-	async displayCurrentChart(event) {
-		this.selectedAsset = event.target.value;
+	// 05
+	async changeCryptocurrency(event) {
+		// TODO: https://www.youtube.com/watch?v=EeT3Ore4Sao&ab_channel=PartTimeLarry
+		const selectedAsset = event.target.value;
 
 		// TODO: Remove series and add it again, using a chart object: https://tradingview.github.io/lightweight-charts/api/interfaces/IChartApi#removeseries 
-		// chart.removeSeries(candleSeries);	
+		// chart.removeSeries(this.candleSeries);	
 
 		// Stream CURRENT Data
-		this.socketUrl = this.getUrl(selectedAsset);
-		this.webs = new WebSocket(socketUrl);
+		const socketUrl = this.getUrl(selectedAsset);
+		const webs2 = new WebSocket(socketUrl);
 
-		this.webs.onmessage = function (event) {
+		webs2.onmessage = function (event) {
 			const jsonObject = JSON.parse(event.data);
 			const candlestick = jsonObject.k;
-			this.candleSeries.update({
+			this.this.candleSeries.update({
 				'time': candlestick.t / 1000,
 				'open': candlestick.o,
 				'high': candlestick.h,
@@ -127,10 +137,10 @@ export default class Minichart {
 				'close': candlestick.c
 			});
 		}
+	}
+
+	changeTimeframe(evet) {
+		console.log('changeTimeframe')
 	}
 
 } // end class
-
-
-
-
