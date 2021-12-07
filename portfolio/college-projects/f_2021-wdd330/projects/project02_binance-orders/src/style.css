@@ -566,5 +566,9 @@ button.form-button:active {
 
 /* end */
 /* end */
+#testButton {
+  margin: 0 auto;
+  display: block;
+}
 
 /*# sourceMappingURL=style.css.map */

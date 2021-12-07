@@ -2,16 +2,20 @@ import {
 	getJson
 } from './utilities.mjs';
 
+/** @type {import('lightweight-charts')} */
+const LightweightCharts = window.LightweightCharts;
+
+
 const bull = '#26a69a';
 const bear = '#ff5252';
 
 
 export default class Minichart {
 
-	// constructor
+	// 00
 	constructor() {
 
-		const chartSettings = {
+		this.chartSettings = {
 			width: 0,
 			height: 350,
 			layout: {
@@ -37,40 +41,43 @@ export default class Minichart {
 			},
 		}
 
-		const chart = LightweightCharts.createChart(
+		this.chart = LightweightCharts.createChart(
 			document.getElementById('chart'),
-			chartSettings);
+			this.chartSettings);
 
-		const timeAxis = chart.timeScale();
+		const timeAxis = this.chart.timeScale();
 		timeAxis.applyOptions({
 			'timeVisible': true
-		});
-
-		this.candleSeries = chart.addCandlestickSeries({
-			upColor: bull,
-			downColor: bear,
-			borderDownColor: bear,
-			borderUpColor: bull,
-			wickDownColor: bear,
-			wickUpColor: bull
 		});
 	}
 
 	// 01
-	getSocketUrl(assetName) {
-		const timeframe = '1m';
-		const assetNameLowered = assetName.toLowerCase();
-		const url = `wss://stream.binance.com:9443/ws/${assetNameLowered}@kline_${timeframe}`;
-		return url;
+	getUrlHistorical(assetString, timeframeString) {
+		return `https://api.binance.com/api/v3/klines?symbol=${assetString}&interval=${timeframeString}`;
 	}
 
 	// 02
-	async setCurrentChart() {
+	getUrlSocket(assetString, timeframeString) {
+		const assetStringLowered = assetString.toLowerCase();
+		const url = `wss://stream.binance.com:9443/ws/${assetStringLowered}@kline_${timeframeString}`;
+		return url;
+	}
+
+	// 03
+	getCandleSeries() {
+		return this.candleSeries;
+	}
+
+	// 04
+	async setChart(asset = 'BTCUSDT', timeframe = '1m') {
 		// Set HISTORICAL storical Data
 		// TODO https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data
-		const historicalUrl = 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m';
+		// console.log(asset);
+		const historicalUrl = this.getUrlHistorical(asset, timeframe);
+		// console.log(historicalUrl);
 		const data = await getJson(historicalUrl);
-		const historicalCandlesticks = [];
+		// console.log(data);		
+		let historicalCandlesticks = [];
 
 		data.forEach(element => {
 			let candlestick = {
@@ -82,18 +89,26 @@ export default class Minichart {
 			};
 			historicalCandlesticks.push(candlestick);
 		});
+
+		this.candleSeries = this.chart.addCandlestickSeries({
+			upColor: bull,
+			downColor: bear,
+			borderDownColor: bear,
+			borderUpColor: bull,
+			wickDownColor: bear,
+			wickUpColor: bull
+		});
+
 		this.candleSeries.setData(historicalCandlesticks);
+		// console.log(this.candleSeries);
+
+		this.updateChart(asset, timeframe);
 	}
 
-	// 03
-	getCandleSeries() {
-		return this.candleSeries;
-	}
-	
-	// 04
-	async updateChart() {
+	// 05
+	async updateChart(asset = 'BTCUSDT', timeframe = '1m') {
 		// TODO https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-streams
-		const socketUrl2 = this.getSocketUrl('BTCUSDT');
+		const socketUrl2 = this.getUrlSocket(asset, timeframe);
 		const webs = new WebSocket(socketUrl2);
 		const candleSeries = await this.getCandleSeries();
 
@@ -113,34 +128,16 @@ export default class Minichart {
 		}
 	}
 
-
-	// 05
-	async changeCryptocurrency(event) {
-		// TODO: https://www.youtube.com/watch?v=EeT3Ore4Sao&ab_channel=PartTimeLarry
-		const selectedAsset = event.target.value;
-
-		// TODO: Remove series and add it again, using a chart object: https://tradingview.github.io/lightweight-charts/api/interfaces/IChartApi#removeseries 
-		// chart.removeSeries(this.candleSeries);	
-
-		// Stream CURRENT Data
-		const socketUrl = this.getUrl(selectedAsset);
-		const webs2 = new WebSocket(socketUrl);
-
-		webs2.onmessage = function (event) {
-			const jsonObject = JSON.parse(event.data);
-			const candlestick = jsonObject.k;
-			this.this.candleSeries.update({
-				'time': candlestick.t / 1000,
-				'open': candlestick.o,
-				'high': candlestick.h,
-				'low': candlestick.l,
-				'close': candlestick.c
-			});
-		}
+	// 06
+	async changeCryptocurrency(assetValue, timeframeValue) {
+		const candleSeries = await this.getCandleSeries();
+		this.chart.removeSeries(candleSeries);
+		this.setChart(assetValue, timeframeValue);
 	}
-
-	changeTimeframe(evet) {
-		console.log('changeTimeframe')
-	}
-
 } // end class
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Functions
+export function changeTimeframe(evet) {
+	console.log('changeTimeframe')
+}

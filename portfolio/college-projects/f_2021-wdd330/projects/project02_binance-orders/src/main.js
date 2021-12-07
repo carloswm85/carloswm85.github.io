@@ -9,7 +9,9 @@ import {
 import {
 	setUpTabs
 } from './modules/styling.mjs';
-import Minichart from './modules/minichart.mjs';
+import Minichart, {
+	changeTimeframe
+} from './modules/minichart.mjs';
 
 const keys = new Keys();
 
@@ -40,10 +42,17 @@ const btc = "BTCUSDT";
 const chart = new Minichart();
 const selectListChart = document.getElementById('asset_selection_chart_id');
 const selectListTimeframe = document.getElementById('timeframe_selection_chart_id');
-chart.setCurrentChart();
-chart.updateChart();
-selectListChart.addEventListener('change', chart.changeCryptocurrency);
-selectListTimeframe.addEventListener('change', chart.changeTimeframe);
+chart.setChart();
+selectListChart.chart = chart;
+
+selectListChart.addEventListener('change', () => {
+	chart.changeCryptocurrency(selectListChart.value, selectListTimeframe.value);
+});
+
+selectListTimeframe.addEventListener('change', () => {
+	chart.changeCryptocurrency(selectListChart.value, selectListTimeframe.value);
+});
+
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> LIST
 // 1
@@ -51,10 +60,12 @@ async function showLists(url) {
 	const data = await getJson(url);
 	const symbolsListTrade = document.getElementById('asset_selection_id');
 	const symbolsListChart = document.getElementById('asset_selection_chart_id');
+	const symbolsListDefault = document.getElementById('asset_selection_default_id');
+
 	const timeframesListChart = document.getElementById('timeframe_selection_chart_id');
 	const symbolsArray = [];
 
-	const timeframesArray = ['1m','3m','5m','15m','30m','1h','2h','4h','6h','8h','12h','1d','3d','1w','1M'];
+	const timeframesArray = ['1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w', '1M'];
 
 	data.forEach(element => {
 		const symbol = element.symbol;
@@ -65,24 +76,32 @@ async function showLists(url) {
 
 	symbolsArray.forEach(element => {
 		const symbol = element;
-		const optionTrade = document.createElement('option');
-		const optionChart = document.createElement('option');
 
+		const optionTrade = document.createElement('option');
 		optionTrade.setAttribute('value', symbol);
 		optionTrade.innerText = symbol;
+		if (symbol == 'BTCUSDT') optionTrade.defaultSelected = true;
+		symbolsListTrade.appendChild(optionTrade);
 
+		const optionChart = document.createElement('option');
 		optionChart.setAttribute('value', symbol);
 		optionChart.innerText = symbol;
-
+		if (symbol == 'BTCUSDT') optionChart.defaultSelected = true;
 		symbolsListChart.appendChild(optionChart);
-		symbolsListTrade.appendChild(optionTrade);
+
+		const optionDefault = document.createElement('option');
+		optionDefault.setAttribute('value', symbol);
+		optionDefault.innerText = symbol;
+		if (symbol == 'BTCUSDT') optionDefault.defaultSelected = true;
+		symbolsListDefault.appendChild(optionDefault);
 	});
 
 	timeframesArray.forEach(timeframe => {
-			const optionTimeframe = document.createElement('option');
-			optionTimeframe.setAttribute('value', timeframe);
-			optionTimeframe.innerText = timeframe;
-			timeframesListChart.appendChild(optionTimeframe);
+		const optionTimeframe = document.createElement('option');
+		optionTimeframe.setAttribute('value', timeframe);
+		optionTimeframe.innerText = timeframe;
+		if (timeframe == '1m') optionTimeframe.defaultSelected = true;
+		timeframesListChart.appendChild(optionTimeframe);
 	})
 }
 
