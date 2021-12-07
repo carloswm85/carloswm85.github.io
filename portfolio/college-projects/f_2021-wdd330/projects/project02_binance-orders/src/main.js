@@ -46,11 +46,11 @@ chart.setChart();
 selectListChart.chart = chart;
 
 selectListChart.addEventListener('change', () => {
-	chart.changeCryptocurrency(selectListChart.value, selectListTimeframe.value);
+	chart.changeChart(selectListChart.value, selectListTimeframe.value);
 });
 
 selectListTimeframe.addEventListener('change', () => {
-	chart.changeCryptocurrency(selectListChart.value, selectListTimeframe.value);
+	chart.changeChart(selectListChart.value, selectListTimeframe.value);
 });
 
 

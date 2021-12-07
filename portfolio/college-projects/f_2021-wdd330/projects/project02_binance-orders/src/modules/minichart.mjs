@@ -129,7 +129,7 @@ export default class Minichart {
 	}
 
 	// 06
-	async changeCryptocurrency(assetValue, timeframeValue) {
+	async changeChart(assetValue, timeframeValue) {
 		const candleSeries = await this.getCandleSeries();
 		this.chart.removeSeries(candleSeries);
 		this.setChart(assetValue, timeframeValue);
