@@ -52,7 +52,7 @@ footer {
   padding: 1em 2em;
 }
 
-/* === Extra Classes ==== */
+/* === Extra Classes ================================================ */
 .last-edit {
   font-size: 1em;
 }
@@ -62,7 +62,12 @@ code {
   tab-size: 2;
 }
 
-/* === Tabs ==== */
+.align-center {
+  text-align: center;
+}
+
+
+/* === Tabs ================================================ */
 .tabs {
   overflow: hidden;
 }
@@ -94,10 +99,6 @@ code {
   flex-direction: row;
   animation: fadeEffect 1s;
 
-  &>div {
-    width: 100%;
-  }
-
   &.flexbox-column {
     flex-direction: column;
   }
@@ -127,6 +128,7 @@ fieldset {
 
   &.radio-button {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
   }
 }
@@ -136,7 +138,7 @@ legend {
   padding: 0.5em;
 }
 
-/* === Orders ==== */
+/* === Orders ================================================ */
 .orders-pane {
   display: flex;
   flex-direction: column;
@@ -144,16 +146,17 @@ legend {
   padding: 1em 0.5em;
 }
 
-select {
+label, select {
   font-size: 1.2em;
-  width: 90%;
+  width: 100%;
 }
 
-/* === FORMS ==== */
+/* === FORMS ================================================ */
 .common-container {
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin: 0;
 
   & .tabcontent-item {
     flex-grow: 1;
@@ -228,10 +231,10 @@ button {
   }
 }
 
-/* === CHART ==== */
+/* === CHART ================================================ */
 .row {
   display: flex;
-  margin: 0.5em 1em; 
+  margin: 0.5em 1em;
 
   & div {
     flex-grow: 1;
@@ -240,5 +243,12 @@ button {
 
 #chart {
   width: 95%;
-  margin: 1em; 
+  margin: 1em;
+}
+
+/* === COLUMNS ================================================ */
+.left-column,
+.right-column {
+  max-width: 50%;
+  margin: 0 0.3em 0 0.3em;
 }

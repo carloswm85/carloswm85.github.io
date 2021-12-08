@@ -38,12 +38,12 @@ const allPrices = `${baseUrl}${v1}/ticker/allPrices`;
 let symbol = "?symbol=";
 const btc = "BTCUSDT";
 
-// Chart
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Chart
 const chart = new Minichart();
+chart.setChart();
+
 const selectListChart = document.getElementById('asset_selection_chart_id');
 const selectListTimeframe = document.getElementById('timeframe_selection_chart_id');
-chart.setChart();
-selectListChart.chart = chart;
 
 selectListChart.addEventListener('change', () => {
 	chart.changeChart(selectListChart.value, selectListTimeframe.value);
@@ -54,7 +54,7 @@ selectListTimeframe.addEventListener('change', () => {
 });
 
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> LIST
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> LISTs
 // 1
 async function showLists(url) {
 	const data = await getJson(url);
@@ -106,7 +106,7 @@ async function showLists(url) {
 }
 
 // 2
-function getUrl(assetName) {
+function getUrl(assetName = 'BTCUSDT') {
 	// const timeframe = '1m';
 	const assetNameLowered = assetName.toLowerCase();
 	// const url = `wss://stream.binance.com:9443/ws/${assetNameLowered}@kline_${timeframe}`;
@@ -114,36 +114,59 @@ function getUrl(assetName) {
 	return url;
 }
 
-// 3
-async function displayCurrent(event) {
-	const selectedAsset = event.target.value;
-	const socketUrl = getUrl(selectedAsset);
-	console.log(socketUrl);
-	const webs = new WebSocket(socketUrl)
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ASSET CURRENT VALUE
+let formatterCurrency = new Intl.NumberFormat('en-US', {
+	style: 'currency',
+	currency: 'USD',
+}); // https://stackoverflow.com/a/16233919/7389293
+
+function formaterPercentage(number) {
+	if (number < 0) {
+		return`${parseFloat(number).toFixed(2)} %`;
+	} else if (number > 0) {
+		return `+${parseFloat(number).toFixed(2)} %`;
+	} else {
+		return ` ${parseFloat(number).toFixed(2)} %`;
+	};
+}
+
+
+function displayTradeableAsset(asset) {
+	const socketUrl = getUrl(asset);
+	const webs = new WebSocket(socketUrl);
 
 	const current = document.getElementById('current');
 	const change = document.getElementById('change');
 
 	webs.onmessage = function (event) {
 		const jsonObject = JSON.parse(event.data);
-		current.innerText = jsonObject.c;
-		change.innerText = jsonObject.P;
+		current.innerText = formatterCurrency.format(jsonObject.c);
+		change.innerText = formaterPercentage(jsonObject.P);
 	}
 
+	return webs;
+}
+
+function changeTradeableAsset(asset, websocket) {
+	websocket.close();
+	websocket.onclose = function () {
+		websocket = null;
+		websocketDisplay = displayTradeableAsset(asset);
+	}
 }
 
 // CODE
+let websocketDisplay = displayTradeableAsset();
 const selectListTrade = document.getElementById('asset_selection_id');
-selectListTrade.addEventListener('change', displayCurrent);
-
+selectListTrade.addEventListener('change', () => {
+	changeTradeableAsset(selectListTrade.value, websocketDisplay);
+});
 
 // displayText();
 const test = 'https://carloswm85.github.io/portfolio/college-projects/f_2021-wdd330/projects/project02_binance-orders/src/scripts/allPrices.json';
 showLists(allPrices);
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> TABS
 setUpTabs();
-document.getElementById("minichart").click();
+document.getElementById("settings").click();
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Radio Buttons
