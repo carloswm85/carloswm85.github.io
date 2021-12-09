@@ -28,7 +28,7 @@
 
 		<!-- Tab 1.0 - TRADE -->
 		<div id="trade_content" class="tabcontent flexbox-column">
-			<span class="note">* Only works on market orders.</span> 
+			<span class="note-container">* Only works on market orders.</span> 
 
 			<!-- Tab 1.1 - Selected Asset-->
 			<fieldset class="common-container">
@@ -57,18 +57,24 @@
 				<div class="left-column tabcontent-item">
 					<fieldset id="order-buy" class="orders-pane">
 						<legend>Buy</legend>
-						<span class="note">* Only works on market orders.</span>
+
+						<div class="available-container">
+							<span>Avbl</span> 
+							<span id="available-buy">Amount</span>
+						</div>
 
 						<input type="text" placeholder="Price">
 						<input type="text" placeholder="Amount">
+
 						<div class="button-container">
 							<button class="form-button">25%</button>
 							<button class="form-button">50%</button>
 							<button class="form-button">75%</button>
 							<button class="form-button">100%</button>
 						</div>
+
 						<input type="text" placeholder="Totals">
-						<button class="form-button">Buy</button>
+						<button class="form-button wide-button bc-green">Buy</button>
 					</fieldset>
 				</div>
 
@@ -76,16 +82,24 @@
 				<div class="right-column tabcontent-item">
 					<fieldset id="order-sell" class="orders-pane">
 						<legend>Sell</legend>
+
+						<div class="available-container">
+							<span>Avbl</span>
+							<span id="available-sell">Amount</span>
+						</div>
+
 						<input type="text" placeholder="Price">
 						<input type="text" placeholder="Amount">
+
 						<div class="button-container">
 							<button class="form-button">25%</button>
 							<button class="form-button">50%</button>
 							<button class="form-button">75%</button>
 							<button class="form-button">100%</button>
 						</div>
+
 						<input type="text" placeholder="Totals">
-						<button class="form-button">Sell</button>
+						<button class="form-button wide-button bc-red">Sell</button>
 					</fieldset>
 				</div>
 			</div>
@@ -133,7 +147,7 @@
 
 		<!-- Tab 3.0 - SECURITY -->
 		<div id="keys_content" class="tabcontent flexbox-column">
-			<span class="note">* Double-click on input fields for toggling.</span>
+			<span class="note-container">* Double-click on input fields for toggling.</span>
 
 			<!-- A -->
 			<fieldset>

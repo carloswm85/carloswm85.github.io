@@ -209,6 +209,10 @@ button {
       box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     }
   }
+
+  &.wide-button {
+    width: 100%;
+  }
 }
 
 #display {
@@ -255,9 +259,22 @@ button {
 }
 
 /* === Toggle Key ============================================= */
-.note {
+.note-container {
   color: $yellow;
   display: block;
-  text-align: right; 
-  
+  text-align: right;
+}
+
+.available-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* === Colors ================================================= */
+.bc-green {
+  background-color: $green !important;
+}
+
+.bc-red {
+  background-color: $red !important;
 }

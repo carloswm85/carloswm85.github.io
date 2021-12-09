@@ -535,6 +535,9 @@ button.form-button:active {
   transform: scale(1.1);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
+button.wide-button {
+  width: 100%;
+}
 
 #display {
   display: flex;
@@ -576,10 +579,24 @@ button.form-button:active {
 }
 
 /* === Toggle Key ============================================= */
-.note {
+.note-container {
   color: #ffff00;
   display: block;
   text-align: right;
+}
+
+.available-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* === Colors ================================================= */
+.bc-green {
+  background-color: #008000 !important;
+}
+
+.bc-red {
+  background-color: #ff0000 !important;
 }
 
 /* end */
