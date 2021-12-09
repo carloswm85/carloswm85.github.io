@@ -255,13 +255,9 @@ button {
 }
 
 /* === Toggle Key ============================================= */
-// .key-container {
-//   display: flex;
-//   &.keys {
-//     flex-grow: 1;
-//   }
-//   &.toggle-key {
-//     flex-grow: 1;
-//     width: 25px;
-//   }  
-// }
+.note {
+  color: $yellow;
+  display: block;
+  text-align: right; 
+  
+}

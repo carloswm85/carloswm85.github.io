@@ -34,12 +34,15 @@ const allPrices = `${baseUrl}${v1}/ticker/allPrices`;
 let symbol = "?symbol=";
 const btc = "BTCUSDT";
 
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Keys TAB
+// TODO: https://blog.logrocket.com/localstorage-javascript-complete-guide/
+// TODO:E:\Repos\1_carloswm85.github.io\portfolio\college-projects\f_2021-wdd330\additional-content\js30\15 - LocalStorage\index-FINISHED.html
 const keys = new Keys();
 const keyApi = keys.testnetApiKey;
 const keySecret = keys.testnetSecretKey;
 const keyAll = keys.getKeys(0);
+
+console.log(keyAll);
 
 // Query the elements
 const keysArray = document.querySelectorAll('.keys');
@@ -67,7 +70,7 @@ function saveKeys(event) {
 	const apiKey = document.getElementById(`${buttonSaveId}-apiKey`).value;
 	const secretKey = document.getElementById(`${buttonSaveId}-secretKey`).value;
 	console.log(apiKey);
-	console.log(secretKey);	
+	console.log(secretKey);
 };
 
   // const addItems = document.querySelector('.add-items');
@@ -243,7 +246,7 @@ selectListTrade.addEventListener('change', () => {
 const test = 'https://carloswm85.github.io/portfolio/college-projects/f_2021-wdd330/projects/project02_binance-orders/src/scripts/allPrices.json';
 showLists(allPrices);
 setUpTabs();
-document.getElementById("keys").click();
+document.getElementById("trade").click();
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Radio Buttons Selection

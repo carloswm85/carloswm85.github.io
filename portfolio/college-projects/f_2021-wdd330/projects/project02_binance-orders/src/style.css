@@ -576,6 +576,12 @@ button.form-button:active {
 }
 
 /* === Toggle Key ============================================= */
+.note {
+  color: #ffff00;
+  display: block;
+  text-align: right;
+}
+
 /* end */
 /* end */
 #testButton {
