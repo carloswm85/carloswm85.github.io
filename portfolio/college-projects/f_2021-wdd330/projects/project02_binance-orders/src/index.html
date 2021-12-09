@@ -20,7 +20,7 @@
 	<header class="tabs">
 		<button id="trade" class="tab active_tab">Trade</button>
 		<button id="minichart" class="tab">Minichart</button>
-		<button id="security" class="tab">Security</button>
+		<button id="keys" class="tab">Keys</button>
 		<button id="settings" class="tab">Settings</button>
 	</header>
 
@@ -118,32 +118,32 @@
 		</div>
 
 		<!-- Tab 3.0 - SECURITY -->
-		<div id="security_content" class="tabcontent flexbox-column">
+		<div id="keys_content" class="tabcontent flexbox-column">
 
 			<!-- A -->
 			<fieldset>
 				<legend>Binance</legend>
 				<!-- Binance -->
-				<label for="key-binance">API Key
-					<input type="password" name="key-binance" id="apiKey" class="keys">
+				<label for="key-binance" class="key-container">API Key
+					<input type="password" name="key-binance" id="binance-apiKey" class="keys" value="001">
 				</label>
-				<label for="secret-binance">Secret Key
-					<input type="text" name="secret-binance" id="secretKey" class="keys">
+				<label for="secret-binance" class="key-container">Secret Key
+					<input type="password" name="secret-binance" id="binance-secretKey" class="keys" value="002">
 				</label>
-				<button class="form-button">Save</button>
+				<button class="form-button keys-save" id="binance">Save</button>
 			</fieldset>
 
 			<!-- B -->
 			<fieldset>
 				<legend>Testnet</legend>
 				<!-- Testnet -->
-				<label for="key-testnet">API Key
-					<input type="text" name="key-testnet" id="apiKeyTest" class="keys">
+				<label for="key-testnet" class="key-container">API Key
+					<input type="password" name="key-testnet" id="testnet-apiKey" class="keys" value="003">
 				</label>
-				<label for="secret-testnet">Secret Key
-					<input type="text" name="secret-testnet" id="secretKeyTest" class="keys">
+				<label for="secret-testnet" class="key-container">Secret Key
+					<input type="password" name="secret-testnet" id="testnet-secretKey" class="keys" value="004">
 				</label>
-				<button class="form-button">Save</button>
+				<button class="form-button keys-save" id="testnet">Save</button>
 
 			</fieldset>
 		</div>

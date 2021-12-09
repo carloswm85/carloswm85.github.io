@@ -13,12 +13,8 @@ import Minichart, {
 	changeTimeframe
 } from './modules/minichart.mjs';
 
-const keys = new Keys();
 
-const keyApi = keys.testnetApiKey;
-const keySecret = keys.testnetSecretKey;
-const keyAll = keys.getKeys(0);
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Endpoint Generation
 // Base URL
 const binance = 'https://api.binance.com/api';
 const testnet = 'https://testnet.binance.vision/api';
@@ -38,7 +34,87 @@ const allPrices = `${baseUrl}${v1}/ticker/allPrices`;
 let symbol = "?symbol=";
 const btc = "BTCUSDT";
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Chart
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Keys TAB
+const keys = new Keys();
+const keyApi = keys.testnetApiKey;
+const keySecret = keys.testnetSecretKey;
+const keyAll = keys.getKeys(0);
+
+// Query the elements
+const keysArray = document.querySelectorAll('.keys');
+const keysSaveArray = document.querySelectorAll('.keys-save');
+
+
+keysArray.forEach(inputKey => {
+	inputKey.addEventListener('dblclick', toggleVisibility);
+});
+
+keysSaveArray.forEach(saveKeyButton => {
+	saveKeyButton.addEventListener('click', saveKeys);
+});
+
+function toggleVisibility(event) {
+	const type = event.target.getAttribute('type');
+	event.target.setAttribute(
+		'type',
+		type === 'password' ? 'text' : 'password'
+	);
+};
+
+function saveKeys(event) {
+	const buttonSaveId = event.target.id;
+	const apiKey = document.getElementById(`${buttonSaveId}-apiKey`).value;
+	const secretKey = document.getElementById(`${buttonSaveId}-secretKey`).value;
+	console.log(apiKey);
+	console.log(secretKey);	
+};
+
+  // const addItems = document.querySelector('.add-items');
+  // const itemsList = document.querySelector('.plates');
+  // const items = JSON.parse(localStorage.getItem('items')) || [];
+
+  // function addItem(e) {
+  // 	e.preventDefault();
+  // 	const text = (this.querySelector('[name=item]')).value;
+  // 	const item = {
+  // 		text,
+  // 		done: false
+  // 	};
+
+  // 	items.push(item);
+  // 	populateList(items, itemsList);
+  // 	localStorage.setItem('items', JSON.stringify(items));
+  // 	this.reset();
+  // }
+
+  // function populateList(plates = [], platesList) {
+  // 	platesList.innerHTML = plates.map((plate, i) => {
+  // 		return `
+  //       <li>
+  //         <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
+  //         <label for="item${i}">${plate.text}</label>
+  //       </li>
+  //     `;
+  // 	}).join('');
+  // }
+
+  // function toggleDone(e) {
+  // 	if (!e.target.matches('input')) return; // skip this unless it's an input
+  // 	const el = e.target;
+  // 	const index = el.dataset.index;
+  // 	items[index].done = !items[index].done;
+  // 	localStorage.setItem('items', JSON.stringify(items));
+  // 	populateList(items, itemsList);
+  // }
+
+  // addItems.addEventListener('submit', addItem);
+  // itemsList.addEventListener('click', toggleDone);
+
+  // populateList(items, itemsList);
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Chart TAB
 const chart = new Minichart();
 chart.setChart();
 
@@ -114,6 +190,7 @@ function getUrl(assetName = 'BTCUSDT') {
 	return url;
 }
 
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ASSET CURRENT VALUE
 let formatterCurrency = new Intl.NumberFormat('en-US', {
 	style: 'currency',
@@ -166,11 +243,10 @@ selectListTrade.addEventListener('change', () => {
 const test = 'https://carloswm85.github.io/portfolio/college-projects/f_2021-wdd330/projects/project02_binance-orders/src/scripts/allPrices.json';
 showLists(allPrices);
 setUpTabs();
-document.getElementById("settings").click();
+document.getElementById("keys").click();
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Radio Buttons Selection
-
 // var rb_tabs = document.querySelectorAll('input[name="rbutton-tab"]');
 // console.log(rb_tabs);
 // rb_tabs.forEach(rbutton => {
@@ -180,4 +256,3 @@ document.getElementById("settings").click();
 // 	});
 // });
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> API Key Storage

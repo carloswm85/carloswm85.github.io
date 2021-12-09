@@ -14,7 +14,7 @@ export function setUpTabs(selectedTab = 'trade', setTab = false) {
 
 	function openTab(event) {
 		const tab = event.target;
-		console.log(tab);
+		// console.log(tab);
 
 		tabs.forEach(otherTab => {
 			otherTab.classList.remove("active_tab");

@@ -478,7 +478,8 @@ legend {
   padding: 1em 0.5em;
 }
 
-label, select {
+label,
+select {
   font-size: 1.2em;
   width: 100%;
 }
@@ -574,6 +575,7 @@ button.form-button:active {
   margin: 0 0.3em 0 0.3em;
 }
 
+/* === Toggle Key ============================================= */
 /* end */
 /* end */
 #testButton {
