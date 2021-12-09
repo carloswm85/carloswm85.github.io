@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="https://carloswm85.github.io/css/public-styles/dark-orange.css">
 	<link rel="icon" href="../favicon.png" type="image/png">
 
 	<link rel="stylesheet" href="../libraries/highlight/styles/default.min.css">
@@ -18,9 +18,9 @@
 	<title>WDD330 - Week 05</title>
 </head>
 
-<body class="body-wide">
+<body>
 	<div class="go-back">
-		<a href="../">&#8666;</a>
+		<a href="../../../">&#8666;</a>
 	</div>
 
 	<h1>Week 05</h1>
@@ -61,13 +61,13 @@
 								</ul>
 							</li>
 
-							<li><span class="orange">Strict Mode</span>, <code class="code-inline code-style">'use strict';</code> 
+							<li><span class="orange">Strict Mode</span>, <code class="code-inline code-style">'use strict';</code>
 								<ul>
 									<li>Produces more exceptions and warnings, and prohibits the use of some deprecated features. It avoids "poor style".</li>
 									<li>Improves code clarity and speed, since it follows conventions.</li>
 									<li>Encourages a better quality of programming.</li>
 									<li>Implementing</li>
-									<li><span class="lime">Implementation</span> using self-invoking functions: This is just one way of doing so: 
+									<li><span class="lime">Implementation</span> using self-invoking functions: This is just one way of doing so:
 										<pre><code class="language-javascript">
 	(function() {
 		'use strict';
@@ -83,10 +83,10 @@
 	if (window.holoDeck) {
 		virtualReality.activate();	}
 								</code></pre>
-								This ensures that no error occurs if the browser doesn’t support the method, because referencing a nonexistent object such as window.virtualReality will return undefined. As it’s a falsy value, the if block won’t run, but calling the method virtualReality.activate() outside of the if block would cause an exception to be thrown. Feature detection guarantees that the method is only called if it actually exists and fails gracefully,  without any exceptions being thrown, if the method doesn’t exist.
+								This ensures that no error occurs if the browser doesn’t support the method, because referencing a nonexistent object such as window.virtualReality will return undefined. As it’s a falsy value, the if block won’t run, but calling the method virtualReality.activate() outside of the if block would cause an exception to be thrown. Feature detection guarantees that the method is only called if it actually exists and fails gracefully, without any exceptions being thrown, if the method doesn’t exist.
 							</li>
 
-							<li><span class="orange">Debugging Options</span> 
+							<li><span class="orange">Debugging Options</span>
 								<ul>
 									<li><i>Trusty Alert Pop-up</i>: Just use a simple <code class="code-inline code-style">alert()</code> inside your code.</li>
 									<li><i>Using the console</i>: <code class="code-inline code-style">console.log()</code>, <code class="code-inline code-style">console.trace()</code></li>
@@ -137,7 +137,7 @@
 									<li> <span class="lime">Exception Handling</span>: When an exception occurs, the program terminates with an error message. This is ideal in development as it allows us to identify and fix errors. In production, however, it will appear as if the program has crashed, which does not reflect well on a ninja programmer.
 										<ul>
 											<li><code class="code-inline code-style">try</code>, <code class="code-inline code-style">catch</code> and <code class="code-inline code-style">finally</code>, example:
-											
+
 												<pre><code class="language-javascript">
 	function imaginarySquareRoot(number) {
 		'use strict';
@@ -151,13 +151,13 @@
 		}
 	}
 												</code></pre>
-											
+
 											</li>
 										</ul>
 
 									</li>
 								</ul>
-							
+
 							</li>
 
 							<li> <span class="orange">Testing</span>:
@@ -181,15 +181,15 @@
 											<li>Test refactored code.</li>
 											<li>Write more tests for new features.</li>
 										</ol>
-									
-										
+
+
 									</li>
 
 								</ul>
-								
+
 							</li>
 
-							
+
 
 						</ul>
 					</li>
@@ -262,34 +262,34 @@
 					<ul>
 						<li> <span class="lime">Linters</span> (style/quality code detection):
 
+					</ul>
+					<ul>
+						<li>JS Lint: <a href="http://jslint.com/" target="_blank">here &#8663;</a></li>
+						<li>JS Hint: <a href="http://jshint.com/" target="_blank">here &#8663;</a></li>
+						<li>ES Lint: <a href="http://eslint.org/" target="_blank">here &#8663;</a></li>
+						<li>Linting tools are also useful for enforcing a programming <i>style guide</i>. This is particularly useful when you are working in a team, as it ensures everybody follows the same conventions.</li>
+					</ul>
+				</li>
+
+				<li> <span class="lime">Feature detection</span>:
+					<ul>
+						<li>Modernizr: <a href="https://modernizr.com/docs" target="_blank">here &#8663;</a></li>
+						<li>Can I Use?: <a href="http://caniuse.com" target="_blank">here &#8663;</a></li>
+						<li>The “old-school” way of checking for browser support was known as <i>browser
+								sniffing</i>.</li>
+					</ul>
+				</li>
+
+				<li> <span class="lime">TDD Frameworks</span>: They make it easy to create and run tests by providing helper methods for common test assertions.
+					<ul>
+						<li>Jest: <a href="https://jestjs.io/" target="_blank">here &#8663;</a> at <code class="code-inline code-style">npm install -g jest</code></li>
+					</ul>
+				</li>
+
 	</ul>
-						<ul>
-							<li>JS Lint: <a href="http://jslint.com/" target="_blank">here &#8663;</a></li>
-							<li>JS Hint: <a href="http://jshint.com/" target="_blank">here &#8663;</a></li>
-							<li>ES Lint: <a href="http://eslint.org/" target="_blank">here &#8663;</a></li>
-							<li>Linting tools are also useful for enforcing a programming <i>style guide</i>. This is particularly useful when you are working in a team, as it ensures everybody follows the same conventions.</li>
-						</ul>						
-					</li>
-					
-					<li> <span class="lime">Feature detection</span>:
-						<ul>
-							<li>Modernizr: <a href="https://modernizr.com/docs" target="_blank">here &#8663;</a></li>
-							<li>Can I Use?: <a href="http://caniuse.com" target="_blank">here &#8663;</a></li>
-							<li>The “old-school” way of checking for browser support was known as <i>browser
-									sniffing</i>.</li>
-						</ul>
-					</li>
 
-					<li> <span class="lime">TDD Frameworks</span>: They make it easy to create and run tests by providing helper methods for common test assertions.
-						<ul>
-							<li>Jest: <a href="https://jestjs.io/" target="_blank">here &#8663;</a> at <code class="code-inline code-style">npm install -g jest</code></li>
-						</ul>
-					</li>
-
-				</ul>
-
-			</li>
-		</ol>
+	</li>
+	</ol>
 	</section>
 
 	<!-- Footer -->
@@ -300,6 +300,6 @@
 	</footer>
 </body>
 
-<script src="../js/other.js"></script>
+<script src="../../source/js/other.js"></script>
 
 </html>

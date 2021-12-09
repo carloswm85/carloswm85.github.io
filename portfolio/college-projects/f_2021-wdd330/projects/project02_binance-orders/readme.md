@@ -1,12 +1,23 @@
-# Links
+# WDD330 Class Project 02 - Binance Orders Application
+
+- [WDD330 Class Project 02 - Binance Orders Application](#wdd330-class-project-02---binance-orders-application)
+  - [Links](#links)
+  - [College Class Content](#college-class-content)
+  - [Binance Documentation](#binance-documentation)
+  - [Additional Information](#additional-information)
+  - [Lightweight-Charts](#lightweight-charts)
+  - [Other](#other)
+- [Chrome Extensions Development](#chrome-extensions-development)
+
+## Links
 - Repo: 
-## College Class
+## College Class Content
 - Block 2 challenge proposal instructions: [Link](https://byui.instructure.com/courses/160562/assignments/7228245?module_item_id=20163546)
 - TODO application instructions: [Link](https://byui-cit.github.io/cit261/resources/todo.html)
 - Trello board: [Link](https://trello.com/b/94QLblUO/todo-project)
 - Teacher's recommendations: [Link](docs/teachers.md)
 
-## Binance
+## Binance Documentation
 - Binance API Documentation: [Link](https://binance-docs.github.io/apidocs/spot/en/#introduction)
 - Binance Testnet: [Link](https://testnet.binance.vision/)
 - Binance Developers Community: [Link](https://dev.binance.vision/#)
@@ -18,8 +29,6 @@
   - Tutorial: https://academy.binance.com/en/articles/binance-api-series-pt-1-spot-trading-with-postman
   - Repo: https://github.com/binance/binance-api-postman  - 
 
-## Chrome Extensions
-- Google Chrome extensions documentation: [Link](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
 
 ## Lightweight-Charts
 - Repo: https://github.com/tradingview/lightweight-charts/
@@ -36,4 +45,7 @@
   - https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
   - https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md#general-wss-information
 - Trading View Advanced Widget: https://www.tradingview.com/widget/advanced-chart/
-- 
+
+# Chrome Extensions Development
+- https://developer.chrome.com/docs/extensions/mv3/getstarted/
+- https://developer.chrome.com/docs/extensions/reference/storage/

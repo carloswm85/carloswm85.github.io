@@ -59,9 +59,9 @@
 <title>JS Validation</title>
 </head>
 
-<body class="body-wide">
+<body>
 	<div class="go-back">
-		<a href="../">&#8666;</a>
+		<a href="../../../">&#8666;</a>
 	</div>
 
 	<!-- Test Zone -->

@@ -5,9 +5,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/styles.css">
-	<link rel="icon" href="../favicon.png" type="image/png">
 
+	<link rel="icon" href="../favicon.png" type="image/png">
+	<link id="custom-css" rel="stylesheet" href="https://carloswm85.github.io/css/public-styles/dark-orange.css">
 	<link rel="stylesheet" href="../libraries/highlight/styles/default.min.css">
 	<script src="../libraries/highlight/highlight.min.js"></script>
 	<script>
@@ -18,9 +18,9 @@
 	<title>WDD330 - Week 03</title>
 </head>
 
-<body class="body-wide">
+<body>
 	<div class="go-back">
-		<a href="../">&#8666;</a>
+		<a href="../../../">&#8666;</a>
 	</div>
 
 	<h1>Week 03</h1>
@@ -196,7 +196,7 @@ ladder.up().up().down().up().down().showStep();
 									<li><code class="code-inline code-style">innerText</code> property is used in IE8.</li>
 								</ul>
 							</li>
-							<li> <span class="cyan">Table with useful functions, on <i>how to navigate the DOM Tree</i></span>: <a href="table-navigate-DOM.html" target="_blank">here &#8663;</a> 
+							<li> <span class="cyan">Table with useful functions, on <i>how to navigate the DOM Tree</i></span>: <a href="table-navigate-DOM.html" target="_blank">here &#8663;</a>
 
 							</li>
 						</ul>
@@ -209,14 +209,14 @@ ladder.up().up().down().up().down().showStep();
 						<ul>
 							<li><i>Event handlers/listeners</i> are used to handle out events on the page. Every time a page is clicked, a callback function will be called, and this function is automatically passed an event object as a parameter that contains information about the event.</li>
 							<li>When thinking about <i>object events</i> consider: event properties, event methods, event types.</li>
-							<li><i>What kind of information does that event object contain?</i> Examples: 
-								<code class="code-inline code-style">event.type</code>, 
-								<code class="code-inline code-style">event.target</code>,  
-								<code class="code-inline code-style">event.screenX</code>,  
-								<code class="code-inline code-style">event.screenY</code>,  
-								<code class="code-inline code-style">event.pageX</code>,  
-								<code class="code-inline code-style">event.pageY</code>,  
-								<code class="code-inline code-style">event.clientX</code>,  
+							<li><i>What kind of information does that event object contain?</i> Examples:
+								<code class="code-inline code-style">event.type</code>,
+								<code class="code-inline code-style">event.target</code>,
+								<code class="code-inline code-style">event.screenX</code>,
+								<code class="code-inline code-style">event.screenY</code>,
+								<code class="code-inline code-style">event.pageX</code>,
+								<code class="code-inline code-style">event.pageY</code>,
+								<code class="code-inline code-style">event.clientX</code>,
 								<code class="code-inline code-style">event.clientY</code>, etc.
 							</li>
 							<li>Examples and problems:
@@ -227,7 +227,7 @@ ladder.up().up().down().up().down().showStep();
 										<ul>
 											<li>Attached to the global object (usually the whole browser window): <code class="code-inline code-style">addEventListener('click' () => alert('clicked!'));</code> Example: <a href="event-handlers/index.html" target="_blank">html-1 &#8663;</a> and <a href="event-handlers/main.js" target="_blank">js-1 &#8663;</a></li>
 											<li>Attached to node objects: <code class="code-inline code-style">document.body.addEventListener("eventType", callbackFunction, thirdParameter);</code> Example: <a href="event-handlers/index2.html" target="_blank">html-2 &#8663;</a> and <a href="event-handlers/main2.js" target="_blank">js-2 &#8663;</a></li>
-										</ul>		
+										</ul>
 								</ol>
 							</li>
 							<li>Event listeners are part of the DOM. DOM is an interface, that allows to use JS to interact with the webpage.</li>
@@ -297,6 +297,6 @@ ladder.up().up().down().up().down().showStep();
 	</footer>
 </body>
 
-<script src="../js/other.js"></script>
+<script src="../../source/js/other.js"></script>
 
 </html>

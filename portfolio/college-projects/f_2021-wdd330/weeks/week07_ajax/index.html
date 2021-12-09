@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/styles.css">
+	<link id="custom-css" rel="stylesheet" href="https://carloswm85.github.io/css/public-styles/dark-orange.css">
 	<link rel="icon" href="../favicon.png" type="image/png">
 
 	<link rel="stylesheet" href="../libraries/highlight/styles/default.min.css">
@@ -18,18 +18,18 @@
 	<title>WDD330 - Week 07</title>
 </head>
 
-<body class="body-wide">
+<body>
 	<div class="go-back">
-		<a href="../">&#8666;</a>
+		<a href="../../../">&#8666;</a>
 	</div>
 
 	<h1>Week 07</h1>
-	
+
 	<!-- Instructions -->
 	<section class="border-bottom">
 		<h2>This week readings assignment:</h2>
 
-		<p><a href="../course-content/prepare/week07.html">/cit261/prepare/week07.html &#8663;</a></p>
+		<p><a href="../../course-content/prepare/week07.html">/cit261/prepare/week07.html &#8663;</a></p>
 	</section>
 
 	<!-- Raw Files -->
@@ -61,7 +61,7 @@
 
 		<ul>
 			<h3>JavaScript: From Novice to Ninja</h3>
-			
+
 			<li> <span class="lime">Ch.11 Further Functions</span>
 				<ul>
 					<li>Functions have built-in properties such as length, and can have custom properties added too. They can also have their own methods. They are <b>first-class objects</b>.</li>
@@ -79,7 +79,7 @@
 					</li>
 					<li>Properties are added like <code class="code-inline code-style">myFunction.description = 'The description';</code> </li>
 					<li>The <code class="code-inline code-style">myFunction.cache</code> property can be very useful for saving values for quick debugging.
-					<pre>
+						<pre>
 						<code class="language-javascript">
 	function square(x) {
 		square.cache = square.cache || {};
@@ -97,7 +97,7 @@
 					</pre>
 					</li>
 					<li><i>Immediately Invoked Function Expressions</i> or IIFEs are functions that are enclosed in parentheses and followed by double parentheses so they’re invoked. They are useful for namespacing variables and setting default values.
-					<pre><code class="language-javascript">
+						<pre><code class="language-javascript">
 	(function (term) {
 	const temp = 'World';
 	console.log(`Hello ${temp} ${term}`);
@@ -105,7 +105,7 @@
 						</code></pre>
 						<ul>Use cases:
 							<li>Temporary variables. You may need to use a variable once in your code, and never again, not even being able to recover its value.</li>
-							<li>Initialization code.  For run only once code. This can also be achieved using <code class="code-inline code-style">{ }</code> </li>
+							<li>Initialization code. For run only once code. This can also be achieved using <code class="code-inline code-style">{ }</code> </li>
 							<li>Isolating your own <code class="code-inline code-style">strict mode</code> zone when working someone else's code.</li>
 							<li>Creating self-contained code blocks (modules).</li>
 						</ul>
@@ -122,9 +122,9 @@
 							</code>
 						</pre>
 						This is called the <b>Lazy Definition Pattern</b> and is often used when some initialization code is required the first time it’s invoked. This means the initialization can be done the first time it’s called, then the function can be redefined to what you want it to be for every subsequent invocation.
-					</li>					
+					</li>
 					<li>A recursive function will keep invoking itself until a certain condition is met.
-					<pre>
+						<pre>
 						<code class="language-javascript">
 	function factorial(n) {
 		if (n === 0) {
@@ -134,7 +134,7 @@
 		}
 	}
 						</code>
-					</pre>						
+					</pre>
 					</li>
 					<li>A callback is a function that’s provided as an argument to another function. Example:
 						<pre>
@@ -162,7 +162,7 @@
 					</li>
 					<li>Callbacks are frequently used in asynchronous programming as part of the event loop. This means that a program can continue to run in a single thread while waiting for another task to be completed.</li>
 					<li>Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence. They also provide a nicer mechanism for handling errors. Examples:
-								<pre>
+						<pre>
 									<code class="language-javascript">
 	const promise = new Promise((resolve, reject) => {
 		const n = dice.roll();
@@ -193,14 +193,14 @@
 							<li>and use anonymous functions</li>
 							<li>and closures,</li>
 						</ul>
-						 are all fundamental elements of functional programming that JavaScript excels at.
-</li>
+						are all fundamental elements of functional programming that JavaScript excels at.
+					</li>
 					<li>A key aspect of functional programming is its use of pure functions. Pure functions are functions that don’t rely on the state of the code they are called from, have no side-effects, and always give the same result when given the same arguments (referential transparency).</li>
 					<li>Currying or "partial application" is the process of applying one argument at a time to a function. A new function is returned until all the arguments have been used.</li>
 				</ul>
 			</li>
 
-			<li> <span class="lime">Ch.13 AJAX</span> 
+			<li> <span class="lime">Ch.13 AJAX</span>
 				<ul>
 					<li> Ajax was a neat acronym coined by Jesse James Garrett in 2005 in the article “Ajax: A New Approach to Web Applications”, that referred to the different parts of the process being used: Asynchronous JavaScript and XML:
 						<img src="images/ajax.png" alt="no image">
@@ -225,7 +225,7 @@
 					<li>Requests can retrieve data using a GET request, or send data using a POST request.</li>
 					<li>The Fetch API <span class="cyan">FormData interface</span> makes it easier to send data from forms.</li>
 					<li>We can use the Headers, Request and Response objects to put together a typical example that sets up the URL, Request and Headers before calling the fetch() method:
-					<pre>
+						<pre>
 						<code class="language-javascript">
 	const url = 'https:example.com/data';
 	
@@ -251,7 +251,7 @@
 		.then(response => /* do something with response */ )
 		.catch(error => console.log('There was an error!'));
 						</code>
-					</pre>	
+					</pre>
 					</li>
 
 					<li>Ajax <i>receiving information</i> full example:
@@ -270,7 +270,7 @@
 					</li>
 
 					<li>If you don’t want to live on the edge, you could consider using a library to take care of Ajax requests. The advantage of this approach is that the library will take care of any implementation details behind the scenes – it will use the most up-to-date methods, such as the fetch API, if it’s supported, and fallback on using older methods, if required.<br>
-					The <span class="lime">jQuery</span> library is a good option for this – it has the generic ajax() method that can be used in a very similar way to the fetch() method.</li>
+						The <span class="lime">jQuery</span> library is a good option for this – it has the generic ajax() method that can be used in a very similar way to the fetch() method.</li>
 
 				</ul>
 			</li>
@@ -310,6 +310,6 @@
 	</footer>
 </body>
 
-<script src="../js/other.js"></script>
+<script src="../../source/js/other.js"></script>
 
 </html>

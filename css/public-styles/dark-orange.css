@@ -22,7 +22,7 @@ h3 {
 }
 
 body {
-	max-width: 450px;
+	max-width: 1024px;
 	margin: 1.5em auto;
 	border: #fff solid 1px;
 	padding: 2em;
@@ -33,10 +33,6 @@ body {
 footer {
 	text-align: center;
 	margin-top: 1em;
-}
-
-.body-wide {
-	max-width: 1024px;
 }
 
 .border-bottom {

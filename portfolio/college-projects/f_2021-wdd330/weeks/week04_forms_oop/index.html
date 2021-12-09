@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/styles.css">
+	<link id="custom-css" rel="stylesheet" href="https://carloswm85.github.io/css/public-styles/dark-orange.css">
 	<link rel="icon" href="../favicon.png" type="image/png">
 
 	<link rel="stylesheet" href="../libraries/highlight/styles/default.min.css">
@@ -18,9 +18,9 @@
 	<title>WDD330 - Week 04</title>
 </head>
 
-<body class="body-wide">
+<body>
 	<div class="go-back">
-		<a href="../">&#8666;</a>
+		<a href="../../../">&#8666;</a>
 	</div>
 
 	<h1>Week 04</h1>
@@ -220,12 +220,13 @@ class NinjaTurtle extends Turtle {
 								<ul>
 									<li><code class="code-inline code-style">super</code> refers to the parent class. In the example above, it is used to call the constructor functions of the <i>Turtle</i> class.</li>
 								</ul>
-								<li> <span class="lime"><i>mixin()</i> ← Using Deep Copy</span>
-									<ul>
-										<li>Technique for adding properties and methods of some objects to another object, without using inheritance, without creating an <i>inheritance chain</i>.</li>
-										<li>Basic mixin functionality is provided by the <code class="code-inline code-style">Object.assign()</code> method. But there is a problem with this solution since it creates a <i>shallow copy</i>: Objects are copied only by reference.</li>
-										<li>A <i>deep copy mixin()</i> solution <isindex>:
-											<pre><code class="language-javascript">
+							<li> <span class="lime"><i>mixin()</i> ← Using Deep Copy</span>
+								<ul>
+									<li>Technique for adding properties and methods of some objects to another object, without using inheritance, without creating an <i>inheritance chain</i>.</li>
+									<li>Basic mixin functionality is provided by the <code class="code-inline code-style">Object.assign()</code> method. But there is a problem with this solution since it creates a <i>shallow copy</i>: Objects are copied only by reference.</li>
+									<li>A <i>deep copy mixin()</i> solution
+										<isindex>:
+										<pre><code class="language-javascript">
 function mixin(target,...objects) {
 	for (const object of objects) {
 		if(typeof object === 'object') {
@@ -242,36 +243,34 @@ function mixin(target,...objects) {
 	return target;
 }
 											</code></pre>
-										</li>
-										<li>Usage example:
-											<ul class="align-left">
-												<code class="code-inline code-style code-inline-block">const a = {}, b = { foo: 'bar' }, c = { numbers: [1,2,3] };</code><br>
-												<code class="code-inline code-style code-inline-block">mixin(a,b,c);</code><br>
-												<code class="code-inline code-style code-inline-block"><< { foo: 'bar' , numbers: [ 1, 2, 3 ] }</code>
-											</ul>											
-										</li>
-										<li>Another uses:
-											<ul>
-												<li>Add a large number of properties to an object all at one.</li>
-												<li>To create a <code class="code-inline code-style">copy()</code> method than can be used to make an exact, deep copy of an object.</li>
-												<li>Then, the copy function can be used to create a <i>factory function</i>.</li>
-												<li>To add <i>modular functionality</i>. This means: Encapsulate properties and methods in an object, then add them to other objects without the overhead of an inheritance chain being created.</li>
-												<li>Example: <code class="code-inline code-style">mixin(superman,flight,superSpeed,xRayVision);</code></li>
-											</ul>
-										</li>
-										<li><span class="lime">this</span> keyword usage:
-											<ul>
-												<li>Binding: The value of <code class="code-inline code-style">this</code> points to the object calling a method.</li>
-												<li>Chaining functions: <code class="code-inline code-style">superman.fly().move().xray();</code> Methods can be chained together and called in sequence if they return a reference to <i>this</i>.</li>
-												<li><code class="code-inline code-style">that = this</code> is used to avoid problems with nested functions.</li>
-												<li><code class="code-inline code-style">.bind(this);</code> can be used for all functions to set the value of this inside the nested function.</li>
-												<li><code class="code-inline code-style">for-of</code> and <i>arrow functions</i> can be used to avoid the use of nested functions. Arrow functions should be used when anonymous functions are
-													required in callbacks.</li>
-											</ul>
-										</li>
-										
-									</ul>
-								</li>
+									</li>
+									<li>Usage example:
+										<ul class="align-left">
+											<code class="code-inline code-style code-inline-block">const a = {}, b = { foo: 'bar' }, c = { numbers: [1,2,3] };</code><br>
+											<code class="code-inline code-style code-inline-block">mixin(a,b,c);</code><br>
+											<code class="code-inline code-style code-inline-block">
+												<< { foo: 'bar' , numbers: [ 1, 2, 3 ] }</code> </ul> </li> <li>Another uses:
+													<ul>
+														<li>Add a large number of properties to an object all at one.</li>
+														<li>To create a <code class="code-inline code-style">copy()</code> method than can be used to make an exact, deep copy of an object.</li>
+														<li>Then, the copy function can be used to create a <i>factory function</i>.</li>
+														<li>To add <i>modular functionality</i>. This means: Encapsulate properties and methods in an object, then add them to other objects without the overhead of an inheritance chain being created.</li>
+														<li>Example: <code class="code-inline code-style">mixin(superman,flight,superSpeed,xRayVision);</code></li>
+													</ul>
+									</li>
+									<li><span class="lime">this</span> keyword usage:
+										<ul>
+											<li>Binding: The value of <code class="code-inline code-style">this</code> points to the object calling a method.</li>
+											<li>Chaining functions: <code class="code-inline code-style">superman.fly().move().xray();</code> Methods can be chained together and called in sequence if they return a reference to <i>this</i>.</li>
+											<li><code class="code-inline code-style">that = this</code> is used to avoid problems with nested functions.</li>
+											<li><code class="code-inline code-style">.bind(this);</code> can be used for all functions to set the value of this inside the nested function.</li>
+											<li><code class="code-inline code-style">for-of</code> and <i>arrow functions</i> can be used to avoid the use of nested functions. Arrow functions should be used when anonymous functions are
+												required in callbacks.</li>
+										</ul>
+									</li>
+
+								</ul>
+							</li>
 						</ul>
 					</li>
 			</li>
@@ -389,6 +388,6 @@ function mixin(target,...objects) {
 	</footer>
 </body>
 
-<script src="../js/other.js"></script>
+<script src="../../source/js/other.js"></script>
 
 </html>

@@ -169,7 +169,7 @@ setUpTabs();
 document.getElementById("settings").click();
 
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Radio Buttons
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Radio Buttons Selection
 
 // var rb_tabs = document.querySelectorAll('input[name="rbutton-tab"]');
 // console.log(rb_tabs);
@@ -179,3 +179,5 @@ document.getElementById("settings").click();
 // 		setUpTabs(selectedTab, true);
 // 	});
 // });
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> API Key Storage
