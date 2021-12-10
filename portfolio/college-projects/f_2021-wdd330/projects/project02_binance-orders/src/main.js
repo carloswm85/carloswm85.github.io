@@ -1,14 +1,17 @@
 import Keys, {
 	something
 } from './modules/keys.mjs';
+
+import Client from './modules/client.mjs';
+
 import {
-	getJson,
-	getText,
-	listFiller
+	getJson
 } from './modules/utilities.mjs';
+
 import {
 	setUpTabs
 } from './modules/styling.mjs';
+
 import Minichart, {
 	changeTimeframe
 } from './modules/minichart.mjs';
@@ -38,11 +41,8 @@ const btc = "BTCUSDT";
 // TODO: https://blog.logrocket.com/localstorage-javascript-complete-guide/
 // TODO:E:\Repos\1_carloswm85.github.io\portfolio\college-projects\f_2021-wdd330\additional-content\js30\15 - LocalStorage\index-FINISHED.html
 const keys = new Keys();
-const keyApi = keys.testnetApiKey;
-const keySecret = keys.testnetSecretKey;
-const keyAll = keys.getKeys(0);
-
-console.log(keyAll);
+const apiKeyObject = keys.getKey(2);
+const secretKeyObject = keys.getKey(3);
 
 // Query the elements
 const keysArray = document.querySelectorAll('.keys');
@@ -73,48 +73,91 @@ function saveKeys(event) {
 	console.log(secretKey);
 };
 
-  // const addItems = document.querySelector('.add-items');
-  // const itemsList = document.querySelector('.plates');
-  // const items = JSON.parse(localStorage.getItem('items')) || [];
+// const addItems = document.querySelector('.add-items');
+// const itemsList = document.querySelector('.plates');
+// const items = JSON.parse(localStorage.getItem('items')) || [];
 
-  // function addItem(e) {
-  // 	e.preventDefault();
-  // 	const text = (this.querySelector('[name=item]')).value;
-  // 	const item = {
-  // 		text,
-  // 		done: false
-  // 	};
+// function addItem(e) {
+// 	e.preventDefault();
+// 	const text = (this.querySelector('[name=item]')).value;
+// 	const item = {
+// 		text,
+// 		done: false
+// 	};
 
-  // 	items.push(item);
-  // 	populateList(items, itemsList);
-  // 	localStorage.setItem('items', JSON.stringify(items));
-  // 	this.reset();
-  // }
+// 	items.push(item);
+// 	populateList(items, itemsList);
+// 	localStorage.setItem('items', JSON.stringify(items));
+// 	this.reset();
+// }
 
-  // function populateList(plates = [], platesList) {
-  // 	platesList.innerHTML = plates.map((plate, i) => {
-  // 		return `
-  //       <li>
-  //         <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
-  //         <label for="item${i}">${plate.text}</label>
-  //       </li>
-  //     `;
-  // 	}).join('');
-  // }
+// function populateList(plates = [], platesList) {
+// 	platesList.innerHTML = plates.map((plate, i) => {
+// 		return `
+//       <li>
+//         <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
+//         <label for="item${i}">${plate.text}</label>
+//       </li>
+//     `;
+// 	}).join('');
+// }
 
-  // function toggleDone(e) {
-  // 	if (!e.target.matches('input')) return; // skip this unless it's an input
-  // 	const el = e.target;
-  // 	const index = el.dataset.index;
-  // 	items[index].done = !items[index].done;
-  // 	localStorage.setItem('items', JSON.stringify(items));
-  // 	populateList(items, itemsList);
-  // }
+// function toggleDone(e) {
+// 	if (!e.target.matches('input')) return; // skip this unless it's an input
+// 	const el = e.target;
+// 	const index = el.dataset.index;
+// 	items[index].done = !items[index].done;
+// 	localStorage.setItem('items', JSON.stringify(items));
+// 	populateList(items, itemsList);
+// }
 
-  // addItems.addEventListener('submit', addItem);
-  // itemsList.addEventListener('click', toggleDone);
+// addItems.addEventListener('submit', addItem);
+// itemsList.addEventListener('click', toggleDone);
 
-  // populateList(items, itemsList);
+// populateList(items, itemsList);
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Client
+const client = new Client(apiKeyObject, secretKeyObject);
+
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+// myHeaders.append("X-MBX-APIKEY", "W4wBtjQxbUWdDiRak0kC6mbIi28zYCmghxIa6vUTUWljNilQA766nHH9RN6I1tpf");
+// myHeaders.append('Access-Control-Allow-Origin', 'http://127.0.0.1:3002');
+// myHeaders.append('Access-Control-Allow-Methods', 'POST');
+// myHeaders.append('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+// myHeaders.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+
+var requestOptions = {
+	method: 'POST',
+	headers: myHeaders,
+	redirect: 'follow',
+	mode: 'cors' // default
+};
+
+
+let listen = getJson("https://testnet.binance.vision/api/v3/userDataStream", requestOptions);
+
+
+// let listen = await fetch("https://testnet.binance.vision/api/v3/userDataStream", requestOptions)
+// 	.then(response => {
+// 		console.log(response);		
+// 		return response.text();
+// 	})
+// 	.then(result => {
+// 		console.log(result)
+// 		return result;
+// 	})
+// 	.catch(error => console.log('error', error));
+
+console.log(listen);
+
+function getUrlSocket(key = 'someKey', assetString = 'BTCUSDT', timeframeString = '1m') {
+	const url = `wss://stream.binance.com:9443/ws/${key}`;
+	const url2 = `wss://stream.binance.com:9443/stream?streams=${key}`;
+	const assetStringLowered = assetString.toLowerCase();
+	const url3 = `wss://stream.binance.com:9443/ws/${assetStringLowered}@kline_${timeframeString}`;
+	return url;
+}
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Chart TAB
@@ -202,7 +245,7 @@ let formatterCurrency = new Intl.NumberFormat('en-US', {
 
 function formaterPercentage(number) {
 	if (number < 0) {
-		return`${parseFloat(number).toFixed(2)} %`;
+		return `${parseFloat(number).toFixed(2)} %`;
 	} else if (number > 0) {
 		return `+${parseFloat(number).toFixed(2)} %`;
 	} else {
@@ -258,4 +301,3 @@ document.getElementById("trade").click();
 // 		setUpTabs(selectedTab, true);
 // 	});
 // });
-
