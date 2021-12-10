@@ -52,6 +52,11 @@ footer {
   padding: 1em 2em;
 }
 
+.body-wide, .test-buttons {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
 /* === Extra Classes ================================================ */
 .last-edit {
   font-size: 1em;
