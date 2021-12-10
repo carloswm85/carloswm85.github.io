@@ -121,7 +121,7 @@ const client = new Client(apiKeyObject, secretKeyObject);
 
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-myHeaders.append("X-MBX-APIKEY", "W4wBtjQxbUWdDiRak0kC6mbIi28zYCmghxIa6vUTUWljNilQA766nHH9RN6I1tpf");
+// myHeaders.append("X-MBX-APIKEY", "W4wBtjQxbUWdDiRak0kC6mbIi28zYCmghxIa6vUTUWljNilQA766nHH9RN6I1tpf");
 // myHeaders.append('Access-Control-Allow-Origin', 'http://127.0.0.1:3002');
 // myHeaders.append('Access-Control-Allow-Methods', 'POST');
 // myHeaders.append('Access-Control-Allow-Headers', 'Content-Type, Authorization');
