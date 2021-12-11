@@ -126,6 +126,7 @@ myHeaders.append("Content-Type", "application/json");
 // myHeaders.append('Access-Control-Allow-Methods', 'POST');
 // myHeaders.append('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 // myHeaders.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+myHeaders.append('User-Agent', 'package/1.0.0');
 
 var requestOptions = {
 	method: 'POST',

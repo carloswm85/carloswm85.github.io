@@ -39,3 +39,16 @@ export default class Keys {
 export function something() {
 	console.log('testing exported something() from key.js');
 }
+
+/*
+
+POSTMAN:
+- Binance:
+		G2RJQc4vzexSx4uGZNnx3QHSmZ9ORabAWpabMhdPvLXxptpYJawLdsMLWMGg0glG
+		srpx1TGDVCLsAZdf0sT9IzMVNGUuJbfOYi3gdACSzawYqItu4eEL1s3WMEVuhebi
+ */
+
+/**
+ * All isolated pairs: {{url}}/sapi/v1/margin/isolated/allPairs?timestamp={{timestamp}}&signature={{signature}}
+ * 
+ */

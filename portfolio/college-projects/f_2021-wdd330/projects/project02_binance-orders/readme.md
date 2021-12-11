@@ -24,6 +24,7 @@
 
 ## Binance Documentation
 - Binance API Documentation: https://binance-docs.github.io/apidocs/spot/en/#introduction
+- Better Binance API Documentation: https://developers.binance.com/docs/binance-api/spot/index
 - Binance Testnet: https://testnet.binance.vision/
 - Binance Developers Community: https://dev.binance.vision/
 - Spot Trading with Postman: https://academy.binance.com/en/articles/binance-api-series-pt-1-spot-trading-with-postman
