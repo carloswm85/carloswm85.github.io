@@ -1,5 +1,5 @@
 import * as pub from './scripts/public.js';
-import * as priv from './scripts/private.js';
+//import * as priv from './scripts/private.js';
 
 import {
 	getJson
