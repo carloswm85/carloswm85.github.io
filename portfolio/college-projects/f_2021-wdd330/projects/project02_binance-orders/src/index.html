@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./img/favicon-125.png" type="image/png">
+
+	<!-- Normalize included. -->
+	<link rel="stylesheet" href="./style.css">
+	<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+	<title>Binance Orders</title>
+</head>
+
+<body>
+
+	<div class="test-buttons centered">
+	<fieldset class="common-container button-container">
+		<legend>Test Buttons</legend>
+
+		<button class="form-button">Open</button>
+		<button class="form-button">null</button>
+		<button class="form-button">null</button>
+		<button class="form-button">null</button>
+		</div>
+	</fieldset>
+</div>
+	<!-- <button id="testButton" class="form-button centered">Test</button> -->
+
+	<!-- TAB LINKS -->
+	<header class="tabs">
+		<button id="trade" class="tab active_tab">Trade</button>
+		<button id="minichart" class="tab">Minichart</button>
+		<button id="keys" class="tab">Keys</button>
+		<button id="settings" class="tab">Settings</button>
+	</header>
+
+	<main>
+
+		<!-- Tab 1.0 - TRADE -->
+		<div id="trade_content" class="tabcontent flexbox-column">
+			<span class="note-container">* Only works with market orders.</span> 
+
+			<!-- Tab 1.1 - Selected Asset-->
+			<fieldset class="common-container">
+				<legend>Asset</legend>
+
+				<!-- A - Drop-down List -->
+				<div class="left-column tabcontent-item">
+					<label for="asset-selection">
+						<select name="asset-selection" id="asset_selection_id">
+							<!-- Selection -->
+						</select>
+					</label>
+				</div>
+
+				<!-- B - Current Asset Values -->
+				<div class="right-column tabcontent-item" id="display">
+					<span id="current" class="align-center">$0.00</span>
+					<span id="change" class="align-center">0.00 %</span>
+				</div>
+			</fieldset>
+
+			<!-- Tab 1.2 - Orders: Buy and Sell -->
+			<div class="common-container">
+
+				<!-- A - Buy -->
+				<div class="left-column tabcontent-item">
+					<fieldset id="order-buy" class="orders-pane">
+						<legend>Buy</legend>
+
+						<div class="available-container">
+							<span>Avbl</span> 
+							<span id="available-buy">Amount</span>
+						</div>
+
+						<input type="text" placeholder="Price">
+						<input type="text" placeholder="Amount">
+
+						<div class="button-container">
+							<button class="form-button">25%</button>
+							<button class="form-button">50%</button>
+							<button class="form-button">75%</button>
+							<button class="form-button">100%</button>
+						</div>
+
+						<input type="text" placeholder="Totals">
+						<button class="form-button wide-button bc-green">Buy</button>
+					</fieldset>
+				</div>
+
+				<!-- B - Sell -->
+				<div class="right-column tabcontent-item">
+					<fieldset id="order-sell" class="orders-pane">
+						<legend>Sell</legend>
+
+						<div class="available-container">
+							<span>Avbl</span>
+							<span id="available-sell">Amount</span>
+						</div>
+
+						<input type="text" placeholder="Price">
+						<input type="text" placeholder="Amount">
+
+						<div class="button-container">
+							<button class="form-button">25%</button>
+							<button class="form-button">50%</button>
+							<button class="form-button">75%</button>
+							<button class="form-button">100%</button>
+						</div>
+
+						<input type="text" placeholder="Totals">
+						<button class="form-button wide-button bc-red">Sell</button>
+					</fieldset>
+				</div>
+			</div>
+
+			<!-- Tab 1.3 - Account Balance Management-->
+			<fieldset class="common-container button-container"> 
+				<legend>Money Management</legend>
+
+					<button class="form-button">Transfer</button>
+					<button class="form-button">Borrow</button>
+					<button class="form-button">Repay</button>
+					<button class="form-button">Settings</button>
+				</div>
+			</fieldset>
+		</div>
+
+		<!-- Tab 2.0 - MINICHART -->
+		<div id="minichart_content" class="tabcontent flexbox-column">
+
+			<!-- A - Chart Settings -->
+			<div class="row">
+
+				<!-- A - Left-column -->
+				<div class="left-column tabcontent-item">
+					<label for="asset-selection">
+						<select name="asset-selection" id="asset_selection_chart_id">
+							<!-- Selection -->
+						</select>
+					</label>
+				</div>
+
+				<!-- B - Right Column -->
+				<div class="right-column tabcontent-item">
+					<label for="timeframe-selection">
+						<select name="timeframe-selection" id="timeframe_selection_chart_id">
+							<!-- Selection -->
+						</select>
+					</label>
+				</div>
+			</div>
+
+			<!-- B - Chart -->
+			<div id="chart"></div>
+		</div>
+
+		<!-- Tab 3.0 - SECURITY -->
+		<div id="keys_content" class="tabcontent flexbox-column">
+			<span class="note-container">* Double-click on input fields for toggling.</span>
+
+			<!-- A -->
+			<fieldset>
+				<legend>Binance</legend>
+				<!-- Binance -->
+				<label for="key-binance" class="key-container">API Key
+					<input type="password" name="key-binance" id="binance-apiKey" class="keys" value="no-binance-apiKey">
+				</label>
+				<label for="secret-binance" class="key-container">Secret Key
+					<input type="password" name="secret-binance" id="binance-secretKey" class="keys" value="no-binance-secretKey">
+				</label>
+				<button class="form-button keys-save" id="binance">Save</button>
+			</fieldset>
+
+			<!-- B -->
+			<fieldset>
+				<legend>Testnet</legend>
+				<!-- Testnet -->
+				<label for="key-testnet" class="key-container">API Key
+					<input type="password" name="key-testnet" id="testnet-apiKey" class="keys" value="no-testnet-apiKey">
+				</label>
+				<label for="secret-testnet" class="key-container">Secret Key
+					<input type="password" name="secret-testnet" id="testnet-secretKey" class="keys" value="no-testnet-secretKey">
+				</label>
+				<button class="form-button keys-save" id="testnet">Save</button>
+
+			</fieldset>
+		</div>
+
+		<!-- Tab 4.0 - SETTINGS -->
+		<div id="settings_content" class="tabcontent">
+
+			<!-- Tab 4.1 -->
+			<div class="left-column tabcontent-item">
+
+				<!-- A - Server -->
+				<fieldset class="radio-button">
+					<legend>Server</legend>
+					<!-- 1 -->
+					<label for="rbutton-binance">
+						<input type="radio" name="rbutton-server" value="binance">
+						api.binance
+					</label>
+					<!-- 2 -->
+					<label for="rbutton-testnet">
+						<input type="radio" name="rbutton-server" value="testnet" checked>
+						testnet.binance
+					</label>
+				</fieldset>
+
+				<!-- B - Mode -->
+				<fieldset class="radio-button">
+					<legend>Mode</legend>
+					<!-- 1 -->
+					<label for="rbutton-spot">
+						<input type="radio" name="rbutton-mode" value="spot" checked>
+						Spot
+					</label>
+					<!-- 2 -->
+					<label for="rbutton-margin">
+						<input type="radio" name="rbutton-mode" value="margin" disabled>
+						Margin x3
+					</label>
+					<!-- 3 -->
+					<label for="rbutton-isolated">
+						<input type="radio" name="rbutton-mode" value="isolated" disabled>
+						Isolated x10
+					</label>
+				</fieldset>
+			</div>
+
+			<!-- Tab 4.2 -->
+			<div class="center-column tabcontent-item">
+
+				<fieldset class="radio-button">
+					<legend>Theme</legend>
+					<!-- 1 -->
+					<label for="rbutton-dark">
+						<input type="radio" name="rbutton-theme" value="dark" checked>
+						Dark
+					</label>
+					<!-- 2 -->
+					<label for="rbutton-light">
+						<input type="radio" name="rbutton-theme" value="light" disabled>
+						Light
+					</label>
+					<!-- 3 -->
+					<label for="rbutton-binance">
+						<input type="radio" name="rbutton-theme" value="binance" disabled>
+						Binance
+					</label>
+				</fieldset>
+
+				<fieldset class="radio-button" id="default_tab">
+					<legend>Default Tab</legend>
+					<!-- 1 -->
+					<label for="rbutton-trade">
+						<input type="radio" name="rbutton-tab" value="trade" checked>
+						Trade
+					</label>
+					<!-- 2 -->
+					<label for="rbutton-chart">
+						<input type="radio" name="rbutton-tab" value="chart">
+						Minichart
+					</label>
+					<!-- 3 -->
+					<label for="rbutton-security">
+						<input type="radio" name="rbutton-tab" value="security">
+						Security
+					</label>
+					<!-- 4 -->
+					<label for="rbutton-settings">
+						<input type="radio" name="rbutton-tab" value="settings">
+						Settings
+					</label>
+				</fieldset>
+
+				<fieldset class="radio-button" id="default_tab">
+					<legend>Default Cryptocurrency</legend>
+
+					<!-- 1 -->
+					<label for="asset-selection">
+						<select name="asset-selection" id="asset_selection_default_id">
+							<!-- Selection -->
+						</select>
+					</label>
+				</fieldset>
+			</div>
+
+			<!-- Tab 4.3 -->
+			<div class="right-column tabcontent-item">
+
+				<fieldset class="radio-button">
+					<legend>Empty</legend>
+					<!-- 1 -->
+					<label for="rbutton-dark">
+						<input type="radio" name="rbutton-theme" value="dark" checked>
+						Value
+					</label>
+				</fieldset>
+			</div>
+		</div>
+
+	</main>
+	<!-- Display Information -->
+	<section class="border-bottom">
+		<pre>
+			<code id="display-json" class="language-json code"></code>
+		</pre>
+	</section>
+
+	<!-- scripts -->
+	<script type="module" src="./app.js"></script>
+</body>
+
+</html>

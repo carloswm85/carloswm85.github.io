@@ -1,0 +1,18 @@
+@import 'normalize';
+@import 'variables';
+
+@import 'small';
+
+@media only screen and (min-width: 512px) {
+  @import 'medium';
+}
+
+/* end */
+
+@media only screen and (min-width: 1024px) {
+  @import 'large';
+}
+
+/* end */
+
+@import 'test';
