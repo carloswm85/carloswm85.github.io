@@ -141,3 +141,5 @@ temp/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
 node_modules/bootstrap-icons/bootstrap-icons.svg
+
+/portfolio/college-projects/e_2021-cit111/cit111_course_material/*
