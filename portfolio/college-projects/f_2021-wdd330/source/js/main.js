@@ -5,7 +5,7 @@
 const list = document.querySelector('#list');
 const links = [
 	{
-		label: 'Week 01 - Intro',
+		label: 'Week 01 - Intro, localStorage',
 		url: 'weeks/week01_introduction/'
 	},
 	{
