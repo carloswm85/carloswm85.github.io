@@ -13,7 +13,7 @@ const links = [
 		url: 'weeks/week02_basics/'
 	},
 	{
-		label: 'Week 03 - Objects, this, evetns, DOM',
+		label: 'Week 03 - Objects, this, events, DOM',
 		url: 'weeks/week03_this_objects_doms_events/'
 	},
 	{
