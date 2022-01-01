@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode
 
@@ -141,3 +140,15 @@ temp/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
 node_modules/bootstrap-icons/bootstrap-icons.svg
+
+# ========================================================================
+# USER 
+
+# Other folders
+
+# Jekyll
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
