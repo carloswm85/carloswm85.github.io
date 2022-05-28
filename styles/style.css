@@ -1,0 +1,28 @@
+/* Main Style */
+* {
+  color: white;
+}
+
+html {
+  padding: 1em 2em;
+}
+
+body {
+  background-color: black;
+}
+
+header, footer, main {
+  border: 1px yellow solid;
+  padding: 1em;
+  margin: 0.5em 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  font-family: "Lobster", cursive;
+}
+
+.color-yellow {
+  color: yellow;
+}
