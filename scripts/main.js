@@ -13,5 +13,5 @@ const options = {
 let last = document.lastModified;
 let date = new Date(last);
 let local = date.toLocaleDateString("en-US", options);
-let fullDate = `${local}`;
+let fullDate = `${local}`;screen
 document.getElementById("updated").textContent = fullDate;
