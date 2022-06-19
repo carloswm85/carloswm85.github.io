@@ -1,0 +1,4 @@
+- Update: Working #FileDropdownList jQuery enabling/disabling
+- Update: Working combobox, Select2.js, for NumberProducing + Full claimant name
+- Working jQuery autocomplete textbox, and Select2.js select
+- Added: New dependency, Select2.js
