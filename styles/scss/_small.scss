@@ -5,11 +5,8 @@
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $title;
+	color: $white;
 }
-
-.center-h, h2 {
-	text-align: center;
-} 
 
 h2:hover {
 	color: $fuchsia;
@@ -20,11 +17,8 @@ h5 {
 	font-weight: 600;
 }
 
-hr {
-	color: $black;
-}
-
-h2, h3, h4, h5, h6, p, small, i, li {
+p {
+	line-height: 1.5em;
 	color: $white;
 }
 
@@ -36,11 +30,12 @@ li {
 	line-height: 2em;
 }
 
-article, .new-header {
-	margin-top: 1em;
-}
 
 /* CLASSES */
+.center-h {
+	text-align: center;
+}
+
 .nav-link {
 	color: $white;
 }
@@ -55,7 +50,7 @@ article, .new-header {
 }
 
 a:hover, .nav-pills .nav-link.active:hover {
-    color: $yellow;
+  color: $yellow;
 	font-weight: 700;
 }
 
