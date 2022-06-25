@@ -1,10 +1,18 @@
 /* ELEMENTS */
-h2 {
-	text-align: center;
+* {
+	font-family: $paragraph; 
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: $title;
+}
+
+.center-h, h2 {
+	text-align: center;
+} 
+
 h2:hover {
-	color: fuchsia;
+	color: $fuchsia;
 	font-weight: 600;
 }
 
@@ -13,15 +21,15 @@ h5 {
 }
 
 hr {
-	color: rgba(0, 0, 0, 0);
+	color: $black;
 }
 
 h2, h3, h4, h5, h6, p, small, i, li {
-	color: white;
+	color: $white;
 }
 
 li > a {
-	background-color: white;
+	background-color: $white;
 }
 
 li {
@@ -34,12 +42,12 @@ article, .new-header {
 
 /* CLASSES */
 .nav-link {
-	color: white;
+	color: $white;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #fff;
-    background-color: black;
+    color: $white;
+    background-color: $black;
 }
 
 .nav-pills .nav-link, .nav-pills .show > .nav-link {
@@ -47,34 +55,38 @@ article, .new-header {
 }
 
 a:hover, .nav-pills .nav-link.active:hover {
-    color: yellow;
+    color: $yellow;
 	font-weight: 700;
 }
 
 .list-group-item {
-	background-color: black;
-	border: white solid 1px;
+	background-color: $black;
+	border: $white solid 1px;
 }
 
 .list-group-item:hover h5, .list-group-item:hover p, .list-group-item:hover small, .list-group-item:hover i {
-	color: black;
+	color: $black;
 }
 
 .list-group-item:hover h5.white-text, .list-group-item:hover small.white-text,.list-group-item:hover p.white-text {
-	color: white;
+	color: $white;
 }
 
 .bi {
 	font-size: 2rem;
-	color: white;
+	color: $white;
 }
 
 .project-links {
-	color: white;
-	background-color: black;
+	color: $white;
+	background-color: $black;
 	text-decoration: none;
 }
 
 span {
-	color:fuchsia;
+	color:$fuchsia;
+}
+
+.yellow {
+	color: $yellow;
 }
