@@ -1,4 +1,3 @@
-
 // Last time page code was updated/changed
 function lastUpdate()
 {
