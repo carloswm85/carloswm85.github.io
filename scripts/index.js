@@ -4,7 +4,9 @@ import { render } from "./tools/render.js";
 var headerContent = ["siteName", "siteAnnouncement", "navbar"];
 var footerContent = ["navfoot", "copyright", "lastUpdate"];
 
-render(headerContent, "header");
-render(footerContent, "footer");
+window.onload = function () {
+	render(headerContent, "header");
+	render(footerContent, "footer");
+}
 
 lastUpdate(); // run after rendering the components
