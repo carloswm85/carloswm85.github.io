@@ -7,6 +7,5 @@ var footerContent = ["navfoot", "copyright", "lastUpdate"];
 window.onload = function () {
 	render(headerContent, "header");
 	render(footerContent, "footer");
+	lastUpdate(); // run after rendering the components
 }
-
-lastUpdate(); // run after rendering the components

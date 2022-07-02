@@ -347,11 +347,16 @@ template {
 /* ELEMENTS */
 * {
   font-family: "Roboto", sans-serif;
+  color: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather", serif;
   color: #ffffff;
+}
+
+body {
+  background-color: #181a1b;
 }
 
 h2:hover {
@@ -369,7 +374,7 @@ p {
 }
 
 li > a {
-  background-color: #ffffff;
+  text-decoration: none;
 }
 
 li {

@@ -1,11 +1,15 @@
 /* ELEMENTS */
 * {
 	font-family: $paragraph; 
+	color: $white;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $title;
 	color: $white;
+}
+body {
+	background-color: $darkgray;
 }
 
 h2:hover {
@@ -23,7 +27,7 @@ p {
 }
 
 li > a {
-	background-color: $white;
+	text-decoration: none;
 }
 
 li {
