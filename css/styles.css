@@ -10707,7 +10707,7 @@ div.lead {
   text-transform: uppercase;
 }
 #sideNav .navbar-toggler:focus {
-  outline-color: #d48a6e;
+  outline-color: #599bfe;
 }
 
 @media (min-width: 992px) {
@@ -10767,7 +10767,7 @@ div.lead {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
-  background-color: #bd5d38;
+  background-color: #0d6efd;
 }
 
 .dev-icons {

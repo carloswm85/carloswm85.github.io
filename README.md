@@ -12,9 +12,21 @@
 ## Ideas for the future
 
 - Improved layout.
-  - Add colors  to relevant icons.
-  - Add dark theme: https://stackoverflow.com/questions/63082529/how-to-properly-introduce-a-light-dark-mode-in-bootstrap
+  - [x] Add new user interface.
+  - [ ] Recover useful information from no-index.hmtl
+  - [ ] Add colors to relevant icons (technologies I'm focused on).
+  - [ ] Add dark theme: https://stackoverflow.com/questions/63082529/how-to-properly-introduce-a-light-dark-mode-in-bootstrap
 - Add extra functionality using Vanilla JS.
-  - Last time  updated.
+  - [ ] Last time  updated.
+- Simplify  SCSS and CSS folder.
+  - [ ] Reduce Bootstrap style to one single CSS file.
+  - [ ] Reduce resumé style to one single file.
+  - [ ] Add my own modifications on top of them.
+- Site expansion:
+  - [ ] Add links to additional page: Courses and classes taken.
+  - Add links to single-page small projects:
+    - [ ] CSS Zen Garden.
+    - [ ] Bitcoin Análisis Técnico.
+  - [ ] Add full blog using bootstrap theme.
 
 Copyright © 2022 Carlos W. Mercado. All rights reserved.
