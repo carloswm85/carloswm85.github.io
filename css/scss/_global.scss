@@ -1,0 +1,61 @@
+// 
+// Global
+// 
+
+body {
+    padding-top: $navbar-base-height;
+    color: $gray-600;
+}
+
+@include media-breakpoint-up(lg) {
+    body {
+        padding-top: 0;
+        padding-left: $sidebar-base-width;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+}
+
+h1 {
+    line-height: 1;
+    font-weight: 600;
+}
+
+h2 {
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 2.1em;
+}
+
+div.lead {
+    font-size: 1.5rem;
+}
+
+.subheading {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+// fa-html5:hover
+// fa-css3-alt
+// fa-js-square
+// icon-csharp
+// icon-database-alt2
+// fa-bootstrap
+// fa-angular
+// icon-jquery
+// fa-figma
+// fa-github-square
+// fa-sass
+// fa-discord
+// fa-slack
+// fa-stack-overflow

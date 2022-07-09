@@ -1,0 +1,5 @@
+@include media-breakpoint-up(md) {
+    .align-self-start-forced {
+				align-self: flex-end !important;
+    }
+}
