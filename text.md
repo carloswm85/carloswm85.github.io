@@ -1,0 +1,2 @@
+[External Link ↗]()
+[Internal Link ]()
