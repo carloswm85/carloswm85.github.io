@@ -16,7 +16,22 @@ function lastUpdate()
 	let date = new Date(last);
 	let local = date.toLocaleDateString("en-US", options);
 	let fullDate = `${local}`;
-	document.getElementById("updated").textContent = fullDate;
+	
+	try {
+		document.getElementById("updated").textContent = fullDate;
+	} catch {
+		console.log("Hey, babe");
+	}
 }
 
-export { lastUpdate };
+function currentYear() {
+	let year = new Date().getFullYear();
+
+	try {
+		document.getElementById("currentYear").textContent = year;
+	} catch {
+		console.log("Hey, babe");
+	}
+}
+
+export { lastUpdate, currentYear };

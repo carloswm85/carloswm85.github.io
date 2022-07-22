@@ -1,4 +1,4 @@
-import { lastUpdate } from "./tools/time.js";
+import { lastUpdate, currentYear } from "./tools/time.js";
 //import { render } from "./tools/render.js";
 
 //var headerContent = ["siteName", "siteAnnouncement", "navbar"];
@@ -8,3 +8,4 @@ import { lastUpdate } from "./tools/time.js";
 //render(footerContent, "footer");
 
 lastUpdate(); // run after rendering the components
+currentYear();
