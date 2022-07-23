@@ -35,12 +35,11 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#coming">Coming Soon</a></li>
                 
                 <!-- Button trigger modal -->
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#sitesModal" style="display: none;">Sites <i class="fas fa-sign-out"></i></a></li>
-
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#coming">Coming Soon</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-regular fa-copyright"></i> 2022</a></li>
+                <li class="nav-item" role="button"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#sitesModal" style="display: none;">Sub-sites <i class="fas fa-sign-out"></i></a></li>
+                <li class="nav-item"><a class="nav-link disabled" href="#"><i class="fa-regular fa-copyright"></i> 2022</a></li>
             </ul>
         </div>
     </nav>
@@ -330,44 +329,38 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="exampleModalLabel">My Personal Sites</h2>
+                <h2 class="modal-title" id="exampleModalLabel">Personal Sub-sites</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="list-group">
-                <a href="sites/blog/" class="list-group-item list-group-item-action" aria-current="true" target="_blank">
+                <a href="sites/blog/" class="list-group-item list-group-item-action" target="_blank">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">👁️🧠 @Visual.Migraine()</h5>
-                        <small class="text-muted"><i class="fas fa-external-link"></i></small>
+                        <big class="mb-1"><b>👁️🧠 @Visual.Migraine()</b></big>
+                        <small><i class="fas fa-external-link"></i></small>
                     </div>
                     <p class="mb-1">A personal blog about .NET development topics.</p>
                     <small>And probably some other random stuffs.</small>
                 </a>
                 <a href="sites/csharp_notes/" class="list-group-item list-group-item-action" target="_blank">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">📝 C# Quick Notes</h5>
+                        <big class="mb-1"><b>📝 C# Quick Notes</b></big>
                         <small><i class="fas fa-external-link"></i></small>
                     </div>
                     <p class="mb-1">Articles, posts, SO questions about C# and .NET topics.</p>
-                    <small class="text-muted">It's just a long static list with links.</small>
+                    <small">It's just a long static list with links.</small>
                 </a>
                 <a href="sites/bitcoin-at/" class="list-group-item list-group-item-action" target="_blank">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">📈 "Bitcoin Análisis Técnico" (SPA)</h5>
-                        <small class="text-muted"><i class="fas fa-external-link"></i></small>
+                        <big class="mb-1"><b>📈 "Bitcoin Análisis Técnico" (SPA)</b></big>
+                        <small><i class="fas fa-external-link"></i></small>
                     </div>
                     <p class="mb-1">A little project I made a long time ago. In Spanish.</p>
-                    <small class="text-muted">It's about trading and cryptocurrencies.</small>
+                    <small>It's about trading and cryptocurrencies.</small>
                 </a>
             </div>
-           <!--  <div class="modal-body">
-                <ul>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="sites/blog/index.html" target="_blank">Personal Blog <i class="fas fa-external-link"></i></a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="sites/csharp_notes/README.md" target="_blank">C# Quick Notes <i class="fas fa-external-link"></i></a></li>
-                </ul>
-            </div> -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

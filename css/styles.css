@@ -21575,4 +21575,9 @@ section.resume-section .resume-section-content {
   background-color: #0d6efd;
 }
 
+.list-group-item:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
 /*# sourceMappingURL=styles.css.map */
