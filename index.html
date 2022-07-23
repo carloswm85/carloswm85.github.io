@@ -30,15 +30,16 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#coming">Coming Soon</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about" title="Information about me as a professional web developer. If you want to know more about my personal life, I want to invite you to take a look at my blog at https://carloswm85.github.io/subsites/blog/">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience" title="">Experience</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education" title="">Education</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills" title="">Skills</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests" title="">Interests</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#coming" title="">Coming Soon</a></li>
                 
                 <!-- Button trigger modal -->
-                <li class="nav-item" role="button"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#sitesModal" style="display: none;">Sub-sites <i class="fas fa-sign-out"></i></a></li>
+                <li class="nav-item" role="button" title="List of sub.sites to https://carloswm85.github.io/"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#sitesModal"">Sub-sites <i class="fas fa-sign-out"></i></a></li>
+
                 <li class="nav-item"><a class="nav-link disabled" href="#"><i class="fa-regular fa-copyright"></i> 2022</a></li>
             </ul>
         </div>
@@ -324,17 +325,18 @@
         <script src="js/index.js" type="module"></script>
 </body>
 
-<!-- Modal -->
-<div class="modal fade" id="sitesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+<!-- Modal 1 -->
+<div class="modal fade" id="sitesModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header border-bottom border-dark mb-3"> 
                 <h2 class="modal-title" id="exampleModalLabel">Personal Sub-sites</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="list-group">
-                <a href="sites/blog/" class="list-group-item list-group-item-action" target="_blank">
+                <!-- blog-->
+                <a href="subsites/blog/" class="list-group-item list-group-item-action" target="_blank" style="display: none;">
                     <div class="d-flex w-100 justify-content-between">
                         <big class="mb-1"><b>👁️🧠 @Visual.Migraine()</b></big>
                         <small><i class="fas fa-external-link"></i></small>
@@ -342,23 +344,16 @@
                     <p class="mb-1">A personal blog about .NET development topics.</p>
                     <small>And probably some other random stuffs.</small>
                 </a>
-                <a href="sites/csharp_notes/" class="list-group-item list-group-item-action" target="_blank">
+                <a href="#" data-bs-target="#projectsModal" data-bs-toggle="modal" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
-                        <big class="mb-1"><b>📝 C# Quick Notes</b></big>
+                        <big class="mb-1"><b>🛠️ Portfolio Projects</b></big>
                         <small><i class="fas fa-external-link"></i></small>
                     </div>
-                    <p class="mb-1">Articles, posts, SO questions about C# and .NET topics.</p>
-                    <small">It's just a long static list with links.</small>
-                </a>
-                <a href="sites/bitcoin-at/" class="list-group-item list-group-item-action" target="_blank">
-                    <div class="d-flex w-100 justify-content-between">
-                        <big class="mb-1"><b>📈 "Bitcoin Análisis Técnico" (SPA)</b></big>
-                        <small><i class="fas fa-external-link"></i></small>
-                    </div>
-                    <p class="mb-1">A little project I made a long time ago. In Spanish.</p>
-                    <small>It's about trading and cryptocurrencies.</small>
+                    <p class="mb-1">Several projects I've made throughout the years, both in college and outside of it.</p>
+                    <small">I have several little projects among my files. It's going to take me some time include them all.</small>
                 </a>
             </div>
+            
             <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
             </div>
@@ -366,5 +361,36 @@
     </div>
 </div>
 
+<!-- Modal 2 -->
+<div class="modal fade" id="projectsModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-bottom border-dark mb-3">
+                <h2 class="modal-title" id="exampleModalLabel">Portfolio Projects</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- LIST -->
+            <div class="list-group">
+                <!-- Bitcoin AT -->
+                <a href="subsites/bitcoin-at/" class="list-group-item list-group-item-action" target="_blank">
+                    <div class="d-flex w-100 justify-content-between">
+                        <big class="mb-1"><b>📈 "Bitcoin Análisis Técnico" (SPA)</b></big>
+                        <small><i class="fas fa-external-link"></i></small>
+                    </div>
+                    <p class="mb-1">A little project static page I made a long time ago. I used HTML, CSS, JS and other very basic web technologies. The web-design part and assets we also arranged by me. Site in Spanish.</p>
+                    <small>It's a site about trading and cryptocurrencies.</small>
+                </a>
+            </div>
+
+            <!-- Buttons -->
+            <div class="modal-footer">
+                <button class="btn btn-outline-dark" data-bs-target="#sitesModal" data-bs-toggle="modal">Back to first</button>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
 
 </html>
