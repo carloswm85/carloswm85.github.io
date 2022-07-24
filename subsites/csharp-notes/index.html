@@ -25,10 +25,10 @@
     </nav>
     <!-- Page content-->
     <div class="container">
-        <div class="text-center mt-5">
+        <div class="mt-4">
 
             <!-- BUTTONS -->
-            <div class="d-flex gap-2 mb-2">
+            <div class="gap-2 mb-2" id="references">
                 <!-- 1 -->
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#bootstrap" aria-expanded="false" aria-controls="bootstrap">
                     Bootstrap
@@ -53,105 +53,168 @@
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#datetime" aria-expanded="false" aria-controls="async">
                     DateTime
                 </button>
-            </div>
 
-            <!-- CARDS -->
-            <div class="d-flex flex-wrap gap-2">
-                <!-- 1 -->
-                <div style="min-height: 120px;">
-                    <div class="collapse collapse-horizontal" id="bootstrap">
-                        <div class="card card-body" style="width: 300px;">
-                            <h2>Bootstrap</h2>
-                            <div class="list-group">
-                                <a class="list-group-item list-group-item-action" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">
-                                    Official Docs <i class="fas fa-external-link"></i>
-                                </a>
-                                <a class="list-group-item list-group-item-action" href="https://blog.shhdharmen.me/toggle-light-and-dark-themes-in-bootstrap" target="_blank">
-                                    Dark Theme using JS <i class="fas fa-external-link"></i>
-                                </a>
-                                <a class="list-group-item list-group-item-action" href="https://vinorodrigues.github.io/bootstrap-dark-5/" target="_blank">
-                                    Dark Theme using CSS <i class="fas fa-external-link"></i>
-                                </a>
+                <!-- 6 -->
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ntier" aria-expanded="false" aria-controls="async">
+                    nTier
+                </button>
+
+                <!-- 7 -->
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#jquery" aria-expanded="false" aria-controls="async">
+                    jQuery
+                </button>
+
+                <hr>
+
+                <!-- CARDS -->
+                <div class="d-flex flex-wrap gap-2 position-relative">
+                    <!-- 1 -->
+                    <div class="position-absolute top-0 start-0" style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" data-bs-parent="#references" id="bootstrap">
+                            <div class="card card-body" style="width: 300px;">
+                                <h2>Bootstrap</h2>
+                                <div class="list-group">
+                                    <a class="list-group-item list-group-item-action" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">
+                                        Official Docs <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://blog.shhdharmen.me/toggle-light-and-dark-themes-in-bootstrap" target="_blank">
+                                        Dark Theme using JS <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://vinorodrigues.github.io/bootstrap-dark-5/" target="_blank">
+                                        Dark Theme using CSS <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://startbootstrap.com/" target="_blank">
+                                        StartBootstrap <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://github.com/coreui/coreui-free-bootstrap-admin-template" target="_blank">
+                                        CoreUI Admin <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://bootstrap-datepicker.readthedocs.io/" target="_blank">
+                                        DatePicker <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://mdbootstrap.com/" target="_blank">
+                                        Material Design <i class="fas fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="position-absolute top-0 start-0" style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" data-bs-parent="#references" id="async">
+                            <div class="card card-body" style="width: 300px;">
+                                <h2>Async/Await</h2>
+                                <div class="list-group">
+                                    <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/a/32343477/7389293" target="_blank">
+                                        Why <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/questions/14455293/how-and-when-to-use-async-and-await" target="_blank">
+                                        How and When <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://www.pluralsight.com/guides/csharp-async-await-keywords-getting-started" target="_blank">
+                                        Getting Started <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://www.pluralsight.com/guides/understand-control-flow-async-await" target="_blank">
+                                        Control Flow <i class="fas fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="position-absolute top-0 start-0" style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" data-bs-parent="#references" id="server">
+                            <div class="card card-body" style="width: 300px;">
+                                <h2>SQL Server</h2>
+                                <div class="list-group">
+                                    <a class="list-group-item list-group-item-action" href="https://blogs.triggerdb.com/2021/06/02/instalar-y-configurar-sql-2019-developer-paso-a-paso/" target="_blank">
+                                        Local Server Set Up <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/a/66770043/7389293" target="_blank">
+                                        Import/Export DB <i class="fas fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="position-absolute top-0 start-0" style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" data-bs-parent="#references" id="css">
+                            <div class="card card-body" style="width: 300px;">
+                                <h2>CSS</h2>
+
+                                <div class="list-group">
+                                    <a class="list-group-item list-group-item-action" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">
+                                        Flexbox <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">
+                                        Grid <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://css-tricks.com/guides/" target="_blank">
+                                        Guides <i class="fas fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="position-absolute top-0 start-0" style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" data-bs-parent="#references" id="datetime">
+                            <div class="card card-body" style="width: 300px;">
+                                <h2>DateTime</h2>
+                                <div class="list-group">
+                                    <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/a/24728080/7389293" target="_blank">
+                                        Format String <i class="fas fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="position-absolute top-0 start-0" style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" data-bs-parent="#references" id="ntier">
+                            <div class="card card-body" style="width: 300px;">
+                                <h2>nTier</h2>
+                                <div class="list-group">
+                                    <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/questions/71714676/where-do-i-place-the-entity-framework-queries-in-layered-architecture" target="_blank">
+                                        Repository Pattern <i class="fas fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7 -->
+                    <div class="position-absolute top-0 start-0" style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" data-bs-parent="#references" id="jquery">
+                            <div class="card card-body" style="width: 300px;">
+                                <h2>jQuery</h2>
+                                <div class="list-group">
+                                    <a class="list-group-item list-group-item-action" href="https://learn.jquery.com/code-organization/" target="_blank">
+                                        Docs <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://jqueryui.com/" target="_blank">
+                                        jQueryUI <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://select2.org/" target="_blank">
+                                        Select2 <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="http://www.jquery-steps.com/" target="_blank">
+                                        jquery-steps <i class="fas fa-external-link"></i>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" href="https://datatables.net/" target="_blank">
+                                        DataTables <i class="fas fa-external-link"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 2 -->
-                <div style="min-height: 120px;">
-                    <div class="collapse collapse-horizontal" id="async">
-                        <div class="card card-body" style="width: 300px;">
-                            <h2>Async/Await</h2>
-                            <div class="list-group">
-                                <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/a/32343477/7389293" target="_blank">
-                                    Why <i class="fas fa-external-link"></i>
-                                </a>
-                                <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/questions/14455293/how-and-when-to-use-async-and-await" target="_blank">
-                                    How and When <i class="fas fa-external-link"></i>
-                                </a>
-                                <a class="list-group-item list-group-item-action" href="https://www.pluralsight.com/guides/csharp-async-await-keywords-getting-started" target="_blank">
-                                    Getting Started <i class="fas fa-external-link"></i>
-                                </a>
-                                <a class="list-group-item list-group-item-action" href="https://www.pluralsight.com/guides/understand-control-flow-async-await" target="_blank">
-                                    Control Flow <i class="fas fa-external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3 -->
-                <div style="min-height: 120px;">
-                    <div class="collapse collapse-horizontal" id="server">
-                        <div class="card card-body" style="width: 300px;">
-                            <h2>SQL Server</h2>
-                            <div class="list-group">
-                                <a class="list-group-item list-group-item-action" href="https://blogs.triggerdb.com/2021/06/02/instalar-y-configurar-sql-2019-developer-paso-a-paso/" target="_blank">
-                                    Local Server Set Up <i class="fas fa-external-link"></i>
-                                </a>
-                                <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/a/66770043/7389293" target="_blank">
-                                    Import/Export DB <i class="fas fa-external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4 -->
-                <div style="min-height: 120px;">
-                    <div class="collapse collapse-horizontal" id="css">
-                        <div class="card card-body" style="width: 300px;">
-                            <h2>CSS</h2>
-
-                            <div class="list-group">
-                                <a class="list-group-item list-group-item-action" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">
-                                    Flexbox <i class="fas fa-external-link"></i>
-                                </a>
-                                <a class="list-group-item list-group-item-action" href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">
-                                    Grid <i class="fas fa-external-link"></i>
-                                </a>
-                                <a class="list-group-item list-group-item-action" href="https://css-tricks.com/guides/" target="_blank">
-                                    Guides <i class="fas fa-external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5 -->
-                <div style="min-height: 120px;">
-                    <div class="collapse collapse-horizontal" id="datetime">
-                        <div class="card card-body" style="width: 300px;">
-                            <h2>DateTime</h2>
-                            <div class="list-group">
-                                <a class="list-group-item list-group-item-action" href="https://stackoverflow.com/a/24728080/7389293" target="_blank">
-                                    Format String <i class="fas fa-external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
         </div>
