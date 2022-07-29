@@ -1,3 +1,25 @@
 button { 
 	margin: 0.1em 0;
+
+	&.btn-dark {
+		border: 1px rgb(134, 131, 131) solid;
+	}
+	
+	&.btn-dark:hover {
+		border: 1.5px rgb(197, 193, 193) solid;
+	}
+
+	&.btn-dark:focus {
+		border-color: rgb(43, 255, 0);
+	}
+}
+
+body {
+    height: 100vh;
+    background-image: url('https://carloswm85.github.io/subsites/csharp-notes/assets/background.jpg');
+}
+
+.list-group-item {
+	background-color: rgba(167, 161, 161, 0.5);
+	color: white;
 }
