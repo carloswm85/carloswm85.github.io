@@ -10700,6 +10700,11 @@ body {
   background-image: url("https://carloswm85.github.io/subsites/csharp-notes/assets/background.jpg");
 }
 
+#searchBox {
+  background-color: rgb(58, 56, 56);
+  color: white;
+}
+
 .list-group-item {
   background-color: rgba(167, 161, 161, 0.5);
   color: white;
@@ -10718,6 +10723,7 @@ body {
   position: absolute;
   text-align: center;
   z-index: 999;
+  border: 1px white solid;
   content: attr(data-content);
   top: 0;
   left: 50%;
@@ -10729,13 +10735,14 @@ body {
 }
 
 .tooltip-top::before {
-  background-color: rgb(19, 18, 18);
+  background-color: rgb(255, 255, 255);
   content: " ";
   display: none;
   position: absolute;
   width: 15px;
   height: 15px;
   z-index: 999;
+  border: 2px black solid;
   top: 0;
   left: 50%;
   transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);

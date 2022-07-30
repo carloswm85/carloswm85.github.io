@@ -1,360 +1,413 @@
 {
-	"references":	[
+	"references": [
 		{
 			"id": 1,
 			"name": "Bootstrap",
 			"lowercased_id": "bootstrap",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "Official Docs (5.1)",
-						"url": "https://getbootstrap.com/docs/5.1/getting-started/introduction/"
-					},
-					{
-						"id": 2,
-						"name": "Dark Theme using JS",
-						"url": "https://blog.shhdharmen.me/toggle-light-and-dark-themes-in-bootstrap"
-					}
-				]
+			"links": [
+				{
+					"name": "Official Docs (5.1)",
+					"url": "https://getbootstrap.com/docs/5.1/getting-started/introduction/"
+				},
+				{
+					"name": "Dark Theme using JS",
+					"url": "https://blog.shhdharmen.me/toggle-light-and-dark-themes-in-bootstrap"
+				},
+				{
+					"name": "Dark Theme using CSS",
+					"url": "https://vinorodrigues.github.io/bootstrap-dark-5/"
+				},
+				{
+					"name": "StartBootstrap",
+					"url": "https://startbootstrap.com/"
+				},
+				{
+					"name": "CoreUI Admin",
+					"url": "https://github.com/coreui/coreui-free-bootstrap-admin-template"
+				},
+				{
+					"name": "DatePicker",
+					"url": "https://bootstrap-datepicker.readthedocs.io/"
+				},
+				{
+					"name": "Material Design",
+					"url": "https://mdbootstrap.com/"
+				}
+			]
 		},
 		{
 			"id": 2,
 			"name": "Async/Await",
 			"lowercased_id": "async",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "SOLID",
-						"url": "solid"
-					}
-				]
+			"links": [
+				{
+					"name": "Why",
+					"url": "https://stackoverflow.com/a/32343477/7389293"
+				},
+				{
+					"name": "How and When",
+					"url": "https://stackoverflow.com/questions/14455293/how-and-when-to-use-async-and-await"
+				},
+				{
+					"name": "Getting Started",
+					"url": "https://www.pluralsight.com/guides/csharp-async-await-keywords-getting-started"
+				},
+				{
+					"name": "Control Flow",
+					"url": "https://www.pluralsight.com/guides/understand-control-flow-async-await"
+				}
+			]
 		},
 		{
 			"id": 3,
 			"name": "SQL Server",
 			"lowercased_id": "sqlserver",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Local Server Set Up",
+					"url": "https://blogs.triggerdb.com/2021/06/02/instalar-y-configurar-sql-2019-developer-paso-a-paso/"
+				},
+				{
+					"name": "Import/Export DB",
+					"url": "https://stackoverflow.com/a/66770043/7389293"
+				}
+			]
 		},
 		{
 			"id": 4,
 			"name": "CSS",
 			"lowercased_id": "css",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Flexbox",
+					"url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+				},
+				{
+					"name": "Grid",
+					"url": "https://css-tricks.com/snippets/css/complete-guide-grid/"
+				},
+				{
+					"name": "Guides CSS Topics",
+					"url": "https://css-tricks.com/guides/"
+				},
+				{
+					"name": "CSS Tooltips",
+					"url": "https://www.florin-pop.com/blog/2019/05/pure-css-tooltip/"
+				}
+			]
 		},
 		{
 			"id": 5,
 			"name": "DateTime",
 			"lowercased_id": "datetime",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Format String",
+					"url": "https://stackoverflow.com/a/24728080/7389293"
+				},
+				{
+					"name": "UNIX Time",
+					"url": "https://currentmillis.com/standard/specification/client-centric-time/"
+				}
+			]
 		},
 		{
 			"id": 6,
 			"name": "nTier",
 			"lowercased_id": "ntier",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Layered Project Case (SO)",
+					"url": "https://stackoverflow.com/questions/71714676/where-do-i-place-the-entity-framework-queries-in-layered-architecture"
+				}
+			]
 		},
 		{
 			"id": 7,
 			"name": "jQuery",
 			"lowercased_id": "jquery",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Official Docs",
+					"url": "https://learn.jquery.com/code-organization/"
+				},
+				{
+					"name": "jQueryUI",
+					"url": "https://jqueryui.com/"
+				},
+				{
+					"name": "Select2",
+					"url": "https://select2.org/"
+				},
+				{
+					"name": "jquery-steps",
+					"url": "http://www.jquery-steps.com/"
+				},
+				{
+					"name": "DataTables",
+					"url": "https://datatables.net/"
+				}
+			]
 		},
 		{
 			"id": 8,
 			"name": "Design Patterns",
 			"lowercased_id": "patterns",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Source Making",
+					"url": "https://sourcemaking.com/"
+				},
+				{
+					"name": "Refactoring Guru",
+					"url": "https://refactoring.guru/"
+				},
+				{
+					"name": "C# Design Patterns",
+					"url": "https://scottlilly.com/c-design-patterns/"
+				}
+			]
 		},
 		{
 			"id": 9,
 			"name": "Vue.js",
 			"lowercased_id": "vue",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Official Docs",
+					"url": "https://vuejs.org/guide/introduction.html"
+				}
+			]
 		},
 		{
 			"id": 10,
 			"name": "React.js",
 			"lowercased_id": "react",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Official Docs",
+					"url": "https://reactjs.org/docs/getting-started.html"
+				}
+			]
 		},
 		{
 			"id": 11,
 			"name": "Angular.js",
 			"lowercased_id": "angular",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Official Docs",
+					"url": "https://angular.io/docs"
+				}
+			]
 		},
 		{
 			"id": 12,
 			"name": "JavaScript",
 			"lowercased_id": "js",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Style guide",
+					"url": "https://google.github.io/styleguide/jsguide.html"
+				}
+			]
 		},
 		{
 			"id": 13,
 			"name": "RegEx",
 			"lowercased_id": "regex",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "regexr.com",
+					"url": "https://regexr.com/"
+				},
+				{
+					"name": "regex101.com",
+					"url": "https://regex101.com/"
+				}
+			]
 		},
 		{
 			"id": 14,
 			"name": "SQL",
 			"lowercased_id": "sql",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "(General) Style",
+					"url": "https://www.sqlstyle.guide/"
+				}
+			]
 		},
 		{
 			"id": 15,
 			"name": "SQL Data Type",
 			"lowercased_id": "sqldatatype",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "char Vs nchar",
+					"url": "https://stackoverflow.com/a/176523/7389293"
+				}
+			]
 		},
 		{
 			"id": 16,
 			"name": "Razor",
 			"lowercased_id": "razor",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "HTML Helper",
+					"url": "https://www.completecsharptutorial.com/asp-net-mvc5/beginners-course-of-html-helper-in-asp-net-mvc.php"
+				}
+			]
 		},
 		{
 			"id": 17,
 			"name": ".NET Tutorials",
 			"lowercased_id": "tutorials",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "MS .NET Video Tutorials",
+					"url": "https://dotnet.microsoft.com/en-us/learn/videos"
+				},
+				{
+					"name": "MS ASP.NET Core Docs                                  ",
+					"url": "https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0"
+				},
+				{
+					"name": "HTML Helper",
+					"url": "https://www.completecsharptutorial.com/asp-net-mvc5/beginners-course-of-html-helper-in-asp-net-mvc.php"
+				},
+				{
+					"name": "Rip Tutorial",
+					"url": "https://riptutorial.com/"
+				},
+				{
+					"name": "DotNet Tutorials",
+					"url": "https://dotnettutorials.net/course/csharp-dot-net-tutorials/"
+				},
+				{
+					"name": "TutorialsTeacher",
+					"url": "https://www.tutorialsteacher.com/csharp"
+				},
+				{
+					"name": "DotNet Academy",
+					"url": "https://dotnetcademy.net/Search"
+				},
+				{
+					"name": "Pragim Tech",
+					"url": "https://www.pragimtech.com/course-category/free-online-courses/"
+				}
+			]
 		},
 		{
 			"id": 18,
 			"name": "C#",
 			"lowercased_id": "csharp",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Style Guide",
+					"url": "https://google.github.io/styleguide/csharp-style.html"
+				}
+			]
 		},
 		{
 			"id": 19,
 			"name": "Online Books",
 			"lowercased_id": "onlinebooks",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "CSharp In Depth",
+					"url": "https://csharpindepth.com/"
+				}
+			]
 		},
 		{
 			"id": 20,
 			"name": "Ebooks",
 			"lowercased_id": "ebooks",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Rip Tutorial",
+					"url": "https://riptutorial.com/ebook"
+				}
+			]
 		},
 		{
 			"id": 21,
 			"name": "Best Practices",
 			"lowercased_id": "bestpractices",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "danylkoweb.com",
+					"url": "https://www.danylkoweb.com/Blog/aspnet-mvc-best-practices-and-guidelines-Q4"
+				}
+			]
 		},
 		{
 			"id": 22,
 			"name": "Repository Pattern",
 			"lowercased_id": "repositorypattern",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Why?",
+					"url": "https://stackoverflow.com/questions/8749153/why-use-repository-pattern-or-please-explain-it-to-me"
+				}
+			]
 		},
 		{
 			"id": 23,
-			"name": "TDD",
+			"name": "Test-driven Development",
 			"lowercased_id": "tdd",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Wiki",
+					"url": "https://en.wikipedia.org/wiki/Test-driven_development"
+				}
+			]
 		},
 		{
 			"id": 24,
 			"name": "Scrum",
 			"lowercased_id": "scrum",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Wiki",
+					"url": "https://en.wikipedia.org/wiki/Scrum_(software_development)"
+				}
+			]
 		},
 		{
 			"id": 25,
 			"name": "Agile",
 			"lowercased_id": "agile",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Wiki",
+					"url": "https://en.wikipedia.org/wiki/Agile_software_development"
+				}
+			]
 		},
 		{
 			"id": 26,
 			"name": "SOLID",
 			"lowercased_id": "solid",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Wiki",
+					"url": "https://en.wikipedia.org/wiki/SOLID"
+				}
+			]
 		},
 		{
 			"id": 27,
 			"name": "MVC",
 			"lowercased_id": "mvc",
-			"links":
-				[
-					{
-						"id": 1,
-						"name": "",
-						"url": ""
-					}
-				]
+			"links": [
+				{
+					"name": "Life Cycle",
+					"url": "https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application"
+				}
+			]
 		}
 	]
 }
