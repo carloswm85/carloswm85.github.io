@@ -1,10 +1,10 @@
-button { 
+button {
 	margin: 0.1em 0;
 
 	&.btn-dark {
 		border: 1px rgb(134, 131, 131) solid;
 	}
-	
+
 	&.btn-dark:hover {
 		border: 1.5px rgb(197, 193, 193) solid;
 	}
@@ -15,8 +15,13 @@ button {
 }
 
 body {
-    height: 100vh;
-    background-image: url('https://carloswm85.github.io/subsites/csharp-notes/assets/background.jpg');
+	height: 100vh;
+	background-image: url("https://carloswm85.github.io/subsites/csharp-notes/assets/background.jpg");
+}
+
+#searchBox {
+	background-color: rgb(58, 56, 56);
+	color: white;
 }
 
 .list-group-item {
@@ -37,6 +42,7 @@ body {
 	position: absolute;
 	text-align: center;
 	z-index: 999;
+	border: 1px white solid;
 
 	// Top
 	content: attr(data-content);
@@ -46,18 +52,19 @@ body {
 }
 
 .tooltip-top:hover::after {
-    display: block;
+	display: block;
 }
 
 .tooltip-top::before {
-	background-color: rgb(19, 18, 18);
-	content: ' ';
+	background-color: rgb(255, 255, 255);
+	content: " ";
 	display: none;
 	position: absolute;
 	width: 15px;
 	height: 15px;
 	z-index: 999;
-	
+	border: 2px black solid;
+
 	// Top
 	top: 0;
 	left: 50%;
@@ -65,5 +72,5 @@ body {
 }
 
 .tooltip-top:hover::before {
-    display: block;
+	display: block;
 }
