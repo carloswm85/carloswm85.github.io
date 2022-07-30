@@ -1,7 +1,3 @@
-import { Search } from "./utils.js";
-
-addEventListener("onkeyup", Search);
-
 var tooltipTriggerList = [].slice.call(
 	document.querySelectorAll('[data-bs-toggle="collapse"]')
 );
