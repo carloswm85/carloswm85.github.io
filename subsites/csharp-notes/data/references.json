@@ -1,12 +1,360 @@
 {
 	"references":	[
 		{
-			"anchorName": "solid",
-			"buttonName": "SOLID"
+			"id": 1,
+			"name": "Bootstrap",
+			"lowercased_id": "bootstrap",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "Official Docs (5.1)",
+						"url": "https://getbootstrap.com/docs/5.1/getting-started/introduction/"
+					},
+					{
+						"id": 2,
+						"name": "Dark Theme using JS",
+						"url": "https://blog.shhdharmen.me/toggle-light-and-dark-themes-in-bootstrap"
+					}
+				]
 		},
 		{
-			"anchorName": "other",
-			"buttonName": "Other"
+			"id": 2,
+			"name": "Async/Await",
+			"lowercased_id": "async",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "SOLID",
+						"url": "solid"
+					}
+				]
+		},
+		{
+			"id": 3,
+			"name": "SQL Server",
+			"lowercased_id": "sqlserver",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 4,
+			"name": "CSS",
+			"lowercased_id": "css",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 5,
+			"name": "DateTime",
+			"lowercased_id": "datetime",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 6,
+			"name": "nTier",
+			"lowercased_id": "ntier",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 7,
+			"name": "jQuery",
+			"lowercased_id": "jquery",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 8,
+			"name": "Design Patterns",
+			"lowercased_id": "patterns",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 9,
+			"name": "Vue.js",
+			"lowercased_id": "vue",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 10,
+			"name": "React.js",
+			"lowercased_id": "react",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 11,
+			"name": "Angular.js",
+			"lowercased_id": "angular",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 12,
+			"name": "JavaScript",
+			"lowercased_id": "js",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 13,
+			"name": "RegEx",
+			"lowercased_id": "regex",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 14,
+			"name": "SQL",
+			"lowercased_id": "sql",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 15,
+			"name": "SQL Data Type",
+			"lowercased_id": "sqldatatype",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 16,
+			"name": "Razor",
+			"lowercased_id": "razor",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 17,
+			"name": ".NET Tutorials",
+			"lowercased_id": "tutorials",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 18,
+			"name": "C#",
+			"lowercased_id": "csharp",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 19,
+			"name": "Online Books",
+			"lowercased_id": "onlinebooks",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 20,
+			"name": "Ebooks",
+			"lowercased_id": "ebooks",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 21,
+			"name": "Best Practices",
+			"lowercased_id": "bestpractices",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 22,
+			"name": "Repository Pattern",
+			"lowercased_id": "repositorypattern",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 23,
+			"name": "TDD",
+			"lowercased_id": "tdd",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 24,
+			"name": "Scrum",
+			"lowercased_id": "scrum",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 25,
+			"name": "Agile",
+			"lowercased_id": "agile",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 26,
+			"name": "SOLID",
+			"lowercased_id": "solid",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
+		},
+		{
+			"id": 27,
+			"name": "MVC",
+			"lowercased_id": "mvc",
+			"links":
+				[
+					{
+						"id": 1,
+						"name": "",
+						"url": ""
+					}
+				]
 		}
 	]
 }
