@@ -18,7 +18,7 @@ fetch(requestURL)
 			button.setAttribute("type", "button");
 			// button.setAttribute("data-bs-placement", "top");
 			button.setAttribute("data-bs-toggle", "collapse");
-			button.setAttribute("data-bs-target", `${references[i].lowercased_id}`);
+			button.setAttribute("data-bs-target", `#${references[i].lowercased_id}`);
 			button.setAttribute("aria-expanded", "false");
 			button.setAttribute("aria-controls", `${references[i].lowercased_id}`);
 			button.setAttribute("data-content", `${references[i].id}`);
