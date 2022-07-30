@@ -1,13 +1,13 @@
 // JSON BOOKS
 const requestURL =
-	"https://carloswm85.github.io/subsites/bitcoin-at/data/libros.json";
+	"https://carloswm85.github.io/subsites/csharp-notes/data/references.json";
 
 fetch(requestURL)
 	.then(function (response) {
 		return response.json();
 	})
 	.then(function (jsonObject) {
-		const books = jsonObject["books"];
+		const books = jsonObject["references"];
 		console.table(jsonObject); // temporary checking for valid response and data parsing
 
 		for (let i = 0; i < books.length; i++) {
