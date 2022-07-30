@@ -1,0 +1,12 @@
+{
+	"references":	[
+		{
+			"anchorName": "solid",
+			"buttonName": "SOLID"
+		},
+		{
+			"anchorName": "other",
+			"buttonName": "Other"
+		}
+	]
+}
