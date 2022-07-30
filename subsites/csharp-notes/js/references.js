@@ -1,6 +1,5 @@
 // JSON BOOKS
-const requestURL =
-	"https://carloswm85.github.io/subsites/csharp-notes/data/references.json";
+const requestURL = ".\\data\\references.json";
 
 fetch(requestURL)
 	.then(function (response) {

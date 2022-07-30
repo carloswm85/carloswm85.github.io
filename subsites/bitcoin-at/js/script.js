@@ -23,7 +23,7 @@ function toggleMenu() {
 }
 
 // JSON BOOKS
-const requestURL = 'https://carloswm85.github.io/subsites/bitcoin-at/data/libros.json';
+const requestURL = ".\\data\\libros.json";
 
 fetch(requestURL)
   .then(function (response) {
