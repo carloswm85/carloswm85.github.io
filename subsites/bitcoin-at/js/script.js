@@ -23,7 +23,7 @@ function toggleMenu() {
 }
 
 // JSON BOOKS
-const requestURL = 'https://carloswm85.github.io/sites/bitcoin-at/data/libros.json';
+const requestURL = 'https://carloswm85.github.io/subsites/bitcoin-at/data/libros.json';
 
 fetch(requestURL)
   .then(function (response) {
@@ -33,7 +33,6 @@ fetch(requestURL)
     const books = jsonObject['books'];
     console.table(jsonObject); // temporary checking for valid response and data parsing
        
-    
     for (let i = 0; i < books.length; i++ ) {
       let card = document.createElement('article');
       let image = document.createElement('img');
