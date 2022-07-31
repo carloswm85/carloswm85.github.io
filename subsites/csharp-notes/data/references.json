@@ -408,6 +408,61 @@
 					"url": "https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application"
 				}
 			]
+		},
+		{
+			"id": 28,
+			"name": "🤓",
+			"lowercased_id": "lol",
+			"links": [
+				{
+					"name": "musicForProgramming();",
+					"url": "https://musicforprogramming.net/fiftyseven"
+				}
+			]
+		},
+		{
+			"id": 29,
+			"name": "APIs",
+			"lowercased_id": "apis",
+			"links": [
+				{
+					"name": "mockAPI",
+					"url": "https://mockapi.io/"
+				}
+			]
+		},
+		{
+			"id": 30,
+			"name": "Community",
+			"lowercased_id": "community",
+			"links": [
+				{
+					"name": "C# Discord",
+					"url": "https://discord.gg/csharp"
+				}
+			]
+		},
+		{
+			"id": 31,
+			"name": "Job Search",
+			"lowercased_id": "jobs",
+			"links": [
+				{
+					"name": "arc.dev",
+					"url": "https://arc.dev/"
+				}
+			]
+		},
+		{
+			"id": 32,
+			"name": "Online Tools",
+			"lowercased_id": "onlinetools",
+			"links": [
+				{
+					"name": "10015 Tools",
+					"url": "https://10015.io/"
+				}
+			]
 		}
 	]
 }
