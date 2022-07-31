@@ -14,7 +14,7 @@ fetch(requestURL)
 
 		for (let i = 0; i < references.length; i++) {
 			let button = document.createElement("button");
-			button.classList.add("btn", "btn-dark", "tooltip-top", "me-1");
+			button.classList.add("btn", "button-reference", "btn-dark", "tooltip-top", "me-1");
 			button.setAttribute("type", "button");
 			// button.setAttribute("data-bs-placement", "top");
 			button.setAttribute("data-bs-toggle", "collapse");
@@ -37,7 +37,7 @@ fetch(requestURL)
 			let links = references[i].links;
 
 			let div1 = document.createElement("div");
-			div1.classList.add("position-absolute", "top-0", "start-0");
+			div1.classList.add("position-absolute", "left-50", "top-0", "mx-auto");
 			div1.setAttribute("style", "min-height: 120px;");
 
 			let div2 = document.createElement("div");

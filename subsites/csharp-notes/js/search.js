@@ -8,6 +8,13 @@ function Search() {
 	Validate(buttons); 
 }
 
+function ClearSearchBox() {
+	document.getElementById("searchBox").value = "";
+	buttons = document.getElementsByTagName("button");
+	for (i = 0; i < buttons.length; i++) {
+			buttons[i].style.display = "";
+	}
+}
 /**
  * If the character is found in the string,
  * the function returns.
@@ -24,6 +31,7 @@ function Validate(content) {
 			content[i].style.display = "";
 		} else {
 			content[i].style.display = "none";
+			document.getElementById("searchClear").style.display = "";
 		}
 	}
 }
