@@ -433,12 +433,16 @@
 		},
 		{
 			"id": 30,
-			"name": "Community",
-			"lowercased_id": "community",
+			"name": "Social",
+			"lowercased_id": "social",
 			"links": [
 				{
 					"name": "C# Discord",
 					"url": "https://discord.gg/csharp"
+				},
+				{
+				"name": "ASP.NET Core en Español",
+				"url": "https://www.facebook.com/groups/291405831518163"
 				}
 			]
 		},
