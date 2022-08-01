@@ -3,13 +3,8 @@ function lastUpdate()
 {
 	const options = {
 		year: "numeric",
-		month: "long",
-		weekday: "long",
+		month: "numeric",
 		day: "numeric",
-		hour: "numeric",
-		minute: "numeric",
-		//second: "numeric",
-		hour12: true
 	};
 
 	let last = document.lastModified;
