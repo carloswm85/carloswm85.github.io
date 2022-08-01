@@ -15,8 +15,18 @@ button {
 }
 
 body {
-	height: 100vh;
-	background-image: url("https://carloswm85.github.io/subsites/csharp-notes/assets/background.jpg");
+	// height: 100vh;
+	// background-image: url("../assets/background.jpg");
+	background: linear-gradient(135deg, #282828 25%, transparent 25%) -100px 0,
+		linear-gradient(225deg, #282828 25%, transparent 25%) -100px 0,
+		linear-gradient(315deg, #282828 25%, transparent 25%),
+		linear-gradient(45deg, #282828 25%, transparent 25%);
+	background-size: 200px 200px;
+	background-color: #515151;
+}
+
+hr {
+	color: white;
 }
 
 #searchBox {
@@ -24,9 +34,21 @@ body {
 	color: white;
 }
 
+// Update Time
+.last-update {
+	border: 1px solid rgba(219, 216, 216, 0.466);
+	margin: 1em;
+}
+
+
+// CARDS
 .list-group-item {
 	background-color: rgba(167, 161, 161, 0.5);
+	border: 1px rgb(134, 131, 131) solid;
 	color: white;
+}
+.card-border {
+	border: 10px rgb(134, 131, 131) solid;
 }
 
 /* TOOLTIP */

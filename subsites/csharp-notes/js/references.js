@@ -21,7 +21,7 @@ fetch(requestURL)
 			button.setAttribute("data-bs-target", `#${references[i].lowercased_id}`);
 			button.setAttribute("aria-expanded", "false");
 			button.setAttribute("aria-controls", `${references[i].lowercased_id}`);
-			button.setAttribute("data-content", `${references[i].id}`);
+			button.setAttribute("data-content", i+1);
 			button.innerText = `${references[i].name}`;
 			referencesView.appendChild(button);
 			// buttons.parentNode.insertBefore(button, buttons.nextSibling);
@@ -41,12 +41,12 @@ fetch(requestURL)
 			div1.setAttribute("style", "min-height: 120px;");
 
 			let div2 = document.createElement("div");
-			div2.classList.add("collapse", "collapse-horizontal");
+			div2.classList.add("collapse", "collapse-horizontal", "card-border", "mb-5");
 			div2.setAttribute("data-bs-parent", "#references");
 			div2.setAttribute("id", `${references[i].lowercased_id}`);
 
 			let div3 = document.createElement("div");
-			div3.classList.add("card", "card-body", "text-white", "bg-dark", "mb-3");
+			div3.classList.add("card", "card-body", "text-white", "bg-dark");
 			div3.setAttribute("style", "width: 300px;");
 
 			let h2 = document.createElement("h2");
