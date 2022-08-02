@@ -117,8 +117,7 @@
 				{
 					"name": "Service Layer Architecture (SO)",
 					"url": "https://stackoverflow.com/questions/14887871/creating-a-service-layer-for-my-mvc-application"
-				}
-				,
+				},
 				{
 					"name": "Service Layer Design (SO)",
 					"url": "https://stackoverflow.com/questions/31180816/mvc-design-pattern-service-layer-purpose"
@@ -380,8 +379,8 @@
 					"url": "https://www.codeproject.com/Articles/615499/Models-POCO-Entity-Framework-and-Data-Patterns"
 				},
 				{
-				"name": "Content List for RP interface (GS)",
-				"url": "https://docs.google.com/spreadsheets/d/18gYhR05ykkRqwye3n808POnTfXT_8MVjz-a5rtldZrg/edit?usp=sharing"
+					"name": "Content List for RP interface (GS)",
+					"url": "https://docs.google.com/spreadsheets/d/18gYhR05ykkRqwye3n808POnTfXT_8MVjz-a5rtldZrg/edit?usp=sharing"
 				}
 			]
 		},
@@ -534,8 +533,18 @@
 					"url": "https://github.com/T4MVC/T4MVC"
 				},
 				{
-				"name": "AutoMapper",
-				"url": "http://automapper.org/"
+					"name": "AutoMapper",
+					"url": "http://automapper.org/"
+				}
+			]
+		},
+		{
+			"name": "GitHub Pages",
+			"lowercased_id": "githubpages",
+			"links": [
+				{
+					"name": "Use own DB on GHP",
+					"url": "https://stackoverflow.com/questions/31655085/database-on-a-personal-github-page"
 				}
 			]
 		},
