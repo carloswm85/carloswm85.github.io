@@ -57,8 +57,8 @@
 			]
 		},
 		{
-			"name": "SQL Server",
-			"lowercased_id": "sqlserver",
+			"name": "SSMS",
+			"lowercased_id": "ssms",
 			"links": [
 				{
 					"name": "Local Server Set Up",
@@ -75,19 +75,19 @@
 			"lowercased_id": "css",
 			"links": [
 				{
-					"name": "Flexbox",
+					"name": "Flexbox Guide",
 					"url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
 				},
 				{
-					"name": "Grid",
+					"name": "Grid Guide",
 					"url": "https://css-tricks.com/snippets/css/complete-guide-grid/"
 				},
 				{
-					"name": "Guides CSS Topics",
+					"name": "CSS Topics Guides",
 					"url": "https://css-tricks.com/guides/"
 				},
 				{
-					"name": "CSS Tooltips",
+					"name": "CSS Tooltips Implementation",
 					"url": "https://www.florin-pop.com/blog/2019/05/pure-css-tooltip/"
 				}
 			]
@@ -103,6 +103,14 @@
 				{
 					"name": "UNIX Time",
 					"url": "https://currentmillis.com/standard/specification/client-centric-time/"
+				},
+				{
+					"name": "UNIX_TIMESTAMP in SQL Server",
+					"url": "https://stackoverflow.com/questions/8837225/unix-timestamp-in-sql-server"
+				},
+				{
+					"name": "How to get correct timestamp in C#",
+					"url": "https://stackoverflow.com/questions/21219797/how-to-get-correct-timestamp-in-c-sharp"
 				}
 			]
 		},
@@ -227,22 +235,30 @@
 			]
 		},
 		{
-			"name": "SQL",
-			"lowercased_id": "sql",
+			"name": "MS SQL Server",
+			"lowercased_id": "sqlserver",
 			"links": [
 				{
 					"name": "(General) Style",
 					"url": "https://www.sqlstyle.guide/"
+				},
+				{
+					"name": "Data Types (numerics, strings, time)",
+					"url": "https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver16"
 				}
 			]
 		},
 		{
-			"name": "SQL Data Type",
-			"lowercased_id": "sqldatatype",
+			"name": "SQL Language",
+			"lowercased_id": "sql",
 			"links": [
 				{
 					"name": "char Vs nchar",
 					"url": "https://stackoverflow.com/a/176523/7389293"
+				},
+				{
+					"name": "Data Types",
+					"url": "https://www.w3schools.com/sql/sql_datatypes.asp"
 				}
 			]
 		},
@@ -545,6 +561,46 @@
 				{
 					"name": "Use own DB on GHP",
 					"url": "https://stackoverflow.com/questions/31655085/database-on-a-personal-github-page"
+				}
+			]
+		},
+		{
+			"name": "Hosting",
+			"lowercased_id": "hosting",
+			"links": [
+				{
+					"name": "Azure",
+					"url": "https://azure.microsoft.com/en-us/"
+				},
+				{
+					"name": "AWS",
+					"url": "https://aws.amazon.com/"
+				},
+				{
+					"name": "somee.com",
+					"url": "https://somee.com/"
+				},
+				{
+					"name": "myasp.net",
+					"url": "https://www.myasp.net/"
+				},
+				{
+					"name": "smarterasp.net",
+					"url": "https://www.smarterasp.net"
+				},
+				{
+					"name": "ionos.com/",
+					"url": "https://www.ionos.com/"
+				}
+			]
+		},
+		{
+			"name": "C# Features",
+			"lowercased_id": "chsarpfeatures",
+			"links": [
+				{
+					"name": "Partials",
+					"url": "https://www.geeksforgeeks.org/partial-classes-in-c-sharp/"
 				}
 			]
 		},
