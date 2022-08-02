@@ -119,15 +119,15 @@
 			"lowercased_id": "ntier",
 			"links": [
 				{
-					"name": "Layered Project Case (SO)",
+					"name": "Layered Project Case",
 					"url": "https://stackoverflow.com/questions/71714676/where-do-i-place-the-entity-framework-queries-in-layered-architecture"
 				},
 				{
-					"name": "Service Layer Architecture (SO)",
+					"name": "Service Layer Architecture",
 					"url": "https://stackoverflow.com/questions/14887871/creating-a-service-layer-for-my-mvc-application"
 				},
 				{
-					"name": "Service Layer Design (SO)",
+					"name": "Service Layer Design",
 					"url": "https://stackoverflow.com/questions/31180816/mvc-design-pattern-service-layer-purpose"
 				}
 			]
@@ -345,12 +345,20 @@
 			]
 		},
 		{
-			"name": "Best Practices",
+			"name": "MVC Best Practices",
 			"lowercased_id": "bestpractices",
 			"links": [
 				{
-					"name": "danylkoweb.com",
+					"name": "General: Best Practices and Guidelines",
 					"url": "https://www.danylkoweb.com/Blog/aspnet-mvc-best-practices-and-guidelines-Q4"
+				},
+				{
+				"name": "MVC Dropdowns",
+				"url": "https://www.danylkoweb.com/Blog/the-ultimate-guide-to-aspnet-mvc-dropdowns-JO"
+				},
+				{
+				"name": "ViewModels More Functional",
+				"url": "https://www.danylkoweb.com/Blog/aspnet-mvc-viewmodel-make-your-viewmodels-more-functional-PY"
 				}
 			]
 		},
@@ -359,15 +367,15 @@
 			"lowercased_id": "repositorypattern",
 			"links": [
 				{
-					"name": "Why? (SO)",
+					"name": "Why?",
 					"url": "https://stackoverflow.com/questions/8749153/why-use-repository-pattern-or-please-explain-it-to-me"
 				},
 				{
-					"name": "But why?? (SO)",
+					"name": "But why??",
 					"url": "https://stackoverflow.com/questions/11985736/repository-pattern-step-by-step-explanation"
 				},
 				{
-					"name": "Implementation #1 (SO)",
+					"name": "Implementation #1",
 					"url": "https://stackoverflow.com/questions/10925257/best-repository-pattern-for-asp-net-mvc/10925510#10925510"
 				},
 				{
@@ -379,11 +387,11 @@
 					"url": "./docs/001.pdf"
 				},
 				{
-					"name": "Why: Interfaces in RP, with good implementation example (SO)",
+					"name": "Why: Interfaces in RP, with good implementation example",
 					"url": "https://stackoverflow.com/questions/10616131/repository-pattern-why-exactly-do-we-need-interfaces"
 				},
 				{
-					"name": "Why: RP and DDD (SO)",
+					"name": "Why: RP and DDD",
 					"url": "https://stackoverflow.com/questions/27631490/what-is-the-use-of-repository-and-why-do-mvc-developers-create-repository"
 				},
 				{
@@ -617,6 +625,16 @@
 					"url": "https://musicforprogramming.net/fiftyseven"
 				}
 			]
+		},
+		{
+		"name": "LINQ",
+		"lowercased_id": "linq",
+		"links": [
+		{
+		"name": "Using IQueryable with Linq",
+		"url": "https://stackoverflow.com/questions/1578778/using-iqueryable-with-linq/1578809#1578809"
 		}
+		]
+		},
 	]
 }
