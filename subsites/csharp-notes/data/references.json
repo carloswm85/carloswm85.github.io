@@ -109,7 +109,7 @@
 					"url": "https://stackoverflow.com/questions/8837225/unix-timestamp-in-sql-server"
 				},
 				{
-					"name": "How to get correct timestamp in C#",
+					"name": "How to get correct UNIX_TIMESTAMP in C#",
 					"url": "https://stackoverflow.com/questions/21219797/how-to-get-correct-timestamp-in-c-sharp"
 				}
 			]
