@@ -525,6 +525,10 @@
 				{
 					"name": "10015 Tools",
 					"url": "https://10015.io/"
+				},
+				{
+				"name": "overapi.com (cheatsheets)",
+				"url": "https://overapi.com/"
 				}
 			]
 		},
@@ -591,6 +595,10 @@
 				{
 					"name": "Use own DB on GHP",
 					"url": "https://stackoverflow.com/questions/31655085/database-on-a-personal-github-page"
+				},
+				{
+				"name": "Link to html in another repo",
+				"url": "https://stackoverflow.com/questions/62601696/github-page-link-to-html-in-another-repo"
 				}
 			]
 		},
