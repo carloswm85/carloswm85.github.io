@@ -1,1 +1,0 @@
-https://github.com/byui-cit/cit261/tree/gh-pages/examples/quakes
