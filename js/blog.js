@@ -23,7 +23,7 @@ fetch(requestURL)
 			<!-- Post preview-->
 			<div class="post-preview">
 				<a href="pages/blog/${timestamp}.html" target="_blank">
-					<h2 class="post-title">${entries[index].title} <i class="fas fa-sign-out"></i></h2>
+					<h2 class="post-title">${entries[index].title} <i class="fas fa-external-link"></i></h2>
 					<h3 class="post-subtitle">${entries[index].subtitle}</h3>
 				</a>
 				<p class="post-meta">
