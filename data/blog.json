@@ -1,0 +1,52 @@
+{
+	"entries": [
+		{
+			"id": 0,
+			"timestamp": 1660345251,
+			"author": "Carlos W. Mercado",
+			"title": "My First Post Here",
+			"subtitle": "This is the very first post I made for this blog, and I posted it using Vanilla JS for static pages, which means I used a json file for storing this post information, and JS for rendering it into the client (statically).",
+			"content": [
+				{
+					"heading": "heading1",
+					"body": [
+						{
+							"paragraph": "hola1"
+						},
+						{
+							"paragraph": "hola2"
+						},
+						{
+							"paragraph": "hola3"
+						},
+						{
+							"quote": "quote"
+						},
+						{
+							"paragraph": "hola4"
+						}
+					]
+				},
+				{
+					"heading": "heading2",
+					"body": [
+						{
+							"paragraph": "hola5"
+						},
+						{
+							"image": 1,
+							"caption": "caption"
+						},
+						{
+							"paragraph": "hola6"
+						},
+						{
+							"image": 2,
+							"caption": "caption"
+						}
+					]
+				}
+			]
+		}
+	]
+}
