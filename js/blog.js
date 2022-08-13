@@ -22,7 +22,7 @@ fetch(requestURL)
 			postPreview.innerHTML = `
 			<!-- Post preview-->
 			<div class="post-preview">
-				<a href="pages/blog/posts/${timestamp}.html" target="_blank">
+				<a href="pages/blog/${timestamp}.html" target="_blank">
 					<h2 class="post-title">${entries[index].title}</h2>
 					<h3 class="post-subtitle">${entries[index].subtitle}</h3>
 				</a>
