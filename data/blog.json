@@ -5,10 +5,10 @@
 			"timestamp": 1660345251,
 			"author": "Carlos W. Mercado",
 			"title": "My First Post Here",
-			"subtitle": "This is the very first post I made for this blog, and I posted it using Vanilla JS for static pages, which means I used a json file for storing this post information, and JS for rendering it into the client (statically).",
+			"subtitle": "This is the very first post I made for this blog, and I posted it using Vanilla JS for static pages, which means I used a json file for storing this post information, and JS for rendering it into the client (statically)",
 			"content": [
 				{
-					"heading": "heading1",
+					"heading": "Thinking about web dev",
 					"body": [
 						{
 							"paragraph": "hola1"

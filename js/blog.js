@@ -23,7 +23,7 @@ fetch(requestURL)
 			<!-- Post preview-->
 			<div class="post-preview">
 				<a href="pages/blog/${timestamp}.html" target="_blank">
-					<h2 class="post-title">${entries[index].title}</h2>
+					<h2 class="post-title">${entries[index].title} <i class="fas fa-sign-out"></i></h2>
 					<h3 class="post-subtitle">${entries[index].subtitle}</h3>
 				</a>
 				<p class="post-meta">
@@ -39,10 +39,12 @@ fetch(requestURL)
 			entriesView.appendChild(postPreview);
 		}
 
-		var pager = document.createElement("div"); 
-		pager.innerHTML = `
-		<!-- Pager-->
-		<div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
-		`;
-		entriesView.appendChild(pager);
+		if (entries.length > 4) {
+			var pager = document.createElement("div"); 
+			pager.innerHTML = `
+			<!-- Pager-->
+			<div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+			`;
+			entriesView.appendChild(pager);
+		}
 	});
