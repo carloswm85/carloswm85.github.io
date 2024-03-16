@@ -1,4 +1,0 @@
-- Icons tag name modified from <span> to <i>
-- Added Checkbook list to Checkbook model
-- Chechbook edit.js file modified, new.js file deleted
-- Added View() action result, to CheckbookController. Related files added or modified
