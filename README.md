@@ -14,3 +14,4 @@ Entry point at: <https://carloswm85.github.io/>
 
 - [ ] Add darkmode.
 - [ ] Add slides to sections.
+- [ ] Update resume to a more AI friendly version.
