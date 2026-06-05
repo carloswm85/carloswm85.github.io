@@ -252,7 +252,7 @@
 
 	// Horizontal rules
 	hr {
-		border-color: #3a3a3a;
+		border: 1px solid #b4aeae;
 	}
 
 	// Social icons
@@ -321,8 +321,12 @@
 	}
 }
 
-	hr {
-	margin: 1rem 0;
-	border: 0;
-	opacity: 0.25;
+[data-bs-theme="light"] {
+	.custom-hr-section {
+		border: 1px solid rgb(0, 0, 0);
+	}
+
+	#custom-hr-navbar {
+		border: 1px solid rgb(219, 219, 219);
+	}
 }

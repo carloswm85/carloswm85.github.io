@@ -1,4 +1,4 @@
-// Styles
-@import "./bootstrap";
-@import "./resume";
-@import "./custom";
+@use "../../node_modules/bootstrap-scss/bootstrap.scss";
+
+@use "./resume";
+@use "./custom";

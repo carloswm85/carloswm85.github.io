@@ -1,0 +1,13 @@
+{
+  "name": "carloswm85-github-io",
+  "version": "1.0.0",
+  "description": "Description",
+  "main": "index.js",
+  "repository": "https://github.com/carloswm85/carloswm85.github.io.git",
+  "author": "Carlos W. Mercado <carlos.washington.mercado@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap-scss": "^5.3.8"
+  }
+}
