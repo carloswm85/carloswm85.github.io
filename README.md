@@ -2,7 +2,8 @@
 
 Personal online resume. By Carlos W. Mercado.
 
-Entry point at: <https://carloswm85.github.io/>
+- Repository: <https://github.com/carloswm85/carloswm85.github.io>
+- Entry point at: <https://carloswm85.github.io/>
 
 ## Used technologies
 
