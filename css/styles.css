@@ -23274,4 +23274,8 @@ section.resume-section .resume-section-content {
   border: 1px solid rgb(219, 219, 219);
 }
 
+a .social-icons, a .social-icon {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

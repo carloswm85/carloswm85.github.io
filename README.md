@@ -13,3 +13,13 @@ Entry point at: <https://carloswm85.github.io/>
 ## TODO
 
 - [ ] Update resume to a more AI friendly version.
+
+---
+
+## Tool Instructions
+
+### Sass
+
+```powershell
+sass --watch .\css\scss\styles.scss .\css\styles.css
+```
