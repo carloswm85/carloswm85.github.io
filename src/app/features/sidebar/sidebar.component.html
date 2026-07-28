@@ -1,0 +1,23 @@
+<div class="sidebar-content">
+  <div class="profile">
+    <a href="#about" aria-label="Go to the About section"><img src="/assets/img/profile_bg-blue.png"
+        alt="Carlos W. Mercado profile photo" /></a><span class="profile-title">ASP.NET Core Dev</span>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <nav aria-label="Résumé sections">
+    <mat-nav-list class="nav-list">
+      <a mat-list-item *ngFor="let item of navItems" [href]="'#' + item.id" [activated]="activeSection === item.id"
+        (click)="onNavigationClick($event)">
+        {{item.label }}
+      </a>
+    </mat-nav-list>
+  </nav>
+
+  <mat-divider></mat-divider>
+
+  <p class="copyright">
+    <mat-icon fontSet="material-symbols-rounded">copyright</mat-icon> 2026 Carlos W. Mercado
+  </p>
+</div>

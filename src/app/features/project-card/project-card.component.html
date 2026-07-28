@@ -1,0 +1,18 @@
+<mat-card appearance="outlined">
+  <mat-card-header class="project-card-header">
+    <mat-icon class="project-icon" fontSet="material-symbols-rounded">{{ item.icon }}</mat-icon>
+    <div class="project-heading">
+      <mat-card-title>{{ item.title }}</mat-card-title>
+      <mat-card-subtitle>{{ item.category }}</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="item.description">
+    <p>{{ item.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a class="project-link" *ngFor="let link of item.links" mat-button [href]="link.href" target="_blank">
+      <span>{{ link.label }}</span>
+      <mat-icon fontSet="material-symbols-rounded">open_in_new</mat-icon>
+    </a>
+  </mat-card-actions>
+</mat-card>

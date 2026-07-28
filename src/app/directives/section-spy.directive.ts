@@ -3,7 +3,7 @@ import { ScrollspyService } from '../services/scrollspy.service';
 
 @Directive({
   selector: '[appSectionSpy]',
-  standalone: true
+  standalone: true,
 })
 export class SectionSpyDirective implements AfterViewInit, OnDestroy {
   @Input('appSectionSpy') sectionId = '';
@@ -26,7 +26,7 @@ export class SectionSpyDirective implements AfterViewInit, OnDestroy {
       {
         root: null,
         threshold: [0.2, 0.35, 0.5, 0.65],
-        rootMargin: '-20% 0px -55% 0px'
+        rootMargin: '-20% 0px -55% 0px',
       }
     );
 
@@ -37,4 +37,3 @@ export class SectionSpyDirective implements AfterViewInit, OnDestroy {
     this.observer?.disconnect();
   }
 }
-

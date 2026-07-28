@@ -5,13 +5,17 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "format": "prettier --write \"src/app/**/*.{ts,html,scss}\"",
+    "format:check": "prettier --check \"src/app/**/*.{ts,html,scss}\""
   },
   "dependencies": {
     "@angular/animations": "20.3.26",
+    "@angular/cdk": "20.2.14",
     "@angular/common": "20.3.26",
     "@angular/compiler": "20.3.26",
     "@angular/core": "20.3.26",
+    "@angular/material": "20.2.14",
     "@angular/platform-browser": "20.3.26",
     "@angular/platform-browser-dynamic": "20.3.26",
     "@angular/router": "20.3.26",
@@ -23,7 +27,7 @@
     "@angular-devkit/build-angular": "20.3.26",
     "@angular/cli": "20.3.26",
     "@angular/compiler-cli": "20.3.26",
+    "prettier": "^3.9.6",
     "typescript": "~5.9.2"
   }
 }
-

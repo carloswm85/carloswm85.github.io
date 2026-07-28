@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.resume-section {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 100%;
+  max-width: 75rem;
+  padding: 5rem 1rem;
+  margin: 0 auto;
+}
+.resume-section-content {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .resume-section {
+    padding: 5rem 3rem;
+  }
+}
