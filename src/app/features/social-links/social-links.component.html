@@ -1,0 +1,11 @@
+<div class="social-links" [class.bordered]="bordered" aria-label="Social profiles">
+  <a
+    *ngFor="let link of links"
+    mat-icon-button
+    [href]="link.href"
+    [attr.target]="link.href.startsWith('http') || link.href.startsWith('/') ? '_blank' : null"
+    [matTooltip]="link.title"
+    [attr.aria-label]="link.label"
+    ><mat-icon fontSet="material-symbols-rounded">{{ link.icon }}</mat-icon></a
+  >
+</div>

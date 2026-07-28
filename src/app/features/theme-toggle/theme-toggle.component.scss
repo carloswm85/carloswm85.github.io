@@ -1,0 +1,27 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--app-control-size);
+  height: var(--app-control-size);
+  padding: 0;
+}
+
+mat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  line-height: 1;
+  vertical-align: initial;
+  width: var(--app-icon-size);
+  height: var(--app-icon-size);
+  font-size: var(--app-icon-size);
+}

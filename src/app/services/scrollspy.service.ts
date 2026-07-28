@@ -8,4 +8,3 @@ export class ScrollspyService {
     this.activeSection.set(sectionId);
   }
 }
-

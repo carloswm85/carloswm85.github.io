@@ -1,0 +1,11 @@
+<button
+  mat-icon-button
+  type="button"
+  (click)="toggle()"
+  [matTooltip]="themeService.isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
+  [attr.aria-label]="themeService.isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
+>
+  <mat-icon fontSet="material-symbols-rounded">{{
+    themeService.isDark() ? 'light_mode' : 'dark_mode'
+  }}</mat-icon>
+</button>

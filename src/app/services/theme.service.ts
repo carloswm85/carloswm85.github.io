@@ -29,4 +29,3 @@ export class ThemeService {
     localStorage.setItem(STORAGE_KEY, theme);
   }
 }
-

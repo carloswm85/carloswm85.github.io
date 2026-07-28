@@ -1,0 +1,17 @@
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.bordered a {
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 50%;
+}
+
+a[mat-icon-button] mat-icon {
+  width: var(--app-icon-size);
+  height: var(--app-icon-size);
+  font-size: var(--app-icon-size);
+}

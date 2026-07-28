@@ -1,0 +1,59 @@
+mat-card {
+  border-radius: 10px;
+  background: var(--mat-sys-surface-container-low);
+  box-shadow: none;
+}
+.project-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+.project-icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+.project-heading {
+  min-width: 0;
+}
+mat-card-title {
+  font-size: var(--app-font-title);
+  line-height: 1.25;
+}
+mat-card-subtitle {
+  margin-top: 0.15rem;
+  font-size: var(--app-font-body);
+  line-height: 1.35;
+}
+mat-card-content p {
+  line-height: 1.7;
+}
+mat-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem 1rem;
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.project-link mat-icon {
+  order: 2;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .project-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
