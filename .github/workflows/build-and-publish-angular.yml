@@ -1,6 +1,21 @@
-name: Build and publish Angular site to /docs
+name: Build and publish Angular site to GitHub Pages
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/build-and-publish-angular.yml'
+      - '.angular/**'
+      - 'angular.json'
+      - 'assets/**'
+      - 'documents/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'src/**'
+      - 'tsconfig*.json'
+      - '!docs/**'
   push:
     branches:
       - main
@@ -19,7 +34,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: build-and-publish-angular-${{ github.ref }}
@@ -28,13 +45,13 @@ concurrency:
 jobs:
   build-publish:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout default branch
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: main
-          persist-credentials: true
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
@@ -74,20 +91,17 @@ jobs:
             exit 1
           fi
 
-      - name: Commit and push built site
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add --all docs
+      - name: Setup Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
 
-          if git diff --cached --quiet; then
-            echo "No docs changes to publish."
-            exit 0
-          fi
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
 
-          git commit -m "chore: build site [skip ci]"
-          git push origin "HEAD:${{ github.event.repository.default_branch }}"
-
-      - name: Report published site
-        run: echo "Site should be published at https://carloswm85.github.io"
+      - name: Deploy to GitHub Pages
+        if: github.event_name != 'pull_request'
+        id: deployment
+        uses: actions/deploy-pages@v4
