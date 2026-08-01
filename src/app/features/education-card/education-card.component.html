@@ -1,10 +1,11 @@
-<mat-card appearance="outlined"
-  ><mat-card-content
-    ><div>
+<mat-card appearance="outlined"><mat-card-content>
+    <div>
       <h2>{{ item.institution }}</h2>
       <p class="eyebrow">{{ item.qualification }}</p>
       <p>{{ item.details }}</p>
+      <a mat-flat-button [href]="'/documents/diplomas/' + item.document" target="_blank" *ngIf="item.document !== null">
+        <mat-icon fontSet="material-symbols-rounded">description</mat-icon>View document
+      </a>
     </div>
-    <p class="date">{{ item.date }}</p></mat-card-content
-  ></mat-card
->
+    <p class="date">{{ item.date }}</p>
+  </mat-card-content></mat-card>
