@@ -23,6 +23,7 @@ export interface EducationItem {
   qualification: string;
   details: string;
   date: string;
+  document: string | null;
 }
 
 export interface ProjectItem {
@@ -98,18 +99,21 @@ export const educationItems: EducationItem[] = [
     qualification: 'Bachelor of Science in Software Development',
     details: 'Department of Computer Information Technology · GPA: 3.910 · Career credits: 121/120',
     date: 'Jan 2020 – Apr 2026',
+    document: null,
   },
   {
     institution: 'University of Cambridge, UK',
     qualification: 'FCE, First Certificate in English',
     details: 'Level B2 · Score: 175',
     date: 'Nov 2017',
+    document: 'FCE-StatementOfResult.pdf',
   },
   {
     institution: 'Universidad Nacional del Comahue, Argentina',
     qualification: 'Mining Technician',
     details: 'Faculty of Engineering · GPA: 3.00',
     date: 'Jan 2011 – Oct 2016',
+    document: null,
   },
 ];
 
@@ -154,8 +158,6 @@ export const projectItems: ProjectItem[] = [
     icon: 'computer',
     description:
       'An Angular single‑page application template that demonstrates an opinionated project architecture (core, shared, auth, admin, articles), uses the standalone bootstrapApplication pattern, and includes standard Angular CLI scripts for building, serving, and testing.',
-    links: [
-      { label: 'View repository', href: 'https://github.com/carloswm85/ng-template-one' },
-    ],
+    links: [{ label: 'View repository', href: 'https://github.com/carloswm85/ng-template-one' }],
   },
 ];
