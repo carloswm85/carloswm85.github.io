@@ -1,7 +1,11 @@
 <button class="sidebar-toggle" mat-icon-button type="button" (click)="toggleSidebar()"
 	[class.sidebar-is-open]="isSidebarOpen()"
 	[attr.aria-label]="isSidebarOpen() ? 'Close navigation menu' : 'Open navigation menu'">
-	<mat-icon fontSet="material-symbols-rounded">menu</mat-icon>
+	@if (isSidebarOpen()) {
+		<mat-icon fontSet="material-symbols-rounded">close</mat-icon>
+	} @else {
+		<mat-icon fontSet="material-symbols-rounded">menu</mat-icon>
+	}
 </button>
 
 <mat-sidenav-container class="app-shell" [hasBackdrop]="false">
@@ -84,9 +88,9 @@
 						<div class="contact-actions">
 							<a mat-flat-button href="mailto:carloswashingtonmercado@gmail.com"><mat-icon
 									fontSet="material-symbols-rounded">mail</mat-icon> Email me</a>
-							<a mat-stroked-button rel="noopener" href="https://api.whatsapp.com/send/?phone=5492942415110"
+							<a mat-flat-button rel="noopener" href="https://api.whatsapp.com/send/?phone=5492942415110"
 								target="_blank"><mat-icon fontSet="material-symbols-rounded">call</mat-icon> Text me on WhatsApp</a>
-							<a mat-stroked-button rel="noopener" href="https://www.linkedin.com/in/carlos-washington-mercado/"
+							<a mat-flat-button rel="noopener" href="https://www.linkedin.com/in/carlos-washington-mercado/"
 								target="_blank"><mat-icon fontSet="material-symbols-rounded">work</mat-icon> My LinkedIn</a>
 						</div>
 					</mat-card-content>

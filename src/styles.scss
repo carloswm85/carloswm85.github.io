@@ -1,34 +1,38 @@
 @use '@angular/material' as mat;
 
-$dark-theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: mat.$violet-palette,
-    tertiary: mat.$orange-palette,
-  ),
-  typography: (
-    brand-family: 'Oswald',
-    plain-family: 'Poppins',
-  ),
-  density: (
-    scale: 0,
-  ),
-));
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$violet-palette,
+      tertiary: mat.$orange-palette,
+    ),
+    typography: (
+      brand-family: 'Oswald',
+      plain-family: 'Poppins',
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
 
-$light-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$violet-palette,
-    tertiary: mat.$orange-palette,
-  ),
-  typography: (
-    brand-family: 'Oswald',
-    plain-family: 'Poppins',
-  ),
-  density: (
-    scale: 0,
-  ),
-));
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$violet-palette,
+      tertiary: mat.$orange-palette,
+    ),
+    typography: (
+      brand-family: 'Oswald',
+      plain-family: 'Poppins',
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
 
 @include mat.typography-hierarchy($dark-theme);
 
@@ -64,6 +68,8 @@ html {
   --sidebar-background: #155dc6;
   --sidebar-active: #ffffff;
   --sidebar-muted: rgba(255, 255, 255, 0.62);
+  --sidebar-active-bg: #1b1b1b;
+  --sidebar-active-text: #ffffff;
 }
 
 html[data-theme='light'] {
@@ -81,7 +87,9 @@ html[data-theme='light'] {
   --mat-sys-outline-variant: #dedede;
   --sidebar-background: #176df0;
   --sidebar-active: #ffffff;
-  --sidebar-muted: rgba(255, 255, 255, 0.68);
+  --sidebar-muted: #ffffff;
+  --sidebar-active-bg: #ffffff;
+  --sidebar-active-text: #000000;
 }
 
 html {
@@ -115,7 +123,11 @@ a {
 }
 
 .material-symbols-rounded {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
   vertical-align: middle;
 }
 

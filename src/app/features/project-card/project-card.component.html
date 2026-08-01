@@ -10,7 +10,8 @@
     <p>{{ item.description }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <a class="project-link" *ngFor="let link of item.links" mat-button [href]="link.href" target="_blank">
+    <a mat-flat-button class="project-link" *ngFor="let link of item.links" mat-button [href]="link.href"
+      target="_blank">
       <span>{{ link.label }}</span>
       <mat-icon fontSet="material-symbols-rounded">open_in_new</mat-icon>
     </a>
