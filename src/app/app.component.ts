@@ -14,7 +14,6 @@ import { AboutComponent } from './features/about/about.component';
 import { SectionShellComponent } from './features/section-shell/section-shell.component';
 import { SidebarComponent } from './features/sidebar/sidebar.component';
 import { ThemeToggleComponent } from './features/theme-toggle/theme-toggle.component';
-import { SocialLinksComponent } from './features/social-links/social-links.component';
 import { ExperienceCardComponent } from './features/experience-card/experience-card.component';
 import { EducationCardComponent } from './features/education-card/education-card.component';
 import { ProjectCardComponent } from './features/project-card/project-card.component';
@@ -38,7 +37,6 @@ import { SkillGroupComponent } from './features/skill-group/skill-group.componen
     SectionShellComponent,
     SidebarComponent,
     ThemeToggleComponent,
-    SocialLinksComponent,
     ExperienceCardComponent,
     EducationCardComponent,
     ProjectCardComponent,

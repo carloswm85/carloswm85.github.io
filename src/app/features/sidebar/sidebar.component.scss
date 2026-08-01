@@ -101,6 +101,7 @@ a[mat-list-item]:hover {
 ::ng-deep .mdc-list-item__primary-text,
 ::ng-deep .mat-mdc-list-item-title {
   width: 100%;
+  color: var(--sidebar-muted) !important;
   overflow: visible;
   overflow-wrap: anywhere;
   text-align: center;
@@ -108,8 +109,12 @@ a[mat-list-item]:hover {
   white-space: normal;
 }
 ::ng-deep .mdc-list-item--activated {
-  background: transparent;
-  color: var(--sidebar-active);
+  background: var(--sidebar-active-bg) !important;
+  color: var(--sidebar-active-text) !important;
+}
+::ng-deep .mdc-list-item--activated .mdc-list-item__primary-text,
+::ng-deep .mdc-list-item--activated .mat-mdc-list-item-title {
+  color: var(--sidebar-active-text) !important;
 }
 .copyright {
   display: flex;
