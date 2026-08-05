@@ -1,11 +1,37 @@
+- [Fit assessment: Senior Cloud Software Engineer (.NET)](#fit-assessment-senior-cloud-software-engineer-net)
+  - [Nice To Have](#nice-to-have)
+  - [(1) Overall assessment](#1-overall-assessment)
+  - [(2) Requirement-by-requirement match](#2-requirement-by-requirement-match)
+    - [(2.1) Core qualifications](#21-core-qualifications)
+    - [(2.2) Immediate client requirements](#22-immediate-client-requirements)
+    - [(2.3) Preferred qualifications](#23-preferred-qualifications)
+  - [(3) Most important gaps](#3-most-important-gaps)
+    - [(3.1) AWS production depth](#31-aws-production-depth)
+    - [(3.2) Windows Services to ECS](#32-windows-services-to-ecs)
+    - [(3.3) WebForms to Blazor](#33-webforms-to-blazor)
+    - [(3.4) Messaging systems](#34-messaging-systems)
+    - [(3.5) Consulting experience](#35-consulting-experience)
+  - [(4) Recommended path](#4-recommended-path)
+    - [(4.1) Apply now](#41-apply-now)
+    - [(4.2) Build one targeted project](#42-build-one-targeted-project)
+    - [(4.3) Estimated distance](#43-estimated-distance)
+  - [Bottom line](#bottom-line)
+
+---
+
 # Fit assessment: Senior Cloud Software Engineer (.NET)
 
-## Table of contents
+## Nice To Have
 
-- [(1) Overall assessment](#1-overall-assessment)
-- [(2) Requirement-by-requirement match](#2-requirement-by-requirement-match)
-- [(3) Most important gaps](#3-most-important-gaps)
-- [(4) Recommended path](#4-recommended-path)
+| Category      | Technical skills                                                                                                                                                      |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Backend**   | C#, .NET ecosystem, .NET Framework 4.6/4.8, .NET 8–10, ASP.NET Web Forms, Blazor, Windows Services, Node.js, Python, NuGet dependency remediation, MSMQ, RabbitMQ     |
+| **Frontend**  | React, TypeScript, Blazor, UX/UI                                                                                                                                      |
+| **Databases** | SQL Server                                                                                                                                                            |
+| **DevOps**    | Docker, Amazon ECS, AWS, IIS, Linux, CI/CD, Infrastructure as Code, automated testing, application containerization                                                   |
+| **Mobile**    | No mobile-specific technology is explicitly requested                                                                                                                 |
+| **AI Eng.**   | Artificial intelligence, generative AI, LLMs, Amazon Bedrock AgentCore, AI-driven testing, AI-enabled software solutions                                              |
+| **Patterns**  | Cloud-native architecture, application modernization, software architecture, containerization, messaging architecture, client-server applications, migration patterns |
 
 ## (1) Overall assessment
 
