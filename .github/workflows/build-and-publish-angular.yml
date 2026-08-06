@@ -1,11 +1,11 @@
-name: build-and-publish-angular-ghp
+name: build-and-publish-angular
 
 on:
   pull_request:
     branches:
       - main
     paths: &watched-paths
-      - '.github/workflows/build-and-publish-angular-ghp.yml'
+      - '.github/workflows/build-and-publish-angular.yml'
       - '.angular/**'
       - 'angular.json'
       - 'assets/**'
