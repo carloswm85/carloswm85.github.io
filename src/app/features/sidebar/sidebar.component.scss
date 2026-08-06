@@ -118,6 +118,7 @@ a[mat-list-item]:hover {
 }
 .copyright {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.35rem;
@@ -126,6 +127,13 @@ a[mat-list-item]:hover {
   color: var(--sidebar-muted);
   font-size: var(--app-font-caption);
   letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.copyright > div:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .copyright mat-icon {

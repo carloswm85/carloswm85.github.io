@@ -6,6 +6,20 @@
   overflow: hidden;
   background: var(--mat-sys-surface);
 }
+.sidebar-scrim {
+  position: fixed;
+  top: var(--app-toolbar-height);
+  right: 0;
+  bottom: 0;
+  left: min(20rem, 88vw);
+  z-index: 20;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar-scrim.is-open {
+  pointer-events: auto;
+}
 .sidebar-toggle {
   position: fixed;
   top: calc((var(--app-toolbar-height) - 3rem) / 2);
@@ -32,7 +46,8 @@
   font-size: var(--app-icon-size);
 }
 .sidebar-toggle.sidebar-is-open {
-  left: calc(min(20rem, 88vw) + 0.5rem);
+  left: calc(min(20rem, 88vw) - var(--app-control-size) - 1rem);
+  color: #ffffff;
 }
 .app-nav {
   position: fixed;
@@ -132,8 +147,15 @@ nav {
   scroll-padding-top: var(--app-toolbar-height);
   scroll-snap-type: y mandatory;
 }
+.app-content.sidebar-is-open {
+  overflow-y: hidden;
+}
 .page-content {
   padding-top: var(--app-toolbar-height);
+  transition: filter 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.page-content[inert] {
+  filter: brightness(0.55);
 }
 .page-content > app-about,
 .page-content > app-section-shell {
@@ -259,6 +281,10 @@ mat-card-actions {
   border-radius: 50%;
 }
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
   padding: 3rem 2rem;
   text-align: center;
   color: var(--mat-sys-on-surface-variant);
