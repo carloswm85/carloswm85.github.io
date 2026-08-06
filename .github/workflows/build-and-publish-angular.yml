@@ -1,4 +1,4 @@
-name: build-and-publish-angular
+name: build-and-publish-angular-ghp
 
 on:
   pull_request:
@@ -31,7 +31,6 @@ on:
       - 'src/**'
       - 'tsconfig*.json'
       - '!docs/**'
-  workflow_dispatch:
 
 permissions:
   contents: read
