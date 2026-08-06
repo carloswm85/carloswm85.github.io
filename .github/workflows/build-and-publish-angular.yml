@@ -39,7 +39,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: build-and-publish-angular-${{ github.ref }}
+  group: pages
   cancel-in-progress: true
 
 jobs:
