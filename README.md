@@ -1,3 +1,5 @@
+[![Build and publish Angular site to GitHub Pages](https://github.com/carloswm85/carloswm85.github.io/actions/workflows/build-and-publish-angular.yml/badge.svg)](https://github.com/carloswm85/carloswm85.github.io/actions/workflows/build-and-publish-angular.yml)
+
 # Information
 
 Personal online resume. By Carlos W. Mercado.
