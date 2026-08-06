@@ -4,8 +4,8 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - '.github/workflows/build-and-publish-angular.yml'
+    paths: &watched-paths
+      - '.github/workflows/build-and-publish-angular-ghp.yml'
       - '.angular/**'
       - 'angular.json'
       - 'assets/**'
@@ -19,25 +19,17 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '.github/workflows/build-and-publish-angular.yml'
-      - '.angular/**'
-      - 'angular.json'
-      - 'assets/**'
-      - 'documents/**'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'pnpm-workspace.yaml'
-      - 'src/**'
-      - 'tsconfig*.json'
-      - '!docs/**'
+    paths: *watched-paths
 
 permissions:
   contents: read
 
 concurrency:
   group: build-and-publish-angular-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'push' }}
+
+env:
+  BASE_HREF: /carloswm85.github.io/
 
 jobs:
   build:
@@ -63,7 +55,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build production site into docs
-        run: pnpm exec ng build --configuration production --output-path=docs --base-href=/
+        run: pnpm exec ng build --configuration production --output-path=docs --base-href=${{ env.BASE_HREF }}
 
       - name: Normalize GitHub Pages output
         shell: bash
