@@ -1,4 +1,4 @@
-name: Build and publish Angular site to GitHub Pages
+name: build-and-publish-angular
 
 on:
   pull_request:
