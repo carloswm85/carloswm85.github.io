@@ -13,6 +13,8 @@ For a 45-minute recruiter interview, the most valuable questions are those that 
 
 # Questions for the recruiter interview
 
+---
+
 ## (1) About the project
 
 - What is the main goal of this project?

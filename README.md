@@ -7,6 +7,8 @@ Personal online resume. By Carlos W. Mercado.
 - Repository: <https://github.com/carloswm85/carloswm85.github.io>
 - Entry point at: <https://carloswm85.github.io/>
 
+---
+
 ## Technological Stack
 
 | Area              | Current state                                                                         |

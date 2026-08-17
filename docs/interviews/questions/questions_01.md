@@ -1,5 +1,7 @@
 # Questions
 
+---
+
 ## Main Questions
 
 1. Is this full-time (40 hours/week)?
@@ -35,6 +37,8 @@
 
 9. How frequently are contractors paid?
    Contractors are paid once a month, during the first week of each month.
+
+---
 
 ## About the role
 

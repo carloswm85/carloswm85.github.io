@@ -4,6 +4,8 @@
 
 **Modernization focus:** .NET Framework 4.8 to .NET 8 and AngularJS/ASP.NET MVC to Angular 20
 
+---
+
 ## Table of contents
 
 - [Senior Full Stack .NET/Angular Modernization Engineer](#senior-full-stack-netangular-modernization-engineer)
@@ -12,6 +14,8 @@
 	- [(2) Responsibilities](#2-responsibilities)
 	- [(3) Minimum qualifications](#3-minimum-qualifications)
 	- [(4) Nice-to-have qualifications](#4-nice-to-have-qualifications)
+
+---
 
 ## (1) About the job
 
@@ -26,6 +30,8 @@ This role centers on maintaining and evolving a hybrid technology stack that inc
 This is a hands-on individual contributor role. You should be comfortable taking initiative despite sometimes receiving limited direction. You should also be prepared to become familiar with the system quickly and suggest improvements when opportunities are identified.
 
 You will join an Ascendum team that is already supporting this modernization effort. You will be expected to ramp up quickly and collaborate with teammates on both the client and Ascendum sides.
+
+---
 
 ## (2) Responsibilities
 
@@ -64,6 +70,8 @@ Responsibilities include, but are not limited to:
 - Collaborate productively with developers, QA engineers, and client stakeholders to determine task priorities and execution.
 - Participate in agile ceremonies while remaining productive when backlog refinement is limited.
 
+---
+
 ## (3) Minimum qualifications
 
 - Eight or more years of experience using C# and the Microsoft technology stack.
@@ -90,6 +98,8 @@ Responsibilities include, but are not limited to:
 - Ability to take initiative without requiring detailed task breakdowns.
 - Ability to read and understand large, unfamiliar codebases.
 - Experience working in agile teams using Git-based version control.
+
+---
 
 ## (4) Nice-to-have qualifications
 

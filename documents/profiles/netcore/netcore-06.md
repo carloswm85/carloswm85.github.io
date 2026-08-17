@@ -2,6 +2,8 @@
 
 # Senior Full Stack Engineer
 
+---
+
 ## Table of contents
 
 - [Senior Full Stack Engineer](#senior-full-stack-engineer)
@@ -13,11 +15,15 @@
   - [(5) We offer](#5-we-offer)
   - [(6) Why join Svitla](#6-why-join-svitla)
 
+---
+
 ## (1) Role overview
 
 Svitla Systems Inc. is looking for a Senior Full Stack Engineer for a full-time position
 (40 hours per week) in Argentina. Our client is a comprehensive tax filing software that offers a
 wide range of features.
+
+---
 
 ## (2) Requirements
 
@@ -36,11 +42,15 @@ wide range of features.
 - Curiosity about how systems fit together, with eagerness to learn from design reviews and
   understand tradeoffs.
 
+---
+
 ## (3) Nice to have
 
 - Experience with AWS (preferred), or other cloud platforms such as Azure or GCP.
 - Experience working in Agile or Scrum-based teams.
 - Experience in highly regulated domains (e.g., tax, fintech, healthcare).
+
+---
 
 ## (4) Responsibilities
 
@@ -52,6 +62,8 @@ wide range of features.
 - Assist in documenting software functionality, technical specifications, and system processes.
 - Learn and apply best practices in software development, version control, and Agile methodologies.
 - Support the continuous improvement of development processes and tools.
+
+---
 
 ## (5) We offer
 
@@ -68,6 +80,8 @@ wide range of features.
 - Fun corporate online/offline celebrations and activities.
 - Well-established remote culture.
 - Awesome team, friendly and supportive community!
+
+---
 
 ## (6) Why join Svitla
 
